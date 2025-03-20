@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "stats.h"
+#include "menu.h"
 
-
-
-int main(int argc, char *argv[]) {
+int main() {
 	
-	//sdfasdfasdfdsa
-	return 0;
+	SetConsoleOutputCP(65001);
+	
+    MenuItem menuList[100];  // Danh sách chứa tối đa 100 món ăn
+    int count = 0;
+    loadMenuFromFile(menuList, &count);
+    
+    printMenu(menuList, count);
+
+    return 0;
 }
