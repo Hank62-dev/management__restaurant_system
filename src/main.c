@@ -6,6 +6,6 @@
 
 int main(int argc, char *argv[]) {
 	
-	calculate_revenue_by_day();
+	//sdfasdfasdfdsa
 	return 0;
 }
