@@ -16,8 +16,8 @@ void calculate_revenue_by_day(){
 	
 	while(fscanf(file, "%s %*s %d", date, &price) != EOF){  // %*s: bỏ qua 1 chuỗi
 		//Nếu gặp một ngày mới, in ra doanh thu của ngày trước đó
-		if(strcmp(prev_date,"") != 0 &&  strcmp(prev_data, date) != 0 ){
-			printf("\n%s : %d VND \n", prev_data, total_day);
+		if(strcmp(prev_date,"") != 0 &&  strcmp(prev_date, date) != 0 ){
+			printf("\n%s : %d VND \n", prev_date, total_day);
 			total_day = 0;
 		}
 		// Cộng dồn doanh thu của ngày hiện tại
@@ -58,14 +58,14 @@ void calculate_revenue_by_month(){
 		strcpy(prev_month, month);
 	}
 	//in ra doanh thu tháng cuối cùng
-	if(strcmp(prev_month, "") != 0 && strcmp(prev_month) != 0){
+	if(strcmp(prev_month, "") != 0 && strcmp(prev_month, month) != 0){
 		printf("\n%s: %d VND", prev_month, total_month);
 	}
 	fclose(file);
 }
 
 //Hàm tìm món ăn và thức uống bán chạy nhất
-void void find_food_best_selling(){
+void find_food_best_selling(){
 	FILE *file_orders = fopen("data/orders.txt", "r");
 	FILE *file_menu = fopen("data/menu.txt", "r");
 	if(!file_orders || !file_menu){
@@ -152,7 +152,7 @@ void find_drink_best_selling(){
 	//Tìm thức uống bán chạy nhất
 	int maxDrinkSelling = 0;
 	for(int i = 0; i <= drink_index - 1; i++){
-		if(drink_count[i] > maxDrinkSelling[maxDrinkSelling]){
+		if(drink_count[i] > drink_count[maxDrinkSelling]){
 			maxDrinkSelling = i;
 		}
 	}
