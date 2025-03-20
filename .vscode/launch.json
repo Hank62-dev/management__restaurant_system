@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/management__restaurant_system",
-      "program": "d:/management__restaurant_system/build/Debug/outDebug",
+      "cwd": "c:/Users/hank6/OneDrive/Desktop/restaurant_management_system",
+      "program": "c:/Users/hank6/OneDrive/Desktop/restaurant_management_system/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

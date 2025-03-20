@@ -30,14 +30,3 @@ void find_food_best_selling();
 void find_drink_best_selling();
 
 #endif // kết thúc khai báo chương trình
-
-
-
-
-
-
-
-
-
-
-

@@ -152,23 +152,10 @@ void find_drink_best_selling(){
 	//Tìm thức uống bán chạy nhất
 	int maxDrinkSelling = 0;
 	for(int i = 0; i <= drink_index - 1; i++){
-		if(food_count[i] > maxDrinkSelling[maxDrinkSelling]){
+		if(drink_count[i] > maxDrinkSelling[maxDrinkSelling]){
 			maxDrinkSelling = i;
 		}
 	}
 	//in kết quả
 	printf("\nThe best of drink selling: %s", drink_items[maxDrinkSelling]);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
