@@ -1,10 +1,10 @@
-F0001  Com-ca-ri  Do-an  50000
-F0002  Com-suon  Do-an  50000
-F0003  Mien-ga  Do-an  50000
-F0004  Bun-rieu-cua  Do-an  50000
-F0005  Bun-ca  Do-an  50000
-D0001  Nuoc-loc  Nuoc-uong  15000
-D0002  Tra-da  Nuoc-uong  10000
-D0003  Coca-Cola  Nuoc-uong  20000
-D0004  Sting  Nuoc-uong  20000
-D0005  7Up  Nuoc-uong  20000
+F0001 "Cơm cà ri" "Đồ ăn" 50000
+F0002 "Cơm sườn" "Đồ ăn" 50000
+F0003 "Miến gà" "Đồ ăn" 50000
+F0004 "Bún riêu cua" "Đồ ăn" 50000
+F0005 "Bún cá" "Đồ ăn" 50000
+D0001 "Nước lọc" "Nước uống" 15000
+D0002 "Trà đá" "Nước uống" 10000
+D0003 "Coca Cola" "Nước uống" 20000
+D0004 "Sting" "Nước uống" 20000
+D0005 "7Up" "Nước uống" 20000

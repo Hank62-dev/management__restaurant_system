@@ -13,5 +13,12 @@ int loadMenuFromFile(MenuItem menuList[], int *count);
 
 void printMenu(MenuItem menuList[], int count);
 
+void saveMenuToFile(MenuItem menuList[], int count); // Sửa tham số *count thành count
+
+void addItem(MenuItem menuList[], int *count);
+
+void deleteItem(MenuItem menuList[], int *count);
+
+void editItem(MenuItem menuList[], int *count);
 
 #endif
