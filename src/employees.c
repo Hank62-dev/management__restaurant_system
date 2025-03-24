@@ -4,7 +4,7 @@
 #include "employees.h"
 
     //dua du lieu vao file
-     void saveToFile(struct Employee employees[], int count){
+    void saveToFile( Employee employees[], int count) {
     FILE *file = fopen("employees.txt", "w");
     if (file == NULL) {
         printf("Error to open file !\n");
@@ -22,7 +22,7 @@
      } 
      
      //lay du lieu tu file
-     void loadfromfile(struct Employee employees[], int *count){
+    void loadFromFile( Employee employees[], int *count){
      	FILE *file=fopen("employees.txt","r");
      	if (file == NULL) {
         printf("Error to open file !\n");
@@ -34,13 +34,17 @@
                   employees[*count].fullName,
                   employees[*count].position,
                   &employees[*count].salary) == 4) {
-        (*count)++;
+				  if (*count >= MAX_EMPLOYEES) { 
+        printf("Employee list is full!\n");
+        break;    
     }
+     }
+    (*count)++;
     fclose(file);
 }
      
      //Them nhan vien
-      void addEmployee(struct Employee employees[], int *count) {
+      void addEmployee( Employee employees[], int *count) {
       	
          // them nhan vien
     printf("\nAdd Employee Id: ");
@@ -66,7 +70,7 @@
 	}
 	
 	//hien thi danh sach nhan vien
-	void displayEmployees(struct Employee employees[], int count){
+	void displayEmployees(Employee employees[], int count){
 	
 	
 	if (count == 0) {
@@ -84,9 +88,9 @@
     }
 }
 // tim kiem nhan vien
-void searchEmployee(struct Employee employees[], int count, int id){
-	for(int i=0 ,i<count,i++) {
-		if (employee[i].employeeId==id){
+void searchEmployee( Employee employees[], int count, int id){
+	for(int i=0 ;i<count;i++) {
+		if (employees[i].employeeId==id){
 		printf("Number: %d,ID: %d, Name: %s, Position: %s, Salary: %.2f \n" ,i,
                employees[i].employeeId,
                employees[i].fullName,
@@ -98,7 +102,7 @@ void searchEmployee(struct Employee employees[], int count, int id){
 	}
 }
 //xoa nhan vien
-void deleteEmployee(Employee employees[], int *count, int id) {
+void deleteEmployee( Employee employees[], int *count, int id) {
     for (int i = 0; i < *count; i++) {
         if (employees[i].employeeId == id) {
             for (int j = i; j < *count - 1; j++) {

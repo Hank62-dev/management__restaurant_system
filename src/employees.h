@@ -1,16 +1,20 @@
-struct Employee{
+#ifndef EMPLOYEES_H
+#define EMPLOYEES_H
+#define MAX_EMPLOYEES 100
+
+typedef struct {
     int employeeId;
     char fullName[50];
-    char position[30];
+    char position[35];
     float salary;
-} ;
+} Employee;
 
-//khai bao ham
-void calculate_revenue_by_day()
-void savetofile(struct Employee employees[], int count);
-void loadfromfile(struct Employee employees[], int *count);
-void addEmployee(struct Employee employees[], int *count);
-void displayEmployees(struct Employee employees[], int count);
-void searchEmployee(struct Employee employees[], int count, int id);
-void updateEmployee(struct Employee employees[], int count, int id);
-void deleteEmployee(struct Employee employees[], int *count, int id);
+void saveToFile(Employee employees[], int count);
+void loadFromFile(Employee employees[], int *count);
+void addEmployee(Employee employees[], int *count);
+void displayEmployees(Employee employees[], int count);
+void searchEmployee(Employee employees[], int count, int id);
+void deleteEmployee(Employee employees[], int *count, int id);
+void updateEmployee(Employee employees[], int count, int id);
+
+#endif
