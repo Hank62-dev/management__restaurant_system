@@ -24,12 +24,12 @@ HostApplication=
 UseCustomMakefile=0
 CustomMakefile=
 CommandLine=
-Folders=src
+Folders=
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=1
 CompilerSettings=0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0
-UnitCount=3
+UnitCount=1
 
 [VersionInfo]
 Major=1
@@ -51,28 +51,19 @@ AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit1]
-FileName=main.c
+FileName=src\orders.c
 CompileCpp=0
-Folder=src
+Folder=
 Compile=1
 Link=1
 Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit7]
-FileName=orders.c
-
-[Unit8]
-FileName=orders.h
-
-[Unit9]
-FileName=employees.h
-
 [Unit2]
-FileName=src\stats.c
+FileName=stats.c
 CompileCpp=0
-Folder=src
+Folder=
 Compile=1
 Link=1
 Priority=1000
@@ -80,9 +71,9 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=src\stats.h
+FileName=stats.h
 CompileCpp=0
-Folder=src
+Folder=
 Compile=1
 Link=1
 Priority=1000
