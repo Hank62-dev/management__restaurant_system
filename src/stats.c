@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 // Hàm tính tổng doanh thu theo ngày
 void calculate_revenue_by_day(){
 	FILE* file = fopen("data/orders.txt", "r");
@@ -11,10 +12,10 @@ void calculate_revenue_by_day(){
 		return;
 	}	
 	int total_day = 0, price = 0;
-	char date[20], prev_date[20] = "";
+	char date[20], prev_date[20] = "", item[50], category[10];
 	printf("\n-----Doanh thu theo ngay-----");
 	
-	while(fscanf(file, "%s %*s %d", date, &price) != EOF){  // %*s: bỏ qua 1 chuỗi
+	while(fscanf(file, "%s %s %d %s", date, item, &price, category ) == 4 ){  // %*s: bỏ qua 1 chuỗi != EOF
 		//Nếu gặp một ngày mới, in ra doanh thu của ngày trước đó
 		if(strcmp(prev_date,"") != 0 &&  strcmp(prev_date, date) != 0 ){
 			printf("\n%s : %d VND \n", prev_date, total_day);
@@ -27,7 +28,7 @@ void calculate_revenue_by_day(){
 	
 	// in ra doanh thu ngày cuối cùng 
 	if(strcmp(prev_date, "") != 0){
-		printf("\n%s: %d VND ", prev_date, date);
+		printf("\n%s: %d VND ", prev_date, total_day);
 	}
 	fclose(file);
 }
@@ -40,11 +41,11 @@ void calculate_revenue_by_month(){
 		return;
 	}
 	
-	char date[20], month[8], prev_month[8] = "";
+	char date[20], month[8], prev_month[8] = "", item[50], category[10];
 	int price, total_month = 0;
 	printf("\n----Doanh thu theo thang----");
 	
-	while(fscanf(file,"%s %*s %d",date, &price) != EOF){
+	while(fscanf(file,"%s %s %d %s",date, item, &price, category) == 4){ //!= EOF
 		strncpy(month, date, 7); // strncpy: lấy số kí tự cần lấy trong chuỗi, ở đây lấy YYYY-MM : 7 kí tự
 		month[7] = '\0'; // tránh tràn số liệu
 		
@@ -58,7 +59,7 @@ void calculate_revenue_by_month(){
 		strcpy(prev_month, month);
 	}
 	//in ra doanh thu tháng cuối cùng
-	if(strcmp(prev_month, "") != 0 && strcmp(prev_month, month) != 0){
+	if(strcmp(prev_month, "") != 0 ){ //&& strcmp(prev_month, month) != 0
 		printf("\n%s: %d VND", prev_month, total_month);
 	}
 	fclose(file);
@@ -75,7 +76,8 @@ void find_food_best_selling(){
 	
 	char item[50]; // lưu từng món ăn đọc được từ orders.txt
 	char menu_item[50], category[10]; // đọc từ menu.txt
-	int price;
+	int price; 
+	char date[20];
 	//Lưu danh sách món ăn
 	char food_items[100][50]; // lưu các món ăn duy nhất
 	int food_count[100] = {0}; // số lần món đó được order
@@ -91,7 +93,7 @@ void find_food_best_selling(){
 	fclose(file_menu);
 	
 	//Đọc file orders.txt đếm số lượng từng món ăn
-	while(fscanf(file_orders, "%s", item ) != EOF){
+	while(fscanf(file_orders, "%s %s %d %s", date, item, &price, category) == 4){
 		//Kiểm tra nếu món ăn thuộc loại food
 		for(int i = 0; i <= food_index - 1; i++ ){
 			if(strcmp(food_items[i],item) == 0){
@@ -114,8 +116,8 @@ void find_food_best_selling(){
 }
 
 void find_drink_best_selling(){
-	FILE *file_menu = fopen("menu.txt " , "r");
-	FILE *file_orders = fopen("orders.txt", "r");
+	FILE *file_menu = fopen("data/menu.txt" , "r");
+	FILE *file_orders = fopen("data/orders.txt", "r");
 	if(!file_menu || !file_orders){
 		printf("\nKhong the mo file_menu.txt hoac file_orders.txt");
 		return;
@@ -126,12 +128,12 @@ void find_drink_best_selling(){
 	int price;
 	//lưu danh sách thức uống
 	char drink_items[100][50]; // lưu các món ăn duy nhất
-	char drink_count[50] = {0}; // lưu số lượng món đó được orders
+	int drink_count[100] = {0}; // lưu số lượng món đó được orders
 	int drink_index = 0; // số lượng món được lưu vào drink
 	
 	//Đọc danh sách để lấy drink ra
-	while(fscanf(file_menu, "%s %d %s", menu_item, &price, category) != EOF){
-		if(strcmp(menu_item,"drink") == 0){
+	while(fscanf(file_menu, "%s %d %s", menu_item, &price, category) == 3){ //!= EOF
+		if(strcmp(category,"drink") == 0){
 			strcpy(drink_items[drink_index], menu_item);
 			drink_count[drink_index++] = 0;
 		}

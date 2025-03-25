@@ -1,0 +1,5 @@
+2025-03-19 Pizza 100000 food
+2025-03-19 Coke 20000 drink
+2025-03-19 Burger 80000 food
+2025-03-19 Coffee 30000 drink
+
