@@ -4,6 +4,7 @@
 #include "menu.h"
 
 int main() {
+	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
 	MenuItem menuList[100];  // Danh sách chứa tối đa 100 món ăn
     int count = 0;

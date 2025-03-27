@@ -11,9 +11,13 @@ typedef struct {
 
 int loadMenuFromFile(MenuItem menuList[], int *count);
 
+int getVisibleLength(const char *str);
+
 void printMenu(MenuItem menuList[], int count);
 
-void saveMenuToFile(MenuItem menuList[], int count); // Sửa tham số *count thành count
+void saveMenuToFile(MenuItem menuList[], int count); 
+
+int checkDuplicate(MenuItem menuList[], int count, char menuId[], char dishName[]);
 
 void addItem(MenuItem menuList[], int *count);
 
