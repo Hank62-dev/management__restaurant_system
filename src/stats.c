@@ -1,9 +1,9 @@
- 
+ /*
 #include "stats.h" // gọi file header
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-/*
+
 // Hàm tính tổng doanh thu theo ngày
 void calculate_revenue_by_day(){
 	FILE* file = fopen("data/orders.txt", "r");
@@ -174,7 +174,10 @@ char best_drink[100]; // 🔧 Sửa đổi: Biến toàn cục để lưu thức
 // 🔧 Sửa đổi: Hàm tính tổng doanh thu theo ngày trả về giá trị
 int calculate_revenue_by_day() {
     FILE *file = fopen("data/orders.txt", "r");
-    if (!file) return 0;
+    if (!file) {
+    perror("Lỗi mở file orders.txt");
+    return;
+}
 
     int total_day = 0, price = 0;
     char date[20], prev_date[20] = "", item[50], category[10];
