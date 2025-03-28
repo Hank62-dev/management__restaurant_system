@@ -23,10 +23,16 @@ typedef struct {
 } Stats;
 
 //Khai báo hàm cần làm
+int calculate_revenue_by_day();
+int calculate_revenue_by_month();
+char* find_food_best_selling();
+char* find_drink_best_selling();
+
+/*
 void calculate_revenue_by_day();
 void calculate_revenue_by_month();
 
 void find_food_best_selling();
 void find_drink_best_selling();
-
+*/
 #endif // kết thúc khai báo chương trình
