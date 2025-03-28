@@ -1,13 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "stats.h"
 #include "employees.h"
-
 
 int main(int argc, char *argv[]) 
 {
-
-	int choice,id,count= 0;
+	int choice,id,count=0;
 	Employee employees[100];
 	loadFromFile(employees,&count);
 	while (choice != 6){
@@ -21,13 +18,12 @@ int main(int argc, char *argv[])
 		printf("\n\t\t\t\t____________________________________\n");
 		printf("\n\t\t\t\t ");
 		scanf("%d",&choice); 
-
 switch (choice) {
   case 1:
- addEmployee(employees,count);
+ addEmployee(employees,&count);
     break;
   case 2:
-displayEmployees(employees, count);
+ displayEmployees(employees,count);
     break;
   case 3:
  printf("Input Employee Id to search: ");
@@ -37,7 +33,7 @@ displayEmployees(employees, count);
   case 4:
 printf("Input Employee Id to update: ");
                 scanf("%d", &id);
-                updateEmployee(employees, count, id);
+                updateEmployee(employees, &count, id);
     break;
  case 5 :
     printf("Input Employee Id to delete: ");
@@ -48,9 +44,10 @@ printf("Input Employee Id to update: ");
           printf("\nExiting program...\n");
             exit(0);
             break;
-	
-	calculate_revenue_by_day();
+	}
+
 	return 0;
+
 }
-}
+//	calculate_revenue_by_day();
 }
