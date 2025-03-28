@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=1
 CompilerSettings=0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0
-UnitCount=3
+UnitCount=4
 
 [VersionInfo]
 Major=1
@@ -50,6 +50,7 @@ ProductVersion=
 AutoIncBuildNr=0
 SyncProduct=1
 
+<<<<<<< HEAD
 [Unit1]
 FileName=main.c
 CompileCpp=0
@@ -71,6 +72,10 @@ FileName=employees.h
 
 [Unit2]
 FileName=stats.h
+=======
+[Unit2]
+FileName=src\menu.c
+>>>>>>> be2992b07fa812262a2a8cb16924e8807575d144
 CompileCpp=0
 Folder=src
 Compile=1
@@ -80,11 +85,54 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
+<<<<<<< HEAD
 FileName=src\stats.c
+=======
+FileName=src\menu.h
+>>>>>>> be2992b07fa812262a2a8cb16924e8807575d144
 CompileCpp=0
 Folder=src
 Compile=1
 Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit8]
+FileName=src\stats.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit9]
+FileName=src\stats.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit1]
+FileName=src\main.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit4]
+FileName=data\menu.txt
+Folder=
+Compile=0
+Link=0
 Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
