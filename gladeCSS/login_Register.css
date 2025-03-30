@@ -1,0 +1,94 @@
+/*login button*/
+#logo_login_register {
+    icon-size: 64px;
+    position-area: left center ;
+}
+
+#btn_login {
+    background: #f6f6f6;
+    color: #1e1a1a;
+    min-width: 150px;
+    min-height: 50px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+#btn_login:hover {
+    background: #228025;
+    color: #fff;
+}
+
+#btn_login:focus {
+    background: #228025;
+    color: #fff;
+}
+
+/*register button*/
+#btn_register {
+    background: #f6f6f6;
+    color: #1e1a1a;
+    min-width: 150px;
+    min-height: 50px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+#btn_registern:hover {
+    background: #228025;
+    color: #fff;
+}
+
+#btn_register:focus {
+    background: #228025;
+    color: #fff;
+}
+
+#right_box {
+    border-radius: 3px solid black;
+}
+
+/*register button finish*/
+#btn_register_now {
+    background: #ffffff;
+    color: #000000;
+    min-width: 150px;
+    min-height: 50px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+#btn_register_now:hover {
+    background: green;
+    color: white;
+}
+
+#btn_register_now:focus {
+    background: #228025;
+    color: #fff;
+}
+
+/*login button finish*/
+#btn_login_now {
+    background: #ffffff;
+    color: #000000;
+    min-width: 150px;
+    min-height: 50px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+#btn_login_now:hover {
+    background: green;
+    color: white;
+}
+
+#btn_login_now:focus {
+    background: #228025;
+    color: #fff;
+}
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+/*home button*/
+#btn_home {
+    background: #fff;
+    color: green;
+    font-weight: bold;
+}
+/*orders button*/
+#btn_orders {
+    background: #fff;
+    color: green;
+    font-weight: bold;
+}
+
+/*stats button*/
+#btn_stats {
+    background: #fff;
+    color: green;
+    font-weight: bold;
+}
+
+/*employees button*/
+#btn_employees {
+    background: #fff;
+    color: green;
+    font-weight: bold;
+}
+/**/
+#frame_daily_revenue {
+    border: 5px;
+}
+
+#frame_monthly_revenue {
+    border: 5px;
+}
+
+#frame_best_selling {
+    border: 5px;
+}
+
+#label_best_food {
+    border: 5px;
+}
+
+#label_best_drink {
+    border: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
