@@ -1,52 +1,108 @@
 /*home button*/
 #btn_home {
     background: #fff;
-    color: green;
+    color: black;
     font-weight: bold;
 }
+#btn_home:hover {
+    background: #228025;
+    color: #fff;
+}
+
+#btn_home:focus {
+    background: #228025;
+    color: #fff;
+}
+
 /*orders button*/
 #btn_orders {
     background: #fff;
-    color: green;
+    color: black;
     font-weight: bold;
+}
+#btn_orders:hover {
+    background: #228025;
+    color: #fff;
+}
+
+#btn_orders:focus {
+    background: #228025;
+    color: #fff;
 }
 
 /*stats button*/
 #btn_stats {
     background: #fff;
-    color: green;
+    color: black;
     font-weight: bold;
+}
+#btn_stats:hover {
+    background: #228025;
+    color: #fff;
+}
+
+#btn_stats:focus {
+    background: #228025;
+    color: #fff;
 }
 
 /*employees button*/
 #btn_employees {
     background: #fff;
-    color: green;
+    color: black;
     font-weight: bold;
 }
-/**/
+#btn_employees:hover {
+    background: #228025;
+    color: #fff;
+}
+
+#btn_employees:focus {
+    background: #228025;
+    color: #fff;
+}
+
+/*khung thống kê*/
 #frame_daily_revenue {
-    border: 5px;
+    border-radius: 5px;
 }
 
 #frame_monthly_revenue {
-    border: 5px;
+    border-radius: 5px;
 }
 
 #frame_best_selling {
-    border: 5px;
+    border-radius: 5px;
 }
 
 #label_best_food {
-    border: 5px;
+    border-radius: 5px;
 }
 
 #label_best_drink {
-    border: 5px;
+    border-radius: 5px;
 }
 
+/*nhãn dán thống kê*/
+#label_daily_data {
+    font-weight: 800;
+    text-align: start;
+}
 
+#label_monthly_data {
+    font-weight: 800;
+    text-align: start;
+}
 
+#label_best_food {
+    font-weight: 800;
+    text-align: start;
+}
+
+#label_best_drink {
+    font-weight: 800;
+    text-align: start;
+}
 
 
 
