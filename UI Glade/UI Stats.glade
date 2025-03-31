@@ -135,7 +135,7 @@
                       <attribute name="scale" value="1.5"/>
                       <attribute name="underline" value="True"/>
                       <attribute name="foreground" value="#ffffffffffff"/>
-                      <attribute name="background" value="#2626a2a26969"/>
+                      <attribute name="background" value="#2626A2"/>
                       <attribute name="strikethrough-color" value="#ffffffffffff"/>
                     </attributes>
                   </object>
@@ -179,7 +179,7 @@
                       <attribute name="scale" value="1.5"/>
                       <attribute name="underline" value="True"/>
                       <attribute name="foreground" value="#ffffffffffff"/>
-                      <attribute name="background" value="#2626a2a26969"/>
+                      <attribute name="background" value="#2626A2"/>
                       <attribute name="strikethrough-color" value="#ffffffffffff"/>
                     </attributes>
                   </object>
@@ -246,7 +246,7 @@
                       <attribute name="scale" value="1.5"/>
                       <attribute name="underline" value="True"/>
                       <attribute name="foreground" value="#ffffffffffff"/>
-                      <attribute name="background" value="#2626a2a26969"/>
+                      <attribute name="background" value="#2626A2"/>
                       <attribute name="strikethrough-color" value="#ffffffffffff"/>
                     </attributes>
                   </object>
