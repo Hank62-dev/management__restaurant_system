@@ -1,9 +1,9 @@
-/*login button*/
+/*logo*/
 #logo_login_register {
     icon-size: 64px;
     position-area: left center ;
 }
-
+/*login button*/
 #btn_login {
     background: #f6f6f6;
     color: #1e1a1a;
@@ -11,6 +11,7 @@
     min-height: 50px;
     padding: 10px;
     font-weight: 600;
+    border-radius: 3px;
 }
 
 #btn_login:hover {
@@ -31,6 +32,7 @@
     min-height: 50px;
     padding: 10px;
     font-weight: 600;
+    border-radius: 3px;
 }
 
 #btn_registern:hover {
