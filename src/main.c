@@ -2,12 +2,13 @@
 #include <stdlib.h>
 #include "stats.h"
 #include <gtk/gtk.h>
-void apply_css() {
-    GtkCssProvider *provider = gtk_css_provider_new();
-    gtk_css_provider_load_from_path(provider, "Glade_CSS/stats.css", NULL);
+void apply_css(GtkWidget *window) {
+GtkCssProvider *provider = gtk_css_provider_new();
+    gtk_css_provider_load_from_path(provider, "style.css", NULL);
 
-    GtkStyleContext *context = gtk_widget_get_style_context(GTK_WIDGET(window));
-    gtk_style_context_add_provider(context,
+    GtkStyleContext *context = gtk_widget_get_style_context(window);
+    gtk_style_context_add_provider_for_screen(
+        gdk_screen_get_default(),
         GTK_STYLE_PROVIDER(provider),
         GTK_STYLE_PROVIDER_PRIORITY_USER);
 }
@@ -59,7 +60,7 @@ int main(int argc, char *argv[]) {
     g_signal_connect(btn_stats, "clicked", G_CALLBACK(update_stats), NULL);
 
     gtk_widget_show_all(window);
-    apply_css();
+    apply_css(window);
     gtk_main();
 
     return 0;
