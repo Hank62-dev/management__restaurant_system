@@ -1,7 +1,9 @@
 /*logo image*/
 #logo_login_register {
     icon-size: 64px;
-    position: left center;
+    position: fixed;
+    top: 50%;
+    left: 0;
 }
 
 /*tạo khung cho form*/
