@@ -2,31 +2,31 @@
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.22"/>
-  <object class="GtkWindow" id="VQHT Restaurant">
+  <object class="GtkWindow" id="Login_Register_window">
     <property name="name">My Restaurant </property>
     <property name="can-focus">False</property>
+    <property name="border-width">10</property>
     <property name="title" translatable="yes">main_window</property>
     <property name="resizable">False</property>
     <property name="default-width">1040</property>
-    <property name="default-height">585</property>
+    <property name="default-height">480</property>
     <child>
       <object class="GtkBox" id="main_box">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="spacing">20</property>
         <child>
-          <object class="GtkImage" id="restaurant_logo">
-            <property name="width-request">-1</property>
-            <property name="height-request">-1</property>
+          <object class="GtkAspectFrame">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="is-focus">True</property>
-            <property name="hexpand">False</property>
-            <property name="vexpand">False</property>
-            <property name="xalign">0</property>
-            <property name="yalign">0</property>
-            <property name="xpad">0</property>
-            <property name="ypad">0</property>
+            <property name="label-xalign">0</property>
+            <property name="shadow-type">none</property>
+            <child>
+              <object class="GtkImage" id="logo_login_register">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+              </object>
+            </child>
           </object>
           <packing>
             <property name="expand">True</property>
@@ -49,9 +49,12 @@
                 <child>
                   <object class="GtkButton" id="btn_login">
                     <property name="label" translatable="yes">LOGIN</property>
+                    <property name="use-action-appearance">True</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <property name="margin-top">40</property>
+                    <property name="margin-bottom">40</property>
                   </object>
                   <packing>
                     <property name="expand">True</property>
@@ -62,9 +65,12 @@
                 <child>
                   <object class="GtkButton" id="btn_register">
                     <property name="label" translatable="yes">REGISTER</property>
+                    <property name="use-action-appearance">True</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <property name="margin-top">40</property>
+                    <property name="margin-bottom">40</property>
                   </object>
                   <packing>
                     <property name="expand">True</property>
@@ -86,67 +92,13 @@
                 <property name="hexpand">False</property>
                 <property name="vexpand">False</property>
                 <child>
-                  <object class="GtkBox" id="login_box">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="orientation">vertical</property>
-                    <property name="spacing">10</property>
-                    <child>
-                      <object class="GtkEntry" id="entry_login_phone">
-                        <property name="visible">True</property>
-                        <property name="can-focus">True</property>
-                        <property name="tooltip-markup" translatable="yes">PHONE</property>
-                        <property name="placeholder-text" translatable="yes">PHONE</property>
-                        <style>
-                          <class name="PHONE"/>
-                        </style>
-                      </object>
-                      <packing>
-                        <property name="expand">True</property>
-                        <property name="fill">True</property>
-                        <property name="position">0</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkEntry" id="entry_login_password">
-                        <property name="visible">True</property>
-                        <property name="can-focus">True</property>
-                        <property name="placeholder-text" translatable="yes">PASSWORD</property>
-                      </object>
-                      <packing>
-                        <property name="expand">True</property>
-                        <property name="fill">True</property>
-                        <property name="position">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkButton" id="btn_login_now">
-                        <property name="label" translatable="yes">Login Now</property>
-                        <property name="visible">True</property>
-                        <property name="can-focus">True</property>
-                        <property name="receives-default">True</property>
-                      </object>
-                      <packing>
-                        <property name="expand">True</property>
-                        <property name="fill">True</property>
-                        <property name="position">2</property>
-                      </packing>
-                    </child>
-                  </object>
-                  <packing>
-                    <property name="name">login_box</property>
-                    <property name="title" translatable="yes">login_box</property>
-                    <property name="needs-attention">True</property>
-                  </packing>
-                </child>
-                <child>
                   <object class="GtkBox" id="register_box">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="orientation">vertical</property>
                     <property name="spacing">10</property>
                     <child>
-                      <object class="GtkBox">
+                      <object class="GtkBox" id="entry_fullname_box">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="spacing">10</property>
@@ -155,6 +107,7 @@
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="placeholder-text" translatable="yes">FIRST NAME</property>
+                            <property name="input-purpose">name</property>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -167,6 +120,7 @@
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="placeholder-text" translatable="yes">LAST NAME</property>
+                            <property name="input-purpose">name</property>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -186,6 +140,7 @@
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="placeholder-text" translatable="yes">PHONE</property>
+                        <property name="input-purpose">phone</property>
                       </object>
                       <packing>
                         <property name="expand">True</property>
@@ -198,6 +153,7 @@
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="placeholder-text" translatable="yes">PASSWORD</property>
+                        <property name="input-purpose">password</property>
                       </object>
                       <packing>
                         <property name="expand">True</property>
@@ -210,6 +166,7 @@
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="placeholder-text" translatable="yes">CONFIRM PASSWORD</property>
+                        <property name="input-purpose">password</property>
                       </object>
                       <packing>
                         <property name="expand">True</property>
@@ -220,6 +177,7 @@
                     <child>
                       <object class="GtkButton" id="btn_register_now">
                         <property name="label" translatable="yes">Register Now</property>
+                        <property name="use-action-appearance">True</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -234,6 +192,63 @@
                   <packing>
                     <property name="name">register_box</property>
                     <property name="title" translatable="yes">register_box</property>
+                    <property name="needs-attention">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkBox" id="login_box">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">10</property>
+                    <child>
+                      <object class="GtkEntry" id="entry_login_phone">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="tooltip-markup" translatable="yes">PHONE</property>
+                        <property name="placeholder-text" translatable="yes">PHONE</property>
+                        <property name="input-purpose">phone</property>
+                        <style>
+                          <class name="PHONE"/>
+                        </style>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="entry_login_password">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="placeholder-text" translatable="yes">PASSWORD</property>
+                        <property name="input-purpose">password</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_login_now">
+                        <property name="label" translatable="yes">Login Now</property>
+                        <property name="use-action-appearance">True</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="name">login_box</property>
+                    <property name="title" translatable="yes">login_box</property>
                     <property name="position">1</property>
                     <property name="needs-attention">True</property>
                   </packing>
