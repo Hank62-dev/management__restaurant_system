@@ -9,9 +9,5 @@
 2025-05-19 Pizza 100000 food
 2025-06-19 Coke 200000 drink
 2025-06-19 Pizza 800000 food
-2025-05-19 Burger 850000 food
-2025-05-19 Coffee 300000 drink
-2025-05-19 Pizza 100000 food
-2025-06-19 Coke 200000 drink
-2025-06-19 Pizza 800000 food
+
 
