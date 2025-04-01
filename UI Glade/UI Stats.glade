@@ -112,12 +112,14 @@
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <child>
-                      <object class="GtkTextView" id="label_daily_data">
+                      <object class="GtkLabel" id="label_daily_data">
                         <property name="visible">True</property>
-                        <property name="can-focus">True</property>
-                        <property name="pixels-below-lines">10</property>
-                        <property name="left-margin">10</property>
-                        <property name="top-margin">10</property>
+                        <property name="can-focus">False</property>
+                        <property name="wrap">True</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Segoe UI Heavy Italic 10"/>
+                          <attribute name="style" value="normal"/>
+                        </attributes>
                       </object>
                     </child>
                   </object>
@@ -135,7 +137,7 @@
                       <attribute name="scale" value="1.5"/>
                       <attribute name="underline" value="True"/>
                       <attribute name="foreground" value="#ffffffffffff"/>
-                      <attribute name="background" value="#2626A2"/>
+                      <attribute name="background" value="#2626a2a26969"/>
                       <attribute name="strikethrough-color" value="#ffffffffffff"/>
                     </attributes>
                   </object>
@@ -158,12 +160,12 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <child>
-                      <object class="GtkTextView" id="label_monthly_data">
+                      <object class="GtkLabel" id="label_monthly_data">
                         <property name="visible">True</property>
-                        <property name="can-focus">True</property>
-                        <property name="pixels-below-lines">10</property>
-                        <property name="left-margin">10</property>
-                        <property name="top-margin">10</property>
+                        <property name="can-focus">False</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Segoe UI Heavy Italic 10"/>
+                        </attributes>
                       </object>
                     </child>
                   </object>
@@ -179,7 +181,7 @@
                       <attribute name="scale" value="1.5"/>
                       <attribute name="underline" value="True"/>
                       <attribute name="foreground" value="#ffffffffffff"/>
-                      <attribute name="background" value="#2626A2"/>
+                      <attribute name="background" value="#2626a2a26969"/>
                       <attribute name="strikethrough-color" value="#ffffffffffff"/>
                     </attributes>
                   </object>
@@ -207,12 +209,13 @@
                         <property name="can-focus">False</property>
                         <property name="orientation">vertical</property>
                         <child>
-                          <object class="GtkTextView" id="label_best_food">
+                          <object class="GtkLabel" id="label_best_food">
                             <property name="visible">True</property>
-                            <property name="can-focus">True</property>
-                            <property name="pixels-below-lines">10</property>
-                            <property name="left-margin">10</property>
-                            <property name="top-margin">10</property>
+                            <property name="can-focus">False</property>
+                            <attributes>
+                              <attribute name="font-desc" value="Segoe UI Heavy Italic 10"/>
+                              <attribute name="style" value="normal"/>
+                            </attributes>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -221,9 +224,13 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkTextView" id="label_best_drink">
+                          <object class="GtkLabel" id="label_best_drink">
                             <property name="visible">True</property>
-                            <property name="can-focus">True</property>
+                            <property name="can-focus">False</property>
+                            <attributes>
+                              <attribute name="font-desc" value="Segoe UI Heavy Italic 10"/>
+                              <attribute name="style" value="normal"/>
+                            </attributes>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -246,7 +253,7 @@
                       <attribute name="scale" value="1.5"/>
                       <attribute name="underline" value="True"/>
                       <attribute name="foreground" value="#ffffffffffff"/>
-                      <attribute name="background" value="#2626A2"/>
+                      <attribute name="background" value="#2626a2a26969"/>
                       <attribute name="strikethrough-color" value="#ffffffffffff"/>
                     </attributes>
                   </object>
