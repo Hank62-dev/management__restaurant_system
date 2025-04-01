@@ -5,7 +5,7 @@
 
 void apply_css(GtkWidget *window) {
     GtkCssProvider *provider = gtk_css_provider_new();
-    gtk_css_provider_load_from_path(provider, "style.css", NULL);
+    gtk_css_provider_load_from_path(provider, "Glade_CSS/stats.css", NULL);
     
     GtkStyleContext *context = gtk_widget_get_style_context(window);
     gtk_style_context_add_provider_for_screen(
