@@ -2,10 +2,11 @@
 #include <stdlib.h>
 #include "stats.h"
 #include <gtk/gtk.h>
-void apply_css(GtkWidget *window) {
-GtkCssProvider *provider = gtk_css_provider_new();
-    gtk_css_provider_load_from_path(provider, "style.css", NULL);
 
+void apply_css(GtkWidget *window) {
+    GtkCssProvider *provider = gtk_css_provider_new();
+    gtk_css_provider_load_from_path(provider, "style.css", NULL);
+    
     GtkStyleContext *context = gtk_widget_get_style_context(window);
     gtk_style_context_add_provider_for_screen(
         gdk_screen_get_default(),
@@ -18,24 +19,32 @@ GtkLabel *label_daily, *label_monthly, *label_best_food, *label_best_drink;
 
 // Hàm cập nhật số liệu lên giao diện
 void update_stats(GtkWidget *widget, gpointer data) {
-    // Tạo buffer để lưu kết quả
     char buffer[256];
 
-    // Cập nhật doanh thu theo ngày
-    sprintf(buffer, "Daily Revenue: %d VND", calculate_revenue_by_day());
-    gtk_label_set_text(GTK_LABEL(label_daily), buffer);
+    int daily_revenue = calculate_revenue_by_day();
+    int monthly_revenue = calculate_revenue_by_month();
+    char *best_food = find_food_best_selling();
+    char *best_drink = find_drink_best_selling();
 
-    // Cập nhật doanh thu theo tháng
-    sprintf(buffer, "Monthly Revenue: %d VND", calculate_revenue_by_month());
-    gtk_label_set_text(GTK_LABEL(label_monthly), buffer);
+    if (daily_revenue >= 0) {
+        sprintf(buffer, "Daily Revenue: %d VND", daily_revenue);
+        gtk_label_set_text(label_daily, buffer);
+    }
 
-    // Cập nhật món ăn bán chạy nhất
-    sprintf(buffer, "Best Selling Food: %s", find_food_best_selling());
-    gtk_label_set_text(GTK_LABEL(label_best_food), buffer);
+    if (monthly_revenue >= 0) {
+        sprintf(buffer, "Monthly Revenue: %d VND", monthly_revenue);
+        gtk_label_set_text(label_monthly, buffer);
+    }
 
-    // Cập nhật thức uống bán chạy nhất
-    sprintf(buffer, "Best Selling Drink: %s", find_drink_best_selling());
-    gtk_label_set_text(GTK_LABEL(label_best_drink), buffer);
+    if (best_food) {
+        sprintf(buffer, "Best Selling Food: %s", best_food);
+        gtk_label_set_text(label_best_food, buffer);
+    }
+
+    if (best_drink) {
+        sprintf(buffer, "Best Selling Drink: %s", best_drink);
+        gtk_label_set_text(label_best_drink, buffer);
+    }
 }
 
 int main(int argc, char *argv[]) {
@@ -53,8 +62,8 @@ int main(int argc, char *argv[]) {
 
     label_daily = GTK_LABEL(gtk_builder_get_object(builder, "label_daily_data"));
     label_monthly = GTK_LABEL(gtk_builder_get_object(builder, "label_monthly_data"));
-    label_best_food = GTK_LABEL(gtk_builder_get_object(builder, "label_selling_data"));
-    label_best_drink = GTK_LABEL(gtk_builder_get_object(builder, "label_drink_data")); // cần thêm trong Glade
+    label_best_food = GTK_LABEL(gtk_builder_get_object(builder, "label_best_food"));
+    label_best_drink = GTK_LABEL(gtk_builder_get_object(builder, "label_best_drink"));
 
     // Gán sự kiện cho nút "Stats"
     g_signal_connect(btn_stats, "clicked", G_CALLBACK(update_stats), NULL);
@@ -65,12 +74,3 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-/*
-int main() {
-	calculate_revenue_by_day();
-	calculate_revenue_by_month();
-
-	find_food_best_selling();
-	find_drink_best_selling();
-	return 0;
-}*/
