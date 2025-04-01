@@ -1,10 +1,6 @@
 /*home button*/
 #btn_home {
-<<<<<<< HEAD
-    background: white;
-=======
     background-color: white;
->>>>>>> stats
     color: black;
     border: 3px solid black;
     border-radius: 5px;
@@ -12,11 +8,7 @@
     text-align: center;
 }
 #btn_home:hover {
-<<<<<<< HEAD
-    background: green;
-=======
     background-color: green;
->>>>>>> stats
     color: white;
     border-radius: 5px;
     font-weight: 700;
@@ -24,22 +16,14 @@
 }
 
 #btn_home:focus {
-<<<<<<< HEAD
-    background: green;
-=======
     background-color: green;
->>>>>>> stats
     color: white;
     border-radius: 5px;
     font-weight: 700;
 }
 /*stats button*/
 #btn_stats {
-<<<<<<< HEAD
-    background: white;
-=======
     background-color: white;
->>>>>>> stats
     color: black;
     border: 3px solid black;
     border-radius: 5px;
@@ -47,11 +31,7 @@
     text-align: center;
 }
 #btn_stats:hover {
-<<<<<<< HEAD
-    background: green;
-=======
     background-color: green;
->>>>>>> stats
     color: white;
     border-radius: 5px;
     font-weight: 700;
@@ -59,22 +39,14 @@
 }
 
 #btn_stats:focus {
-<<<<<<< HEAD
-    background: green;
-=======
     background-color: green;
->>>>>>> stats
     color: white;
     border-radius: 5px;
     font-weight: 700;
 }
 /*orders button*/
 #btn_orders {
-<<<<<<< HEAD
-    background: white;
-=======
     background-color: white;
->>>>>>> stats
     color: black;
     border: 3px solid black;
     border-radius: 5px;
@@ -82,11 +54,7 @@
     text-align: center;
 }
 #btn_orders:hover {
-<<<<<<< HEAD
-    background: green;
-=======
     background-color: green;
->>>>>>> stats
     color: white;
     border-radius: 5px;
     font-weight: 700;
@@ -94,22 +62,14 @@
 }
 
 #btn_orders:focus {
-<<<<<<< HEAD
-    background: green;
-=======
     background-color: green;
->>>>>>> stats
     color: white;
     border-radius: 5px;
     font-weight: 700;
 }
 /*employees button*/
 #btn_employees {
-<<<<<<< HEAD
-    background: white;
-=======
     background-color: white;
->>>>>>> stats
     color: black;
     border: 3px solid black;
     border-radius: 5px;
@@ -117,41 +77,21 @@
     text-align: center;
 }
 #btn_employees:hover {
-<<<<<<< HEAD
-    background: green;
-=======
     background-color: green;
->>>>>>> stats
     color: white;
     border-radius: 5px;
     font-weight: 700;
     text-align: center;
 }
 
-<<<<<<< HEAD
-#btn_employee:focus {
-    background: green;
-=======
 #btn_employees:focus {
     background-color: green;
->>>>>>> stats
     color: white;
     border-radius: 5px;
     font-weight: 700;
 }
 
 #frame_daily_revenue {
-<<<<<<< HEAD
-    border: 5px solid black;
-}
-
-#frame_monthly_revenue {
-    border: 5px solid black;
-}
-
-#frame_best-selling {
-    border: 5px solid black;
-=======
     border-width: 5px;
     border-style: solid;
     border-color: black;
@@ -167,39 +107,17 @@
     border-width: 5px;
     border-style: solid;
     border-color: black;
->>>>>>> stats
 }
 
 #label_daily_data {
     font-size: 20px;
     font-weight: 700;
-<<<<<<< HEAD
-    text-align: start;
-=======
     text-align: left;
->>>>>>> stats
 }
 
 #label_monthly_data {
     font-size: 20px;
     font-weight: 700;
-<<<<<<< HEAD
-    text-align: start;
-}
-
-#label_best_food {
-    border: 5px;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: start;
-}
-
-#label_best_drink {
-    border: 5px;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: start;
-=======
     text-align: left;
 }
 
@@ -215,7 +133,6 @@
     font-size: 20px;
     font-weight: 700;
     text-align: left;
->>>>>>> stats
 }
 
 
