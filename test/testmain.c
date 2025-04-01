@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "test.h"
+#include <time.h>
+#include "test.h"  // Đảm bảo rằng bạn đã định nghĩa các hàm calculate_revenue_by_day, calculate_revenue_by_month, find_food_best_selling, find_drink_best_selling trong file test.h
 #include <gtk/gtk.h>
 
+// Hàm áp dụng CSS cho giao diện
 void apply_css(GtkWidget *window) {
     GtkCssProvider *provider = gtk_css_provider_new();
     gtk_css_provider_load_from_path(provider, "Glade_CSS/stats.css", NULL);
@@ -17,9 +19,16 @@ void apply_css(GtkWidget *window) {
 // Các biến toàn cục để truy cập widget từ nhiều hàm
 GtkLabel *label_daily, *label_monthly, *label_best_food, *label_best_drink;
 
-// Hàm cập nhật số liệu lên giao diện
 void update_stats(GtkWidget *widget, gpointer data) {
     char buffer[256];
+
+    // Lấy thời gian hiện tại
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+
+    // Định dạng ngày tháng năm (DD-MM-YYYY)
+    sprintf(buffer, "Date: %02d-%02d-%04d", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
+    gtk_label_set_text(GTK_LABEL(label_daily), buffer);  // Cập nhật ngày vào label_daily
 
     int daily_revenue = calculate_revenue_by_day();
     int monthly_revenue = calculate_revenue_by_month();
@@ -47,10 +56,12 @@ void update_stats(GtkWidget *widget, gpointer data) {
     }
 }
 
+
 int main(int argc, char *argv[]) {
     GtkBuilder *builder;
     GtkWidget *window, *btn_stats;
 
+    // Khởi tạo GTK
     gtk_init(&argc, &argv);
 
     // Load file Glade
@@ -68,8 +79,11 @@ int main(int argc, char *argv[]) {
     // Gán sự kiện cho nút "Stats"
     g_signal_connect(btn_stats, "clicked", G_CALLBACK(update_stats), NULL);
 
+    // Hiển thị cửa sổ và áp dụng CSS
     gtk_widget_show_all(window);
     apply_css(window);
+
+    // Vòng lặp chính của GTK
     gtk_main();
 
     return 0;
