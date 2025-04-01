@@ -130,7 +130,7 @@
                     <property name="can-focus">False</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
-                    <property name="label" translatable="yes">		DAILY REVENUE			</property>
+                    <property name="label" translatable="yes">DAILY REVENUE</property>
                     <attributes>
                       <attribute name="font-desc" value="Segoe UI Heavy Italic 10"/>
                       <attribute name="style" value="oblique"/>

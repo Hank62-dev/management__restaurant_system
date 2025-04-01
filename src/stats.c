@@ -11,7 +11,7 @@ int calculate_revenue_by_day() {
     FILE *file = fopen("data/orders.txt", "r");
     if (!file) {
     perror("Lỗi mở file orders.txt");
-    return;
+    return 0;
 }
 
     int total_day = 0, price = 0;

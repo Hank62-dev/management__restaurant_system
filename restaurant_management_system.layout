@@ -1,20 +1,26 @@
 [Editors]
-Order=0,1,2
-Focused=1
+Order=2,0,1
+Focused=0
 [Editor_0]
-CursorCol=10
-CursorRow=4
+CursorCol=38
+CursorRow=12
 TopLine=1
 LeftChar=1
 [Editor_1]
+<<<<<<< HEAD
 CursorCol=15
 CursorRow=60
 TopLine=49
+=======
+CursorCol=13
+CursorRow=14
+TopLine=1
+>>>>>>> stats
 LeftChar=1
 [Editor_2]
 CursorCol=1
 CursorRow=30
-TopLine=16
+TopLine=1
 LeftChar=1
 [Editor_5]
 CursorCol=1
