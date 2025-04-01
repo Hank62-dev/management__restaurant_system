@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "stats.h"
+#include "test.h"
 #include <gtk/gtk.h>
 
 void apply_css(GtkWidget *window) {

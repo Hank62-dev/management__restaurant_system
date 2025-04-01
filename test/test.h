@@ -6,8 +6,8 @@ Lưu ý: dữ liệu sẽ được tính toán từ orders.txt
  */
 
 
-#ifndef STATS_H  // Kiểm tra nếu chưa được định nghĩa
-#define STATS_H // Định nghĩa để tránh nạp lại file
+#ifndef TEST_H  // Kiểm tra nếu chưa được định nghĩa
+#define TEST_H // Định nghĩa để tránh nạp lại file
 
 #include <stdio.h>
 #include <stdlib.h>
