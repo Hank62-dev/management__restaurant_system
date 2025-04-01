@@ -103,7 +103,7 @@
     border-color: black;
 }
 
-#frame_best-selling {
+#frame_best_selling {
     border-width: 5px;
     border-style: solid;
     border-color: black;
@@ -112,27 +112,27 @@
 #label_daily_data {
     font-size: 20px;
     font-weight: 700;
-    text-align: start;
+    text-align: left;
 }
 
 #label_monthly_data {
     font-size: 20px;
     font-weight: 700;
-    text-align: start;
+    text-align: left;
 }
 
 #label_best_food {
-    border: 5px;
+    border: 5px solid black;
     font-size: 20px;
     font-weight: 700;
-    text-align: start;
+    text-align: left;
 }
 
 #label_best_drink {
-    border: 5px;
+    border: 5px solid black;
     font-size: 20px;
     font-weight: 700;
-    text-align: start;
+    text-align: left;
 }
 
 
