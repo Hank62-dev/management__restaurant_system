@@ -112,27 +112,27 @@
 #label_daily_data {
     font-size: 20px;
     font-weight: 700;
-    text-align: left;
+    text-align: -gtk-left;
 }
 
 #label_monthly_data {
     font-size: 20px;
     font-weight: 700;
-    text-align: left;
+    text-align: -gtk-left;
 }
 
 #label_best_food {
     border: 5px solid black;
     font-size: 20px;
     font-weight: 700;
-    text-align: left;
+    text-align: -gtk-left;
 }
 
 #label_best_drink {
     border: 5px solid black;
     font-size: 20px;
     font-weight: 700;
-    text-align: left;
+    text-align: -gtk-left;
 }
 
 
