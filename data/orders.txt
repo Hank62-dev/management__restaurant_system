@@ -1,5 +1,13 @@
 2025-03-19 Pizza 100000 food
-2025-03-19 Coke 20000 drink
-2025-03-19 Burger 80000 food
-2025-03-19 Coffee 30000 drink
+2025-03-19 Coke 240000 drink
+2025-03-21 Pizza 880000 food
+2025-03-21 Coffee 30000 drink
+2025-04-19 Pizza 100000 food
+2025-04-19 Pizza 206000 drink
+2025-05-19 Burger 850000 food
+2025-05-19 Coffee 300000 drink
+2025-05-19 Pizza 100000 food
+2025-06-19 Coke 200000 drink
+2025-06-19 Pizza 800000 food
+
 
