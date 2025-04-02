@@ -58,7 +58,7 @@ int calculate_revenue_by_month() {
     return total_month;  // Trả về doanh thu theo tháng
 }
 
-// 🔧 Sửa đổi: Hàm trả về chuỗi chứa món ăn bán chạy nhất
+// Hàm trả về chuỗi chứa món ăn bán chạy nhất
 char* find_food_best_selling() {
     FILE *file_orders = fopen("data/orders.txt", "r");
     if (!file_orders) return "N/A";
@@ -99,7 +99,7 @@ char* find_food_best_selling() {
     return best_food;
 }
 
-// 🔧 Sửa đổi: Hàm trả về chuỗi chứa thức uống bán chạy nhất
+// Hàm trả về chuỗi chứa thức uống bán chạy nhất
 char* find_drink_best_selling() {
     FILE *file_orders = fopen("data/orders.txt", "r");
     if (!file_orders) return "N/A";

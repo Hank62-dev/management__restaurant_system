@@ -20,6 +20,13 @@ GtkLabel *label_daily, *label_monthly, *label_best_food, *label_best_drink;
 // Hàm cập nhật số liệu lên giao diện
 void update_stats(GtkWidget *widget, gpointer data) {
     char buffer[256];
+    // Lấy thời gian hiện tại
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+
+    // Định dạng ngày tháng năm (DD-MM-YYYY)
+    sprintf(buffer, "Date: %02d-%02d-%04d", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
+    gtk_label_set_text(GTK_LABEL(label_daily), buffer);  // Cập nhật ngày vào label_daily
 
     int daily_revenue = calculate_revenue_by_day();
     int monthly_revenue = calculate_revenue_by_month();
