@@ -1,18 +1,20 @@
+
+
 #include "stats.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-char best_food[100]; // 🔧 Sửa đổi: Biến toàn cục để lưu món bán chạy nhất
-char best_drink[100]; // 🔧 Sửa đổi: Biến toàn cục để lưu thức uống bán chạy nhất
+char best_food[100]; // Biến toàn cục để lưu món bán chạy nhất
+char best_drink[100]; //Biến toàn cục để lưu thức uống bán chạy nhất
 
-// 🔧 Sửa đổi: Hàm tính tổng doanh thu theo ngày trả về giá trị
+//Hàm tính tổng doanh thu theo ngày trả về giá trị
 int calculate_revenue_by_day() {
     FILE *file = fopen("data/orders.txt", "r");
-    if (!file) {
-    perror("Lỗi mở file orders.txt");
-    return 0;
-}
+    if (!file){
+        printf("Khong tim thay file orders\n");
+        return;
+    } 
 
     int total_day = 0, price = 0;
     char date[20], prev_date[20] = "", item[50], category[10];
@@ -20,17 +22,20 @@ int calculate_revenue_by_day() {
     while (fscanf(file, "%s %s %d %s", date, item, &price, category) == 4) {
         if (strcmp(prev_date, "") != 0 && strcmp(prev_date, date) != 0) {
             strcpy(prev_date, date);
-        }
+        }	
         total_day += price;
     }
     fclose(file);
     return total_day;
 }
 
-// 🔧 Sửa đổi: Hàm tính tổng doanh thu theo tháng trả về giá trị
+//Hàm tính tổng doanh thu theo tháng trả về giá trị
 int calculate_revenue_by_month() {
     FILE *file = fopen("data/orders.txt", "r");
-    if (!file) return 0;
+    if (!file) {
+        printf("Khong tim thay file orders\n");
+        return;
+    } 
 
     int total_month = 0, price = 0;
     char date[20], month[8], prev_month[8] = "", item[50], category[10];
@@ -48,10 +53,13 @@ int calculate_revenue_by_month() {
     return total_month;
 }
 
-// 🔧 Sửa đổi: Hàm trả về chuỗi chứa món ăn bán chạy nhất
+//Hàm trả về chuỗi chứa món ăn bán chạy nhất
 char* find_food_best_selling() {
     FILE *file_orders = fopen("data/orders.txt", "r");
-    if (!file_orders) return "N/A";
+    if (!file_orders){
+        printf("Khong tim thay file orders\n");
+        return;
+    } 
 
     int maxCount = 0;
     strcpy(best_food, "None");
@@ -89,10 +97,13 @@ char* find_food_best_selling() {
     return best_food;
 }
 
-// 🔧 Sửa đổi: Hàm trả về chuỗi chứa thức uống bán chạy nhất
+// Hàm trả về chuỗi chứa thức uống bán chạy nhất
 char* find_drink_best_selling() {
     FILE *file_orders = fopen("data/orders.txt", "r");
-    if (!file_orders) return "N/A";
+    if (!file_orders){
+        printf("Khong tim thay file orders\n");
+        return;
+    } 
 
     int maxCount = 0;
     strcpy(best_drink, "None");

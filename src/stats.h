@@ -5,7 +5,6 @@ Dữ liệu thống kê bao gồm:
 Lưu ý: dữ liệu sẽ được tính toán từ orders.txt
  */
 
-
 #ifndef STATS_H  // Kiểm tra nếu chưa được định nghĩa
 #define STATS_H // Định nghĩa để tránh nạp lại file
 
@@ -28,11 +27,4 @@ int calculate_revenue_by_month();
 char* find_food_best_selling();
 char* find_drink_best_selling();
 
-/*
-void calculate_revenue_by_day();
-void calculate_revenue_by_month();
-
-void find_food_best_selling();
-void find_drink_best_selling();
-*/
 #endif // kết thúc khai báo chương trình
