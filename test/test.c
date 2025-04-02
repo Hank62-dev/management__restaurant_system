@@ -3,8 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-char best_food[100]; // 🔧 Sửa đổi: Biến toàn cục để lưu món bán chạy nhất
-char best_drink[100]; // 🔧 Sửa đổi: Biến toàn cục để lưu thức uống bán chạy nhất
+char best_food[100]; // Biến toàn cục để lưu món bán chạy nhất
+char best_drink[100]; // Biến toàn cục để lưu thức uống bán chạy nhất
 int calculate_revenue_by_day() {
     FILE *file = fopen("data/orders.txt", "r");
     if (!file) {

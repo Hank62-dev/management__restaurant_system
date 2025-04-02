@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "test.h"  // Đảm bảo rằng bạn đã định nghĩa các hàm calculate_revenue_by_day, calculate_revenue_by_month, find_food_best_selling, find_drink_best_selling trong file test.h
+#include "test.h"  
 #include <gtk/gtk.h>
 
 // Hàm áp dụng CSS cho giao diện
