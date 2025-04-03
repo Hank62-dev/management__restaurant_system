@@ -159,7 +159,7 @@ int calculate_revenue_by_day(const char* date_target) {
     }
 
     fclose(file);
-    return total_day;  // Trả về doanh thu cho ngày target
+    return total_day;  // Trả về doanh thu
 }
 
 int calculate_revenue_by_month(int year, int month) {
@@ -189,7 +189,10 @@ char best_drink[100];  // Biến toàn cục để lưu thức uống bán chạ
 // Hàm trả về chuỗi chứa món ăn bán chạy nhất
 char* find_food_best_selling() {
     FILE *file_orders = fopen("data/orders.txt", "r");
-    if (!file_orders) return "N/A";
+    if (!file_orders){
+    	printf("No found file!\n");
+    	return 0;
+	}
 
     int maxCount = 0;
     strcpy(best_food, "None");
@@ -230,7 +233,10 @@ char* find_food_best_selling() {
 // Hàm trả về chuỗi chứa thức uống bán chạy nhất
 char* find_drink_best_selling() {
     FILE *file_orders = fopen("data/orders.txt", "r");
-    if (!file_orders) return "N/A";
+    if (!file_orders){
+    	printf("No found file!\n");
+    	return 0;
+	}
 
     int maxCount = 0;
     strcpy(best_drink, "None");
