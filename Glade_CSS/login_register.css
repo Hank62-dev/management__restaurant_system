@@ -1,17 +1,21 @@
-/*logo image*/
+/* logo image */
 #logo_login_register {
-    icon-size: 64px;
+    width: 64px;
+    height: 64px;
     position: fixed;
     top: 50%;
     left: 0;
+    transform: translateY(-50%); /* Đảm bảo logo căn giữa theo chiều dọc */
 }
 
-/*tạo khung cho form*/
+/* tạo khung cho form */
 #right_box {
-    border-radius: 5px solid black;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 20px;
 }
 
-/*login button*/
+/* login button */
 #btn_login {
     background: white;
     color: black;
@@ -36,7 +40,7 @@
     font-weight: 700;
 }
 
-/*register button*/
+/* register button */
 #btn_register {
     background: white;
     color: black;
@@ -61,20 +65,21 @@
     font-weight: 700;
 }
 
-/*login button finish*/
+/* login button finish */
 #btn_login_now {
     background: white;
     color: black;
-    border-radius: 5px solid black;
+    border: 3px solid black;
+    border-radius: 5px;
     font-weight: 700;
     text-align: center;
-}    
+}
 
 #btn_login_now:hover {
     background: green;
     color: white;
     font-weight: 700;
-    border-radius: 5px solid black;
+    border-radius: 5px;
     text-align: center;
 }
 
@@ -82,24 +87,25 @@
     background: green;
     color: white;
     font-weight: 700;
-    border-radius: 5px solid black;
-    text-align: center; 
+    border-radius: 5px;
+    text-align: center;
 }
 
-/*register button finish*/
+/* register button finish */
 #btn_register_now {
     background: white;
     color: black;
-    border-radius: 5px solid black;
+    border: 3px solid black;
+    border-radius: 5px;
     font-weight: 700;
     text-align: center;
-}    
+}
 
 #btn_register_now:hover {
     background: green;
     color: white;
     font-weight: 700;
-    border-radius: 5px solid black;
+    border-radius: 5px;
     text-align: center;
 }
 
@@ -107,42 +113,6 @@
     background: green;
     color: white;
     font-weight: 700;
-    border-radius: 5px solid black;
-    text-align: center; 
+    border-radius: 5px;
+    text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
