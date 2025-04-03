@@ -116,6 +116,8 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="wrap">True</property>
+                        <property name="width-chars">53</property>
+                        <property name="max-width-chars">133</property>
                         <attributes>
                           <attribute name="font-desc" value="Segoe UI Heavy Italic 10"/>
                           <attribute name="style" value="normal"/>
@@ -130,7 +132,7 @@
                     <property name="can-focus">False</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
-                    <property name="label" translatable="yes">DAILY REVENUE</property>
+                    <property name="label" translatable="yes">		DAILY REVENUE			</property>
                     <attributes>
                       <attribute name="font-desc" value="Segoe UI Heavy Italic 10"/>
                       <attribute name="style" value="oblique"/>
