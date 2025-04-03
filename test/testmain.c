@@ -1,80 +1,100 @@
 #include <gtk/gtk.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
-#define DATA_FILE "data/users.txt"
 
-GtkWidget *stack;
+GtkWidget *window;
+GtkWidget *stack;  
+GtkWidget *register_box, *login_box;
 GtkWidget *entry_firstname, *entry_lastname, *entry_phone, *entry_password, *entry_confirm_password;
 GtkWidget *entry_login_phone, *entry_login_password;
 
-void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
-    GtkStyleContext *context = gtk_widget_get_style_context(widget);
-    gtk_style_context_add_provider(context, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
-    if (GTK_IS_CONTAINER(widget)) {
-        gtk_container_foreach(GTK_CONTAINER(widget), (GtkCallback)apply_css, provider);
-    }
-}
-
+//Hàm xử lý khi nhấn nút register
 void on_register_now_clicked(GtkButton *button, gpointer user_data) {
-    const gchar *firstname = gtk_entry_get_text(GTK_ENTRY(entry_firstname));
-    const gchar *lastname = gtk_entry_get_text(GTK_ENTRY(entry_lastname));
-    const gchar *phone = gtk_entry_get_text(GTK_ENTRY(entry_phone));
-    const gchar *password = gtk_entry_get_text(GTK_ENTRY(entry_password));
-    const gchar *confirm_password = gtk_entry_get_text(GTK_ENTRY(entry_confirm_password));
+    const char *first_name = gtk_entry_get_text(GTK_ENTRY(entry_firstname));
+    const char *last_name = gtk_entry_get_text(GTK_ENTRY(entry_lastname));
+    const char *phone = gtk_entry_get_text(GTK_ENTRY(entry_phone));
+    const char *password = gtk_entry_get_text(GTK_ENTRY(entry_password));
+    const char *confirm_password = gtk_entry_get_text(GTK_ENTRY(entry_confirm_password));
 
-    if (g_strcmp0(password, confirm_password) != 0) {
-        g_print("Passwords do not match!\n");
+    // Kiểm tra mật khẩu 
+    if (strcmp(password, confirm_password) != 0) {
+        gtk_label_set_text(GTK_LABEL(user_data), "Passwords do not match!");
         return;
     }
-    
-    FILE *file = fopen(DATA_FILE, "a");
-    if (file) {
-        fprintf(file, "%s %s %s %s\n", firstname, lastname, phone, password);
+
+    // lưu file
+    FILE *file = fopen("data/users.txt", "a");
+    if (file != NULL) {
+        fprintf(file, "%s,%s,%s,%s\n", first_name, last_name, phone, password);
         fclose(file);
-        g_print("User registered successfully!\n");
+        gtk_label_set_text(GTK_LABEL(user_data), "Registration successful!");
     } else {
-        g_print("Error saving data!\n");
+        gtk_label_set_text(GTK_LABEL(user_data), "Error saving user data.");
     }
 }
 
+//Hàm xử lý khi nhấn nút login
 void on_login_now_clicked(GtkButton *button, gpointer user_data) {
-    const gchar *phone = gtk_entry_get_text(GTK_ENTRY(entry_login_phone));
-    const gchar *password = gtk_entry_get_text(GTK_ENTRY(entry_login_password));
+    const char *phone = gtk_entry_get_text(GTK_ENTRY(entry_login_phone));
+    const char *password = gtk_entry_get_text(GTK_ENTRY(entry_login_password));
     
-    FILE *file = fopen(DATA_FILE, "r");
-    if (!file) {
-        g_print("Error opening data file!\n");
-        return;
-    }
-    
-    char firstname[50], lastname[50], stored_phone[20], stored_password[50];
-    int found = 0;
-    while (fscanf(file, "%s %s %s %s", firstname, lastname, stored_phone, stored_password) != EOF) {
-        if (strcmp(phone, stored_phone) == 0 && strcmp(password, stored_password) == 0) {
-            found = 1;
-            break;
+    FILE *file = fopen("data/users.txt", "r");
+    if (file != NULL) {
+        char line[256];
+        int found = 0;
+        
+        while (fgets(line, sizeof(line), file)) {
+            char stored_phone[50], stored_password[50];
+            sscanf(line, "%*[^,],%*[^,],%49[^,],%49[^\n]", stored_phone, stored_password);
+            
+            // Check if phone and password match
+            if (strcmp(stored_phone, phone) == 0 && strcmp(stored_password, password) == 0) {
+                found = 1;
+                break;
+            }
         }
-    }
-    fclose(file);
-    
-    if (found) {
-        g_print("Login successful! Redirecting to Home...\n");
-        // Chuyển sang giao diện Home
+        
+        fclose(file);
+        
+        if (found) {
+            //Nếu đúng login chuyển sang giao diện home
+            GtkBuilder *home_builder = gtk_builder_new_from_file("UI Glade/home.glade");
+            window = GTK_WIDGET(gtk_builder_get_object(home_builder, "home_window"));
+            gtk_widget_show_all(window);
+            gtk_main_quit();  //đóng cửa sổ hiện tại chuyển sang trang mới 
+        } else {
+            gtk_label_set_text(GTK_LABEL(user_data), "Invalid login. Try again.");
+        }
     } else {
-        g_print("Invalid login credentials!\n");
+        gtk_label_set_text(GTK_LABEL(user_data), "Error reading user data.");
     }
 }
+
+//Hàm chuyển đổi sang form register 
+void on_register_clicked(GtkButton *button, gpointer user_data) {
+    gtk_stack_set_visible_child_name(GTK_STACK(stack), "register_box");  // Make sure "register_box" exists in Glade
+}
+
+//Hàm chuyển đổi sang form login
+void on_login_clicked(GtkButton *button, gpointer user_data) {
+    gtk_stack_set_visible_child_name(GTK_STACK(stack), "login_box");  // Make sure "login_box" exists in Glade
+}
+
 
 int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
-    
+
+    //Load file login/register.glade
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register.glade");
-    GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "VQHT Restaurant"));
-    stack = GTK_WIDGET(gtk_builder_get_object(builder, "stack_form"));
+    window = GTK_WIDGET(gtk_builder_get_object(builder, "VQHT Restaurant"));
     
-    // Lấy các entry từ form
+    // lấy stack của 2 form login với register
+    stack = GTK_WIDGET(gtk_builder_get_object(builder, "stack_form")); 
+    register_box = GTK_WIDGET(gtk_builder_get_object(builder, "register_box"));
+    login_box = GTK_WIDGET(gtk_builder_get_object(builder, "login_box"));
+
+    // liên kết các mục nhập
     entry_firstname = GTK_WIDGET(gtk_builder_get_object(builder, "entry_firstname"));
     entry_lastname = GTK_WIDGET(gtk_builder_get_object(builder, "entry_lastname"));
     entry_phone = GTK_WIDGET(gtk_builder_get_object(builder, "entry_phone"));
@@ -82,21 +102,28 @@ int main(int argc, char *argv[]) {
     entry_confirm_password = GTK_WIDGET(gtk_builder_get_object(builder, "entry_confirm_password"));
     entry_login_phone = GTK_WIDGET(gtk_builder_get_object(builder, "entry_login_phone"));
     entry_login_password = GTK_WIDGET(gtk_builder_get_object(builder, "entry_login_password"));
-    
+
+    // kết nối sự kiện
     GtkWidget *btn_register_now = GTK_WIDGET(gtk_builder_get_object(builder, "btn_register_now"));
+    g_signal_connect(btn_register_now, "clicked", G_CALLBACK(on_register_now_clicked), gtk_builder_get_object(builder, "register_label"));
+    
     GtkWidget *btn_login_now = GTK_WIDGET(gtk_builder_get_object(builder, "btn_login_now"));
+    g_signal_connect(btn_login_now, "clicked", G_CALLBACK(on_login_now_clicked), gtk_builder_get_object(builder, "login_label"));
     
-    g_signal_connect(btn_register_now, "clicked", G_CALLBACK(on_register_now_clicked), NULL);
-    g_signal_connect(btn_login_now, "clicked", G_CALLBACK(on_login_now_clicked), NULL);
+    GtkWidget *btn_register = GTK_WIDGET(gtk_builder_get_object(builder, "btn_register"));
+    g_signal_connect(btn_register, "clicked", G_CALLBACK(on_register_clicked), NULL);
     
-    // Áp dụng CSS
-    GtkCssProvider *provider = gtk_css_provider_new();
-    gtk_css_provider_load_from_path(provider, "Glade_CSS/login_register.css", NULL);
-    apply_css(window, provider);
-    g_object_unref(provider);
-    
+    GtkWidget *btn_login = GTK_WIDGET(gtk_builder_get_object(builder, "btn_login"));
+    g_signal_connect(btn_login, "clicked", G_CALLBACK(on_login_clicked), NULL);
+
+    //áp dụng css vào gtk
+    GtkCssProvider *css_provider = gtk_css_provider_new();
+    gtk_css_provider_load_from_path(css_provider, "Glade_CSS/login_register.css", NULL);
+    gtk_style_context_add_provider_for_screen(gdk_screen_get_default(), GTK_STYLE_PROVIDER(css_provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+    //hiện màn hình cửa sổ chính 
     gtk_widget_show_all(window);
     gtk_main();
-    
+
     return 0;
 }
