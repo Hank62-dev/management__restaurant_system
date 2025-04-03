@@ -1,7 +1,8 @@
 /* logo image */
 #logo_login_register {
-    width: 64px;
-    height: 64px;
+    /* Không dùng width và height, thay vào đó là kích thước của ảnh */
+    background-size: 64px 64px;
+    background-position: center;
     position: fixed;
     top: 50%;
     left: 0;
@@ -13,6 +14,7 @@
     border: 2px solid black;
     border-radius: 5px;
     padding: 20px;
+    /* Không dùng text-align trong GTK+, sẽ dùng layout GTK+ để căn chỉnh */
 }
 
 /* login button */
@@ -22,7 +24,8 @@
     border: 3px solid black;
     border-radius: 5px;
     font-weight: 700;
-    text-align: center;
+    display: inline-block; /* Thêm để các nút được hiển thị đúng */
+    padding: 10px 20px;
 }
 
 #btn_login:hover {
@@ -30,14 +33,12 @@
     color: white;
     border-radius: 5px;
     font-weight: 700;
-    text-align: center;
 }
 
 #btn_login:focus {
     background: green;
     color: white;
     border-radius: 5px;
-    font-weight: 700;
 }
 
 /* register button */
@@ -47,7 +48,8 @@
     border: 3px solid black;
     border-radius: 5px;
     font-weight: 700;
-    text-align: center;
+    display: inline-block; /* Thêm để các nút được hiển thị đúng */
+    padding: 10px 20px;
 }
 
 #btn_register:hover {
@@ -55,14 +57,12 @@
     color: white;
     border-radius: 5px;
     font-weight: 700;
-    text-align: center;
 }
 
 #btn_register:focus {
     background: green;
     color: white;
     border-radius: 5px;
-    font-weight: 700;
 }
 
 /* login button finish */
@@ -72,23 +72,20 @@
     border: 3px solid black;
     border-radius: 5px;
     font-weight: 700;
-    text-align: center;
+    display: inline-block; /* Thêm để các nút được hiển thị đúng */
+    padding: 10px 20px;
 }
 
 #btn_login_now:hover {
     background: green;
     color: white;
     font-weight: 700;
-    border-radius: 5px;
-    text-align: center;
 }
 
 #btn_login_now:focus {
     background: green;
     color: white;
     font-weight: 700;
-    border-radius: 5px;
-    text-align: center;
 }
 
 /* register button finish */
@@ -98,21 +95,18 @@
     border: 3px solid black;
     border-radius: 5px;
     font-weight: 700;
-    text-align: center;
+    display: inline-block; /* Thêm để các nút được hiển thị đúng */
+    padding: 10px 20px;
 }
 
 #btn_register_now:hover {
     background: green;
     color: white;
     font-weight: 700;
-    border-radius: 5px;
-    text-align: center;
 }
 
 #btn_register_now:focus {
     background: green;
     color: white;
     font-weight: 700;
-    border-radius: 5px;
-    text-align: center;
 }
