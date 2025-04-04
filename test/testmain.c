@@ -1,128 +1,229 @@
-#include <gtk/gtk.h>
-#include <string.h>
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <gtk/gtk.h>
+#include "test.h"
+#define MAX_DAYS 100  
 
+typedef struct {
+    char date[11]; // Định dạng YYYY-MM-DD
+    int revenue;
+} DailyRevenue;
 
-GtkWidget *window;
-GtkWidget *stack;  
-GtkWidget *register_box, *login_box;
-GtkWidget *entry_firstname, *entry_lastname, *entry_phone, *entry_password, *entry_confirm_password;
-GtkWidget *entry_login_phone, *entry_login_password;
+// Các biến toàn cục để truy cập widget
+GtkLabel *label_daily, *label_monthly, *label_best_food, *label_best_drink;
 
-//Hàm xử lý khi nhấn nút register
-void on_register_now_clicked(GtkButton *button, gpointer user_data) {
-    const char *first_name = gtk_entry_get_text(GTK_ENTRY(entry_firstname));
-    const char *last_name = gtk_entry_get_text(GTK_ENTRY(entry_lastname));
-    const char *phone = gtk_entry_get_text(GTK_ENTRY(entry_phone));
-    const char *password = gtk_entry_get_text(GTK_ENTRY(entry_password));
-    const char *confirm_password = gtk_entry_get_text(GTK_ENTRY(entry_confirm_password));
-
-    // Kiểm tra mật khẩu 
-    if (strcmp(password, confirm_password) != 0) {
-        gtk_label_set_text(GTK_LABEL(user_data), "Passwords do not match!");
-        return;
-    }
-
-    // lưu file
-    FILE *file = fopen("data/users.txt", "a");
-    if (file != NULL) {
-        fprintf(file, "%s,%s,%s,%s\n", first_name, last_name, phone, password);
-        fclose(file);
-        gtk_label_set_text(GTK_LABEL(user_data), "Registration successful!");
+// Hàm áp dụng CSS cho giao diện
+void apply_css(GtkWidget *window) {
+    GtkCssProvider *provider = gtk_css_provider_new();
+    if (gtk_css_provider_load_from_path(provider, "Glade_CSS/stats.css", NULL)) {
+        g_print("CSS loaded successfully.\n");
     } else {
-        gtk_label_set_text(GTK_LABEL(user_data), "Error saving user data.");
+        g_print("Failed to load CSS.\n");
     }
+    gtk_style_context_add_provider_for_screen(
+        gdk_screen_get_default(),
+        GTK_STYLE_PROVIDER(provider),
+        GTK_STYLE_PROVIDER_PRIORITY_USER);
+        gtk_widget_queue_draw(window);  // Vẽ lại giao diện sau khi thay đổi CSS
 }
 
-//Hàm xử lý khi nhấn nút login
-void on_login_now_clicked(GtkButton *button, gpointer user_data) {
-    const char *phone = gtk_entry_get_text(GTK_ENTRY(entry_login_phone));
-    const char *password = gtk_entry_get_text(GTK_ENTRY(entry_login_password));
-    
-    FILE *file = fopen("data/users.txt", "r");
-    if (file != NULL) {
-        char line[256];
+
+// Hàm lấy doanh thu từ file orders.txt theo ngày
+int get_revenue_by_day(DailyRevenue revenues[], int *num_days) {
+    FILE *file = fopen("data/orders.txt", "r");
+    if (!file) {
+        printf("No found file!\n");
+        return -1;
+    }
+
+    char date[11], item[50], type[10];
+    int amount;
+    *num_days = 0;
+
+    while (fscanf(file, "%s %s %d %s", date, item, &amount, type) != EOF) {
         int found = 0;
-        
-        while (fgets(line, sizeof(line), file)) {
-            char stored_phone[50], stored_password[50];
-            sscanf(line, "%*[^,],%*[^,],%49[^,],%49[^\n]", stored_phone, stored_password);
-            
-            // Check if phone and password match
-            if (strcmp(stored_phone, phone) == 0 && strcmp(stored_password, password) == 0) {
+        for (int i = 0; i < *num_days; i++) {
+            if (strcmp(revenues[i].date, date) == 0) {
+                revenues[i].revenue += amount;
                 found = 1;
                 break;
             }
         }
-        
-        fclose(file);
-        
-        if (found) {
-            //Nếu đúng login chuyển sang giao diện home
-            GtkBuilder *home_builder = gtk_builder_new_from_file("UI Glade/home.glade");
-            window = GTK_WIDGET(gtk_builder_get_object(home_builder, "home_window"));
-            gtk_widget_show_all(window);
-            gtk_main_quit();  //đóng cửa sổ hiện tại chuyển sang trang mới 
-        } else {
-            gtk_label_set_text(GTK_LABEL(user_data), "Invalid login. Try again.");
+        if (!found && *num_days < MAX_DAYS) {
+            strcpy(revenues[*num_days].date, date);
+            revenues[*num_days].revenue = amount;
+            (*num_days)++;
         }
-    } else {
-        gtk_label_set_text(GTK_LABEL(user_data), "Error reading user data.");
+    }
+
+    fclose(file);
+    return 0;
+}
+
+// Hàm lấy doanh thu từ file orders.txt theo tháng
+int get_revenue_by_month(DailyRevenue revenues[], int *num_months) {
+    FILE *file = fopen("data/orders.txt", "r");
+    if (!file) {
+        printf("No found file!\n");
+        return -1;
+    }
+
+    char date[11], item[50], type[10];
+    int amount;
+    *num_months = 0;
+
+    while (fscanf(file, "%s %s %d %s", date, item, &amount, type) != EOF) {
+        char month_year[8];  // Định dạng YYYY-MM
+        strncpy(month_year, date, 7);  // Lấy 7 ký tự đầu (YYYY-MM)
+
+        int found = 0;
+        for (int i = 0; i < *num_months; i++) {
+            if (strcmp(revenues[i].date, month_year) == 0) {
+                revenues[i].revenue += amount;
+                found = 1;
+                break;
+            }
+        }
+        if (!found && *num_months < MAX_DAYS) {
+            strcpy(revenues[*num_months].date, month_year);
+            revenues[*num_months].revenue = amount;
+            (*num_months)++;
+        }
+    }
+
+    fclose(file);
+    return 0;
+}
+
+// Hàm cập nhật doanh thu và hiển thị trên giao diện
+void update_stats(GtkWidget *widget, gpointer data) {
+    char buffer[2048] = "Daily Revenue:\n";  // Thêm markup để in đậm
+    DailyRevenue revenues[MAX_DAYS];
+    int num_days = 0;
+
+    get_revenue_by_day(revenues, &num_days);
+
+    // Lấy ngày hiện tại
+    time_t t = time(NULL);
+    struct tm today = *localtime(&t);
+
+    // Hiển thị doanh thu từng ngày trong 7 ngày gần nhất
+    for (int i = 6; i >= 0; i--) {
+        struct tm day = today;
+        day.tm_mday -= i;
+        mktime(&day); // Chuẩn hóa ngày
+
+        char date_str[11];
+        sprintf(date_str, "%04d-%02d-%02d", day.tm_year + 1900, day.tm_mon + 1, day.tm_mday);
+
+        int revenue = 0;
+        for (int j = 0; j < num_days; j++) {
+            if (strcmp(revenues[j].date, date_str) == 0) {
+                revenue = revenues[j].revenue;
+                break;
+            }
+        }
+
+        char line[50];
+        if (revenue == 0) {
+            sprintf(line, "%s: No Revenue\n", date_str);
+        } else {
+            sprintf(line, "%s: %d VND\n", date_str, revenue);
+        }
+        strcat(buffer, line);
+    }
+
+    gtk_label_set_markup(GTK_LABEL(label_daily), buffer);  // Cập nhật GUI
+
+    //Hiển thị doanh thu 7 tháng gần nhất
+    char buffer_monthly[2048] = "Monthly Revenue:\n";
+
+    DailyRevenue monthly_revenues[MAX_DAYS];
+    int num_months = 0;
+
+    get_revenue_by_month(monthly_revenues, &num_months); 
+
+    for (int j = 6; j >= 0; j--) {
+        struct tm month_data = today;
+        month_data.tm_mon -= j;
+        if (month_data.tm_mon < 0) { // Xử lý khi tháng vượt qua tháng 0
+            month_data.tm_mon = 11; // Tháng 12
+            month_data.tm_year -= 1; // Giảm năm đi một đơn vị
+        }
+        mktime(&month_data);
+
+        int year = month_data.tm_year + 1900;
+        int month = month_data.tm_mon + 1;
+
+        // Tìm doanh thu theo tháng
+        int monthly_revenue = 0;
+        char month_year[8];
+        sprintf(month_year, "%04d-%02d", year, month);
+
+        for (int i = 0; i < num_months; i++) {
+            if (strcmp(monthly_revenues[i].date, month_year) == 0) {
+                monthly_revenue = monthly_revenues[i].revenue;
+                break;
+            }
+        }
+
+        // Cập nhật thông tin doanh thu tháng
+        char line[50];
+        if (monthly_revenue == 0) {
+            sprintf(line, "%04d-%02d: No Revenue\n", year, month);
+        } else {
+            sprintf(line, "%04d-%02d: %d VND\n", year, month, monthly_revenue);
+        }
+
+        strcat(buffer_monthly, line); // Ghép vào buffer tháng
+    }
+
+    gtk_label_set_markup(GTK_LABEL(label_monthly), buffer_monthly);  // Cập nhật GUI
+
+    //Cập nhật món ăn & đồ uống bán chạy nhất
+    char *best_food = find_food_best_selling();
+    char *best_drink = find_drink_best_selling();
+
+    if (best_food) {
+        sprintf(buffer, "<b>Best Selling Food:</b> %s", best_food);
+        gtk_label_set_markup(GTK_LABEL(label_best_food), buffer);
+    }
+
+    if (best_drink) {
+        sprintf(buffer, "<b>Best Selling Drink:</b> %s", best_drink);
+        gtk_label_set_markup(GTK_LABEL(label_best_drink), buffer);
     }
 }
 
-//Hàm chuyển đổi sang form register 
-void on_register_clicked(GtkButton *button, gpointer user_data) {
-    gtk_stack_set_visible_child_name(GTK_STACK(stack), "register_box");  // Make sure "register_box" exists in Glade
-}
-
-//Hàm chuyển đổi sang form login
-void on_login_clicked(GtkButton *button, gpointer user_data) {
-    gtk_stack_set_visible_child_name(GTK_STACK(stack), "login_box");  // Make sure "login_box" exists in Glade
-}
-
-
+// Hàm khởi chạy chương trình GTK+
 int main(int argc, char *argv[]) {
+    GtkBuilder *builder;
+    GtkWidget *window, *btn_stats;
+
+    // Khởi tạo GTK
     gtk_init(&argc, &argv);
 
-    //Load file login/register.glade
-    GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register.glade");
-    window = GTK_WIDGET(gtk_builder_get_object(builder, "VQHT Restaurant"));
-    
-    // lấy stack của 2 form login với register
-    stack = GTK_WIDGET(gtk_builder_get_object(builder, "stack_form")); 
-    register_box = GTK_WIDGET(gtk_builder_get_object(builder, "register_box"));
-    login_box = GTK_WIDGET(gtk_builder_get_object(builder, "login_box"));
+    builder = gtk_builder_new_from_file("UI Glade/UI Stats.glade");
 
-    // liên kết các mục nhập
-    entry_firstname = GTK_WIDGET(gtk_builder_get_object(builder, "entry_firstname"));
-    entry_lastname = GTK_WIDGET(gtk_builder_get_object(builder, "entry_lastname"));
-    entry_phone = GTK_WIDGET(gtk_builder_get_object(builder, "entry_phone"));
-    entry_password = GTK_WIDGET(gtk_builder_get_object(builder, "entry_password"));
-    entry_confirm_password = GTK_WIDGET(gtk_builder_get_object(builder, "entry_confirm_password"));
-    entry_login_phone = GTK_WIDGET(gtk_builder_get_object(builder, "entry_login_phone"));
-    entry_login_password = GTK_WIDGET(gtk_builder_get_object(builder, "entry_login_password"));
+    // Lấy widget từ file Glade
+    window = GTK_WIDGET(gtk_builder_get_object(builder, "Revenue_window"));
+    btn_stats = GTK_WIDGET(gtk_builder_get_object(builder, "btn_stats"));
 
-    // kết nối sự kiện
-    GtkWidget *btn_register_now = GTK_WIDGET(gtk_builder_get_object(builder, "btn_register_now"));
-    g_signal_connect(btn_register_now, "clicked", G_CALLBACK(on_register_now_clicked), gtk_builder_get_object(builder, "register_label"));
-    
-    GtkWidget *btn_login_now = GTK_WIDGET(gtk_builder_get_object(builder, "btn_login_now"));
-    g_signal_connect(btn_login_now, "clicked", G_CALLBACK(on_login_now_clicked), gtk_builder_get_object(builder, "login_label"));
-    
-    GtkWidget *btn_register = GTK_WIDGET(gtk_builder_get_object(builder, "btn_register"));
-    g_signal_connect(btn_register, "clicked", G_CALLBACK(on_register_clicked), NULL);
-    
-    GtkWidget *btn_login = GTK_WIDGET(gtk_builder_get_object(builder, "btn_login"));
-    g_signal_connect(btn_login, "clicked", G_CALLBACK(on_login_clicked), NULL);
+    label_daily = GTK_LABEL(gtk_builder_get_object(builder, "label_daily_data"));
+    label_monthly = GTK_LABEL(gtk_builder_get_object(builder, "label_monthly_data"));
+    label_best_food = GTK_LABEL(gtk_builder_get_object(builder, "label_best_food"));
+    label_best_drink = GTK_LABEL(gtk_builder_get_object(builder, "label_best_drink"));
 
-    //áp dụng css vào gtk
-    GtkCssProvider *css_provider = gtk_css_provider_new();
-    gtk_css_provider_load_from_path(css_provider, "Glade_CSS/login_register.css", NULL);
-    gtk_style_context_add_provider_for_screen(gdk_screen_get_default(), GTK_STYLE_PROVIDER(css_provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+    // Gán sự kiện cho nút Stats
+    g_signal_connect(btn_stats, "clicked", G_CALLBACK(update_stats), NULL);
 
-    //hiện màn hình cửa sổ chính 
+    // Hiển thị cửa sổ và áp dụng CSS
     gtk_widget_show_all(window);
+    apply_css(window);
+
     gtk_main();
 
     return 0;

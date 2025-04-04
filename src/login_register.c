@@ -70,7 +70,7 @@ void on_login_now_clicked(GtkButton *button, gpointer user_data) {
 int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
     
-    GtkBuilder *builder = gtk_builder_new_from_file("UI Login_Register.glade");
+    GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register.glade");
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "VQHT Restaurant"));
     stack = GTK_WIDGET(gtk_builder_get_object(builder, "stack_form"));
     
@@ -91,7 +91,7 @@ int main(int argc, char *argv[]) {
     
     // Áp dụng CSS
     GtkCssProvider *provider = gtk_css_provider_new();
-    gtk_css_provider_load_from_path(provider, "login_register.css", NULL);
+    gtk_css_provider_load_from_path(provider, "Glade_CSS/login_register.css", NULL);
     apply_css(window, provider);
     g_object_unref(provider);
     
