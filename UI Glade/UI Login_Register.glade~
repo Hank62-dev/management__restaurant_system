@@ -15,12 +15,12 @@
         <property name="can-focus">False</property>
         <property name="spacing">20</property>
         <child>
-          <object class="GtkEventBox">
+          <object class="GtkEventBox" id="logo_login_register">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="above-child">True</property>
             <child>
-              <object class="GtkImage">
+              <object class="GtkImage" id="logo_image">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="pixbuf">../UI_image\logores.jpg</property>

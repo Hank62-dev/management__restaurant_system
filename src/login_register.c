@@ -86,8 +86,14 @@ int main(int argc, char *argv[]) {
     
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register.glade");
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "VQHT Restaurant"));
-    GtkWidget *logo_box = GTK_WIDGET(gtk_builder_get_object(builder, "logo_login_register"));
-	gtk_widget_set_size_request(logo_box, 10, 10);
+    //resize ảnh
+    
+	GtkWidget *image = GTK_WIDGET(gtk_builder_get_object(builder, "logo_image"));
+	GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file("UI_image/logores.jpg", NULL); 
+	int width = 390, height = 390;
+	pixbuf = gdk_pixbuf_scale_simple(pixbuf, width, height, GDK_INTERP_BILINEAR);
+	gtk_image_set_from_pixbuf(GTK_IMAGE(image), pixbuf);
+
 
     stack = GTK_WIDGET(gtk_builder_get_object(builder, "stack_form"));
     
