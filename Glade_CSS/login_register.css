@@ -1,10 +1,13 @@
 /* logo image */
 #logo_login_register {
+    background-image: url("UI_image/logores.jpg");
     background-size: 64px 64px;
     background-position: center;
-    margin-left: 10px;
-    margin-top: 10px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
 }
+
 
 /* tạo khung cho form */
 #right_box {
