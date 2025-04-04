@@ -19,10 +19,10 @@ void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
 }
 // Chuyển form khi nhấn nút login/register
 void switch_to_login(GtkButton *button, gpointer user_data){
-	gtk_stack_set_visible_child_name(GTK_STACK(stack),"login_form");	
+	gtk_stack_set_visible_child_name(GTK_STACK(stack),"login_box");	
 }
 void switch_to_register(GtkButton *button, gpointer user_data){
-	gtk_stack_set_visible_child_name(GTK_STACK(stack),"register_form");
+	gtk_stack_set_visible_child_name(GTK_STACK(stack),"register_box");
 }
 // Lưu trữ thông tin đăng kí
 void on_register_now_clicked(GtkButton *button, gpointer user_data) {
