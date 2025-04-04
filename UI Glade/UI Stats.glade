@@ -24,12 +24,20 @@
             <property name="spacing">10</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkImage">
+              <object class="GtkEventBox">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkImage" id="logo_mini">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="margin-end">175</property>
+                    <property name="pixbuf">../UI_image\logomini.png</property>
+                  </object>
+                </child>
               </object>
               <packing>
-                <property name="expand">True</property>
+                <property name="expand">False</property>
                 <property name="fill">True</property>
                 <property name="position">0</property>
               </packing>
@@ -40,6 +48,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">30</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -53,6 +62,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">30</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -66,6 +76,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">30</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -79,6 +90,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">30</property>
               </object>
               <packing>
                 <property name="expand">True</property>
