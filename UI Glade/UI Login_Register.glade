@@ -15,16 +15,16 @@
         <property name="can-focus">False</property>
         <property name="spacing">20</property>
         <child>
-          <object class="GtkAspectFrame">
+          <object class="GtkAspectFrame" id="logo_res">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="label-xalign">0</property>
             <property name="shadow-type">none</property>
             <child>
-              <object class="GtkImage">
+              <object class="GtkImage" id="logo_login_register">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="stock">gtk-missing-image</property>
+                <property name="pixbuf">../UI_image\logores.jpg</property>
               </object>
             </child>
           </object>

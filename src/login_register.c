@@ -9,8 +9,14 @@ GtkWidget *stack;
 GtkWidget *entry_firstname, *entry_lastname, *entry_phone, *entry_password, *entry_confirm_password;
 GtkWidget *entry_login_phone, *entry_login_password;
 
-//áp dụng css
+//Áp dụng css
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
+	
+    if( gtk_css_provider_load_from_path(provider, "Glade_CSS/login_register.css", NULL) ){
+    	g_print("CSS loaded successfully!!\n");
+	}else{
+		g_print("CSS load error!!!!\n");
+	}
     GtkStyleContext *context = gtk_widget_get_style_context(widget);
     gtk_style_context_add_provider(context, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
     if (GTK_IS_CONTAINER(widget)) {
@@ -104,7 +110,6 @@ int main(int argc, char *argv[]) {
     g_signal_connect(btn_register,"clicked",G_CALLBACK(switch_to_register), NULL);
     // Áp dụng CSS
     GtkCssProvider *provider = gtk_css_provider_new();
-    gtk_css_provider_load_from_path(provider, "Glade_CSS/login_register.css", NULL);
     apply_css(window, provider);
     g_object_unref(provider);
     

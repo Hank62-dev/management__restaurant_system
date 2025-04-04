@@ -2,7 +2,6 @@
 #logo_login_register {
     background-size: 64px 64px;
     background-position: center;
-    /* Không sử dụng position, thay vào đó dùng layout của GTK+ để căn chỉnh */
     margin-left: 10px;
     margin-top: 10px;
 }
