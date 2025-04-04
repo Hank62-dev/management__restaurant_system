@@ -1,14 +1,15 @@
-#include <gtk/gtk.h>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <gtk/gtk.h>
 #define DATA_FILE "data/users.txt"
 
 GtkWidget *stack;
 GtkWidget *entry_firstname, *entry_lastname, *entry_phone, *entry_password, *entry_confirm_password;
 GtkWidget *entry_login_phone, *entry_login_password;
 
+//áp dụng css
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
     GtkStyleContext *context = gtk_widget_get_style_context(widget);
     gtk_style_context_add_provider(context, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
@@ -16,7 +17,14 @@ void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
         gtk_container_foreach(GTK_CONTAINER(widget), (GtkCallback)apply_css, provider);
     }
 }
-
+// Chuyển form khi nhấn nút login/register
+void switch_to_login(GtkButton *button, gpointer user_data){
+	gtk_stack_set_visible_child_name(GTK_STACK(stack),"login_form");	
+}
+void switch_to_register(GtkButton *button, gpointer user_data){
+	gtk_stack_set_visible_child_name(GTK_STACK(stack),"register_form");
+}
+// Lưu trữ thông tin đăng kí
 void on_register_now_clicked(GtkButton *button, gpointer user_data) {
     const gchar *firstname = gtk_entry_get_text(GTK_ENTRY(entry_firstname));
     const gchar *lastname = gtk_entry_get_text(GTK_ENTRY(entry_lastname));
@@ -38,7 +46,7 @@ void on_register_now_clicked(GtkButton *button, gpointer user_data) {
         g_print("Error saving data!\n");
     }
 }
-
+// Kiểm tra thông tin đăng nhập
 void on_login_now_clicked(GtkButton *button, gpointer user_data) {
     const gchar *phone = gtk_entry_get_text(GTK_ENTRY(entry_login_phone));
     const gchar *password = gtk_entry_get_text(GTK_ENTRY(entry_login_password));
@@ -86,9 +94,14 @@ int main(int argc, char *argv[]) {
     GtkWidget *btn_register_now = GTK_WIDGET(gtk_builder_get_object(builder, "btn_register_now"));
     GtkWidget *btn_login_now = GTK_WIDGET(gtk_builder_get_object(builder, "btn_login_now"));
     
+    GtkWidget *btn_login = GTK_WIDGET(gtk_builder_get_object(builder,"btn_login"));
+    GtkWidget *btn_register = GTK_WIDGET(gtk_builder_get_object(builder,"btn_register"));
+    
     g_signal_connect(btn_register_now, "clicked", G_CALLBACK(on_register_now_clicked), NULL);
     g_signal_connect(btn_login_now, "clicked", G_CALLBACK(on_login_now_clicked), NULL);
     
+    g_signal_connect(btn_login,"clicked",G_CALLBACK(switch_to_login), NULL);
+    g_signal_connect(btn_register,"clicked",G_CALLBACK(switch_to_register), NULL);
     // Áp dụng CSS
     GtkCssProvider *provider = gtk_css_provider_new();
     gtk_css_provider_load_from_path(provider, "Glade_CSS/login_register.css", NULL);
