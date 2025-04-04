@@ -86,6 +86,9 @@ int main(int argc, char *argv[]) {
     
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register.glade");
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "VQHT Restaurant"));
+    GtkWidget *logo_box = GTK_WIDGET(gtk_builder_get_object(builder, "logo_login_register"));
+	gtk_widget_set_size_request(logo_box, 10, 10);
+
     stack = GTK_WIDGET(gtk_builder_get_object(builder, "stack_form"));
     
     // Lấy các entry từ form

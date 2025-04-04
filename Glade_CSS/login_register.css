@@ -1,11 +1,8 @@
 /* logo image */
 #logo_login_register {
-    background-image: url("UI_image/logores.jpg");
-    background-size: 64px 64px;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 64px;
-    height: 64px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 
