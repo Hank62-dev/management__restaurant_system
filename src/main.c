@@ -1,9 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "employees.h"
+#include <gtk/gtk.h>
 
-int main(int argc, char *argv[]) 
-{
+
+int main(int argc, char *argv[]) {
+//glade 
+ GtkBuilder *builder;
+    GtkWidget *window, *button, *label;
+    GtkCssProvider *cssProvider;
+    GdkDisplay *display;
+    GdkScreen *screen;
+
+    gtk_init(&argc, &argv);
+    builder = gtk_builder_new_from_file("UIhome.glade");
+      window = GTK_WIDGET(gtk_builder_get_object(builder, "main_window"));
+       if (!window) {
+        g_printerr("None widget with this ID 'main_window'\n");
+        return 1;
+    }
+    g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+    gtk_widget_show_all(window);
+    gtk_main();
+
+    return 0;
+}      
+                 
+// css
+      cssProvider = gtk_css_provider_new();
+gtk_css_provider_load_from_path(cssProvider, "home.css", NULL);
+display = gdk_display_get_default();
+screen = gdk_display_get_default_screen(display);
+
+gtk_style_context_add_provider_for_screen(
+    screen,
+    GTK_STYLE_PROVIDER(cssProvider),
+    GTK_STYLE_PROVIDER_PRIORITY_USER
+);
+
+//
 	int choice,id,count=0;
 	Employee employees[100];
 	loadFromFile(employees,&count);
