@@ -1,4 +1,65 @@
 
+#include <gtk/gtk.h>
+
+static gboolean on_draw(GtkWidget *widget, cairo_t *cr, gpointer user_data) {
+    // Vẽ khung hóa đơn
+    cairo_rectangle(cr, 10, 10, 300, 200);  // Vẽ một khung hình chữ nhật
+    cairo_set_line_width(cr, 2);
+    cairo_set_source_rgb(cr, 0, 0, 0); // Màu đen cho đường viền
+    cairo_stroke(cr);
+
+    // Vẽ thông tin hóa đơn bên trong khung
+    cairo_move_to(cr, 20, 40);
+    cairo_set_font_size(cr, 14);
+    cairo_show_text(cr, "Tên khách: Nguyễn Văn A");
+
+    cairo_move_to(cr, 20, 70);
+    cairo_show_text(cr, "Tổng tiền: 120,000 VND");
+
+    cairo_move_to(cr, 20, 100);
+    cairo_show_text(cr, "Ngày thanh toán: 2025-04-04");
+
+    return FALSE;
+}
+
+int main(int argc, char *argv[]) {
+    GtkWidget *window;
+    GtkWidget *scroll_window;
+    GtkWidget *drawing_area;
+    GtkWidget *box;
+    GtkBuilder *builder;
+
+    gtk_init(&argc, &argv);
+
+    // Tải giao diện từ Glade
+    builder = gtk_builder_new_from_file("UI Glade/UI Orders.glade");
+
+    // Lấy cửa sổ từ Glade
+    window = GTK_WIDGET(gtk_builder_get_object(builder, "Orders Window"));
+    
+    // Lấy GtkScrolledWindow từ Glade
+    scroll_window = GTK_WIDGET(gtk_builder_get_object(builder, "scrollwindow"));
+    
+    // Lấy GtkBox từ GtkViewport trong GtkScrolledWindow
+    box = GTK_WIDGET(gtk_builder_get_object(builder, "bill_view"));
+
+    // Tạo GtkDrawingArea và kết nối sự kiện vẽ
+    drawing_area = gtk_drawing_area_new();
+    g_signal_connect(drawing_area, "draw", G_CALLBACK(on_draw), NULL);
+    
+    // Thêm GtkDrawingArea vào GtkBox
+    gtk_box_pack_start(GTK_BOX(box), drawing_area, TRUE, TRUE, 0);
+
+    // Hiển thị tất cả các widget
+    gtk_widget_show_all(window);
+
+    gtk_main();
+
+    return 0;
+}
+
+
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -228,3 +289,4 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+*/
