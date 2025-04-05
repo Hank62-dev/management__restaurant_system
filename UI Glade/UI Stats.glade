@@ -24,20 +24,12 @@
             <property name="spacing">10</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkEventBox">
+              <object class="GtkImage">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <child>
-                  <object class="GtkImage" id="logo_mini">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="margin-end">175</property>
-                    <property name="pixbuf">../UI_image\logomini.png</property>
-                  </object>
-                </child>
               </object>
               <packing>
-                <property name="expand">False</property>
+                <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">0</property>
               </packing>
@@ -48,7 +40,6 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
-                <property name="margin-bottom">30</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -62,7 +53,6 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
-                <property name="margin-bottom">30</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -76,7 +66,6 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
-                <property name="margin-bottom">30</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -90,7 +79,6 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
-                <property name="margin-bottom">30</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -124,14 +112,12 @@
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <child>
-                      <object class="GtkLabel" id="label_daily_data">
+                      <object class="GtkTextView" id="label_daily_data">
                         <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="wrap">True</property>
-                        <attributes>
-                          <attribute name="font-desc" value="Segoe UI Heavy Italic 10"/>
-                          <attribute name="style" value="normal"/>
-                        </attributes>
+                        <property name="can-focus">True</property>
+                        <property name="pixels-below-lines">10</property>
+                        <property name="left-margin">10</property>
+                        <property name="top-margin">10</property>
                       </object>
                     </child>
                   </object>
@@ -172,12 +158,12 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <child>
-                      <object class="GtkLabel" id="label_monthly_data">
+                      <object class="GtkTextView" id="label_monthly_data">
                         <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <attributes>
-                          <attribute name="font-desc" value="Segoe UI Heavy Italic 10"/>
-                        </attributes>
+                        <property name="can-focus">True</property>
+                        <property name="pixels-below-lines">10</property>
+                        <property name="left-margin">10</property>
+                        <property name="top-margin">10</property>
                       </object>
                     </child>
                   </object>
@@ -221,13 +207,12 @@
                         <property name="can-focus">False</property>
                         <property name="orientation">vertical</property>
                         <child>
-                          <object class="GtkLabel" id="label_best_food">
+                          <object class="GtkTextView" id="label_best_food">
                             <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <attributes>
-                              <attribute name="font-desc" value="Segoe UI Heavy Italic 10"/>
-                              <attribute name="style" value="normal"/>
-                            </attributes>
+                            <property name="can-focus">True</property>
+                            <property name="pixels-below-lines">10</property>
+                            <property name="left-margin">10</property>
+                            <property name="top-margin">10</property>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -236,13 +221,9 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="label_best_drink">
+                          <object class="GtkTextView" id="label_best_drink">
                             <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <attributes>
-                              <attribute name="font-desc" value="Segoe UI Heavy Italic 10"/>
-                              <attribute name="style" value="normal"/>
-                            </attributes>
+                            <property name="can-focus">True</property>
                           </object>
                           <packing>
                             <property name="expand">True</property>
