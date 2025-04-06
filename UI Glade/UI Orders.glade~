@@ -20,7 +20,7 @@
             <property name="spacing">10</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkImage">
+              <object class="GtkImage" id="logo_mini">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="pixbuf">../UI_image\logomini.png</property>
@@ -74,7 +74,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_">
+              <object class="GtkButton" id="btn_employee">
                 <property name="label" translatable="yes">EMPLOYEES</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
