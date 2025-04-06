@@ -3,6 +3,7 @@
 #include <string.h>
 #include "employees.h"
 
+
     //dua du lieu vao file
 void saveToFile(Employee employees[], int *count) {
     FILE *file = fopen("employees.txt", "w");
