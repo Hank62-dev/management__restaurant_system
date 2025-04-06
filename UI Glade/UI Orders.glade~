@@ -104,7 +104,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <child>
-                  <object class="GtkTreeView">
+                  <object class="GtkTreeView" id="orders_view">
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="reorderable">True</property>
@@ -113,37 +113,61 @@
                     <property name="rubber-banding">True</property>
                     <property name="activate-on-single-click">True</property>
                     <child>
-                      <object class="GtkTreeViewColumn">
+                      <object class="GtkTreeViewColumn" id="customer_name">
+                        <property name="resizable">True</property>
+                        <property name="sizing">autosize</property>
                         <property name="title" translatable="yes">Tên Khách</property>
                         <property name="expand">True</property>
                         <property name="clickable">True</property>
                         <property name="reorderable">True</property>
                         <property name="sort-indicator">True</property>
+                        <child>
+                          <object class="GtkCellRendererText" id="Customer_text"/>
+                          <attributes>
+                            <attribute name="single-paragraph-mode">0</attribute>
+                            <attribute name="width-chars">0</attribute>
+                          </attributes>
+                        </child>
                       </object>
                     </child>
                     <child>
-                      <object class="GtkTreeViewColumn">
+                      <object class="GtkTreeViewColumn" id="total_price">
+                        <property name="resizable">True</property>
+                        <property name="sizing">autosize</property>
                         <property name="title" translatable="yes">Tổng Tiền</property>
                         <property name="expand">True</property>
                         <property name="clickable">True</property>
                         <property name="reorderable">True</property>
                         <property name="sort-indicator">True</property>
+                        <child>
+                          <object class="GtkCellRendererText" id="Price_text"/>
+                        </child>
                       </object>
                     </child>
                     <child>
-                      <object class="GtkTreeViewColumn">
+                      <object class="GtkTreeViewColumn" id="date_pay">
+                        <property name="resizable">True</property>
+                        <property name="sizing">autosize</property>
                         <property name="title" translatable="yes">Ngày Thanh Toán</property>
                         <property name="clickable">True</property>
                         <property name="reorderable">True</property>
                         <property name="sort-indicator">True</property>
+                        <child>
+                          <object class="GtkCellRendererText" id="Date_text"/>
+                        </child>
                       </object>
                     </child>
                     <child>
-                      <object class="GtkTreeViewColumn">
+                      <object class="GtkTreeViewColumn" id="ID_bill">
+                        <property name="resizable">True</property>
+                        <property name="sizing">autosize</property>
                         <property name="title" translatable="yes">ID Hóa Đơn</property>
                         <property name="clickable">True</property>
                         <property name="reorderable">True</property>
                         <property name="sort-indicator">True</property>
+                        <child>
+                          <object class="GtkCellRendererText" id="ID_text"/>
+                        </child>
                       </object>
                     </child>
                   </object>

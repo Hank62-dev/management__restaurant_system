@@ -27,6 +27,7 @@
               <object class="GtkImage">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+                <property name="pixbuf">../UI_image\logomini.png</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -40,6 +41,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">30</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -53,6 +55,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">30</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -66,6 +69,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">30</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -79,6 +83,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">30</property>
               </object>
               <packing>
                 <property name="expand">True</property>
