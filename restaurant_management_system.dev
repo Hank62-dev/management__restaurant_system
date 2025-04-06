@@ -1,7 +1,7 @@
 [Project]
 filename=restaurant_management_system.dev
 name=restaurant_management_system
-Type=0
+Type=1
 Ver=2
 ObjFiles=
 Includes=
@@ -19,7 +19,7 @@ ObjectOutput=
 LogOutput=
 LogOutputEnabled=0
 OverrideOutput=0
-OverrideOutputName=restaurant_management_system.exe
+OverrideOutputName=
 HostApplication=
 UseCustomMakefile=0
 CustomMakefile=
@@ -39,29 +39,19 @@ Build=0
 LanguageID=1033
 CharsetID=1252
 CompanyName=
-FileVersion=1.0.0.0
+FileVersion=
 FileDescription=Developed using the Dev-C++ IDE
 InternalName=
 LegalCopyright=
 LegalTrademarks=
 OriginalFilename=
 ProductName=
-ProductVersion=1.0.0.0
+ProductVersion=
 AutoIncBuildNr=0
 SyncProduct=1
 
-[Unit1]
-FileName=src\employees.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=$(CC) -c employees.c -o employees.o $(CFLAGS)
-
 [Unit2]
-FileName=src\main.c
+FileName=test\test.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -71,7 +61,17 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=src\employees.h
+FileName=test\test.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit1]
+FileName=test\testmain.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -81,7 +81,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit4]
-FileName=src\stats.h
+FileName=src\login_register.c
 CompileCpp=0
 Folder=
 Compile=1
