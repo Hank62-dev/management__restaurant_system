@@ -1,6 +1,6 @@
 /*home bg*/
 #home_window{
-background-image: url("../images/bg.jpg");
+background-image: url("UI_image/bg.jpg");
 background-size: cover;
 background-color: white;
 background-position: center;
@@ -10,7 +10,55 @@ background-position: center;
 
 #btn_home {
     background-color: white;
-    color: black;
+    color: black;/* ==== Home Background ==== */
+    #home_window {
+        background-image: url("UI_image/bg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-color: white;
+    }
+    
+    /* ==== Nút chung ==== */
+    #btn_home, #btn_menu, #btn_stats, #btn_employee, #btn_add, #btn_edit {
+        background-color: white;
+        color: black;
+        border: 3px solid black;
+        border-radius: 5px;
+        font-weight: 700;
+        margin-left: 10px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    #btn_home:hover, #btn_menu:hover, #btn_stats:hover,
+    #btn_employee:hover, #btn_add:hover, #btn_edit:hover {
+        background-color: green;
+        color: white;
+    }
+    #btn_home:focus, #btn_menu:focus, #btn_stats:focus,
+    #btn_employee:focus, #btn_add:focus, #btn_edit:focus {
+        background-color: green;
+        color: white;
+    }
+    
+    /* ==== Logo & Icon ==== */
+    #logo {
+        background-image: url("UI_image/logo.png");
+        background-size: 64px 64px;
+        background-repeat: no-repeat;
+    }
+    #i1, #i2, #i3, #i4, #i5, #i6, #i7, #i8 {
+        background-size: 32px 32px;
+        background-repeat: no-repeat;
+    }
+    #i1 { background-image: url("UI_image/i1.jpg"); }
+    #i2 { background-image: url("UI_image/i2.jpg"); }
+    #i3 { background-image: url("UI_image/i3.jpg"); }
+    #i4 { background-image: url("UI_image/i4.jpg"); }
+    #i5 { background-image: url("UI_image/i5.jpg"); }
+    #i6 { background-image: url("UI_image/i6.jpg"); }
+    #i7 { background-image: url("UI_image/i7.jpg"); }
+    #i8 { background-image: url("UI_image/i8.jpg"); }
+    
     border: 3px solid black;
     border-radius: 5px;
     font-weight: 700;
@@ -61,7 +109,7 @@ background-position: center;
     font-weight: 700;
     margin-left: 10px
 }
-#btn_stats :hover {
+#btn_stats:hover {
     background-color: green;
     color: white;
     border-radius: 5px;
@@ -84,7 +132,7 @@ background-position: center;
     font-weight: 700;
     margin-left: 10px
 }
-#btn_employee :hover {
+#btn_employee:hover {
     background-color: green;
     color: white;
     border-radius: 5px;
@@ -105,7 +153,7 @@ background-position: center;
     border-radius: 5px;
     font-weight: 700;
 }
-#btn_add :hover {
+#btn_add:hover {
     background-color: green;
     color: white;
     border-radius: 5px;
@@ -124,7 +172,7 @@ background-position: center;
     border-radius: 5px;
     font-weight: 700;
 }
-#btn_edit :hover {
+#btn_edit:hover {
     background-color: green;
     color: white;
     border-radius: 5px;
@@ -143,7 +191,7 @@ background-position: center;
     border-radius: 5px;
     font-weight: 700;
 }
-#btn_edit :hover {
+#btn_edit:hover {
     background-color: green;
     color: white;
     border-radius: 5px;
@@ -157,55 +205,55 @@ background-position: center;
 }
 /*image*/
 #logo {
-    background-image: url("D:\Project_Fcode\management__restaurant_system\UI_image");
+    background-image: url("C:\Users\OneDrive\Desktop\management__restaurant_system\UI_image");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 64px 64px
   }
 #i1 {
-    background-image: url("../images/i1.jpg");
+    background-image: url("UI_image/i1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px
   }
 #i2 {
-    background-image: url("../images/i2.jpg");
+    background-image: url("UI_image/i2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px
   }
  #i3{
-    background-image: url("../images/i3.jpg");
+    background-image: url("UI_image/i3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px
  }
   #i4{
-    background-image: url("../images/i4.jpg");
+    background-image: url("UI_image/i4.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px
   }
   #i5{
-    background-image: url("../images/i5.jpg");
+    background-image: url("UI_image/i5.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px
   }
   #i6{
-    background-image: url("../images/i6.jpg");
+    background-image: url("UI_image/i6.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px
   }
   #i7{
-    background-image: url("../images/i7.jpg");
+    background-image: url("UI_image/i7.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px
   }
   #i8{
-    background-image: url("../images/i8.jpg");
+    background-image: url("UI_image/i8.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px
