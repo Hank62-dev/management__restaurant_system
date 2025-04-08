@@ -11,7 +11,7 @@
     border: 2px solid black;
     border-radius: 5px;
     padding: 20px;
-    /* Không dùng text-align trong GTK+, sẽ dùng layout GTK+ để căn chỉnh */
+
 }
 
 /* login button */
@@ -22,7 +22,7 @@
     border-radius: 5px;
     font-weight: 700;
     padding: 10px 20px;
-    /* Thay thế display: inline-block bằng việc dùng GtkBox hoặc GtkGrid để quản lý layout */
+    
 }
 
 #btn_login:hover {
