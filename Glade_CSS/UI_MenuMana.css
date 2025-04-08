@@ -1,0 +1,201 @@
+/* Định dạng chung */
+* {
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+}
+
+/* Định dạng nền tổng thể */
+#menuManager {
+    background-color: #f5f5f5; /* Màu nền xám nhạt */
+}
+
+/* Định dạng chữ mặc định */
+label {
+    color: #333333;
+    font-weight: bold;
+}
+
+/* Định dạng khoảng cách cho các box */
+box {
+    margin: 5px;
+    padding: 5px;
+}
+
+/* Định dạng thanh điều hướng */
+#header {
+    background-color: #ffffff; /* Nền trắng */
+    border-bottom: 1px solid #dcdcdc; /* Viền dưới */
+    padding: 10px;
+}
+
+/* Định dạng logo */
+#logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+/* Định dạng các nút trong thanh điều hướng */
+#buttonHome, #buttonMenu, #buttonBooking, #buttonBill {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Màu xanh dương */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+/* Tab đang được chọn */
+#buttonHome {
+    background-color: #003087; /* Xanh đậm hơn */
+}
+
+/* Định dạng khu vực chính */
+#mainContent {
+    margin-top: 10px;
+}
+
+/* Định dạng danh sách món ăn */
+#menuList {
+    width: 50%; /* Chiếm 50% chiều rộng */
+    margin-right: 10px;
+}
+
+#menuTreeView {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+}
+
+/* Định dạng tiêu đề cột */
+#menuTreeView treeview header button {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+}
+
+/* Định dạng các ô trong bảng */
+#menuTreeView treeview row {
+    font-size: 14px;
+    color: #333333;
+}
+
+/* Dòng chẵn và lẻ */
+#menuTreeView treeview row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#menuTreeView treeview row:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Định dạng khu vực chi tiết món */
+#menuDetails {
+    width: 50%;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Định dạng khu vực thông tin món */
+#infoBox {
+    margin-bottom: 20px;
+}
+
+/* Định dạng hình ảnh món */
+#imageDisplay {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+/* Định dạng tiêu đề thông tin */
+#titleImage, #titleId, #titleName, #titleCategory, #titlePrice {
+    font-size: 16px;
+    color: #2c3e50; /* Màu xanh đen */
+}
+
+/* Định dạng giá trị thông tin */
+#labelId, #labelName, #labelCategory, #labelPrice {
+    font-size: 14px;
+    color: #555555;
+}
+
+/* Định dạng các nút hành động */
+#actionButtons {
+    margin-bottom: 20px;
+}
+
+/* Định dạng nút "Thêm" */
+#buttonAdd {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #28a745; /* Màu xanh lá */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Định dạng nút "Sửa" */
+#buttonEdit {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Màu xanh dương */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Định dạng nút "Xóa" */
+#buttonDelete {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #dc3545; /* Màu đỏ */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Định dạng khu vực chỉnh sửa */
+#editBox {
+    margin-bottom: 20px;
+}
+
+/* Định dạng tiêu đề chỉnh sửa */
+#titleEditImage, #titleEditName, #titleEditCategory, #titleEditPrice {
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+/* Định dạng nút chọn ảnh */
+#imageChooser {
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Định dạng các trường nhập liệu */
+#entryName, #entryCategory, #entryPrice {
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+}
+
+/* Định dạng nút CONFIRM */
+#buttonConfirm {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 30px;
+    background-color: #28a745; /* Màu xanh lá */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+}

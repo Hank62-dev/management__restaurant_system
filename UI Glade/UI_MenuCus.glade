@@ -13,7 +13,7 @@
         <property name="can-focus">False</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkBox" id="titlle">
+          <object class="GtkBox" id="title">
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="border-width">10</property>
@@ -2281,7 +2281,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="menuListCofirm">
+              <object class="GtkBox" id="menuListConfirm">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="orientation">vertical</property>
@@ -2295,10 +2295,12 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
-                          <object class="GtkTreeView" id="menuListItemSellected">
+                          <object class="GtkTreeView" id="menuListItemSelected">
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
-                            <property name="headers-visible">True</property>
+                            <child internal-child="selection">
+                              <object class="GtkTreeSelection"/>
+                            </child>
                             <child>
                               <object class="GtkTreeViewColumn" id="column_stt">
                                 <property name="title" translatable="yes">STT</property>

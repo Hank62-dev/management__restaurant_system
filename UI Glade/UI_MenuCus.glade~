@@ -13,7 +13,7 @@
         <property name="can-focus">False</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkBox" id="titlle">
+          <object class="GtkBox" id="title">
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="border-width">10</property>
@@ -2295,55 +2295,57 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
-                        <object class="GtkTreeView" id="menuListItemSellected">
-                          <property name="visible">True</property>
-                          <property name="can-focus">True</property>
-                          <property name="headers-visible">True</property>
-                          <child>
-                            <object class="GtkTreeViewColumn" id="column_stt">
-                              <property name="title" translatable="yes">STT</property>
-                              <child>
-                                <object class="GtkCellRendererText" id="renderer_stt"/>
-                                <attributes>
-                                  <attribute name="text">0</attribute>
-                                </attributes>
-                              </child>
-                            </object>
-                          </child>
-                          <child>
-                            <object class="GtkTreeViewColumn" id="column_tenMon">
-                              <property name="title" translatable="yes">Tên món</property>
-                              <child>
-                                <object class="GtkCellRendererText" id="renderer_tenMon"/>
-                                <attributes>
-                                  <attribute name="text">1</attribute>
-                                </attributes>
-                              </child>
-                            </object>
-                          </child>
-                          <child>
-                            <object class="GtkTreeViewColumn" id="column_soLuongMon">
-                              <property name="title" translatable="yes">SL món</property>
-                              <child>
-                                <object class="GtkCellRendererText" id="renderer_soLuongMon"/>
-                                <attributes>
-                                  <attribute name="text">2</attribute>
-                                </attributes>
-                              </child>
-                            </object>
-                          </child>
-                          <child>
-                            <object class="GtkTreeViewColumn" id="column_gia">
-                              <property name="title" translatable="yes">Giá</property>
-                              <child>
-                                <object class="GtkCellRendererText" id="renderer_gia"/>
-                                <attributes>
-                                  <attribute name="text">3</attribute>
-                                </attributes>
-                              </child>
-                            </object>
-                          </child>
-                        </object>
+                          <object class="GtkTreeView" id="menuListItemSelected">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <child internal-child="selection">
+                              <object class="GtkTreeSelection"/>
+                            </child>
+                            <child>
+                              <object class="GtkTreeViewColumn" id="column_stt">
+                                <property name="title" translatable="yes">STT</property>
+                                <child>
+                                  <object class="GtkCellRendererText" id="renderer_stt"/>
+                                  <attributes>
+                                    <attribute name="text">0</attribute>
+                                  </attributes>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkTreeViewColumn" id="column_tenMon">
+                                <property name="title" translatable="yes">Tên món</property>
+                                <child>
+                                  <object class="GtkCellRendererText" id="renderer_tenMon"/>
+                                  <attributes>
+                                    <attribute name="text">1</attribute>
+                                  </attributes>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkTreeViewColumn" id="column_soLuongMon">
+                                <property name="title" translatable="yes">SL món</property>
+                                <child>
+                                  <object class="GtkCellRendererText" id="renderer_soLuongMon"/>
+                                  <attributes>
+                                    <attribute name="text">2</attribute>
+                                  </attributes>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkTreeViewColumn" id="column_gia">
+                                <property name="title" translatable="yes">Giá</property>
+                                <child>
+                                  <object class="GtkCellRendererText" id="renderer_gia"/>
+                                  <attributes>
+                                    <attribute name="text">3</attribute>
+                                  </attributes>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
                         </child>
                       </object>
                     </child>
