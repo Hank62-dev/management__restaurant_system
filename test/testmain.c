@@ -4,7 +4,7 @@
 #include <string.h>
 #include <time.h>
 #include <gtk/gtk.h>
-#include "stats.h"
+#include "test.h"
 #define MAX_DAYS 100  
 
 typedef struct {
