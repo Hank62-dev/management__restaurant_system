@@ -3,47 +3,22 @@
 #include <string.h>
 #include "menu.h"
 
-int main() {
-	SetConsoleCP(65001);
-	SetConsoleOutputCP(65001);
-	MenuItem menuList[100];  // Danh sách chứa tối đa 100 món ăn
-    int count = 0;
-    int choice;
-    
-    //Đọc menu từ file khi bắt đầu ctrinh
-	loadMenuFromFile(menuList, &count);
+int main(int argc, char *argv[]) {
+    gtk_init(&argc, &argv);
 
-    while (1) {
-        printf("\n======== MENU QUẢN LÝ ========\n");
-        printf("1. Xem menu\n");
-        printf("2. Thêm món\n");
-        printf("3. Xóa món\n");
-        printf("4. Sửa món\n");
-        printf("5. Thoát\n");
-        printf("Chọn chức năng: ");
-        scanf("%d", &choice);
-        getchar(); // Xóa ký tự '\n' trong bộ nhớ đệm
+    // Tải CSS cho giao diện khách hàng
+    load_css("Glade_CSS/UI_MenuCus.css");
 
-        switch (choice) {
-            case 1:
-                printMenu(menuList, count);
-                break;
-            case 2:
-                addItem(menuList, &count);
-                break;
-            case 3:
-                deleteItem(menuList, &count);
-                break;
-            case 4:
-                editItem(menuList, &count);
-                break;
-            case 5:
-                printf("Thoát chương trình.\n");
-                return 0;
-            default:
-                printf("Lựa chọn không hợp lệ. Vui lòng nhập lại!\n");
-        }
-    }
-    
+    // Tải CSS cho giao diện quản lý
+    load_css("Glade_CSS/UI_MenuMana.css");
+
+    // Đọc menu từ file khi bắt đầu chương trình
+    loadMenuFromFile(menuList, &menu_count);
+
+    // Tải giao diện (chọn một trong hai tùy theo vai trò: khách hàng hoặc quản lý)
+    // load_customer_ui();  // Giao diện khách hàng
+    load_manager_ui();   // Giao diện quản lý
+
+    gtk_main();
     return 0;
 }

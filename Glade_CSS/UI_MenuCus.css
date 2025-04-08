@@ -1,0 +1,172 @@
+/* Định dạng chung */
+* {
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+}
+
+/* Định dạng nền tổng thể */
+#menuCustomer {
+    background-color: #f5f5f5; /* Màu nền xám nhạt */
+}
+
+/* Định dạng chữ mặc định */
+label {
+    color: #333333;
+    font-weight: bold;
+}
+
+/* Định dạng khoảng cách cho các box */
+box {
+    margin: 5px;
+    padding: 5px;
+}
+
+/* Định dạng thanh điều hướng */
+#title {
+    background-color: #ffffff; /* Nền trắng */
+    border-bottom: 1px solid #dcdcdc; /* Viền dưới */
+    padding: 10px;
+}
+
+/* Định dạng logo */
+#logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+/* Định dạng các nút trong thanh điều hướng */
+#buttonHome, #buttonMenu, #buttonBooking, #buttonBill {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Màu xanh dương */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+/* Tab đang được chọn */
+#buttonHome {
+    background-color: #003087; /* Xanh đậm hơn */
+}
+
+/* Định dạng khu vực chính */
+#menuDetails {
+    margin-top: 10px;
+}
+
+/* Định dạng danh sách món ăn */
+#menuList1 {
+    width: 70%; /* Chiếm 70% chiều rộng */
+    margin-right: 10px;
+}
+
+#menuListItemSelect {
+    background-color: #ffffff; /* Nền trắng */
+    border: 1px solid #dcdcdc; /* Viền xám nhạt */
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Định dạng từng món ăn (động) */
+#menuListItemSelect box {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+
+/* Định dạng hình ảnh món ăn */
+#menuListItemSelect image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 5px;
+}
+
+/* Định dạng tên món */
+#menuListItemSelect label:nth-child(2) {
+    font-size: 16px;
+    color: #2c3e50; /* Màu xanh đen */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Định dạng giá */
+#menuListItemSelect label:nth-child(3) {
+    font-size: 14px;
+    color: #e67e22; /* Màu cam */
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+/* Định dạng nút "+" */
+#menuListItemSelect button:nth-child(4) {
+    font-size: 16px;
+    padding: 5px 10px;
+    background-color: #28a745; /* Màu xanh lá */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+/* Định dạng nút "-" */
+#menuListItemSelect button:nth-child(5) {
+    font-size: 16px;
+    padding: 5px 10px;
+    background-color: #dc3545; /* Màu đỏ */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+/* Định dạng bảng đơn hàng */
+#menuListConfirm {
+    width: 30%; /* Chiếm 30% chiều rộng */
+}
+
+#menuListItemSelected {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+}
+
+/* Định dạng tiêu đề cột */
+#menuListItemSelected treeview header button {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+}
+
+/* Định dạng các ô trong bảng */
+#menuListItemSelected treeview row {
+    font-size: 14px;
+    color: #333333;
+}
+
+/* Dòng chẵn và lẻ */
+#menuListItemSelected treeview row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#menuListItemSelected treeview row:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Định dạng nút CONFIRM */
+#buttonConfirm {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 30px;
+    background-color: #28a745; /* Màu xanh lá */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+}
