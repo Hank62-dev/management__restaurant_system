@@ -221,8 +221,8 @@ int main(int argc, char *argv[]) {
     g_signal_connect(btn_stats, "clicked", G_CALLBACK(update_stats), NULL);
 
     // Hiển thị cửa sổ và áp dụng CSS
-    gtk_widget_show_all(window);
     apply_css(window);
+    gtk_widget_show_all(window);
 
     gtk_main();
 
