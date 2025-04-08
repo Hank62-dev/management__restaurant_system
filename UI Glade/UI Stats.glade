@@ -115,6 +115,9 @@
                       <object class="GtkLabel" id="label_daily_data">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Segoe UI Heavy Italic 15"/>
+                        </attributes>
                       </object>
                     </child>
                   </object>
@@ -158,6 +161,9 @@
                       <object class="GtkLabel" id="label_monthly_data">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Segoe UI Heavy Italic 15"/>
+                        </attributes>
                       </object>
                     </child>
                   </object>
@@ -204,6 +210,9 @@
                           <object class="GtkLabel" id="label_best_food">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
+                            <attributes>
+                              <attribute name="font-desc" value="Segoe UI Heavy Italic 15"/>
+                            </attributes>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -215,6 +224,9 @@
                           <object class="GtkLabel" id="label_best_drink">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
+                            <attributes>
+                              <attribute name="font-desc" value="Segoe UI Heavy Italic 15"/>
+                            </attributes>
                           </object>
                           <packing>
                             <property name="expand">True</property>
