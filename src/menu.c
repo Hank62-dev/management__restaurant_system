@@ -19,7 +19,7 @@ void load_css(const char *css_file) {
                                               GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
     GError *error = NULL;
-    gtk_css_provider_load_from_file(provider, g_file_new_for_path(css_file), &error);
+    gtk_css_provider_load_from_file(provider, g_file_new_for_path(Glade_CSS/UI_MenuMana.css), &error);
 
     if (error != NULL) {
         g_printerr("Error loading CSS: %s\n", error->message);
