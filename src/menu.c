@@ -177,7 +177,7 @@ void editItem(MenuItem menuList[], int *count) {
 
 // Tải giao diện khách hàng
 void load_customer_ui() {
-    builder = gtk_builder_new_from_file("menu_customer.glade");
+    builder = gtk_builder_new_from_file("UI Glade/UI_MenuCus.glade");
     gtk_builder_connect_signals(builder, NULL);
 
     // Hiển thị cửa sổ chính
@@ -190,7 +190,7 @@ void load_customer_ui() {
 
 // Tải giao diện quản lý
 void load_manager_ui() {
-    builder = gtk_builder_new_from_file("menu_manager.glade");
+    builder = gtk_builder_new_from_file("UI Glade/UI_MenuMana.glade");
     gtk_builder_connect_signals(builder, NULL);
 
     // Hiển thị cửa sổ chính
