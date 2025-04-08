@@ -30,9 +30,9 @@ box {
 
 /* Định dạng logo */
 #logo {
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 0 20px 0 0;
 }
 
 /* Định dạng các nút trong thanh điều hướng */
@@ -58,8 +58,7 @@ box {
 
 /* Định dạng danh sách món ăn */
 #menuList {
-    width: 50%; /* Chiếm 50% chiều rộng */
-    margin-right: 10px;
+    margin: 0 10px 0 0;
 }
 
 #menuTreeView {
@@ -93,7 +92,7 @@ box {
 
 /* Định dạng khu vực chi tiết món */
 #menuDetails {
-    width: 50%;
+    min-width: 300px;
     background-color: #ffffff;
     border: 1px solid #dcdcdc;
     border-radius: 5px;
@@ -107,8 +106,8 @@ box {
 
 /* Định dạng hình ảnh món */
 #imageDisplay {
-    width: 150px;
-    height: 150px;
+    min-width: 150px;
+    min-height: 150px;
     margin-bottom: 10px;
 }
 
