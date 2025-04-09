@@ -1,162 +1,139 @@
-* {
-    color: rgb(20, 145, 20);
-}
-*:hover {
-    background-color: green;
-    color: rgb(4, 120, 23);
-    border-radius: 5px;
-    font-weight: 700;
 
-}
-*:focus {
-    background-color: green;
-    color: rgb(4, 120, 23);
-    border-radius: 5px;
-    font-weight: 700;
-}
 
 /*home button*/
-#btn_home {
-    background-color: white;
+.btn_home {
+    background: white;
     color: black;
-    border: 3px solid black;
-    border-radius: 5px;
+    border: 0.5px solid black;
+    border-radius: 0.5px;
     font-weight: 700;
  
 }
-#btn_home:hover {
-    background-color: green;
+.btn_home:hover {
+    background: green;
     color: white;
-    border-radius: 5px;
-    font-weight: 700;
+
 
 }
 
-#btn_home:focus {
-    background-color: green;
+.btn_home:focus {
+    background: green;
     color: white;
-    border-radius: 5px;
-    font-weight: 700;
+
 }
 /*stats button*/
-#btn_stats{
-    all: unset;
-    background-color: white;
+.btn_stats{
+
+    background: white;
     color: black;
-    border: 3px solid black;
-    border-radius: 5px;
+    border: 0.5px solid black;
+    border-radius: 0.5px;
     font-weight: 700;
 
 }
 
-#btn_stats:hover {
-    background-color: green;
+.btn_stats:hover {
+    background: green;
     color: white;
-    border-radius: 5px;
-    font-weight: 700;
+
 
 }
 
-#btn_stats:focus {
-    background-color: green;
+.btn_stats:focus {
+    background: green;
     color: white;
-    border-radius: 5px;
-    font-weight: 700;
+
 }
 /*orders button*/
-#btn_orders {
-    background-color: white;
+.btn_orders {
+    background: white;
     color: black;
-    border: 3px solid black;
-    border-radius: 5px;
+    border: 0.5px solid black;
+    border-radius: 0.5px;
     font-weight: 700;
 
 }
-#btn_orders:hover {
-    background-color: green;
+.btn_orders:hover {
+    background: green;
     color: white;
-    border-radius: 5px;
-    font-weight: 700;
+
 
 }
 
-#btn_orders:focus {
-    background-color: green;
+.btn_orders:focus {
+    background: green;
     color: white;
-    border-radius: 5px;
-    font-weight: 700;
+
 }
 /*employees button*/
-#btn_employees {
-    background-color: white;
+.btn_employees {
+    background: white;
     color: black;
-    border: 3px solid black;
-    border-radius: 5px;
+    border: 0.5px solid black;
+    border-radius: 0.5px;
     font-weight: 700;
 
 }
-#btn_employees:hover {
-    background-color: green;
+.btn_employees:hover {
+    background: green;
     color: white;
-    border-radius: 5px;
-    font-weight: 700;
+
 
 }
 
-#btn_employees:focus {
-    background-color: green;
+.btn_employees:focus {
+    background: green;
     color: white;
-    border-radius: 5px;
-    font-weight: 700;
+
 }
 
-#frame_daily_revenue {
-    border-width: 5px;
+.frame_daily_revenue {
+    border-width: 0.5px;
     border-style: solid;
     border-color: black;
 }
 
-#frame_monthly_revenue {
-    border-width: 5px;
+.frame_monthly_revenue {
+    border-width: 0.5px;
     border-style: solid;
     border-color: black;
 }
 
 #frame_best_selling {
-    border-width: 5px;
+    border-width: 0.5px;
     border-style: solid;
     border-color: black;
 }
 
-#label_daily_data {
-    all: unset;
+.label_daily_data {
+
     color: black;
     font-size: 20px;
     font-weight: 700;
 
 }
 
-#label_monthly_data {
-    all:unset;
+.label_monthly_data {
+
     color: black;
     font-size: 20px;
     font-weight: 700;
 
 }
 
-#label_best_food {
-    all:unset;
+.label_best_food {
+
     color: black;
-    border: 5px solid black;
+    border: 0.5px solid black;
     font-size: 20px;
     font-weight: 700;
 
 }
 
-#label_best_drink {
-    all:unset;
+.label_best_drink {
+
     color: black;
-    border: 5px solid black;
+    border: 0.5px solid black;
     font-size: 20px;
     font-weight: 700;
 
