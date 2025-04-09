@@ -1,6 +1,20 @@
 * {
-    background-color: green;
+    color: rgb(20, 145, 20);
 }
+*:hover {
+    background-color: green;
+    color: rgb(4, 120, 23);
+    border-radius: 5px;
+    font-weight: 700;
+
+}
+*:focus {
+    background-color: green;
+    color: rgb(4, 120, 23);
+    border-radius: 5px;
+    font-weight: 700;
+}
+
 /*home button*/
 #btn_home {
     background-color: white;
@@ -25,7 +39,8 @@
     font-weight: 700;
 }
 /*stats button*/
-#btn_stats {
+#btn_stats{
+    all: unset;
     background-color: white;
     color: black;
     border: 3px solid black;
@@ -33,6 +48,7 @@
     font-weight: 700;
 
 }
+
 #btn_stats:hover {
     background-color: green;
     color: white;
@@ -113,18 +129,24 @@
 }
 
 #label_daily_data {
+    all: unset;
+    color: black;
     font-size: 20px;
     font-weight: 700;
 
 }
 
 #label_monthly_data {
+    all:unset;
+    color: black;
     font-size: 20px;
     font-weight: 700;
 
 }
 
 #label_best_food {
+    all:unset;
+    color: black;
     border: 5px solid black;
     font-size: 20px;
     font-weight: 700;
@@ -132,6 +154,8 @@
 }
 
 #label_best_drink {
+    all:unset;
+    color: black;
     border: 5px solid black;
     font-size: 20px;
     font-weight: 700;

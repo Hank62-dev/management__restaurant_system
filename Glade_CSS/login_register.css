@@ -1,3 +1,4 @@
+
 /* logo image */
 #logo_login_register {
     background-color: black;
@@ -15,82 +16,102 @@
 }
 
 /* login button */
-#btn_login {
+.login {
     background: white;
     color: black;
-    border: 3px solid black;
-    border-radius: 5px;
+    border: 0.5px solid black;
+    border-radius: 0.5px;
     font-weight: 700;
     padding: 10px 20px;
     
 }
 
-#btn_login:hover {
+.login:hover {
     background: green;
     color: white;
 }
 
-#btn_login:focus {
+.login:focus {
     background: green;
     color: white;
 }
+
 
 /* register button */
-#btn_register {
+.register {
     background: white;
     color: black;
-    border: 3px solid black;
-    border-radius: 5px;
+    border: 0.5px solid black;
+    border-radius: 0.5px;
     font-weight: 700;
     padding: 10px 20px;
 }
 
-#btn_register:hover {
+.register:hover {
     background: green;
     color: white;
 }
 
-#btn_register:focus {
+.register:focus {
     background: green;
     color: white;
 }
 
 /* login button finish */
-#btn_login_now {
+.login_now {
     background: white;
     color: black;
-    border: 3px solid black;
-    border-radius: 5px;
+    border: 0.5px solid black;
+    border-radius: 0.5px;
     font-weight: 700;
     padding: 10px 20px;
 }
 
-#btn_login_now:hover {
+.login_now:hover {
     background: green;
     color: white;
 }
 
-#btn_login_now:focus {
+.login_now:focus {
     background: green;
     color: white;
 }
-
+.login:active {
+    background: green;
+    color: white;
+}
 /* register button finish */
-#btn_register_now {
+.register_now {
     background: white;
     color: black;
-    border: 3px solid black;
-    border-radius: 5px;
+    border: 0.5px solid black;
+    border-radius: 0.5px;
     font-weight: 700;
     padding: 10px 20px;
 }
-
-#btn_register_now:hover {
+.register_now:hover {
     background: green;
     color: white;
 }
-
-#btn_register_now:focus {
+.register_now:focus {
     background: green;
     color: white;
 }
+.register_now:active {
+    background: green;
+    color: white;
+}
+/*tạo khung cho các form*/
+.entry_login_phone, .entry_login_password, .entry_firstname,
+.entry_lastname, .entry_phone, .entry_password, .entry_confirm_password {
+    border: 0.5px solid black;
+    border-radius: 0.5px;
+}
+/*tạo khung*/
+.right-frame {
+    border: 2px solid #4CAF50;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #ffffff;
+  }
+  

@@ -23,6 +23,8 @@ void apply_css(GtkWidget *window) {
     } else {
         g_print("Failed to load CSS.\n");
     }
+    GdkDisplay *display = gdk_display_get_default();
+    GdkScreen *screen = gdk_display_get_default_screen(display);
     gtk_style_context_add_provider_for_screen(
         gdk_screen_get_default(),
         GTK_STYLE_PROVIDER(provider),

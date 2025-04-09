@@ -84,11 +84,11 @@ void on_login_now_clicked(GtkButton *button, gpointer user_data) {
 int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
     
-    GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register.glade");
-    GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "VQHT Restaurant"));
+    GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register_Cus.glade");
+    GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Register_window"));
     //resize ảnh
     
-	GtkWidget *image = GTK_WIDGET(gtk_builder_get_object(builder, "logo_image"));
+	GtkWidget *image = GTK_WIDGET(gtk_builder_get_object(builder, "logo_login_register"));
 	GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file("UI_image/logores.jpg", NULL); 
 	int width = 390, height = 390;
 	pixbuf = gdk_pixbuf_scale_simple(pixbuf, width, height, GDK_INTERP_BILINEAR);
