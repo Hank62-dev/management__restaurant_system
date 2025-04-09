@@ -8,7 +8,7 @@ background-position: center;
 
 /*home btn*/
 
-#btn_home {
+.btn_home {
     background-color: white;
     color: black;
     border: 3px solid black;
@@ -16,21 +16,22 @@ background-position: center;
     font-weight: 700;
     margin-left: 10px
 }
-#btn_home:hover {
+.btn_home:hover {
     background-color: green;
     color: white;
     border-radius: 5px;
     font-weight: 700;
     margin-left: 10px
 }
-#btn_home:focus {
+.btn_home:focus {
     background-color: green;
     color: white;
     border-radius: 5px;
     font-weight: 700;
     margin-left: 10px
     /*menu btn*/
-}#btn_menu {
+}
+.btn_menu {
     background-color: white;
     color: black;
     border: 3px solid black;
@@ -38,14 +39,14 @@ background-position: center;
     font-weight: 700;
     margin-left: 10px
 }
-#btn_menu:hover {
+.btn_menu:hover {
     background-color: green;
     color: white;
     border-radius: 5px;
     font-weight: 700;
     margin-left: 10px
 }
-#btn_menu:focus {
+.btn_menu:focus {
     background-color: green;
     color: white;
     border-radius: 5px;
@@ -53,7 +54,7 @@ background-position: center;
     margin-left: 10px
     /*stats btn*/
 }
-#btn_stats {
+.btn_stats {
     background-color: white;
     color: black;
     border: 3px solid black;
@@ -61,7 +62,7 @@ background-position: center;
     font-weight: 700;
     margin-left: 10px
 }
-#btn_stats :hover {
+.btn_stats :hover {
     background-color: green;
     color: white;
     border-radius: 5px;
@@ -78,55 +79,47 @@ background-position: center;
 
 /*image*/
 #logo {
-    background-image: url("D:\Project_Fcode\management__restaurant_system\UI_image");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 64px 64px
   }
 #i1 {
-    background-image: url("../images/i1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px
   }
 #i2 {
-    background-image: url("../images/i2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px
   }
  #i3{
-    background-image: url("../images/i3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px
  }
   #i4{
-    background-image: url("../images/i4.jpg");
+
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px
   }
   #i5{
-    background-image: url("../images/i5.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px
   }
   #i6{
-    background-image: url("../images/i6.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px
   }
   #i7{
-    background-image: url("../images/i7.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px
   }
   #i8{
-    background-image: url("../images/i8.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 32px 32px

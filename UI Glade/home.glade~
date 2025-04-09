@@ -16,6 +16,7 @@
           <object class="GtkGrid">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
+            <property name="column-homogeneous">True</property>
             <child>
               <object class="GtkImage" id="logo">
                 <property name="visible">True</property>
@@ -92,10 +93,12 @@
           </packing>
         </child>
         <child>
-          <!-- n-columns=5 n-rows=2 -->
+          <!-- n-columns=5 n-rows=4 -->
           <object class="GtkGrid">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
+            <property name="row-homogeneous">True</property>
+            <property name="column-homogeneous">True</property>
             <child>
               <object class="GtkLabel" id="text1">
                 <property name="visible">True</property>
@@ -105,7 +108,7 @@
               </object>
               <packing>
                 <property name="left-attach">2</property>
-                <property name="top-attach">0</property>
+                <property name="top-attach">1</property>
               </packing>
             </child>
             <child>
@@ -116,22 +119,11 @@
               </object>
               <packing>
                 <property name="left-attach">2</property>
-                <property name="top-attach">1</property>
+                <property name="top-attach">2</property>
               </packing>
             </child>
             <child>
-              <object class="GtkImage" id="i1">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="stock">gtk-missing-image</property>
-              </object>
-              <packing>
-                <property name="left-attach">1</property>
-                <property name="top-attach">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkImage" id="i2">
+              <object class="GtkImage">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="stock">gtk-missing-image</property>
@@ -142,51 +134,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkImage" id="i3">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="stock">gtk-missing-image</property>
-              </object>
-              <packing>
-                <property name="left-attach">4</property>
-                <property name="top-attach">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkImage" id="i4">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="stock">gtk-missing-image</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkImage" id="i5">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="stock">gtk-missing-image</property>
-              </object>
-              <packing>
-                <property name="left-attach">0</property>
-                <property name="top-attach">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkImage" id="i6">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="stock">gtk-missing-image</property>
-              </object>
-              <packing>
-                <property name="left-attach">4</property>
-                <property name="top-attach">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkImage" id="i7">
+              <object class="GtkImage">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="stock">gtk-missing-image</property>
@@ -197,7 +145,29 @@
               </packing>
             </child>
             <child>
-              <object class="GtkImage" id="i8">
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="stock">gtk-missing-image</property>
+              </object>
+              <packing>
+                <property name="left-attach">2</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="stock">gtk-missing-image</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="stock">gtk-missing-image</property>
@@ -206,6 +176,85 @@
                 <property name="left-attach">1</property>
                 <property name="top-attach">1</property>
               </packing>
+            </child>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="stock">gtk-missing-image</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="stock">gtk-missing-image</property>
+              </object>
+              <packing>
+                <property name="left-attach">3</property>
+                <property name="top-attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="stock">gtk-missing-image</property>
+              </object>
+              <packing>
+                <property name="left-attach">3</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="stock">gtk-missing-image</property>
+              </object>
+              <packing>
+                <property name="left-attach">2</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="stock">gtk-missing-image</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
             </child>
           </object>
           <packing>
