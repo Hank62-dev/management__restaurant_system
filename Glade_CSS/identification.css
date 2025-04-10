@@ -1,0 +1,54 @@
+.iden_window {
+    background: gray;
+    opacity: 0.5;
+}
+.label_youare{
+    border: 1px solid black;
+}
+.btn_customer{
+    font-size: 12px;
+    font-weight: 700;
+}
+.btn_customer:hover {
+    font-size: 12px;
+    font-weight: 700;
+    background: rgb(23, 125, 23);
+    color: white;
+}
+.btn_customer:focus {
+    font-size: 12px;
+    font-weight: 700;
+    background: rgb(23, 125, 23);
+    color: white;
+}
+
+/*button management*/
+.btn_management {
+    font-size: 12px;
+    font-weight: 700;
+}
+.btn_management:hover {
+    font-size: 12px;
+    font-weight: 700;
+    background: rgb(23, 125, 23);
+    color: white;
+}
+.btn_managemnt:focus{
+    font-size: 12px;
+    font-weight: 700;
+    background: rgb(23, 125, 23);
+    color: white;
+}
+.main_box{
+    border: 1px solid black;
+    border-radius: 1px;
+}
+
+
+
+
+
+
+
+
+

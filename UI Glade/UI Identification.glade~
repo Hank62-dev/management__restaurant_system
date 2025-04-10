@@ -25,6 +25,9 @@
               <attribute name="underline-color" value="#000000000000"/>
               <attribute name="strikethrough-color" value="#000000000000"/>
             </attributes>
+            <style>
+              <class name="label_youare"/>
+            </style>
           </object>
           <packing>
             <property name="expand">True</property>
@@ -46,6 +49,9 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <property name="relief">half</property>
+                <style>
+                  <class name="btn_customer"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -60,6 +66,9 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <property name="relief">half</property>
+                <style>
+                  <class name="btn_management"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -75,10 +84,19 @@
           </packing>
         </child>
         <child>
-          <object class="GtkImage">
+          <object class="GtkLabel">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="stock">gtk-missing-image</property>
+            <property name="label" translatable="yes">Welcome to VQHT Restaurant
+         @VQHT Restaurant </property>
+            <attributes>
+              <attribute name="font-desc" value="Serif Bold 11"/>
+              <attribute name="foreground" value="#3333d1d17a7a"/>
+              <attribute name="underline-color" value="#2626a2a26969"/>
+            </attributes>
+            <style>
+              <class name="label_intro"/>
+            </style>
           </object>
           <packing>
             <property name="expand">True</property>
@@ -88,5 +106,8 @@
         </child>
       </object>
     </child>
+    <style>
+      <class name="iden_window"/>
+    </style>
   </object>
 </interface>
