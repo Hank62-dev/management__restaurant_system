@@ -121,7 +121,7 @@ void on_customer_clicked(GtkButton *button, gpointer user_data) {
     g_signal_connect(btn_login_now, "clicked", G_CALLBACK(on_login_now_clicked), NULL);
     g_signal_connect(btn_login, "clicked", G_CALLBACK(switch_to_login), NULL);
     g_signal_connect(btn_register, "clicked", G_CALLBACK(switch_to_register), NULL);
-    g_signal_connect(btn_back, "clicked", G_CALLBACK(switch_to_back), window_identification);
+    g_signal_connect(btn_back, "clicked", G_CALLBACK(switch_to_back), NULL);
     // Hiện cửa sổ
     gtk_widget_show_all(window);
     gtk_widget_hide(window_identification);
@@ -166,7 +166,7 @@ void on_management_clicked(GtkButton *button, gpointer user_data) {
     g_signal_connect(btn_login_now, "clicked", G_CALLBACK(on_login_now_clicked), NULL);
     g_signal_connect(btn_login, "clicked", G_CALLBACK(switch_to_login), NULL);
     g_signal_connect(btn_register, "clicked", G_CALLBACK(switch_to_register), NULL);
-    g_signal_connect(btn_back, "clicked", G_CALLBACK(switch_to_back), window_identification);
+    g_signal_connect(btn_back, "clicked", G_CALLBACK(switch_to_back), NULL);
 
     // Hiện cửa sổ
     gtk_widget_show_all(window);
