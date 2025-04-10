@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
-  <object class="GtkWindow" id="home_window">
+  <object class="GtkWindow" id="home_m">
     <property name="can-focus">False</property>
     <property name="border-width">10</property>
     <property name="resizable">False</property>
@@ -20,9 +20,12 @@
             <property name="spacing">10</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkImage">
+              <object class="GtkImage" id="image_logo">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+                <style>
+                  <class name="image_logo"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -66,14 +69,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_booking">
-                <property name="label" translatable="yes">BOOKING</property>
+              <object class="GtkButton" id="btn_stats">
+                <property name="label" translatable="yes">STATS</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <style>
-                  <class name="btn_booking"/>
-                  <class name="btn_c"/>
+                  <class name="btn_stats"/>
+                  <class name="btn_m"/>
                 </style>
               </object>
               <packing>
@@ -83,13 +86,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_orders">
-                <property name="label" translatable="yes">ORDERS</property>
+              <object class="GtkButton" id="btn_emloyee">
+                <property name="label" translatable="yes">EMPLOYEE</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <style>
-                  <class name="btn_orders"/>
+                  <class name="btn_employee"/>
                   <class name="btn_c"/>
                 </style>
               </object>
@@ -131,13 +134,16 @@
               <placeholder/>
             </child>
             <child>
-              <object class="GtkLabel">
+              <object class="GtkLabel" id="text_name">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="label" translatable="yes">VQHT</property>
                 <attributes>
                   <attribute name="font-desc" value="Segoe Print 60"/>
                 </attributes>
+                <style>
+                  <class name="text_name"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -149,7 +155,7 @@
               <placeholder/>
             </child>
             <child>
-              <object class="GtkBox">
+              <object class="GtkBox" id="text_intro">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <child>
@@ -177,6 +183,9 @@ phục vụ các món ăn đậm đà bản sắc Việt trong không gian ấm 
                 <child>
                   <placeholder/>
                 </child>
+                <style>
+                  <class name="text_intro"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -193,5 +202,8 @@ phục vụ các món ăn đậm đà bản sắc Việt trong không gian ấm 
         </child>
       </object>
     </child>
+    <style>
+      <class name="home_m"/>
+    </style>
   </object>
 </interface>

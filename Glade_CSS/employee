@@ -1,17 +1,10 @@
 
-/*home btn*/
 
-#btn_home {
+.window_e {
     background-color: white;
     color: black;/* ==== Home Background ==== */
-    #home_window {
-        background-image: url("UI_image/bg.jpg");
-        background-size: cover;
-        background-position: center;
-        background-color: white;
-    }
-    
-    /* ==== Nút chung ==== */
+}
+/* ==== nut chung ==== */
     .btn_home, .btn_menu, #btn_stats, .btn_employee{
         background-color: white;
         color: black;
@@ -39,27 +32,20 @@
         margin-left: 10px
     }
     
-    /* ==== Logo & Icon ==== */
+    /* ==== Logo ==== */
     .logo {
         background-size: 64px 64px;
-        background-repeat: no-repeat;
-    }
-    #i1, #i2, #i3, #i4, #i5, #i6, #i7, #i8 {
-        background-size: 32px 32px;
-        background-repeat: no-repeat;
-    border: 3px solid black;
-    border-radius: 5px;
-    font-weight: 700;
-    margin-left: 10px
+        background-repeat: no-repeat
 }
-.btn_add, .btn_edit ,.btn_delete{ 
+/* ==== nut employee ===*/
+.btn_add, .btn_edit ,.btn_delete, .btn_find { 
     background-color: white;
     color: black;
     border: 3px solid black;
     border-radius: 5px;
     font-weight: 700;
 }
-.btn_add:hover, .btn_edit:hover, .btn_delete:hover{
+.btn_add:hover, .btn_edit:hover, .btn_delete:hover ,.btn_find:hover{
      background-color: white;
     color: black;
     border: 3px solid black;
@@ -67,11 +53,10 @@
     font-weight: 700;
 
 }
-.btn_add:focus, .btn_edit:focus, .btn_delete:focus {
+.btn_add:focus, .btn_edit:focus, .btn_delete:focus ,.btn_find :focus {
     background-color: white;
     color: black;
     border: 3px solid black;
     border-radius: 5px;
-    width: ;
-    font-weight: 700;
+    width: 60px; ;
 }
