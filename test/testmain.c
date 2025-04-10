@@ -7,7 +7,7 @@
 GtkWidget *stack;
 GtkWidget *entry_firstname, *entry_lastname, *entry_phone, *entry_password, *entry_confirm_password;
 GtkWidget *entry_login_phone, *entry_login_password;
-GtkWidget *window_identification;
+GtkWidget *window_identification, *Login_Register_window;
 
 // Áp dụng CSS đệ quy
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
@@ -25,7 +25,12 @@ void switch_to_login(GtkButton *button, gpointer user_data) {
 void switch_to_register(GtkButton *button, gpointer user_data) {
     gtk_stack_set_visible_child_name(GTK_STACK(stack), "register_box");
 }
-
+void switch_to_back(GtkButton *button, gpointer data) {
+        GtkWidget *identification = GTK_WIDGET(data);
+        gtk_widget_show_all(identification);
+        gtk_widget_hide(Login_Register_window);
+    
+}
 // Xử lý đăng ký
 void on_register_now_clicked(GtkButton *button, gpointer user_data) {
     const gchar *firstname = gtk_entry_get_text(GTK_ENTRY(entry_firstname));
@@ -82,7 +87,7 @@ void on_login_now_clicked(GtkButton *button, gpointer user_data) {
 void on_customer_clicked(GtkButton *button, gpointer user_data) {
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register_Cus.glade");
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Register_window"));
-
+    Login_Register_window = window;
     //resize ảnh
     GtkWidget *image = GTK_WIDGET(gtk_builder_get_object(builder, "logo_login_register"));
     GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file("UI_image/logores.jpg", NULL); 
@@ -110,13 +115,13 @@ void on_customer_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *btn_login_now = GTK_WIDGET(gtk_builder_get_object(builder, "btn_login_now"));
     GtkWidget *btn_login = GTK_WIDGET(gtk_builder_get_object(builder, "btn_login"));
     GtkWidget *btn_register = GTK_WIDGET(gtk_builder_get_object(builder, "btn_register"));
-
+    GtkWidget *btn_back = GTK_WIDGET(gtk_builder_get_object(builder, "btn_back"));
     // Gắn sự kiện
     g_signal_connect(btn_register_now, "clicked", G_CALLBACK(on_register_now_clicked), NULL);
     g_signal_connect(btn_login_now, "clicked", G_CALLBACK(on_login_now_clicked), NULL);
     g_signal_connect(btn_login, "clicked", G_CALLBACK(switch_to_login), NULL);
     g_signal_connect(btn_register, "clicked", G_CALLBACK(switch_to_register), NULL);
-
+    g_signal_connect(btn_back, "clicked", G_CALLBACK(switch_to_back), window_identification);
     // Hiện cửa sổ
     gtk_widget_show_all(window);
     gtk_widget_hide(window_identification);
@@ -126,7 +131,7 @@ void on_customer_clicked(GtkButton *button, gpointer user_data) {
 void on_management_clicked(GtkButton *button, gpointer user_data) {
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register_Mana.glade");
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Register_window"));
-
+    Login_Register_window = window;
     //resize ảnh
     GtkWidget *image = GTK_WIDGET(gtk_builder_get_object(builder,"logo_login_register"));
     GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file("UI_image/logores.jpg", NULL);
@@ -154,12 +159,14 @@ void on_management_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *btn_login_now = GTK_WIDGET(gtk_builder_get_object(builder, "btn_login_now"));
     GtkWidget *btn_login = GTK_WIDGET(gtk_builder_get_object(builder, "btn_login"));
     GtkWidget *btn_register = GTK_WIDGET(gtk_builder_get_object(builder, "btn_register"));
+    GtkWidget *btn_back = GTK_WIDGET(gtk_builder_get_object(builder, "btn_back"));
 
     // Gắn sự kiện
     g_signal_connect(btn_register_now, "clicked", G_CALLBACK(on_register_now_clicked), NULL);
     g_signal_connect(btn_login_now, "clicked", G_CALLBACK(on_login_now_clicked), NULL);
     g_signal_connect(btn_login, "clicked", G_CALLBACK(switch_to_login), NULL);
     g_signal_connect(btn_register, "clicked", G_CALLBACK(switch_to_register), NULL);
+    g_signal_connect(btn_back, "clicked", G_CALLBACK(switch_to_back), window_identification);
 
     // Hiện cửa sổ
     gtk_widget_show_all(window);
@@ -174,7 +181,6 @@ int main(int argc, char *argv[]) {
 
     GtkWidget *btn_customer = GTK_WIDGET(gtk_builder_get_object(builder, "btn_customer"));
     GtkWidget *btn_management = GTK_WIDGET(gtk_builder_get_object(builder, "btn_management"));
-
 
     // CSS cho identification
     GtkCssProvider *provider = gtk_css_provider_new();

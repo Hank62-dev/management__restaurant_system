@@ -107,4 +107,25 @@
     padding: 20px;
     background-color: #ffffff;
   }
-  
+.btn_back{
+    background: white;
+    color: black;
+    font-weight: 700;
+    border: 0.5px solid black;
+    border-radius: 0.5px;
+}
+.btn_back:hover {
+    background: #3b973e;
+    color: white;
+ 
+}
+.btn_back:focus {
+    background: #3b973e;
+    color: white;
+
+}
+.btn_back:active {
+    background: #3b973e;
+    color: white;
+
+}
