@@ -1,22 +1,28 @@
 .iden_window {
-    background: gray;
+    background: rgb(255, 255, 255);
     opacity: 0.5;
 }
-.label_youare{
-    border: 1px solid black;
+.main_box{
+    border: 2px solid rgb(23, 125, 23);
+}
+.label_intro{
+    all: unset;
+    color: rgb(23, 125, 23);
 }
 .btn_customer{
-    font-size: 12px;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 25px;
     font-weight: 700;
 }
 .btn_customer:hover {
-    font-size: 12px;
+    font-size: 25px;
     font-weight: 700;
     background: rgb(23, 125, 23);
     color: white;
 }
 .btn_customer:focus {
-    font-size: 12px;
+    font-size: 25px;
     font-weight: 700;
     background: rgb(23, 125, 23);
     color: white;
@@ -24,25 +30,22 @@
 
 /*button management*/
 .btn_management {
-    font-size: 12px;
+    font-size: 25px;
     font-weight: 700;
 }
 .btn_management:hover {
-    font-size: 12px;
+    font-size: 25px;
     font-weight: 700;
     background: rgb(23, 125, 23);
     color: white;
 }
 .btn_managemnt:focus{
-    font-size: 12px;
+    font-size: 25px;
     font-weight: 700;
     background: rgb(23, 125, 23);
     color: white;
 }
-.main_box{
-    border: 1px solid black;
-    border-radius: 1px;
-}
+
 
 
 

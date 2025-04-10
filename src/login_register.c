@@ -86,8 +86,8 @@ int main(int argc, char *argv[]) {
     
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register_Cus.glade");
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Register_window"));
-    //resize ảnh
     
+    //resize ảnh
 	GtkWidget *image = GTK_WIDGET(gtk_builder_get_object(builder, "logo_login_register"));
 	GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file("UI_image/logores.jpg", NULL); 
 	int width = 390, height = 390;

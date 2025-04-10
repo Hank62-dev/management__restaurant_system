@@ -1,277 +1,129 @@
 
-#include "test.h"
-#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+#include <string.h>
+#include <gtk/gtk.h>
+#define DATA_FILE "data/users.txt"
 
-int calculate_revenue_by_day(const char* date_target) {
-    FILE *file = fopen("data/orders.txt", "r");
-    if (!file) {
-        perror("No found file orders.txt");
-        return 0;
-    }
+GtkWidget *stack;
+GtkWidget *entry_firstname, *entry_lastname, *entry_phone, *entry_password, *entry_confirm_password;
+GtkWidget *entry_login_phone, *entry_login_password;
 
-    int total_day = 0, price = 0;
-    char date[20], item[50], category[10];
-
-    while (fscanf(file, "%s %s %d %s", date, item, &price, category) == 4) {
-        if (strcmp(date, date_target) == 0) {
-            total_day += price;  // Cộng dồn doanh thu cho ngày cần tìm
-        }
-    }
-
-    fclose(file);
-    return total_day;  // Trả về doanh thu
-}
-
-int calculate_revenue_by_month(int year, int month) {
-    FILE *file = fopen("data/orders.txt", "r");
-    if (!file) {
-        perror("No found file orders.txt");
-        return 0;
-    }
-
-    int total_month = 0, price = 0;
-    char date[20], item[50], category[10];
-
-    while (fscanf(file, "%s %s %d %s", date, item, &price, category) == 4) {
-        int year_data, month_data;
-        sscanf(date, "%d-%d", &year_data, &month_data);
-
-        if (year_data == year && month_data == month) {
-            total_month += price;  // Cộng dồn doanh thu cho tháng cần tìm
-        }
-    }
-
-    fclose(file);
-    return total_month;  // Trả về doanh thu cho tháng cần tìm
-}
-char best_food[100];   // Biến toàn cục để lưu món ăn bán chạy nhất
-char best_drink[100];  // Biến toàn cục để lưu thức uống bán chạy nhất
-// Hàm trả về chuỗi chứa món ăn bán chạy nhất
-char* find_food_best_selling() {
-    FILE *file_orders = fopen("data/orders.txt", "r");
-    if (!file_orders){
-    	printf("No found file!\n");
-    	return 0;
+//Áp dụng css
+void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
+	
+    if( gtk_css_provider_load_from_path(provider, "Glade_CSS/login_register.css", NULL) ){
+    	g_print("CSS loaded successfully!!\n");
+	}else{
+		g_print("CSS load error!!!!\n");
 	}
-
-    int maxCount = 0;
-    strcpy(best_food, "None");
-
-    char item[50], category[10], date[20];
-    int price;
-    char food_items[100][50];
-    int food_count[100] = {0};
-    int food_index = 0;
-
-    while (fscanf(file_orders, "%s %s %d %s", date, item, &price, category) == 4) {
-        if (strcmp(category, "food") == 0) {
-            int found = 0;
-            for (int i = 0; i < food_index; i++) {
-                if (strcmp(food_items[i], item) == 0) {
-                    food_count[i]++;
-                    found = 1;
-                    break;
-                }
-            }
-            if (!found) {
-                strcpy(food_items[food_index], item);
-                food_count[food_index++] = 1;
-            }
-        }
+    GtkStyleContext *context = gtk_widget_get_style_context(widget);
+    gtk_style_context_add_provider(context, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
+    if (GTK_IS_CONTAINER(widget)) {
+        gtk_container_foreach(GTK_CONTAINER(widget), (GtkCallback)apply_css, provider);
     }
-    fclose(file_orders);
-
-    for (int i = 0; i < food_index; i++) {
-        if (food_count[i] > maxCount) {
-            maxCount = food_count[i];
-            strcpy(best_food, food_items[i]);
-        }
-    }
-    return best_food;
 }
-
-// Hàm trả về chuỗi chứa thức uống bán chạy nhất
-char* find_drink_best_selling() {
-    FILE *file_orders = fopen("data/orders.txt", "r");
-    if (!file_orders){
-    	printf("No found file!\n");
-    	return 0;
-	}
-
-    int maxCount = 0;
-    strcpy(best_drink, "None");
-
-    char item[50], category[10], date[20];
-    int price;
-    char drink_items[100][50];
-    int drink_count[100] = {0};
-    int drink_index = 0;
-
-    while (fscanf(file_orders, "%s %s %d %s", date, item, &price, category) == 4) {
-        if (strcmp(category, "drink") == 0) {
-            int found = 0;
-            for (int i = 0; i < drink_index; i++) {
-                if (strcmp(drink_items[i], item) == 0) {
-                    drink_count[i]++;
-                    found = 1;
-                    break;
-                }
-            }
-            if (!found) {
-                strcpy(drink_items[drink_index], item);
-                drink_count[drink_index++] = 1;
-            }
-        }
-    }
-    fclose(file_orders);
-
-    for (int i = 0; i < drink_index; i++) {
-        if (drink_count[i] > maxCount) {
-            maxCount = drink_count[i];
-            strcpy(best_drink, drink_items[i]);
-        }
-    }
-    return best_drink;
+// Chuyển form khi nhấn nút login/register
+void switch_to_login(GtkButton *button, gpointer user_data){
+	gtk_stack_set_visible_child_name(GTK_STACK(stack),"login_box");	
 }
-/*
-char best_food[100]; // Biến toàn cục để lưu món bán chạy nhất
-char best_drink[100]; // Biến toàn cục để lưu thức uống bán chạy nhất
-int calculate_revenue_by_day() {
-    FILE *file = fopen("data/orders.txt", "r");
+void switch_to_register(GtkButton *button, gpointer user_data){
+	gtk_stack_set_visible_child_name(GTK_STACK(stack),"register_box");
+}
+// Lưu trữ thông tin đăng kí
+void on_register_now_clicked(GtkButton *button, gpointer user_data) {
+    const gchar *firstname = gtk_entry_get_text(GTK_ENTRY(entry_firstname));
+    const gchar *lastname = gtk_entry_get_text(GTK_ENTRY(entry_lastname));
+    const gchar *phone = gtk_entry_get_text(GTK_ENTRY(entry_phone));
+    const gchar *password = gtk_entry_get_text(GTK_ENTRY(entry_password));
+    const gchar *confirm_password = gtk_entry_get_text(GTK_ENTRY(entry_confirm_password));
+
+    if (g_strcmp0(password, confirm_password) != 0) {
+        g_print("Passwords do not match!\n");
+        return;
+    }
+    
+    FILE *file = fopen(DATA_FILE, "a");
+    if (file) {
+        fprintf(file, "%s %s %s %s\n", firstname, lastname, phone, password);
+        fclose(file);
+        g_print("User registered successfully!\n");
+    } else {
+        g_print("Error saving data!\n");
+    }
+}
+// Kiểm tra thông tin đăng nhập
+void on_login_now_clicked(GtkButton *button, gpointer user_data) {
+    const gchar *phone = gtk_entry_get_text(GTK_ENTRY(entry_login_phone));
+    const gchar *password = gtk_entry_get_text(GTK_ENTRY(entry_login_password));
+    
+    FILE *file = fopen(DATA_FILE, "r");
     if (!file) {
-        perror("Lỗi mở file orders.txt");
-        return 0;
+        g_print("Error opening data file!\n");
+        return;
     }
-
-    int total_day = 0, price = 0;
-    char date[20], prev_date[20] = "", item[50], category[10];
-
-    while (fscanf(file, "%s %s %d %s", date, item, &price, category) == 4) {
-        if (strcmp(prev_date, "") != 0 && strcmp(prev_date, date) != 0) {
-            // Khi ngày thay đổi, in ra doanh thu của ngày cũ
-            total_day = 0;  // Reset doanh thu cho ngày mới
+    
+    char firstname[50], lastname[50], stored_phone[20], stored_password[50];
+    int found = 0;
+    while (fscanf(file, "%s %s %s %s", firstname, lastname, stored_phone, stored_password) != EOF) {
+        if (strcmp(phone, stored_phone) == 0 && strcmp(password, stored_password) == 0) {
+            found = 1;
+            break;
         }
-        total_day += price;  // Cộng dồn doanh thu
-
-        // Lưu lại ngày để so sánh khi chuyển sang ngày khác
-        strcpy(prev_date, date);
     }
-
     fclose(file);
-    return total_day;  // Trả về doanh thu theo ngày
+    
+    if (found) {
+        g_print("Login successful! Redirecting to Home...\n");
+        // Chuyển sang giao diện Home
+    } else {
+        g_print("Invalid login credentials!\n");
+    }
 }
 
-int calculate_revenue_by_month() {
-    FILE *file = fopen("data/orders.txt", "r");
-    if (!file) {
-        perror("Lỗi mở file orders.txt");
-        return 0;
-    }
+int main(int argc, char *argv[]) {
+    gtk_init(&argc, &argv);
+    
+    GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register_Cus.glade");
+    GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Register_window"));
+    
+    //resize ảnh
+	GtkWidget *image = GTK_WIDGET(gtk_builder_get_object(builder, "logo_login_register"));
+	GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file("UI_image/logores.jpg", NULL); 
+	int width = 390, height = 390;
+	pixbuf = gdk_pixbuf_scale_simple(pixbuf, width, height, GDK_INTERP_BILINEAR);
+	gtk_image_set_from_pixbuf(GTK_IMAGE(image), pixbuf);
 
-    int total_month = 0, price = 0;
-    char date[20], month[8], prev_month[8] = "", item[50], category[10];
 
-    while (fscanf(file, "%s %s %d %s", date, item, &price, category) == 4) {
-        strncpy(month, date, 7);  // Lấy tháng và năm từ ngày
-        month[7] = '\0';
-
-        if (strcmp(prev_month, "") != 0 && strcmp(prev_month, month) != 0) {
-            // Khi tháng thay đổi, in ra doanh thu của tháng cũ
-            total_month = 0;  // Reset doanh thu cho tháng mới
-        }
-        total_month += price;  // Cộng dồn doanh thu
-
-        // Lưu lại tháng để so sánh khi chuyển sang tháng khác
-        strcpy(prev_month, month);
-    }
-
-    fclose(file);
-    return total_month;  // Trả về doanh thu theo tháng
+    stack = GTK_WIDGET(gtk_builder_get_object(builder, "stack_form"));
+    
+    // Lấy các entry từ form
+    entry_firstname = GTK_WIDGET(gtk_builder_get_object(builder, "entry_firstname"));
+    entry_lastname = GTK_WIDGET(gtk_builder_get_object(builder, "entry_lastname"));
+    entry_phone = GTK_WIDGET(gtk_builder_get_object(builder, "entry_phone"));
+    entry_password = GTK_WIDGET(gtk_builder_get_object(builder, "entry_password"));
+    entry_confirm_password = GTK_WIDGET(gtk_builder_get_object(builder, "entry_confirm_password"));
+    entry_login_phone = GTK_WIDGET(gtk_builder_get_object(builder, "entry_login_phone"));
+    entry_login_password = GTK_WIDGET(gtk_builder_get_object(builder, "entry_login_password"));
+    
+    GtkWidget *btn_register_now = GTK_WIDGET(gtk_builder_get_object(builder, "btn_register_now"));
+    GtkWidget *btn_login_now = GTK_WIDGET(gtk_builder_get_object(builder, "btn_login_now"));
+    
+    GtkWidget *btn_login = GTK_WIDGET(gtk_builder_get_object(builder,"btn_login"));
+    GtkWidget *btn_register = GTK_WIDGET(gtk_builder_get_object(builder,"btn_register"));
+    
+    g_signal_connect(btn_register_now, "clicked", G_CALLBACK(on_register_now_clicked), NULL);
+    g_signal_connect(btn_login_now, "clicked", G_CALLBACK(on_login_now_clicked), NULL);
+    
+    g_signal_connect(btn_login,"clicked",G_CALLBACK(switch_to_login), NULL);
+    g_signal_connect(btn_register,"clicked",G_CALLBACK(switch_to_register), NULL);
+    // Áp dụng CSS
+    GtkCssProvider *provider = gtk_css_provider_new();
+    apply_css(window, provider);
+    g_object_unref(provider);
+    
+    gtk_widget_show_all(window);
+    gtk_main();
+    
+    return 0;
 }
-
-// Hàm trả về chuỗi chứa món ăn bán chạy nhất
-char* find_food_best_selling() {
-    FILE *file_orders = fopen("data/orders.txt", "r");
-    if (!file_orders) return "N/A";
-
-    int maxCount = 0;
-    strcpy(best_food, "None");
-
-    char item[50], category[10], date[20];
-    int price;
-    char food_items[100][50];
-    int food_count[100] = {0};
-    int food_index = 0;
-
-    while (fscanf(file_orders, "%s %s %d %s", date, item, &price, category) == 4) {
-        if (strcmp(category, "food") == 0) {
-            int found = 0;
-            for (int i = 0; i < food_index; i++) {
-                if (strcmp(food_items[i], item) == 0) {
-                    food_count[i]++;
-                    found = 1;
-                    break;
-                }
-            }
-            if (!found) {
-                strcpy(food_items[food_index], item);
-                food_count[food_index++] = 1;
-            }
-        }
-    }
-    fclose(file_orders);
-
-    for (int i = 0; i < food_index; i++) {
-        if (food_count[i] > maxCount) {
-            maxCount = food_count[i];
-            strcpy(best_food, food_items[i]);
-        }
-    }
-    return best_food;
-}
-
-// Hàm trả về chuỗi chứa thức uống bán chạy nhất
-char* find_drink_best_selling() {
-    FILE *file_orders = fopen("data/orders.txt", "r");
-    if (!file_orders) return "N/A";
-
-    int maxCount = 0;
-    strcpy(best_drink, "None");
-
-    char item[50], category[10], date[20];
-    int price;
-    char drink_items[100][50];
-    int drink_count[100] = {0};
-    int drink_index = 0;
-
-    while (fscanf(file_orders, "%s %s %d %s", date, item, &price, category) == 4) {
-        if (strcmp(category, "drink") == 0) {
-            int found = 0;
-            for (int i = 0; i < drink_index; i++) {
-                if (strcmp(drink_items[i], item) == 0) {
-                    drink_count[i]++;
-                    found = 1;
-                    break;
-                }
-            }
-            if (!found) {
-                strcpy(drink_items[drink_index], item);
-                drink_count[drink_index++] = 1;
-            }
-        }
-    }
-    fclose(file_orders);
-
-    for (int i = 0; i < drink_index; i++) {
-        if (drink_count[i] > maxCount) {
-            maxCount = drink_count[i];
-            strcpy(best_drink, drink_items[i]);
-        }
-    }
-    return best_drink;
-}
-*/
-
