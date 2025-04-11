@@ -7,7 +7,7 @@
 GtkWidget *stack;
 GtkWidget *entry_firstname, *entry_lastname, *entry_phone, *entry_password, *entry_confirm_password;
 GtkWidget *entry_login_phone, *entry_login_password;
-GtkWidget *window_identification, *Login_Register_window;
+GtkWidget *window_identification, *Login_Register_window, *homewindow;
 
 // Áp dụng CSS đệ quy
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
@@ -26,10 +26,17 @@ void switch_to_register(GtkButton *button, gpointer user_data) {
     gtk_stack_set_visible_child_name(GTK_STACK(stack), "register_box");
 }
 void switch_to_back(GtkButton *button, gpointer data) {
-        GtkWidget *identification = GTK_WIDGET(data);
-        gtk_widget_show_all(identification);
-        gtk_widget_hide(Login_Register_window);
+    GtkWidget *identification = GTK_WIDGET(data);
+    gtk_widget_show_all(identification);
+    gtk_widget_hide(Login_Register_window);
     
+}
+//chuyển giao diện khi đăng nhập đúng
+void switch_to_login_now(GtkButton *button, gpointer user_data){
+    GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Stats.glade");
+    GtkWidget *home_window = GTK_WIDGET(gtk_builder_get_object(builder,"Revenue_window"));//id home
+    gtk_widget_show_all(home_window);
+    gtk_widget_hide(Login_Register_window);
 }
 // Xử lý đăng ký
 void on_register_now_clicked(GtkButton *button, gpointer user_data) {
@@ -78,6 +85,7 @@ void on_login_now_clicked(GtkButton *button, gpointer user_data) {
     if (found) {
         g_print("Login successful! Redirecting to Home...\n");
         // Chuyển sang giao diện Home 
+        switch_to_login_now;
     } else {
         g_print("Invalid login credentials!\n");
     }
