@@ -30,23 +30,28 @@ int main(int argc, char *argv[]) {
     builder = gtk_builder_new_from_file("UI Glade/UIhome.glade");
 
     // Lấy widget từ Glade
-    home_window = GTK_WIDGET(gtk_builder_get_object(builder, "home_window"));
+    home_window = GTK_WIDGET(gtk_builder_get_object(builder, "home_c_window"));
+     home_window = GTK_WIDGET(gtk_builder_get_object(builder, "home_m_window"));
     employee_window = GTK_WIDGET(gtk_builder_get_object(builder, "employee_window"));
 
     // Kết nối tín hiệu nút
-    GtkWidget *btn_home = GTK_WIDGET(gtk_builder_get_object(builder, "btn_home"));
+    GtkWidget *btn_home = GTK_WIDGET(gtk_builder_get_object(builder, "btn_home_c"));
+     GtkWidget *btn_home = GTK_WIDGET(gtk_builder_get_object(builder, "btn_home_m"));
     GtkWidget *btn_employee = GTK_WIDGET(gtk_builder_get_object(builder, "btn_employee"));
-    g_signal_connect(btn_home, "clicked", G_CALLBACK(on_btn_home_clicked), NULL);
+    g_signal_connect(btn_home_c, "clicked", G_CALLBACK(on_btn_home_clicked), NULL);
     g_signal_connect(btn_employee, "clicked", G_CALLBACK(on_btn_employee_clicked), NULL);
+     g_signal_connect(btn_home_m, "clicked", G_CALLBACK(on_btn_home_clicked), NULL);
 
     // Kiểm tra lại tín hiệu có được kết nối không
-    if (!btn_home) {
+    if (!btn_home_c) {
         g_print("btn_home is NULL!\n");
     }
     if (!btn_employee) {
         g_print("btn_employee is NULL!\n");
     }
-
+ if (!btn_home_m) {
+        g_print("btn_home is NULL!\n");
+    }
     // Load CSS
     css_provider = gtk_css_provider_new();
     gtk_css_provider_load_from_path(css_provider, "Glade_CSS/home.css.css", NULL);

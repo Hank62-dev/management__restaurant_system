@@ -2,42 +2,66 @@
 #include <stdlib.h>
 #include "employees.h"
 #include <gtk/gtk.h>
-
-
+void on_btn_employee_clicked(GtkButton *button, gpointer user_data) {
+    g_print("Employee button clicked\n");  // In ra để kiểm tra
+    gtk_widget_hide(home_m_window);
+    gtk_widget_show_all(employee_window);
+    // Callback: chuyển từ Employee về Home
+void on_btn_home_clicked(GtkButton *button, gpointer user_data) {
+    g_print("Home button clicked\n");  // In ra để kiểm tra
+    gtk_widget_hide(employee_window);
+    gtk_widget_show_all(home_m_window);
+GtkWidget *home_m_window;
+GtkWidget *employee_window;
+GtkWidget *home_c_window;
 int main(int argc, char *argv[]) {
-//glade 
- GtkBuilder *builder;
-    GtkWidget *window, *button, *label;
-    GtkCssProvider *cssProvider;
+    GtkBuilder *builder;
+    GtkCssProvider *css_provider;
     GdkDisplay *display;
     GdkScreen *screen;
 
     gtk_init(&argc, &argv);
-    builder = gtk_builder_new_from_file("UIhome.glade");
-      window = GTK_WIDGET(gtk_builder_get_object(builder, "main_window"));
-       if (!window) {
-        g_printerr("None widget with this ID 'main_window'\n");
-        return 1;
+
+    // Load file Glade
+    builder = gtk_builder_new_from_file("UI Glade/UIhome.glade");
+
+    // Lấy widget từ Glade
+    home_window = GTK_WIDGET(gtk_builder_get_object(builder, "home_c_window"));
+     home_window = GTK_WIDGET(gtk_builder_get_object(builder, "home_m_window"));
+    employee_window = GTK_WIDGET(gtk_builder_get_object(builder, "employee_window"));
+
+    // Kết nối tín hiệu nút
+    GtkWidget *btn_home = GTK_WIDGET(gtk_builder_get_object(builder, "btn_home_c"));
+     GtkWidget *btn_home = GTK_WIDGET(gtk_builder_get_object(builder, "btn_home_m"));
+    GtkWidget *btn_employee = GTK_WIDGET(gtk_builder_get_object(builder, "btn_employee"));
+    g_signal_connect(btn_home_c, "clicked", G_CALLBACK(on_btn_home_clicked), NULL);
+    g_signal_connect(btn_employee, "clicked", G_CALLBACK(on_btn_employee_clicked), NULL);
+     g_signal_connect(btn_home_m, "clicked", G_CALLBACK(on_btn_home_clicked), NULL);
+
+    // Kiểm tra lại tín hiệu có được kết nối không
+    if (!btn_home_c) {
+        g_print("btn_home is NULL!\n");
     }
-    g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
-    gtk_widget_show_all(window);
+    if (!btn_employee) {
+        g_print("btn_employee is NULL!\n");
+    }
+ if (!btn_home_m) {
+        g_print("btn_home is NULL!\n");
+    }
+    // Load CSS
+    css_provider = gtk_css_provider_new();
+    gtk_css_provider_load_from_path(css_provider, "Glade_CSS/home.css.css", NULL);
+    display = gdk_display_get_default();
+    screen = gdk_display_get_default_screen(display);
+    gtk_style_context_add_provider_for_screen(screen,
+        GTK_STYLE_PROVIDER(css_provider),
+        GTK_STYLE_PROVIDER_PRIORITY_USER);
+
+    // Hiển thị cửa sổ chính
+    gtk_widget_show_all(home_window);
     gtk_main();
 
     return 0;
-}      
-                 
-// css
-      cssProvider = gtk_css_provider_new();
-gtk_css_provider_load_from_path(cssProvider, "home.css", NULL);
-display = gdk_display_get_default();
-screen = gdk_display_get_default_screen(display);
-
-gtk_style_context_add_provider_for_screen(
-    screen,
-    GTK_STYLE_PROVIDER(cssProvider),
-    GTK_STYLE_PROVIDER_PRIORITY_USER
-);
-
 //
 	int choice,id,count=0;
 	Employee employees[100];
