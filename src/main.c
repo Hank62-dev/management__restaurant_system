@@ -5,15 +5,17 @@
 void on_btn_employee_clicked(GtkButton *button, gpointer user_data) {
     g_print("Employee button clicked\n");  // In ra để kiểm tra
     gtk_widget_hide(home_m_window);
-    gtk_widget_show_all(employee_window);
+    gtk_widget_show_all(employee_window);}
     // Callback: chuyển từ Employee về Home
 void on_btn_home_clicked(GtkButton *button, gpointer user_data) {
     g_print("Home button clicked\n");  // In ra để kiểm tra
     gtk_widget_hide(employee_window);
-    gtk_widget_show_all(home_m_window);
+    gtk_widget_show_all(home_m_window);}
+
 GtkWidget *home_m_window;
 GtkWidget *employee_window;
 GtkWidget *home_c_window;
+
 int main(int argc, char *argv[]) {
     GtkBuilder *builder;
     GtkCssProvider *css_provider;
@@ -50,7 +52,9 @@ int main(int argc, char *argv[]) {
     }
     // Load CSS
     css_provider = gtk_css_provider_new();
-    gtk_css_provider_load_from_path(css_provider, "Glade_CSS/home.css.css", NULL);
+    gtk_css_provider_load_from_path(css_provider, "Glade_CSS/home_m.css", NULL);
+    gtk_css_provider_load_from_path(css_provider, "Glade_CSS/home_c.css", NULL);
+    gtk_css_provider_load_from_path(css_provider, "Glade_CSS/employee.css", NULL);
     display = gdk_display_get_default();
     screen = gdk_display_get_default_screen(display);
     gtk_style_context_add_provider_for_screen(screen,
