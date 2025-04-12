@@ -85,7 +85,7 @@ void on_login_now_clicked(GtkButton *button, gpointer user_data) {
     if (found) {
         g_print("Login successful! Redirecting to Home...\n");
         // Chuyển sang giao diện Home 
-        switch_to_login_now;
+        switch_to_login_now(NULL,NULL);
     } else {
         g_print("Invalid login credentials!\n");
     }
@@ -181,7 +181,8 @@ void on_management_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_hide(window_identification);
 }
 //chưa khai báo hàm này nha
-void show_identification(){
+int main(int argc, char *argv[]) {
+    gtk_init(&argc, &argv);
 
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Identification.glade");
     window_identification = GTK_WIDGET(gtk_builder_get_object(builder, "identification_window"));
@@ -199,5 +200,6 @@ void show_identification(){
     g_signal_connect(btn_management, "clicked", G_CALLBACK(on_management_clicked), NULL);
 
     gtk_widget_show_all(window_identification);
-
+    gtk_main();
+    return 0;
 }

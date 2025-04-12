@@ -19,16 +19,14 @@
     
 }
 
-.login:hover {
-    background: green;
-    color: white;
-}
-
 .login:focus {
     background: green;
     color: white;
 }
-
+.login:hover {
+    background: green;
+    color: white;
+}
 
 /* register button */
 .register {
@@ -60,10 +58,6 @@
     padding: 10px 20px;
 }
 
-.login_now:hover {
-    background: green;
-    color: white;
-}
 
 .login_now:focus {
     background: green;
@@ -73,6 +67,12 @@
     background: green;
     color: white;
 }
+.login_now:hover {
+    background: green;
+    color: white;
+    outline: none;
+}
+
 /* register button finish */
 .register_now {
     background: white;
