@@ -1,4 +1,4 @@
-#include <gtk/gtk.h>
+//#include <gtk/gtk.h>//
 
 // Widget khai báo toàn cục
 GtkWidget *home_window;

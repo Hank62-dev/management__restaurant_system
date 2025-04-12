@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include "employees.h"
 #include <gtk/gtk.h>
+GtkWidget *home_m_window;
+GtkWidget *employee_window;
+GtkWidget *home_c_window;
 void on_btn_employee_clicked(GtkButton *button, gpointer user_data) {
     g_print("Employee button clicked\n");  // In ra để kiểm tra
     gtk_widget_hide(home_m_window);
@@ -11,10 +14,6 @@ void on_btn_home_clicked(GtkButton *button, gpointer user_data) {
     g_print("Home button clicked\n");  // In ra để kiểm tra
     gtk_widget_hide(employee_window);
     gtk_widget_show_all(home_m_window);}
-
-GtkWidget *home_m_window;
-GtkWidget *employee_window;
-GtkWidget *home_c_window;
 
 int main(int argc, char *argv[]) {
     GtkBuilder *builder;
