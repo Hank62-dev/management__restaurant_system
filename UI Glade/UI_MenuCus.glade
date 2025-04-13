@@ -35,6 +35,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <signal name="clicked" handler="on_button_home_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -48,6 +49,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <signal name="clicked" handler="on_button_menu_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -61,6 +63,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <signal name="clicked" handler="on_button_booking_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -74,6 +77,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <signal name="clicked" handler="on_button_bill_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -149,12 +153,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem1">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -174,12 +173,6 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem1">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -239,12 +232,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem2">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                               
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -264,12 +252,6 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem2">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -329,12 +311,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem4">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                               
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -354,12 +331,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem4">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -419,12 +391,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem5">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                ]
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -444,12 +411,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem5">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                  
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -509,12 +471,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem3">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                              
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -534,12 +491,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem3">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -599,12 +551,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem7">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -624,12 +571,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem7">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -689,12 +631,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem8">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                               
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -714,12 +651,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem8">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -779,12 +711,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem10">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -804,12 +731,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem10">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                  
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -869,12 +791,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem6">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -894,12 +811,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem6">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -959,12 +871,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem9">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                               
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -984,12 +891,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem9">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1049,12 +951,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem12">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                               
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1074,12 +971,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem12">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1139,12 +1031,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem11">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                              
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1164,12 +1051,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem11">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                              
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1229,12 +1111,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem13">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                              
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1254,12 +1131,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem13">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                  
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1319,12 +1191,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem15">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1344,12 +1211,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem15">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1409,12 +1271,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem16">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1434,12 +1291,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem16">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1499,12 +1351,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem14">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1524,12 +1371,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem14">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1589,12 +1431,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem17">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                               
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1614,12 +1451,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem17">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                               
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1679,12 +1511,10 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem19">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                              <object class="GtkTreeView" id="menuListItemSelected">
+                                <property name="visible">True</property>
+                                <property name="can-focus">True</property>
+                              </object>
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1704,12 +1534,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem19">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1769,12 +1594,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem21">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                  
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1794,12 +1614,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem21">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                  
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1859,12 +1674,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem18">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1884,12 +1694,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem18">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1949,12 +1754,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem22">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -1974,12 +1774,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem22">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -2039,12 +1834,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem23">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                  
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -2064,12 +1854,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem23">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -2129,12 +1914,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem24">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                  
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -2154,12 +1934,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem24">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                 
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -2219,12 +1994,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkButton" id="deleteItem20">
-                                    <property name="label" translatable="yes">-</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                               
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -2244,12 +2014,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="addItem20">
-                                    <property name="label" translatable="yes">+</property>
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">True</property>
-                                    <property name="receives-default">True</property>
-                                  </object>
+                                  
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
@@ -2362,6 +2127,7 @@
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <signal name="clicked" handler="on_confirm_order_clicked" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>

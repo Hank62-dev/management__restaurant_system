@@ -6,7 +6,7 @@
 
 /* Định dạng nền tổng thể */
 #menuManager {
-    background-color: #f5f5f5; /* Màu nền xám nhạt */
+    background-color: #f5f5f5;
 }
 
 /* Định dạng chữ mặc định */
@@ -23,8 +23,8 @@ box {
 
 /* Định dạng thanh điều hướng */
 #header {
-    background-color: #ffffff; /* Nền trắng */
-    border-bottom: 1px solid #dcdcdc; /* Viền dưới */
+    background-color: #ffffff;
+    border-bottom: 1px solid #dcdcdc;
     padding: 10px;
 }
 
@@ -39,7 +39,7 @@ box {
 #buttonHome, #buttonMenu, #buttonBooking, #buttonBill {
     font-size: 16px;
     padding: 10px 20px;
-    background-color: #007BFF; /* Màu xanh dương */
+    background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
@@ -48,7 +48,7 @@ box {
 
 /* Tab đang được chọn */
 #buttonHome {
-    background-color: #003087; /* Xanh đậm hơn */
+    background-color: #003087;
 }
 
 /* Định dạng khu vực chính */
@@ -114,7 +114,7 @@ box {
 /* Định dạng tiêu đề thông tin */
 #titleImage, #titleId, #titleName, #titleCategory, #titlePrice {
     font-size: 16px;
-    color: #2c3e50; /* Màu xanh đen */
+    color: #2c3e50;
 }
 
 /* Định dạng giá trị thông tin */
@@ -132,7 +132,7 @@ box {
 #buttonAdd {
     font-size: 16px;
     padding: 10px 20px;
-    background-color: #28a745; /* Màu xanh lá */
+    background-color: #28a745;
     color: white;
     border: none;
     border-radius: 5px;
@@ -142,7 +142,7 @@ box {
 #buttonEdit {
     font-size: 16px;
     padding: 10px 20px;
-    background-color: #007BFF; /* Màu xanh dương */
+    background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
@@ -152,7 +152,7 @@ box {
 #buttonDelete {
     font-size: 16px;
     padding: 10px 20px;
-    background-color: #dc3545; /* Màu đỏ */
+    background-color: #dc3545;
     color: white;
     border: none;
     border-radius: 5px;
@@ -180,7 +180,7 @@ box {
 }
 
 /* Định dạng các trường nhập liệu */
-#entryName, #entryCategory, #entryPrice {
+#entryId, #entryName, #entryCategory, #entryPrice {
     font-size: 14px;
     padding: 5px;
     border: 1px solid #dcdcdc;
@@ -192,7 +192,7 @@ box {
     font-size: 16px;
     font-weight: bold;
     padding: 10px 30px;
-    background-color: #28a745; /* Màu xanh lá */
+    background-color: #28a745;
     color: white;
     border: none;
     border-radius: 5px;
