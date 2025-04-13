@@ -17,7 +17,7 @@
   <object class="GtkTreeViewColumn" id="treeviewcolumn1">
     <property name="title" translatable="yes">column</property>
   </object>
-  <object class="GtkWindow" id="window_e">
+  <object class="GtkWindow" id="employee_window">
     <property name="can-focus">False</property>
     <property name="resizable">False</property>
     <property name="default-width">1366</property>
@@ -302,7 +302,7 @@
       </object>
     </child>
     <style>
-      <class name="window_e"/>
+      <class name="employee_window"/>
     </style>
   </object>
 </interface>

@@ -265,12 +265,15 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkSearchEntry">
+                      <object class="GtkSearchEntry" id="entry_search_id">
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="primary-icon-name">edit-find-symbolic</property>
                         <property name="primary-icon-activatable">False</property>
                         <property name="primary-icon-sensitive">False</property>
+                        <style>
+                          <class name="entry_search_id"/>
+                        </style>
                       </object>
                       <packing>
                         <property name="expand">False</property>
