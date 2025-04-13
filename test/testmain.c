@@ -27,7 +27,9 @@ int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
 
     // Load file Glade
-    builder = gtk_builder_new_from_file("UI Glade/UIhome.glade");
+   GtkBuilder *builder_home_m = gtk_builder_new_from_file("home_m.ui");
+GtkBuilder *builder_home_c = gtk_builder_new_from_file("home_c.ui");
+GtkBuilder *builder_employee = gtk_builder_new_from_file("employee.ui");
 
     // Lấy widget từ Glade
     home_window = GTK_WIDGET(gtk_builder_get_object(builder, "home_c_window"));
@@ -62,7 +64,8 @@ int main(int argc, char *argv[]) {
         GTK_STYLE_PROVIDER_PRIORITY_USER);
 
     // Hiển thị cửa sổ chính
-    gtk_widget_show_all(home_window);
+    gtk_widget_show_all(home_c_window);
+    gtk_widget_show_all(home_m_window);
     gtk_main();
 
     return 0;
