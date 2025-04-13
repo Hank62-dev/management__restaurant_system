@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
-  <object class="GtkWindow" id="home_c">
+  <object class="GtkWindow" id="home_c_window">
     <property name="can-focus">False</property>
     <property name="border-width">10</property>
     <property name="resizable">False</property>
@@ -34,14 +34,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_home">
+              <object class="GtkButton" id="btn_home_c">
                 <property name="label" translatable="yes">HOME</property>
-                <property name="name">btn_home</property>
+                <property name="name">btn_home_c</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <style>
-                  <class name="btn_home"/>
+                  <class name="btn_home_c"/>
                   <class name="btn_c"/>
                 </style>
               </object>
@@ -52,13 +52,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_menu">
+              <object class="GtkButton" id="btn_menu_c">
                 <property name="label" translatable="yes">MENU</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <style>
-                  <class name="btn_menu"/>
+                  <class name="btn_menu_c"/>
                   <class name="btn_c"/>
                 </style>
               </object>
@@ -69,13 +69,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_booking">
+              <object class="GtkButton" id="btn_booking_c">
                 <property name="label" translatable="yes">BOOKING</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <style>
-                  <class name="btn_booking"/>
+                  <class name="btn_booking_c"/>
                   <class name="btn_c"/>
                 </style>
               </object>
@@ -86,7 +86,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_orders">
+              <object class="GtkButton" id="btn_orders_c">
                 <property name="label" translatable="yes">ORDERS</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
@@ -199,5 +199,8 @@ phục vụ các món ăn đậm đà bản sắc Việt trong không gian ấm 
         </child>
       </object>
     </child>
+    <style>
+      <class name="home_c_window"/>
+    </style>
   </object>
 </interface>
