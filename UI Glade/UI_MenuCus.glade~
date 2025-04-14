@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
@@ -155,7 +155,7 @@
                                 <child>
                                  
                                   <packing>
-                                    <property name="expand">False</property>
+                                    <property name="expand">True</property>
                                     <property name="fill">True</property>
                                     <property name="position">0</property>
                                   </packing>
@@ -1511,7 +1511,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                              <object class="GtkTreeView" id="menuListItemSellected">
+                              <object class="GtkTreeView" id="menuListItemSelected">
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                               </object>
