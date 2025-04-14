@@ -9,12 +9,12 @@
     <property name="default-width">1366</property>
     <property name="default-height">768</property>
     <child>
-      <object class="GtkBox">
+      <object class="GtkBox" id="main_box">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkBox">
+          <object class="GtkBox" id="upper_box">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="spacing">10</property>
@@ -34,14 +34,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_home">
+              <object class="GtkButton" id="btn_home_c">
                 <property name="label" translatable="yes">HOME</property>
-                <property name="name">btn_home</property>
+                <property name="name">btn_home_c</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <style>
-                  <class name="btn_home"/>
+                  <class name="btn_home_c"/>
                   <class name="btn_c"/>
                 </style>
               </object>
@@ -52,13 +52,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_menu">
+              <object class="GtkButton" id="btn_menu_c">
                 <property name="label" translatable="yes">MENU</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <style>
-                  <class name="btn_menu"/>
+                  <class name="btn_menu_c"/>
                   <class name="btn_c"/>
                 </style>
               </object>
@@ -69,13 +69,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_booking">
+              <object class="GtkButton" id="btn_booking_c">
                 <property name="label" translatable="yes">BOOKING</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <style>
-                  <class name="btn_booking"/>
+                  <class name="btn_booking_c"/>
                   <class name="btn_c"/>
                 </style>
               </object>
@@ -86,7 +86,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_orders">
+              <object class="GtkButton" id="btn_orders_c">
                 <property name="label" translatable="yes">ORDERS</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
@@ -110,7 +110,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox">
+          <object class="GtkBox" id="bottom_box">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="orientation">vertical</property>
@@ -134,7 +134,7 @@
               <placeholder/>
             </child>
             <child>
-              <object class="GtkLabel">
+              <object class="GtkLabel" id="name">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="label" translatable="yes">VQHT</property>
@@ -152,7 +152,7 @@
               <placeholder/>
             </child>
             <child>
-              <object class="GtkBox">
+              <object class="GtkBox" id="text_intr">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <child>
