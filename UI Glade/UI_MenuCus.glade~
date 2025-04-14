@@ -153,12 +153,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem1">
@@ -173,11 +168,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -232,12 +223,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                               
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem2">
@@ -252,11 +238,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -311,12 +293,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                               
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem4">
@@ -331,12 +308,7 @@
                                   </packing>
                                 </child>
                                 <child>
-
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -391,12 +363,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                ]
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem5">
@@ -411,12 +378,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -471,12 +433,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                              
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem3">
@@ -491,12 +448,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -551,12 +503,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem7">
@@ -571,12 +518,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -631,12 +573,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                               
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem8">
@@ -651,12 +588,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -711,12 +643,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem10">
@@ -731,12 +658,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -791,12 +713,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem6">
@@ -811,12 +728,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -871,12 +783,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                               
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem9">
@@ -891,12 +798,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -951,12 +853,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                               
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem12">
@@ -971,12 +868,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -1031,12 +923,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                              
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem11">
@@ -1051,12 +938,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                              
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -1111,12 +993,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                              
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem13">
@@ -1131,12 +1008,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -1191,12 +1063,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem15">
@@ -1211,12 +1078,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -1271,12 +1133,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem16">
@@ -1291,12 +1148,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -1351,12 +1203,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem14">
@@ -1371,12 +1218,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -1431,12 +1273,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                               
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem17">
@@ -1451,12 +1288,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                               
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -1511,15 +1343,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                              <object class="GtkTreeView" id="menuListItemSellected">
-                                <property name="visible">True</property>
-                                <property name="can-focus">True</property>
-                              </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem19">
@@ -1534,12 +1358,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -1594,12 +1413,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem21">
@@ -1614,12 +1428,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -1674,12 +1483,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem18">
@@ -1694,12 +1498,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -1754,12 +1553,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem22">
@@ -1774,12 +1568,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -1834,12 +1623,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem23">
@@ -1854,12 +1638,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -1914,12 +1693,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem24">
@@ -1934,12 +1708,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                 
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -1994,12 +1763,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                               
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem20">
@@ -2014,12 +1778,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">2</property>
-                                  </packing>
+                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
