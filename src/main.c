@@ -5,8 +5,7 @@
 
 int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
-
-    if (!loadMenuFromFile(menuList, &menu_count)) {
+/*    if (!loadMenuFromFile(menuList, &menu_count)) {
         fprintf(stderr, "Failed to load menu data\n");
         return 1;
     }
@@ -18,7 +17,10 @@ int main(int argc, char *argv[]) {
         load_css("Glade_CSS/UI_MenuMana.css");
         load_manager_ui();
     }
-
+*/
+load_customer_ui();
+    
+    load_css("Glade_CSS/UI_MenuCus.css");
     gtk_main();
     return 0;
 }

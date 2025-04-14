@@ -282,12 +282,3 @@ void on_button_booking_clicked(GtkButton *button, gpointer user_data) {
 void on_button_bill_clicked(GtkButton *button, gpointer user_data) {
     g_print("Bill button clicked!\n");
 }
-
-int main(int argc, char *argv[]) {
-    gtk_init(&argc, &argv);
-    load_css("Glade_CSS/UI_MenuMana.css");
-    loadMenuFromFile(menuList, &menu_count);
-    load_manager_ui();
-    gtk_main();
-    return 0;
-}
