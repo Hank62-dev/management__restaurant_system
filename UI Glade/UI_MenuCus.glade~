@@ -158,7 +158,7 @@
 =======
                                  
                                   <packing>
-                                    <property name="expand">True</property>
+                                    <property name="expand"></property>
                                     <property name="fill">True</property>
                                     <property name="position">0</property>
                                   </packing>
@@ -1352,19 +1352,7 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-<<<<<<< HEAD
                                   <placeholder/>
-=======
-                              <object class="GtkTreeView" id="menuListItemSelected">
-                                <property name="visible">True</property>
-                                <property name="can-focus">True</property>
-                              </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">0</property>
-                                  </packing>
->>>>>>> 680354f2caa3a94ab1db6a154d995f8d1a814a49
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem19">
