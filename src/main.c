@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 #include "employees.h"
 #include <gtk/gtk.h>
@@ -60,12 +60,12 @@ int get_search_entry_id(GtkBuilder *builder) {
 // employee
     // Hàm thêm nhân viên
     void on_btn_add_clicked(GtkWidget *widget, gpointer data) {
-        addEmployee();  
+        addEmployee(employees, &count);  
         g_print("Add button clicked.\n");
     }
     // Hàm cập nhật nhân viên
     void on_btn_edit_clicked(GtkWidget *widget, gpointer data) {
-          GtkBuilder *builder = GTK_BUILDER(user_data);
+          GtkBuilder *builder = GTK_BUILDER(data);
 
          int id = get_search_entry_id(builder);
          updateEmployee(employees, &count, id);
@@ -73,14 +73,14 @@ int get_search_entry_id(GtkBuilder *builder) {
      // Hàm xóa nhân viên
         g_print("Edit button clicked.\n");
         void on_btn_delete_clicked(GtkWidget *widget, gpointer data) {
-         GtkBuilder *builder = GTK_BUILDER(user_data);
+         GtkBuilder *builder = GTK_BUILDER(data);
         int id = get_search_entry_id(builder);
          deleteEmployee(employees, &count, id);
         g_print("Delete button clicked.\n");
     }
     // Hàm tìm nhân viên
          void on_btn_find_clicked(GtkWidget *widget, gpointer data) {
-         GtkBuilder *builder = GTK_BUILDER(user_data);
+         GtkBuilder *builder = GTK_BUILDER(data);
           int id = get_search_entry_id(builder);
           searchEmployee(employees, count, id);;  
          g_print("Find button clicked.\n");
@@ -108,7 +108,7 @@ int main(int argc, char *argv[]) {
     GtkWidget *btn_home_c = GTK_WIDGET(gtk_builder_get_object(builder, "btn_home_c"));
      GtkWidget *btn_home_m = GTK_WIDGET(gtk_builder_get_object(builder, "btn_home_m"));
     GtkWidget *btn_employee = GTK_WIDGET(gtk_builder_get_object(builder, "btn_employee"));
-    g_signal_connect(btn_home_c, "clicked", G_CALLBACK(on_btn_home_c_licked), NULL);
+    g_signal_connect(btn_home_c, "clicked", G_CALLBACK(on_btn_home_c_clicked), NULL);
     g_signal_connect(btn_employee, "clicked", G_CALLBACK(on_btn_employee_clicked), NULL);
     g_signal_connect(btn_home_m, "clicked", G_CALLBACK(on_btn_home_m_clicked), NULL);
 // ======== home_c_window: LẤY VÀ KẾT NỐI NÚT ========
@@ -135,7 +135,7 @@ g_signal_connect(btn_employee_m, "clicked", G_CALLBACK(on_btn_employee_m_clicked
 
 
  // ======== employee_window: LẤY VÀ KẾT NỐI NÚT ========
- tkWidget *btn_add    = GTK_WIDGET(gtk_builder_get_object(builder, "btn_add"));
+GtkWidget *btn_add    = GTK_WIDGET(gtk_builder_get_object(builder, "btn_add"));
 GtkWidget *btn_edit     = GTK_WIDGET(gtk_builder_get_object(builder, "btn_edit"));
 GtkWidget *btn_delete   = GTK_WIDGET(gtk_builder_get_object(builder, "btn_delete"));
 GtkWidget *btn_find = GTK_WIDGET(gtk_builder_get_object(builder, "btn_find"));
@@ -171,5 +171,107 @@ g_signal_connect(btn_find, "clicked", G_CALLBACK(on_btn_find_clicked), NULL);
     gtk_main();
 
     return 0;
-//	calculate_revenue_by_day();
+
+}
+*/
+#include <stdio.h>
+#include <stdlib.h>
+#include "employees.h"
+#include <gtk/gtk.h>
+
+GtkWidget *home_m_window;
+GtkWidget *employee_window;
+GtkWidget *home_c_window;
+
+int get_search_entry_id(GtkBuilder *builder) {
+    GtkSearchEntry *search_entry = GTK_SEARCH_ENTRY(gtk_builder_get_object(builder, "entry_search_id"));
+    const gchar *text = gtk_entry_get_text(GTK_ENTRY(search_entry));
+    int id = atoi(text);
+    return id;
+}
+
+void on_btn_home_m_clicked(GtkWidget *widget, gpointer data) {
+    gtk_widget_hide(home_c_window);
+    gtk_widget_hide(employee_window);
+    gtk_widget_show_all(home_m_window);
+}
+
+void on_btn_employee_m_clicked(GtkWidget *widget, gpointer data) {
+    gtk_widget_hide(home_m_window);
+    gtk_widget_show_all(employee_window);
+}
+
+void on_btn_home_c_clicked(GtkWidget *widget, gpointer data) {
+    gtk_widget_hide(home_m_window);
+    gtk_widget_hide(employee_window);
+    gtk_widget_show_all(home_c_window);
+}
+
+void on_btn_add_clicked(GtkWidget *widget, gpointer data) {
+    addEmployee(employees, &count);
+}
+
+void on_btn_edit_clicked(GtkWidget *widget, gpointer data) {
+    GtkBuilder *builder = GTK_BUILDER(data);
+    int id = get_search_entry_id(builder);
+    updateEmployee(employees, &count, id);
+}
+
+void on_btn_delete_clicked(GtkWidget *widget, gpointer data) {
+    GtkBuilder *builder = GTK_BUILDER(data);
+    int id = get_search_entry_id(builder);
+    deleteEmployee(employees, &count, id);
+}
+
+void on_btn_find_clicked(GtkWidget *widget, gpointer data) {
+    GtkBuilder *builder = GTK_BUILDER(data);
+    int id = get_search_entry_id(builder);
+    searchEmployee(employees, count, id);
+}
+
+int main(int argc, char *argv[]) {
+    GtkBuilder *builder;
+    GtkCssProvider *css_provider;
+    GdkDisplay *display;
+    GdkScreen *screen;
+
+    gtk_init(&argc, &argv);
+
+    builder = gtk_builder_new_from_file("UI Glade/employee.glade");
+
+    home_c_window = GTK_WIDGET(gtk_builder_get_object(builder, "home_c_window"));
+    home_m_window = GTK_WIDGET(gtk_builder_get_object(builder, "home_m_window"));
+    employee_window = GTK_WIDGET(gtk_builder_get_object(builder, "employee_window"));
+
+    GtkWidget *btn_home_c = GTK_WIDGET(gtk_builder_get_object(builder, "btn_home_c"));
+    GtkWidget *btn_employee = GTK_WIDGET(gtk_builder_get_object(builder, "btn_employee"));
+    GtkWidget *btn_home_m = GTK_WIDGET(gtk_builder_get_object(builder, "btn_home_m"));
+
+    g_signal_connect(btn_home_c, "clicked", G_CALLBACK(on_btn_home_c_clicked), NULL);
+    g_signal_connect(btn_employee, "clicked", G_CALLBACK(on_btn_employee_m_clicked), NULL);
+    g_signal_connect(btn_home_m, "clicked", G_CALLBACK(on_btn_home_m_clicked), NULL);
+
+    GtkWidget *btn_add = GTK_WIDGET(gtk_builder_get_object(builder, "btn_add"));
+    GtkWidget *btn_edit = GTK_WIDGET(gtk_builder_get_object(builder, "btn_edit"));
+    GtkWidget *btn_delete = GTK_WIDGET(gtk_builder_get_object(builder, "btn_delete"));
+    GtkWidget *btn_find   = GTK_WIDGET(gtk_builder_get_object(builder, "btn_find"));
+    g_signal_connect(btn_add,    "clicked", G_CALLBACK(on_btn_add_clicked), builder);
+    g_signal_connect(btn_edit,   "clicked", G_CALLBACK(on_btn_edit_clicked), builder);
+    g_signal_connect(btn_delete, "clicked", G_CALLBACK(on_btn_delete_clicked), builder);
+    g_signal_connect(btn_find, "clicked", G_CALLBACK(on_btn_find_clicked), builder);
+
+    // Load dữ liệu từ file TXT
+    loadFromFile(employees, &count);
+
+    // Áp dụng CSS
+    css_provider = gtk_css_provider_new();
+    gtk_css_provider_load_from_path(css_provider, "style.css", NULL);
+    display = gdk_display_get_default();
+    screen = gdk_display_get_default_screen(display);
+    gtk_style_context_add_provider_for_screen(screen, GTK_STYLE_PROVIDER(css_provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
+
+    gtk_widget_show_all(employee_window);
+    gtk_main();
+
+    return 0;
 }
