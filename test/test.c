@@ -10,7 +10,6 @@
 
 // Các biến toàn cục để truy cập widget
 GtkLabel *label_daily, *label_monthly, *label_best_food, *label_best_drink;
-
 // Hàm áp dụng CSS cho giao diện
 void apply_css(GtkWidget *window) {
     GtkCssProvider *provider = gtk_css_provider_new();
