@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
@@ -153,7 +153,16 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
+<<<<<<< HEAD
                                   <placeholder/>
+=======
+                                 
+                                  <packing>
+                                    <property name="expand"></property>
+                                    <property name="fill">True</property>
+                                    <property name="position">0</property>
+                                  </packing>
+>>>>>>> 680354f2caa3a94ab1db6a154d995f8d1a814a49
                                 </child>
                                 <child>
                                   <object class="GtkLabel" id="costItem1">

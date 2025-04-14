@@ -222,4 +222,9 @@ void on_button_booking_clicked(GtkButton *button, gpointer user_data) {
 
 void on_button_bill_clicked(GtkButton *button, gpointer user_data) {
     g_print("Bill button clicked!\n");
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> 680354f2caa3a94ab1db6a154d995f8d1a814a49
