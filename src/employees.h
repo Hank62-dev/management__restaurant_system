@@ -1,6 +1,7 @@
 #ifndef STATS_H  
 #define EMPLOYEES_H
 #define MAX_EMPLOYEES 100
+#include <gtk/gtk.h>
 
 typedef struct {
     int employeeId;
@@ -19,4 +20,9 @@ void displayEmployees(Employee employees[], int count);
 void searchEmployee(Employee employees[], int count, int id);
 void deleteEmployee(Employee employees[], int *count, int id);
 void updateEmployee(Employee employees[], int *count, int id);
+
+//hamUI
+void addEmployeeFromUI(GtkBuilder *builder, Employee employees[], int *count);
+void displayEmployeeInfo(GtkBuilder *builder, Employee emp);
+
 #endif

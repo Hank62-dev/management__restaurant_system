@@ -19,8 +19,22 @@ void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
         gtk_container_foreach(GTK_CONTAINER(widget), (GtkCallback)apply_css, provider);
     };
 }
-    void on_btn_add_clicked(GtkWidget *widget, gpointer data) {
-        addEmployee(employees, &count);
+    // lay du lieu tu entry vào add 
+    void addEmployeeFromUI(GtkBuilder *builder, Employee employees[], int *count) {
+        const char *id_str = gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(builder, "entry_id")));
+        const char *name_str = gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(builder, "entry_name")));
+        const char *position_str = gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(builder, "entry_position")));
+        const char *salary_str = gtk_entry_get_text(GTK_ENTRY(gtk_builder_get_object(builder, "entry_salary")));
+    
+        // Gán giá trị vào employees[*count]
+        employees[*count].employeeId = atoi(id_str);
+        strncpy(employees[*count].fullName, name_str, sizeof(employees[*count].fullName));
+        strncpy(employees[*count].position, position_str, sizeof(employees[*count].position));
+        employees[*count].salary = atof(salary_str);
+    
+        (*count)++;
+        saveToFile(employees, count);
+        printf("Employee added from UI successfully!\n");
     }
 // lay du lieu tu search
 nt get_search_entry_id(GtkBuilder *builder) {
@@ -44,6 +58,9 @@ void displayEmployeeInfo(GtkBuilder *builder, Employee emp) {
 }
 
 //Ham xu ly employee
+    void on_btn_add_clicked(GtkWidget *widget, gpointer data) {
+    addEmployeeFromUI(employees, &count);
+}
     void on_btn_edit_clicked(GtkWidget *widget, gpointer data) {
         GtkBuilder *builder = GTK_BUILDER(data);
         int id = get_search_entry_id(builder);
@@ -54,7 +71,7 @@ void displayEmployeeInfo(GtkBuilder *builder, Employee emp) {
                 return;
             }
         }
-        g_print("Không tìm thấy nhân viên ID %d\n", id);
+        g_print("Cant find this ID %d\n", id);
     }
     
     void on_btn_delete_clicked(GtkWidget *widget, gpointer data) {
@@ -67,7 +84,7 @@ void displayEmployeeInfo(GtkBuilder *builder, Employee emp) {
                 return;
             }
         }
-        g_print("Không tìm thấy nhân viên ID %d\n", id);
+        g_print("Cant find this ID %d\n", id);
     }
     
     void on_btn_find_clicked(GtkWidget *widget, gpointer data) {
@@ -81,7 +98,7 @@ void displayEmployeeInfo(GtkBuilder *builder, Employee emp) {
             }
         }
     
-        g_print("Không tìm thấy nhân viên ID %d\n", id);
+        g_print("Cant find this ID %d\n", id);
     }
 // ==== lay entry ===
 
