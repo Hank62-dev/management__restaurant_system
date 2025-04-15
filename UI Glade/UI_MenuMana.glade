@@ -22,6 +22,7 @@
               <object class="GtkImage" id="logo">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+                <property name="pixbuf">../UI_image\logomini.png</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -1394,8 +1395,8 @@
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
                                 <child>
-                                  <!-- n-columns=2 n-rows=4 -->
-                                  <object class="GtkGrid">
+                                  <!-- n-columns=2 n-rows=5 -->
+                                  <object class="GtkGrid" id="GtkGrid">
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <child>
@@ -1503,6 +1504,31 @@
                                         <property name="top-attach">3</property>
                                       </packing>
                                     </child>
+                                    <child>
+                                      <object class="GtkLabel" id="titleOldImage">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="halign">start</property>
+                                        <property name="margin-start">10</property>
+                                        <property name="margin-bottom">10</property>
+                                        <property name="label" translatable="yes">Ảnh cũ:</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left-attach">0</property>
+                                        <property name="top-attach">4</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkImage" id="OldImage">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="stock">gtk-missing-image</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left-attach">1</property>
+                                        <property name="top-attach">4</property>
+                                      </packing>
+                                    </child>
                                   </object>
                                   <packing>
                                     <property name="expand">True</property>
@@ -1579,7 +1605,7 @@
                                 <property name="can-focus">False</property>
                                 <property name="orientation">vertical</property>
                                 <child>
-                                  <!-- n-columns=2 n-rows=4 -->
+                                  <!-- n-columns=2 n-rows=5 -->
                                   <object class="GtkGrid">
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
@@ -1686,6 +1712,33 @@
                                       <packing>
                                         <property name="left-attach">1</property>
                                         <property name="top-attach">3</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkLabel" id="titleNewImage">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="halign">start</property>
+                                        <property name="margin-start">10</property>
+                                        <property name="margin-bottom">10</property>
+                                        <property name="label" translatable="yes">Ảnh mới:</property>
+                                      </object>
+                                      <packing>
+                                        <property name="left-attach">0</property>
+                                        <property name="top-attach">4</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkFileChooserButton" id="NewImage">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="margin-start">10</property>
+                                        <property name="margin-top">10</property>
+                                        <property name="title" translatable="yes"/>
+                                      </object>
+                                      <packing>
+                                        <property name="left-attach">1</property>
+                                        <property name="top-attach">4</property>
                                       </packing>
                                     </child>
                                   </object>

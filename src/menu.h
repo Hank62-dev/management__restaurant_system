@@ -1,28 +1,42 @@
-#ifndef MENU_ITEM_H
-#define MENU_ITEM_H
- 
+#ifndef MENU_H
+#define MENU_H
+
+#define MAX_MENU_ITEMS 100
+#define MAX_ID_LENGTH 6
+#define MAX_NAME_LENGTH 100
+#define MAX_TYPE_LENGTH 50
+#define MAX_IMAGE_PATH 100
+#define MAX_ORDER_ITEMS 100
+
+// Cấu trúc cho món ăn
 typedef struct {
-    char menuId[6];          //1 chữ cái F hoặc D và 3 số đi kèm sau. Đồ ăn thì đầu dòng là F còn nước thì là D, EX: F0001, D0001
-    char dishName[100];
-    char category[100];  //đồ ăn hay nước uống
+    char menuId[MAX_ID_LENGTH];
+    char dishName[MAX_NAME_LENGTH];
+    char type[MAX_TYPE_LENGTH];
     float price;
-    
+    char imagePath[MAX_IMAGE_PATH];
 } MenuItem;
 
-int loadMenuFromFile(MenuItem menuList[], int *count);
+// Cấu trúc cho món được chọn (khách hàng)
+typedef struct {
+    char menuId[MAX_ID_LENGTH];
+    char dishName[MAX_NAME_LENGTH];
+    int quantity;
+    float price;
+} OrderItem;
 
-int getVisibleLength(const char *str);
+// Hàm cho giao diện khách hàng
+int loadMenuFromFile(MenuItem menu[], int *count);
+void printMenu(MenuItem menu[], int count);
+int saveOrderToFile(OrderItem order[], int count);
 
-void printMenu(MenuItem menuList[], int count);
+// Hàm cho giao diện quản lý
+int saveMenuToFile(MenuItem menu[], int count);
+int checkDuplicate(MenuItem menu[], int count, const char *menuId);
+int addItem(MenuItem menu[], int *count, const char *menuId, const char *dishName, 
+            const char *type, float price, const char *imagePath);
+int deleteItem(MenuItem menu[], int *count, const char *menuId);
+int editItem(MenuItem menu[], int count, const char *menuId, const char *newDishName, 
+             const char *newType, float newPrice, const char *newImagePath);
 
-void saveMenuToFile(MenuItem menuList[], int count); 
-
-int checkDuplicate(MenuItem menuList[], int count, char menuId[], char dishName[]);
-
-void addItem(MenuItem menuList[], int *count);
-
-void deleteItem(MenuItem menuList[], int *count);
-
-void editItem(MenuItem menuList[], int *count);
-
-#endif
+#endif // MENU_H
