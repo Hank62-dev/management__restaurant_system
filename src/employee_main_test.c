@@ -146,7 +146,7 @@ g_print("Succesfull: ID=%d, Name=%s, Position=%s, Salary=%.2f\n",
     
         column = gtk_tree_view_column_new_with_attributes("Salary", renderer, "text", 2, NULL);
         gtk_tree_view_append_column(GTK_TREE_VIEW(treeview), column);
-    }
+    
      // Tạo ListStore với 3 cột: ID, Name, Salary
      GtkListStore *store = gtk_list_store_new(3, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_FLOAT);
     
