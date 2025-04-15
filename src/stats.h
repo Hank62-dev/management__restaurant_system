@@ -21,10 +21,12 @@ Lưu ý: dữ liệu sẽ được tính toán từ orders.txt
 	 int bestFoodSellingCount; // Số lượng món bán chạy nhất
 	 int bestDrinkSellingCount; // Sô lượng thức uống bán chạy nhất
  } Stats;
+
  typedef struct {
     char date[11]; // Định dạng YYYY-MM-DD
     int revenue;
 } DailyRevenue;
+
  //Khai báo hàm cần làm
  int calculate_revenue_by_day();
  int calculate_revenue_by_month();

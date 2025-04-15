@@ -221,4 +221,5 @@ int main(int argc, char *argv[]) {
     g_signal_connect(btn_management, "clicked", G_CALLBACK(on_management_clicked), NULL);
 
     gtk_widget_show_all(window_identification);
+    gtk_main();
 }

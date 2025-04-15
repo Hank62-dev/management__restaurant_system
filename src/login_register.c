@@ -81,7 +81,7 @@ void on_login_now_clicked(GtkButton *button, gpointer user_data) {
     }
 }
 void load_login_ui(){
-    
+
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register_Cus.glade");
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Register_window"));
     
@@ -121,5 +121,5 @@ void load_login_ui(){
     g_object_unref(provider);
     
     gtk_widget_show_all(window);
-
+    gtk_main();
 }
