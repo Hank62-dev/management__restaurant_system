@@ -205,7 +205,7 @@ int main(int argc, char *argv[]) {
     gtk_main();
     return 0;
 }
-*/void load_identification_ui() {
+*/void show_identification() {
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Identification.glade");
     window_identification = GTK_WIDGET(gtk_builder_get_object(builder, "identification_window"));
 

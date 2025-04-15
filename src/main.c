@@ -207,11 +207,11 @@ int main(int argc, char *argv[]) {
 #include <gtk/gtk.h>
 
 // Khai báo hàm sẽ viết trong identification.c
-void load_identification_ui();
+void show_identification();
 
 int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
-    load_identification_ui();  // bắt đầu từ chọn vai trò
+    show_identification();  // bắt đầu từ chọn vai trò
     gtk_main();
     return 0;
 }
