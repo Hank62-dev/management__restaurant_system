@@ -50,6 +50,7 @@ ProductVersion=
 AutoIncBuildNr=0
 SyncProduct=1
 
+<<<<<<< HEAD
 [Unit1]
 FileName=src\orders.c
 CompileCpp=0
@@ -60,8 +61,10 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
+=======
+>>>>>>> 1694768cdf3c64d6e7510a805afb6415b8faa5da
 [Unit2]
-FileName=stats.c
+FileName=test\test.h
 CompileCpp=0
 Folder=
 Compile=1
@@ -71,7 +74,17 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=stats.h
+FileName=test\testmain.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit1]
+FileName=test\test.c
 CompileCpp=0
 Folder=
 Compile=1

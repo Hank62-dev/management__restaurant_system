@@ -1,0 +1,148 @@
+/*logo image*/
+#logo_login_register {
+    icon-size: 64px;
+    position: fixed;
+    top: 50%;
+    left: 0;
+}
+
+/*tạo khung cho form*/
+#right_box {
+    border-radius: 5px solid black;
+}
+
+/*login button*/
+#btn_login {
+    background: white;
+    color: black;
+    border: 3px solid black;
+    border-radius: 5px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#btn_login:hover {
+    background: green;
+    color: white;
+    border-radius: 5px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#btn_login:focus {
+    background: green;
+    color: white;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+/*register button*/
+#btn_register {
+    background: white;
+    color: black;
+    border: 3px solid black;
+    border-radius: 5px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#btn_register:hover {
+    background: green;
+    color: white;
+    border-radius: 5px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#btn_register:focus {
+    background: green;
+    color: white;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+/*login button finish*/
+#btn_login_now {
+    background: white;
+    color: black;
+    border-radius: 5px solid black;
+    font-weight: 700;
+    text-align: center;
+}    
+
+#btn_login_now:hover {
+    background: green;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px solid black;
+    text-align: center;
+}
+
+#btn_login_now:focus {
+    background: green;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px solid black;
+    text-align: center; 
+}
+
+/*register button finish*/
+#btn_register_now {
+    background: white;
+    color: black;
+    border-radius: 5px solid black;
+    font-weight: 700;
+    text-align: center;
+}    
+
+#btn_register_now:hover {
+    background: green;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px solid black;
+    text-align: center;
+}
+
+#btn_register_now:focus {
+    background: green;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px solid black;
+    text-align: center; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

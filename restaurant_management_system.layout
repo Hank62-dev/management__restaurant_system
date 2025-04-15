@@ -1,17 +1,56 @@
 [Editors]
+<<<<<<< HEAD
 Order=0
 Focused=0
 [Editor_0]
 CursorCol=37
 CursorRow=149
 TopLine=125
+=======
+Order=0,1,2
+Focused=2
+[Editor_0]
+CursorCol=14
+CursorRow=238
+TopLine=148
+>>>>>>> 1694768cdf3c64d6e7510a805afb6415b8faa5da
 LeftChar=1
 [Editor_1]
-CursorCol=1
-CursorRow=34
+<<<<<<< HEAD
+CursorCol=15
+CursorRow=60
+TopLine=49
+=======
+CursorCol=13
+<<<<<<< HEAD
+CursorRow=14
 TopLine=1
+>>>>>>> stats
+=======
+CursorRow=10
+<<<<<<< HEAD
+TopLine=16
+>>>>>>> stats
+=======
+TopLine=8
+>>>>>>> stats
 LeftChar=1
 [Editor_2]
+CursorCol=35
+CursorRow=202
+TopLine=1
+LeftChar=1
+[Editor_5]
+CursorCol=1
+CursorRow=1
+TopLine=1
+LeftChar=1
+[Editor_4]
+CursorCol=1
+CursorRow=1
+TopLine=1
+LeftChar=1
+[Editor_3]
 CursorCol=1
 CursorRow=1
 TopLine=1

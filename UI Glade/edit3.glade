@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="bill_layout">
+    <property name="width-request">1366</property>
+    <property name="height-request">768</property>
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkBox" id="boxngang3">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkBox" id="boxdoc3">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="spacing">10</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="home3">
+                <property name="label" translatable="yes">HOME</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <signal name="clicked" handler="on_home3_clicked" swapped="no"/>
+                <style>
+                  <class name="home3"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="menu3">
+                <property name="label" translatable="yes">MENU</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <signal name="clicked" handler="on_menu3_clicked" swapped="no"/>
+                <style>
+                  <class name="menu3"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="booking3">
+                <property name="label" translatable="yes">BOOKING</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <signal name="clicked" handler="on_booking3_clicked" swapped="no"/>
+                <style>
+                  <class name="booking3"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="bill3">
+                <property name="label" translatable="yes">BILL</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <signal name="clicked" handler="on_bill3_clicked" swapped="no"/>
+                <style>
+                  <class name="bill3"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">5</property>
+              </packing>
+            </child>
+            <style>
+              <class name="boxdoc3"/>
+            </style>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFixed" id="fixed2">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkLabel" id="restaurant_name">
+                <property name="width-request">337</property>
+                <property name="height-request">45</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">VQHT RESTAURANT</property>
+                <attributes>
+                  <attribute name="font-desc" value="Bookman Old Style Semi-Bold 15"/>
+                  <attribute name="foreground" value="#ffffffffffff"/>
+                  <attribute name="background" value="#2e2ec2c27e7e"/>
+                  <attribute name="size" value="32768"/>
+                </attributes>
+                <style>
+                  <class name="restaurant_name"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">470</property>
+                <property name="y">30</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="phone_contact">
+                <property name="width-request">106</property>
+                <property name="height-request">20</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">PHONE: 0123456789</property>
+                <style>
+                  <class name="phone_contact"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">636</property>
+                <property name="y">100</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="table_ordered">
+                <property name="width-request">100</property>
+                <property name="height-request">20</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Table: </property>
+                <style>
+                  <class name="table_ordered"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">636</property>
+                <property name="y">130</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="date_ordered">
+                <property name="width-request">100</property>
+                <property name="height-request">20</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">dd/mm/yyyy</property>
+                <style>
+                  <class name="date_ordered"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">636</property>
+                <property name="y">160</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="customer_name">
+                <property name="width-request">100</property>
+                <property name="height-request">20</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Customer's name:</property>
+                <style>
+                  <class name="customer_name"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">636</property>
+                <property name="y">190</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="subtotal_bill">
+                <property name="width-request">108</property>
+                <property name="height-request">20</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Subtotal:</property>
+                <style>
+                  <class name="subtotal_bill"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">636</property>
+                <property name="y">320</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="tar">
+                <property name="width-request">100</property>
+                <property name="height-request">20</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Tar:</property>
+                <style>
+                  <class name="tar"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">636</property>
+                <property name="y">350</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="total_bill">
+                <property name="width-request">100</property>
+                <property name="height-request">20</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Total:</property>
+                <style>
+                  <class name="total_bill"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">636</property>
+                <property name="y">380</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="confirm_bill_button">
+                <property name="label" translatable="yes">CONFIRM</property>
+                <property name="width-request">100</property>
+                <property name="height-request">34</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <signal name="clicked" handler="on_confirm_bill_button_clicked" swapped="no"/>
+                <style>
+                  <class name="home3"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">636</property>
+                <property name="y">440</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="bill_information">
+                <property name="width-request">104</property>
+                <property name="height-request">80</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">BILL INFORMATION</property>
+              </object>
+              <packing>
+                <property name="x">636</property>
+                <property name="y">225</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <style>
+          <class name="boxngang3"/>
+        </style>
+      </object>
+    </child>
+  </object>
+</interface>

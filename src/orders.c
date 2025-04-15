@@ -165,4 +165,8 @@ int main() {
     } while (choice != 6);
 
     return 0;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1694768cdf3c64d6e7510a805afb6415b8faa5da

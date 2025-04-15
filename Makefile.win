@@ -4,8 +4,13 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
+<<<<<<< HEAD
 OBJ      = src/orders.o
 LINKOBJ  = src/orders.o
+=======
+OBJ      = test/test.o test/testmain.o
+LINKOBJ  = test/test.o test/testmain.o
+>>>>>>> 1694768cdf3c64d6e7510a805afb6415b8faa5da
 LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
 CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
@@ -24,5 +29,13 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
 
+<<<<<<< HEAD
 src/orders.o: src/orders.c
 	$(CC) -c src/orders.c -o src/orders.o $(CFLAGS)
+=======
+test/test.o: test/test.c
+	$(CC) -c test/test.c -o test/test.o $(CFLAGS)
+
+test/testmain.o: test/testmain.c
+	$(CC) -c test/testmain.c -o test/testmain.o $(CFLAGS)
+>>>>>>> 1694768cdf3c64d6e7510a805afb6415b8faa5da
