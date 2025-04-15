@@ -1,5 +1,6 @@
 #include <gtk/gtk.h>
 #include <string.h>
+#include "utils.h"
 
 #define DATA_FILE "data/users.txt"
 
@@ -8,7 +9,7 @@ GtkWidget *stack;
 GtkWidget *entry_firstname, *entry_lastname, *entry_phone, *entry_password, *entry_confirm_password;
 GtkWidget *entry_login_phone, *entry_login_password;
 GtkWidget *window_identification, *Login_Register_window, *homewindow;
-
+/*
 // Áp dụng CSS đệ quy
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
     GtkStyleContext *context = gtk_widget_get_style_context(widget);
@@ -17,7 +18,7 @@ void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
         gtk_container_foreach(GTK_CONTAINER(widget), (GtkCallback)apply_css, provider);
     }
 }
-
+*/
 // Chuyển form login/register
 void switch_to_login(GtkButton *button, gpointer user_data) {
     gtk_stack_set_visible_child_name(GTK_STACK(stack), "login_box");
@@ -180,6 +181,7 @@ void on_management_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
     gtk_widget_hide(window_identification);
 }
+/*
 //chưa khai báo hàm này nha
 int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
@@ -202,4 +204,21 @@ int main(int argc, char *argv[]) {
     gtk_widget_show_all(window_identification);
     gtk_main();
     return 0;
+}
+*/void load_identification_ui() {
+    GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Identification.glade");
+    window_identification = GTK_WIDGET(gtk_builder_get_object(builder, "identification_window"));
+
+    GtkWidget *btn_customer = GTK_WIDGET(gtk_builder_get_object(builder, "btn_customer"));
+    GtkWidget *btn_management = GTK_WIDGET(gtk_builder_get_object(builder, "btn_management"));
+
+    GtkCssProvider *provider = gtk_css_provider_new();
+    gtk_css_provider_load_from_path(provider, "Glade_CSS/identification.css", NULL);
+    apply_css(window_identification, provider);
+    g_object_unref(provider);
+
+    g_signal_connect(btn_customer, "clicked", G_CALLBACK(on_customer_clicked), NULL);
+    g_signal_connect(btn_management, "clicked", G_CALLBACK(on_management_clicked), NULL);
+
+    gtk_widget_show_all(window_identification);
 }

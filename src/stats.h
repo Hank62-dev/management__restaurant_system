@@ -11,7 +11,7 @@ Lưu ý: dữ liệu sẽ được tính toán từ orders.txt
  
  #include <stdio.h>
  #include <stdlib.h>
- 
+ #include <gtk/gtk.h>
  //Cấu trúc dữ liệu thống kê
  typedef struct {
 	 int totalRevenueByDay; // Tổng doanh thu theo ngày
@@ -21,11 +21,18 @@ Lưu ý: dữ liệu sẽ được tính toán từ orders.txt
 	 int bestFoodSellingCount; // Số lượng món bán chạy nhất
 	 int bestDrinkSellingCount; // Sô lượng thức uống bán chạy nhất
  } Stats;
- 
+ typedef struct {
+    char date[11]; // Định dạng YYYY-MM-DD
+    int revenue;
+} DailyRevenue;
  //Khai báo hàm cần làm
  int calculate_revenue_by_day();
  int calculate_revenue_by_month();
  char* find_food_best_selling();
  char* find_drink_best_selling();
- 
+ void show_stats();
+ void update_stats(GtkWidget *widget, gpointer data);
+ int get_revenue_by_month(DailyRevenue revenues[], int *num_months);
+ int get_revenue_by_day(DailyRevenue revenues[], int *num_days);
+
  #endif // kết thúc khai báo chương trình

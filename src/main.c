@@ -1,4 +1,4 @@
-#include <gtk/gtk.h>
+/*#include <gtk/gtk.h>
 #include <string.h>
 
 #define DATA_FILE "data/users.txt"
@@ -200,6 +200,18 @@ int main(int argc, char *argv[]) {
 
     gtk_widget_show_all(window_identification);
     
+    gtk_main();
+    return 0;
+}
+*/
+#include <gtk/gtk.h>
+
+// Khai báo hàm sẽ viết trong identification.c
+void load_identification_ui();
+
+int main(int argc, char *argv[]) {
+    gtk_init(&argc, &argv);
+    load_identification_ui();  // bắt đầu từ chọn vai trò
     gtk_main();
     return 0;
 }

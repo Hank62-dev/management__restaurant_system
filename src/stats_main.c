@@ -7,14 +7,9 @@
 #include "stats.h"
 #define MAX_DAYS 100  
 
-typedef struct {
-    char date[11]; // Định dạng YYYY-MM-DD
-    int revenue;
-} DailyRevenue;
 
 // Các biến toàn cục để truy cập widget
 GtkLabel *label_daily, *label_monthly, *label_best_food, *label_best_drink;
-
 // Hàm áp dụng CSS cho giao diện
 void apply_css(GtkWidget *window) {
     GtkCssProvider *provider = gtk_css_provider_new();
@@ -201,12 +196,10 @@ void update_stats(GtkWidget *widget, gpointer data) {
 }
 
 // Hàm khởi chạy chương trình GTK+
-int main(int argc, char *argv[]) {
+void show_stats() {
     GtkBuilder *builder;
     GtkWidget *window, *btn_stats;
 
-    // Khởi tạo GTK
-    gtk_init(&argc, &argv);
 
     builder = gtk_builder_new_from_file("UI Glade/UI Stats.glade");
 
@@ -226,8 +219,6 @@ int main(int argc, char *argv[]) {
     apply_css(window);
     gtk_widget_show_all(window);
 
-    gtk_main();
 
-    return 0;
 }
 
