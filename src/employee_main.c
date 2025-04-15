@@ -2,10 +2,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include <gtk/gtk.h>
+#include "employees.h"
+
+extern Employee employees[];
+extern int count;
+GtkBuilder *builder;
+GtkWidget *window;
 GtkWidget *employee_window;
 GtkWidget *btn_add, *btn_edit, *btn_delete, *btn_find;
 GtkWidget *entry_search_id;
 //load css
+void apply_css(GtkWidget *window, GtkCssProvider *provider);
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
 	
     if( gtk_css_provider_load_from_path(provider, "Glade_CSS/employee.css", NULL) ){
@@ -34,10 +41,10 @@ void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
     
         (*count)++;
         saveToFile(employees, count);
-        printf("Employee added from UI successfully!\n");
+        printf("Employee added successfully!\n");
     }
 // lay du lieu tu search
-nt get_search_entry_id(GtkBuilder *builder) {
+int get_search_entry_id(GtkBuilder *builder) {
     GtkSearchEntry *search_entry = GTK_SEARCH_ENTRY(gtk_builder_get_object(builder, "entry_search_id"));
     const gchar *text = gtk_entry_get_text(GTK_ENTRY(search_entry));
     int id = atoi(text);
@@ -45,11 +52,12 @@ nt get_search_entry_id(GtkBuilder *builder) {
 }
 //ham hien thi
 void displayEmployeeInfo(GtkBuilder *builder, Employee emp) {
+    GtkEntry *entry_id = GTK_ENTRY(gtk_builder_get_object(builder, "entry_id"));
     GtkEntry *entry_name = GTK_ENTRY(gtk_builder_get_object(builder, "entry_name"));
     GtkEntry *entry_position = GTK_ENTRY(gtk_builder_get_object(builder, "entry_position"));
     GtkEntry *entry_salary = GTK_ENTRY(gtk_builder_get_object(builder, "entry_salary"));
 
-    gtk_entry_set_text(entry_name, emp.name);
+    gtk_entry_set_text(entry_name, emp.fullName);
     gtk_entry_set_text(entry_position, emp.position);
 
     char salary_str[20];
@@ -59,13 +67,13 @@ void displayEmployeeInfo(GtkBuilder *builder, Employee emp) {
 
 //Ham xu ly employee
     void on_btn_add_clicked(GtkWidget *widget, gpointer data) {
-    addEmployeeFromUI(employees, &count);
-}
+    addEmployeeFromUI(builder, employees, &count);}
+
     void on_btn_edit_clicked(GtkWidget *widget, gpointer data) {
         GtkBuilder *builder = GTK_BUILDER(data);
         int id = get_search_entry_id(builder);
         for (int i = 0; i < count; i++) {
-            if (employees[i].id == id) {
+            if (employees[i].employeeId == id) {
                 displayEmployeeInfo(builder, employees[i]); // ← hiển thị trước
                 updateEmployee(employees, &count, id);      // ← xử lý sửa
                 return;
@@ -78,7 +86,7 @@ void displayEmployeeInfo(GtkBuilder *builder, Employee emp) {
         GtkBuilder *builder = GTK_BUILDER(data);
         int id = get_search_entry_id(builder);
         for (int i = 0; i < count; i++) {
-            if (employees[i].id == id) {
+            if (employees[i].employeeId == id) {
                 displayEmployeeInfo(builder, employees[i]); // ← hiển thị trước
                deleteEmployee(employees, &count, id);      // ← xử lý sửa
                 return;
@@ -91,7 +99,7 @@ void displayEmployeeInfo(GtkBuilder *builder, Employee emp) {
         GtkBuilder *builder = GTK_BUILDER(data);
         int id = get_search_entry_id(builder);
         for (int i = 0; i < count; i++) {
-            if (employees[i].id == id) {
+            if (employees[i].employeeId == id) {
                 displayEmployeeInfo(builder, employees[i]); // <-- hiển thị thông tin
                 g_print("Đã tìm thấy nhân viên ID %d\n", id);
                 return;
@@ -104,8 +112,20 @@ void displayEmployeeInfo(GtkBuilder *builder, Employee emp) {
 
 int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
+        // === Khởi tạo builder và load file Glade ===
+        builder = gtk_builder_new();
+        if (!gtk_builder_add_from_file(builder, "Glade_CSS/employee.glade", NULL)) {
+            g_print("❌ Cant not load file Glade\n");
+            return 1;
+        }
+    
+        // === Lấy window chính ===
+        window = GTK_WIDGET(gtk_builder_get_object(builder, "employee_window"));
+        if (!window) {
+            g_print("❌ Cant find window 'employee_window' trong Glade\n");
+            return 1;
+        }
 entry_search_id = GTK_WIDGET(gtk_builder_get_object(builder, "entry_search_id"));
-
 GtkWidget *btn_add = GTK_WIDGET(gtk_builder_get_object(builder, "btn_add"));
 GtkWidget *btn_edit = GTK_WIDGET(gtk_builder_get_object(builder, "btn_edit"));
 GtkWidget *btn_delete = GTK_WIDGET(gtk_builder_get_object(builder, "btn_delete"));
@@ -119,9 +139,11 @@ g_signal_connect(btn_find, "clicked", G_CALLBACK(on_btn_find_clicked), builder);
 
     // Áp dụng CSS
     GtkCssProvider *provider = gtk_css_provider_new();
-    apply_css(window, provider);
-    g_object_unref(provider);
-    
+    if (gtk_css_provider_load_from_path(provider, "Glade_CSS/employee.css", NULL)) {
+        g_print("✅ CSS loaded successfully!\n");
+    } else {
+        g_print("❌ Failed to load CSS!\n");
+    }
     gtk_widget_show_all(window);
     gtk_main();
     
