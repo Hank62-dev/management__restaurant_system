@@ -5,6 +5,7 @@ Focused=0
 [Editor_0]
 CursorCol=37
 CursorRow=149
+<<<<<<< HEAD
 TopLine=125
 =======
 Order=0,1,2
@@ -14,6 +15,9 @@ CursorCol=14
 CursorRow=238
 TopLine=148
 >>>>>>> 1694768cdf3c64d6e7510a805afb6415b8faa5da
+=======
+TopLine=1
+>>>>>>> 86a3651e76f41cc680181345e0d54b09f3fa0982
 LeftChar=1
 [Editor_1]
 <<<<<<< HEAD
