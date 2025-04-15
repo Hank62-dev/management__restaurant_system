@@ -114,7 +114,7 @@ int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
         // === Khởi tạo builder và load file Glade ===
         builder = gtk_builder_new();
-        if (!gtk_builder_add_from_file(builder, "Glade_CSS/employee.glade", NULL)) {
+        if (!gtk_builder_add_from_file(builder, "UI Glade/employee.glade", NULL)) {
             g_print("❌ Cant not load file Glade\n");
             return 1;
         }
