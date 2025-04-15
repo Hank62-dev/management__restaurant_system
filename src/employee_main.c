@@ -147,32 +147,24 @@ int main(int argc, char *argv[]) {
     GtkCellRenderer *renderer;
 
     gtk_init(&argc, &argv);
-
-    builder = gtk_builder_new_from_file("UI_glade/employee.glade");
-
-    window = GTK_WIDGET(gtk_builder_get_object(builder, "employee_window"));
-    treeview = GTK_WIDGET(gtk_builder_get_object(builder, "employee_treeview"));
-
-    store = gtk_list_store_new(4,G_TYPE_INT, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_FLOAT);
-    gtk_tree_view_set_model(GTK_TREE_VIEW(treeview), GTK_TREE_MODEL(store));
-
-    renderer = gtk_cell_renderer_text_new();
-    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(treeview), -1, "Id", renderer, "text", 0, NULL);
-
-    renderer = gtk_cell_renderer_text_new();
-    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(treeview), -1, "Name", renderer, "text", 1, NULL);
-
-    renderer = gtk_cell_renderer_text_new();
-    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(treeview), -1, "Position", renderer, "text", 2, NULL);
-
-    renderer = gtk_cell_renderer_text_new();
-    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(treeview), -1, "Salary", renderer, "text", 3, NULL);
-
-    entry_search_id = GTK_WIDGET(gtk_builder_get_object(builder, "entry_search_id"));
-    GtkWidget *btn_add = GTK_WIDGET(gtk_builder_get_object(builder, "btn_add"));
-    GtkWidget *btn_edit = GTK_WIDGET(gtk_builder_get_object(builder, "btn_edit"));
-    GtkWidget *btn_delete = GTK_WIDGET(gtk_builder_get_object(builder, "btn_delete"));
-    GtkWidget *btn_find   = GTK_WIDGET(gtk_builder_get_object(builder, "btn_find"));
+        // === Khởi tạo builder và load file Glade ===
+        builder = gtk_builder_new();
+        if (!gtk_builder_add_from_file(builder, "Glade_CSS/employee.glade", NULL)) {
+            g_print("❌ Cant not load file Glade\n");
+            return 1;
+        }
+    
+        // === Lấy window chính ===
+        window = GTK_WIDGET(gtk_builder_get_object(builder, "employee_window"));
+        if (!window) {
+            g_print("❌ Cant find window 'employee_window' trong Glade\n");
+            return 1;
+        }
+entry_search_id = GTK_WIDGET(gtk_builder_get_object(builder, "entry_search_id"));
+GtkWidget *btn_add = GTK_WIDGET(gtk_builder_get_object(builder, "btn_add"));
+GtkWidget *btn_edit = GTK_WIDGET(gtk_builder_get_object(builder, "btn_edit"));
+GtkWidget *btn_delete = GTK_WIDGET(gtk_builder_get_object(builder, "btn_delete"));
+GtkWidget *btn_find   = GTK_WIDGET(gtk_builder_get_object(builder, "btn_find"));
 
     gtk_style_context_add_class(gtk_widget_get_style_context(btn_add), "btn_add");
     gtk_style_context_add_class(gtk_widget_get_style_context(btn_edit), "btn_edit");
