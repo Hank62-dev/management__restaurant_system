@@ -24,6 +24,9 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="pixbuf">../UI_image\logomini.png</property>
+                <style>
+                  <class name="logo_mini"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -38,6 +41,9 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <property name="margin-bottom">30</property>
+                <style>
+                  <class name="btn_home"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -52,6 +58,9 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <property name="margin-bottom">30</property>
+                <style>
+                  <class name="btn_orders"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -66,6 +75,9 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <property name="margin-bottom">30</property>
+                <style>
+                  <class name="btn_stats"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -80,6 +92,9 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <property name="margin-bottom">30</property>
+                <style>
+                  <class name="btn_employee"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -87,6 +102,9 @@
                 <property name="position">4</property>
               </packing>
             </child>
+            <style>
+              <class name="toolbar_box"/>
+            </style>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -112,10 +130,13 @@
                     <property name="hover-expand">True</property>
                     <property name="rubber-banding">True</property>
                     <property name="activate-on-single-click">True</property>
+                    <child internal-child="selection">
+                      <object class="GtkTreeSelection"/>
+                    </child>
                     <child>
                       <object class="GtkTreeViewColumn" id="customer_name">
                         <property name="resizable">True</property>
-                        <property name="sizing">autosize</property>
+                        <property name="sizing">fixed</property>
                         <property name="title" translatable="yes">Tên Khách</property>
                         <property name="expand">True</property>
                         <property name="clickable">True</property>
@@ -133,7 +154,7 @@
                     <child>
                       <object class="GtkTreeViewColumn" id="total_price">
                         <property name="resizable">True</property>
-                        <property name="sizing">autosize</property>
+                        <property name="sizing">fixed</property>
                         <property name="title" translatable="yes">Tổng Tiền</property>
                         <property name="expand">True</property>
                         <property name="clickable">True</property>
@@ -147,7 +168,7 @@
                     <child>
                       <object class="GtkTreeViewColumn" id="date_pay">
                         <property name="resizable">True</property>
-                        <property name="sizing">autosize</property>
+                        <property name="sizing">fixed</property>
                         <property name="title" translatable="yes">Ngày Thanh Toán</property>
                         <property name="clickable">True</property>
                         <property name="reorderable">True</property>
@@ -160,7 +181,7 @@
                     <child>
                       <object class="GtkTreeViewColumn" id="ID_bill">
                         <property name="resizable">True</property>
-                        <property name="sizing">autosize</property>
+                        <property name="sizing">fixed</property>
                         <property name="title" translatable="yes">ID Hóa Đơn</property>
                         <property name="clickable">True</property>
                         <property name="reorderable">True</property>
@@ -170,6 +191,9 @@
                         </child>
                       </object>
                     </child>
+                    <style>
+                      <class name="orders_view"/>
+                    </style>
                   </object>
                 </child>
               </object>
@@ -181,7 +205,13 @@
             <property name="position">1</property>
           </packing>
         </child>
+        <style>
+          <class name="main_box"/>
+        </style>
       </object>
     </child>
+    <style>
+      <class name="Orders_Window"/>
+    </style>
   </object>
 </interface>
