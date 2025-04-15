@@ -2,18 +2,6 @@
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
-  <object class="GtkListStore" id="liststore1">
-    <columns>
-      <!-- column-name Id -->
-      <column type="G_TYPE_STRING"/>
-      <!-- column-name Name -->
-      <column type="G_TYPE_STRING"/>
-      <!-- column-name Position -->
-      <column type="G_TYPE_STRING"/>
-      <!-- column-name Salary -->
-      <column type=" G_TYPE_FLOAT"/>
-    </columns>
-  </object>
   <object class="GtkTreeViewColumn" id="treeviewcolumn1">
     <property name="title" translatable="yes">column</property>
     <property name="expand">True</property>
@@ -127,6 +115,88 @@
             <property name="can-focus">False</property>
             <property name="spacing">3</property>
             <child>
+              <object class="GtkBox">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="margin-right">10</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">15</property>
+                <property name="baseline-position">top</property>
+                <child>
+                  <object class="GtkEntry" id="entry_id">
+                    <property name="name">entry_id</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="margin-left">20</property>
+                    <property name="margin-top">10</property>
+                    <property name="margin-bottom">10</property>
+                    <property name="text" translatable="yes">Id :</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry_name">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="margin-left">20</property>
+                    <property name="margin-top">10</property>
+                    <property name="margin-bottom">10</property>
+                    <property name="text" translatable="yes">Name :</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry_position">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="margin-left">20</property>
+                    <property name="margin-top">10</property>
+                    <property name="margin-bottom">10</property>
+                    <property name="text" translatable="yes">Position :</property>
+                    <style>
+                      <class name="entry_position"/>
+                    </style>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry_salary">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="margin-left">20</property>
+                    <property name="margin-top">10</property>
+                    <property name="margin-bottom">10</property>
+                    <property name="text" translatable="yes">Salary :</property>
+                    <style>
+                      <class name="entry_salary"/>
+                    </style>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkScrolledWindow" id="employee_scroll">
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
@@ -143,12 +213,14 @@
                         <property name="height-request">20</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
-                        <property name="model">liststore1</property>
                         <property name="expander-column">treeviewcolumn1</property>
                         <property name="search-column">4</property>
                         <child internal-child="selection">
                           <object class="GtkTreeSelection"/>
                         </child>
+                        <style>
+                          <class name="employee_treeview"/>
+                        </style>
                       </object>
                     </child>
                   </object>

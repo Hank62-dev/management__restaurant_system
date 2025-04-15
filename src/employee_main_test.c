@@ -3,6 +3,7 @@
 #include <string.h>
 #include <gtk/gtk.h>
 #include "employees.h"
+g_object_unref(G_OBJECT(store));
 
 extern Employee employees[];
 extern int count;
@@ -13,13 +14,15 @@ GtkWidget *btn_add, *btn_edit, *btn_delete, *btn_find;
 GtkWidget *entry_search_id;
 GtkWidget *employee_treeview;
 
+treeview = GTK_WIDGET(gtk_builder_get_object(builder, "employee_treeview"));
 //load css
+void apply_css(GtkWidget *window, GtkCssProvider *provider);
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
 	
     if( gtk_css_provider_load_from_path(provider, "Glade_CSS/employee.css", NULL) ){
     	g_print("CSS loaded successfully!!\n");
 	}else{
-		g_print("CSS load error!!!\n");
+		g_print("CSS load error!!!!\n");
 	}
     GtkStyleContext *context = gtk_widget_get_style_context(widget);
     gtk_style_context_add_provider(context, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
@@ -58,14 +61,22 @@ void displayEmployeeInfo(GtkBuilder *builder, Employee emp) {
     GtkEntry *entry_position = GTK_ENTRY(gtk_builder_get_object(builder, "entry_position"));
     GtkEntry *entry_salary = GTK_ENTRY(gtk_builder_get_object(builder, "entry_salary"));
 
+    // Hiển thị ID
+    char id_str[20];
+    sprintf(id_str, "%d", emp.employeeId);
+    gtk_entry_set_text(entry_id, id_str);
+
+    // Hiển thị các thông tin khác
     gtk_entry_set_text(entry_name, emp.fullName);
     gtk_entry_set_text(entry_position, emp.position);
 
     char salary_str[20];
-    sprintf(salary_str, "%d", emp.salary);
+    sprintf(salary_str, "%.2f", emp.salary);  // đúng kiểu float
     gtk_entry_set_text(entry_salary, salary_str);
-}
 
+g_print("Succesfull: ID=%d, Name=%s, Position=%s, Salary=%.2f\n",
+    emp.employeeId, emp.fullName, emp.position, emp.salary);
+}
 //Ham xu ly employee
     void on_btn_add_clicked(GtkWidget *widget, gpointer data) {
     addEmployeeFromUI(builder, employees, &count);}
@@ -116,7 +127,7 @@ void displayEmployeeInfo(GtkBuilder *builder, Employee emp) {
         GtkCellRenderer *renderer;
         GtkTreeViewColumn *column;
         // Lấy đối tượng treeview từ file .glade
-
+        tGtkWidget *treeview = GTK_WIDGET(gtk_builder_get_object(builder, "employee_treeview"));
         // Tạo ListStore với 3 cột: ID, Name, Salary
         store = gtk_list_store_new(3, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_FLOAT);
     
@@ -127,71 +138,96 @@ void displayEmployeeInfo(GtkBuilder *builder, Employee emp) {
         // Tạo renderer và thêm các cột
         renderer = gtk_cell_renderer_text_new();
     
-        column = gtk_tree_view_column_new_with_attributes("Name", renderer, "text", 0, NULL);
+        column = gtk_tree_view_column_new_with_attributes("ID", renderer, "text", 0, NULL);
         gtk_tree_view_append_column(GTK_TREE_VIEW(treeview), column);
     
-        column = gtk_tree_view_column_new_with_attributes("Position", renderer, "text", 1, NULL);
+        column = gtk_tree_view_column_new_with_attributes("Name", renderer, "text", 1, NULL);
         gtk_tree_view_append_column(GTK_TREE_VIEW(treeview), column);
     
         column = gtk_tree_view_column_new_with_attributes("Salary", renderer, "text", 2, NULL);
         gtk_tree_view_append_column(GTK_TREE_VIEW(treeview), column);
     }
+     // Tạo ListStore với 3 cột: ID, Name, Salary
+     GtkListStore *store = gtk_list_store_new(3, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_FLOAT);
     
+     // Gán ListStore cho TreeView
+     gtk_tree_view_set_model(GTK_TREE_VIEW(treeview), GTK_TREE_MODEL(store));
+     g_object_unref(store); // Giải phóng sau khi gán model
+ 
+     // Tạo renderer và thêm các cột
+     renderer = gtk_cell_renderer_text_new();
+ 
+     column = gtk_tree_view_column_new_with_attributes("Name", renderer, "text", 0, NULL);
+     gtk_tree_view_append_column(GTK_TREE_VIEW(treeview), column);
+ 
+     column = gtk_tree_view_column_new_with_attributes("Position", renderer, "text", 1, NULL);
+     gtk_tree_view_append_column(GTK_TREE_VIEW(treeview), column);
+ 
+     column = gtk_tree_view_column_new_with_attributes("Salary", renderer, "text", 2, NULL);
+     gtk_tree_view_append_column(GTK_TREE_VIEW(treeview), column);
+ }
 // ==== lay entry ===
 
 int main(int argc, char *argv[]) {
-    GtkWidget *treeview;
+    
+    //treeview va liststore
     GtkBuilder *builder;
     GtkWidget *window;
+    GtkWidget *treeview;
     GtkListStore *store;
     GtkCellRenderer *renderer;
-
     gtk_init(&argc, &argv);
 
-    builder = gtk_builder_new_from_file("UI_glade/employee.glade");
+    builder = gtk_builder_new_from_file("employee.glade");
 
     window = GTK_WIDGET(gtk_builder_get_object(builder, "employee_window"));
     treeview = GTK_WIDGET(gtk_builder_get_object(builder, "employee_treeview"));
 
-    store = gtk_list_store_new(4,G_TYPE_INT, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_FLOAT);
+    store = gtk_list_store_new(3, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_INT);
     gtk_tree_view_set_model(GTK_TREE_VIEW(treeview), GTK_TREE_MODEL(store));
 
-    renderer = gtk_cell_renderer_text_new();
-    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(treeview), -1, "Id", renderer, "text", 0, NULL);
+renderer = gtk_cell_renderer_text_new();
+gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(treeview), -1, "Name", renderer, "text", 0, NULL);
 
-    renderer = gtk_cell_renderer_text_new();
-    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(treeview), -1, "Name", renderer, "text", 1, NULL);
+renderer = gtk_cell_renderer_text_new();
+gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(treeview), -1, "Position", renderer, "text", 1, NULL);
 
-    renderer = gtk_cell_renderer_text_new();
-    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(treeview), -1, "Position", renderer, "text", 2, NULL);
+renderer = gtk_cell_renderer_text_new();
+gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(treeview), -1, "Salary", renderer, "text", 2, NULL);
+        // === Khởi tạo builder và load file Glade ===
+        builder = gtk_builder_new();
+        if (!gtk_builder_add_from_file(builder, "UI_Glade/employee.glade", NULL)) {
+            g_print("❌ Cant not load file Glade\n");
+            return 1;
+        
+        // === Lấy window chính ===
+        window = GTK_WIDGET(gtk_builder_get_object(builder, "employee_window"));
+        if (!window) {
+            g_print("❌ Cant find window 'employee_window' trong Glade\n");
+            return 1;
+        }
+entry_search_id = GTK_WIDGET(gtk_builder_get_object(builder, "entry_search_id"));
+GtkWidget *btn_add = GTK_WIDGET(gtk_builder_get_object(builder, "btn_add"));
+GtkWidget *btn_edit = GTK_WIDGET(gtk_builder_get_object(builder, "btn_edit"));
+GtkWidget *btn_delete = GTK_WIDGET(gtk_builder_get_object(builder, "btn_delete"));
+GtkWidget *btn_find   = GTK_WIDGET(gtk_builder_get_object(builder, "btn_find"));
 
-    renderer = gtk_cell_renderer_text_new();
-    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(treeview), -1, "Salary", renderer, "text", 3, NULL);
 
-    entry_search_id = GTK_WIDGET(gtk_builder_get_object(builder, "entry_search_id"));
-    GtkWidget *btn_add = GTK_WIDGET(gtk_builder_get_object(builder, "btn_add"));
-    GtkWidget *btn_edit = GTK_WIDGET(gtk_builder_get_object(builder, "btn_edit"));
-    GtkWidget *btn_delete = GTK_WIDGET(gtk_builder_get_object(builder, "btn_delete"));
-    GtkWidget *btn_find   = GTK_WIDGET(gtk_builder_get_object(builder, "btn_find"));
+g_signal_connect(btn_add,    "clicked", G_CALLBACK(on_btn_add_clicked), builder);
+g_signal_connect(btn_edit,   "clicked", G_CALLBACK(on_btn_edit_clicked), builder);
+g_signal_connect(btn_delete, "clicked", G_CALLBACK(on_btn_delete_clicked), builder);
+g_signal_connect(btn_find, "clicked", G_CALLBACK(on_btn_find_clicked), builder);
 
-    gtk_style_context_add_class(gtk_widget_get_style_context(btn_add), "btn_add");
-    gtk_style_context_add_class(gtk_widget_get_style_context(btn_edit), "btn_edit");
-    gtk_style_context_add_class(gtk_widget_get_style_context(btn_delete), "btn_delete");
-    gtk_style_context_add_class(gtk_widget_get_style_context(btn_find), "btn_find");
-    gtk_style_context_add_class(gtk_widget_get_style_context(employee_window), "employee_window");
-
-    g_signal_connect(btn_add,    "clicked", G_CALLBACK(on_btn_add_clicked), builder);
-    g_signal_connect(btn_edit,   "clicked", G_CALLBACK(on_btn_edit_clicked), builder);
-    g_signal_connect(btn_delete, "clicked", G_CALLBACK(on_btn_delete_clicked), builder);
-    g_signal_connect(btn_find, "clicked", G_CALLBACK(on_btn_find_clicked), builder);
-
- // Áp dụng CSS
- GtkCssProvider *provider = gtk_css_provider_new();
-    apply_css(window, provider);
-    g_object_unref(provider);
-   
+    // Áp dụng CSS
+    GtkCssProvider *provider = gtk_css_provider_new();
+    if (gtk_css_provider_load_from_path(provider, "Glade_CSS/employee.css", NULL)) {
+        g_print("✅ CSS loaded successfully!\n");
+    } else {
+        g_print("❌ Failed to load CSS!\n");
+    }
     gtk_widget_show_all(window);
     gtk_main();
-
+    
     return 0;
 }   
+}
