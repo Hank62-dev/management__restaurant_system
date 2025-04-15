@@ -9,6 +9,6 @@ extern GtkWidget *entry_firstname, *entry_lastname, *entry_phone;
 extern GtkWidget *entry_password, *entry_confirm_password;
 extern GtkWidget *entry_login_phone, *entry_login_password;
 
-void load_login_ui();
+void show_identification();
 
 #endif
