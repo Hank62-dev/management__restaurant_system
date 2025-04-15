@@ -3,7 +3,7 @@
 /* tạo khung cho form */
 #right_box {
     border: 2px solid black;
-    border-radius: 5px;
+    border-radius: 5%;
     padding: 20px;
 
 }
@@ -13,7 +13,7 @@
     background: white;
     color: black;
     border: 0.5px solid black;
-    border-radius: 0.5px;
+    border-radius: 5%;
     font-weight: 700;
     padding: 10px 20px;
     
@@ -33,7 +33,7 @@
     background: white;
     color: black;
     border: 0.5px solid black;
-    border-radius: 0.5px;
+    border-radius: 5%;
     font-weight: 700;
     padding: 10px 20px;
 }
@@ -53,7 +53,7 @@
     background: white;
     color: black;
     border: 0.5px solid black;
-    border-radius: 0.5px;
+    border-radius: 5%;
     font-weight: 700;
     padding: 10px 20px;
 }
@@ -78,7 +78,7 @@
     background: white;
     color: black;
     border: 0.5px solid black;
-    border-radius: 0.5px;
+    border-radius: 5%;
     font-weight: 700;
     padding: 10px 20px;
 }
@@ -98,12 +98,12 @@
 .entry_login_phone, .entry_login_password, .entry_firstname,
 .entry_lastname, .entry_phone, .entry_password, .entry_confirm_password {
     border: 0.5px solid black;
-    border-radius: 0.5px;
+    border-radius: 5%;
 }
 /*tạo khung*/
 .right-frame {
     border: 2px solid #4CAF50;
-    border-radius: 12px;
+    border-radius: 5%;
     padding: 20px;
     background-color: #ffffff;
   }
@@ -112,7 +112,7 @@
     color: black;
     font-weight: 700;
     border: 0.5px solid black;
-    border-radius: 0.5px;
+    border-radius: 5%;
 }
 .btn_back:hover {
     background: #3b973e;

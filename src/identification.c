@@ -9,7 +9,6 @@ GtkWidget *stack;
 GtkWidget *entry_firstname, *entry_lastname, *entry_phone, *entry_password, *entry_confirm_password;
 GtkWidget *entry_login_phone, *entry_login_password;
 GtkWidget *window_identification, *Login_Register_window, *homewindow;
-/*
 // Áp dụng CSS đệ quy
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
     GtkStyleContext *context = gtk_widget_get_style_context(widget);
@@ -18,7 +17,7 @@ void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
         gtk_container_foreach(GTK_CONTAINER(widget), (GtkCallback)apply_css, provider);
     }
 }
-*/
+
 // Chuyển form login/register
 void switch_to_login(GtkButton *button, gpointer user_data) {
     gtk_stack_set_visible_child_name(GTK_STACK(stack), "login_box");
@@ -181,7 +180,7 @@ void on_management_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_show_all(window);
     gtk_widget_hide(window_identification);
 }
-/*
+
 //chưa khai báo hàm này nha
 int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
@@ -205,7 +204,7 @@ int main(int argc, char *argv[]) {
     gtk_main();
     return 0;
 }
-*/void show_identification() {
+void show_identification() {
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Identification.glade");
     window_identification = GTK_WIDGET(gtk_builder_get_object(builder, "identification_window"));
 

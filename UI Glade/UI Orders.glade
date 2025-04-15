@@ -93,7 +93,7 @@
                 <property name="receives-default">True</property>
                 <property name="margin-bottom">30</property>
                 <style>
-                  <class name="btn_employee"/>
+                  <class name="btn_employees"/>
                 </style>
               </object>
               <packing>
