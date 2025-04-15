@@ -18,9 +18,10 @@ int main(int argc, char *argv[]) {
         load_manager_ui();
     }
 */
-load_customer_ui();
+
     
-    load_css("Glade_CSS/UI_MenuCus.css");
+    load_css("Glade_CSS/UI_MenuMana.css");
+    load_manager_ui();
     gtk_main();
     return 0;
 }
