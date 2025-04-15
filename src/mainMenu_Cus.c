@@ -10,6 +10,17 @@ int menuCount = 0;
 OrderItem orderItems[MAX_ORDER_ITEMS];
 int orderCount = 0;
 GtkWidget *menuListItemSelected;
+//Hàm load css
+void load_css(const char *css_file_path) {
+    GtkCssProvider *provider = gtk_css_provider_new();
+    GdkDisplay *display = gdk_display_get_default();
+    GdkScreen *screen = gdk_display_get_default_screen(display);
+
+    gtk_css_provider_load_from_path(provider, "Glade_CSS/UI_MenuCus.css", NULL);
+    gtk_style_context_add_provider_for_screen(screen,
+        GTK_STYLE_PROVIDER(provider),
+        GTK_STYLE_PROVIDER_PRIORITY_USER);
+}
 
 // Hàm hiển thị thông báo
 void showMessage(GtkWindow *parent, const char *message) {
@@ -138,7 +149,7 @@ int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
 
     GtkBuilder *builder = gtk_builder_new();
-    if (!gtk_builder_add_from_file(builder, "UI_MenuCus.glade", NULL)) {
+    if (!gtk_builder_add_from_file(builder, "UI Glade/UI_MenuCus.glade", NULL)) {
         printf("Lỗi tải file UI_MenuCus.glade\n");
         return 1;
     }
@@ -160,7 +171,7 @@ int main(int argc, char *argv[]) {
     g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
     g_signal_connect(confirmBtn, "clicked", G_CALLBACK(on_confirm_clicked), window);
 
-    load_css("UI_MenuCus.css");
+    load_css("Glade_CSS/UI_MenuCus.css");
     gtk_widget_show_all(window);
     gtk_main();
 
