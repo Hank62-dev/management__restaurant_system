@@ -1,4 +1,6 @@
 #include "utils.h"
+#include "stats.h"
+#include "login_register_Cus.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -29,6 +31,12 @@ void switch_to_login(GtkButton *button, gpointer user_data){
 }
 void switch_to_register(GtkButton *button, gpointer user_data){
 	gtk_stack_set_visible_child_name(GTK_STACK(stack),"register_box");
+}
+void switch_to_login_now(GtkButton *button, gpointer user_data){
+    GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Stats.glade");
+    GtkWidget *home_window = GTK_WIDGET(gtk_builder_get_object(builder,"Revenue_window"));//id home
+    gtk_widget_show_all(home_window);
+    gtk_widget_hide(Login_Register_window);
 }
 // Lưu trữ thông tin đăng kí
 void on_register_now_clicked(GtkButton *button, gpointer user_data) {
@@ -76,11 +84,13 @@ void on_login_now_clicked(GtkButton *button, gpointer user_data) {
     if (found) {
         g_print("Login successful! Redirecting to Home...\n");
         // Chuyển sang giao diện Home
+        show_stats();
+
     } else {
         g_print("Invalid login credentials!\n");
     }
 }
-void load_login_ui(){
+void login_register_Customer(){
 
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register_Cus.glade");
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Register_window"));
@@ -121,5 +131,4 @@ void load_login_ui(){
     g_object_unref(provider);
     
     gtk_widget_show_all(window);
-    gtk_main();
 }

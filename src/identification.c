@@ -1,13 +1,15 @@
 #include <gtk/gtk.h>
 #include <string.h>
 #include "utils.h"
-
+#include "login_register_Cus.h"
+#include "login_register_Mana.h"
 #define DATA_FILE "data/users.txt"
-
+/*
 // Biến toàn cục
-GtkWidget *stack;
+
 GtkWidget *entry_firstname, *entry_lastname, *entry_phone, *entry_password, *entry_confirm_password;
-GtkWidget *entry_login_phone, *entry_login_password;
+GtkWidget *entry_login_phone, *entry_login_password;*/
+GtkWidget *stack;
 GtkWidget *window_identification, *Login_Register_window, *homewindow;
 // Áp dụng CSS đệ quy
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
@@ -17,7 +19,7 @@ void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
         gtk_container_foreach(GTK_CONTAINER(widget), (GtkCallback)apply_css, provider);
     }
 }
-
+/*
 // Chuyển form login/register
 void switch_to_login(GtkButton *button, gpointer user_data) {
     gtk_stack_set_visible_child_name(GTK_STACK(stack), "login_box");
@@ -37,7 +39,10 @@ void switch_to_login_now(GtkButton *button, gpointer user_data){
     GtkWidget *home_window = GTK_WIDGET(gtk_builder_get_object(builder,"Revenue_window"));//id home
     gtk_widget_show_all(home_window);
     gtk_widget_hide(Login_Register_window);
-}
+}*/
+
+
+/*
 // Xử lý đăng ký
 void on_register_now_clicked(GtkButton *button, gpointer user_data) {
     const gchar *firstname = gtk_entry_get_text(GTK_ENTRY(entry_firstname));
@@ -90,9 +95,11 @@ void on_login_now_clicked(GtkButton *button, gpointer user_data) {
         g_print("Invalid login credentials!\n");
     }
 }
-
+*/
 // Khi nhấn nút Customer
 void on_customer_clicked(GtkButton *button, gpointer user_data) {
+    login_register_Customer();
+    /*
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register_Cus.glade");
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Register_window"));
     Login_Register_window = window;
@@ -133,11 +140,14 @@ void on_customer_clicked(GtkButton *button, gpointer user_data) {
     // Hiện cửa sổ
     gtk_widget_show_all(window);
     gtk_widget_hide(window_identification);
+
+    */
 }
 
 // Khi nhấn Management 
 void on_management_clicked(GtkButton *button, gpointer user_data) {
-    GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register_Mana.glade");
+    login_register_Management();
+    /*GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register_Mana.glade");
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Register_window"));
     Login_Register_window = window;
     //resize ảnh
@@ -178,7 +188,7 @@ void on_management_clicked(GtkButton *button, gpointer user_data) {
 
     // Hiện cửa sổ
     gtk_widget_show_all(window);
-    gtk_widget_hide(window_identification);
+    gtk_widget_hide(window_identification);*/
 }
 /*
 //chưa khai báo hàm này nha
