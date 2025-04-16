@@ -23,6 +23,9 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="pixbuf">../UI_image\logomini.png</property>
+                <style>
+                  <class name="logo"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -36,6 +39,9 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <style>
+                  <class name="buttonHome"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -49,6 +55,9 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <style>
+                  <class name="buttonMenu"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -62,6 +71,9 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <style>
+                  <class name="buttonBooking"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -75,6 +87,9 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <style>
+                  <class name="buttonBill"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -82,6 +97,9 @@
                 <property name="position">4</property>
               </packing>
             </child>
+            <style>
+              <class name="titlle"/>
+            </style>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -122,6 +140,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem1"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -136,6 +157,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem1"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -155,6 +179,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem1"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -167,6 +194,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem1"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -180,6 +210,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem1"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -194,6 +227,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem1"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">0</property>
@@ -212,6 +248,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem2"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -226,6 +265,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem2"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -245,6 +287,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem2"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -257,6 +302,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem2"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -270,6 +318,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem2"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -284,6 +335,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem2"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">1</property>
@@ -302,6 +356,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem4"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -316,6 +373,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem4"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -335,6 +395,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem4"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -347,6 +410,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem4"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -360,6 +426,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem4"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -374,6 +443,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem4"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">3</property>
@@ -392,6 +464,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem5"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -406,6 +481,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem5"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -425,6 +503,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem5"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -437,6 +518,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem5"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -450,6 +534,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem5"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -464,6 +551,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem5"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">0</property>
@@ -482,6 +572,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem3"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -496,6 +589,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem3"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -515,6 +611,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem3"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -527,6 +626,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem3"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -540,6 +642,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem3"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -554,6 +659,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem3"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">2</property>
@@ -572,6 +680,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem7"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -586,6 +697,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem7"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -605,6 +719,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem7"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -617,6 +734,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem7"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -630,6 +750,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem7"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -644,6 +767,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem7"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">2</property>
@@ -662,6 +788,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem8"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -676,6 +805,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem8"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -695,6 +827,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem8"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -707,6 +842,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem8"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -720,6 +858,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem8"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -734,6 +875,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem8"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">3</property>
@@ -752,6 +896,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem10"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -766,6 +913,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem10"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -785,6 +935,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem10"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -797,6 +950,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem10"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -810,6 +966,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem10"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -824,6 +983,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem10"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">1</property>
@@ -842,6 +1004,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem6"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -856,6 +1021,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem6"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -875,6 +1043,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem6"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -887,6 +1058,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem6"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -900,6 +1074,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem6"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -914,6 +1091,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem6"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">1</property>
@@ -932,6 +1112,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem9"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -946,6 +1129,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem9"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -965,6 +1151,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem9"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -977,6 +1166,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem9"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -990,6 +1182,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem9"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1004,6 +1199,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem9"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">0</property>
@@ -1022,6 +1220,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem12"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1036,6 +1237,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem12"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1055,6 +1259,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem12"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1067,6 +1274,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem12"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1080,6 +1290,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem12"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1094,6 +1307,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem12"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">3</property>
@@ -1112,6 +1328,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem11"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1126,6 +1345,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem11"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1145,6 +1367,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem11"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1157,6 +1382,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem11"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1170,6 +1398,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem11"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1184,6 +1415,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem11"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">2</property>
@@ -1202,6 +1436,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem13"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1216,6 +1453,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem13"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1235,6 +1475,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem13"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1247,6 +1490,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem13"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1260,6 +1506,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem13"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1274,6 +1523,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem13"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">0</property>
@@ -1292,6 +1544,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem15"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1306,6 +1561,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem15"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1325,6 +1583,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem15"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1337,6 +1598,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem15"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1350,6 +1614,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem15"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1364,6 +1631,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem15"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">2</property>
@@ -1382,6 +1652,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem16"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1396,6 +1669,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem16"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1415,6 +1691,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem16"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1427,6 +1706,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem16"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1440,6 +1722,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem16"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1454,6 +1739,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem16"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">3</property>
@@ -1472,6 +1760,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem14"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1486,6 +1777,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem14"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1505,6 +1799,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem14"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1517,6 +1814,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem14"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1530,6 +1830,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem14"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1544,6 +1847,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem14"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">1</property>
@@ -1562,6 +1868,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem17"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1576,6 +1885,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem17"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1595,6 +1907,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem17"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1607,6 +1922,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem17"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1620,6 +1938,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem17"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1634,6 +1955,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem17"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">0</property>
@@ -1652,6 +1976,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem19"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1666,6 +1993,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem19"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1685,6 +2015,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem19"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1697,6 +2030,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem19"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1710,6 +2046,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem19"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1724,6 +2063,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem19"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">2</property>
@@ -1742,6 +2084,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem21"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1756,6 +2101,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem21"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1775,6 +2123,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem21"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1787,6 +2138,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem21"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1800,6 +2154,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem21"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1814,6 +2171,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem21"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">0</property>
@@ -1832,6 +2192,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem18"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1846,6 +2209,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem18"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1865,6 +2231,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem18"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1877,6 +2246,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem18"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1890,6 +2262,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem18"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1904,6 +2279,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem18"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">1</property>
@@ -1922,6 +2300,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem22"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1936,6 +2317,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem22"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1955,6 +2339,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem22"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1967,6 +2354,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem22"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1980,6 +2370,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem22"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1994,6 +2387,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem22"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">1</property>
@@ -2012,6 +2408,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem23"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2026,6 +2425,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem23"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2045,6 +2447,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem23"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -2057,6 +2462,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem23"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -2070,6 +2478,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem23"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -2084,6 +2495,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem23"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">2</property>
@@ -2102,6 +2516,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem24"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2116,6 +2533,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem24"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2135,6 +2555,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem24"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -2147,6 +2570,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem24"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -2160,6 +2586,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem24"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -2174,6 +2603,9 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem24"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">3</property>
@@ -2192,6 +2624,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="stock">gtk-missing-image</property>
+                                <style>
+                                  <class name="imageItem20"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2206,6 +2641,9 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <property name="label" translatable="yes">Tên món</property>
+                                <style>
+                                  <class name="nameItem20"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2225,6 +2663,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="deleteItem20"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -2237,6 +2678,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="label" translatable="yes">Giá</property>
+                                    <style>
+                                      <class name="costItem20"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -2250,6 +2694,9 @@
                                     <property name="visible">True</property>
                                     <property name="can-focus">True</property>
                                     <property name="receives-default">True</property>
+                                    <style>
+                                      <class name="addItem20"/>
+                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -2264,16 +2711,28 @@
                                 <property name="position">2</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItem20"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="left-attach">3</property>
                             <property name="top-attach">4</property>
                           </packing>
                         </child>
+                        <style>
+                          <class name="menuListItemSelect"/>
+                        </style>
                       </object>
                     </child>
+                    <style>
+                      <class name="GtkViewport"/>
+                    </style>
                   </object>
                 </child>
+                <style>
+                  <class name="menuList1"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -2352,6 +2811,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected1"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2411,6 +2873,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected2"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2470,6 +2935,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected3"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2529,6 +2997,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected5"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2588,6 +3059,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected4"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2647,6 +3121,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected7"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2706,6 +3183,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected6"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2765,6 +3245,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected8"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2824,6 +3307,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected9"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2883,6 +3369,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected10"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -2942,6 +3431,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected12"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -3001,6 +3493,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected11"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -3060,6 +3555,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected14"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -3119,6 +3617,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected13"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -3178,6 +3679,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected15"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -3237,6 +3741,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected16"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -3296,6 +3803,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected17"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -3355,6 +3865,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected18"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -3414,6 +3927,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected19"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -3473,6 +3989,9 @@
                                     <property name="position">3</property>
                                   </packing>
                                 </child>
+                                <style>
+                                  <class name="menuListItemSelected20"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -3480,10 +3999,16 @@
                                 <property name="position">19</property>
                               </packing>
                             </child>
+                            <style>
+                              <class name="menuListItemSelected"/>
+                            </style>
                           </object>
                         </child>
                       </object>
                     </child>
+                    <style>
+                      <class name="menuList2"/>
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">True</property>
@@ -3497,6 +4022,9 @@
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
+                    <style>
+                      <class name="buttonConfirm"/>
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -3504,6 +4032,9 @@
                     <property name="position">1</property>
                   </packing>
                 </child>
+                <style>
+                  <class name="menuListCofirm"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -3511,6 +4042,9 @@
                 <property name="position">1</property>
               </packing>
             </child>
+            <style>
+              <class name="menuDetails"/>
+            </style>
           </object>
           <packing>
             <property name="expand">True</property>
@@ -3518,7 +4052,13 @@
             <property name="position">1</property>
           </packing>
         </child>
+        <style>
+          <class name="menuHome"/>
+        </style>
       </object>
     </child>
+    <style>
+      <class name="menuCustomer"/>
+    </style>
   </object>
 </interface>

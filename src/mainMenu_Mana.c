@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "menu.h"
+#include "menu_Mana.h"
 
 // Biến toàn cục
 MenuItem menuList[MAX_MENU_ITEMS];

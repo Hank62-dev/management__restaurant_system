@@ -22,6 +22,7 @@
               <object class="GtkImage" id="logo">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+                <property name="pixbuf">../UI_image\logomini.png</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -2295,12 +2296,12 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
-                          <object class="GtkBox" id="menuListItemSellected">
+                          <object class="GtkBox" id="menuListItemSelected">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <property name="orientation">vertical</property>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected1">
+                              <object class="GtkBox" id="menuListItemSelected1">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -2359,7 +2360,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected2">
+                              <object class="GtkBox" id="menuListItemSelected2">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -2418,7 +2419,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected3">
+                              <object class="GtkBox" id="menuListItemSelected3">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -2477,7 +2478,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected5">
+                              <object class="GtkBox" id="menuListItemSelected5">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -2536,7 +2537,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected4">
+                              <object class="GtkBox" id="menuListItemSelected4">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -2654,7 +2655,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected6">
+                              <object class="GtkBox" id="menuListItemSelected6">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -2713,7 +2714,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected8">
+                              <object class="GtkBox" id="menuListItemSelected8">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -2772,7 +2773,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected9">
+                              <object class="GtkBox" id="menuListItemSelected9">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -2831,7 +2832,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected10">
+                              <object class="GtkBox" id="menuListItemSelected10">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -2890,7 +2891,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected12">
+                              <object class="GtkBox" id="menuListItemSelected12">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -2949,7 +2950,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected11">
+                              <object class="GtkBox" id="menuListItemSelected11">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -3008,7 +3009,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected14">
+                              <object class="GtkBox" id="menuListItemSelected14">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -3067,7 +3068,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected13">
+                              <object class="GtkBox" id="menuListItemSelected13">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -3126,7 +3127,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected15">
+                              <object class="GtkBox" id="menuListItemSelected15">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -3185,7 +3186,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected16">
+                              <object class="GtkBox" id="menuListItemSelected16">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -3244,7 +3245,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected17">
+                              <object class="GtkBox" id="menuListItemSelected17">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -3303,7 +3304,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected18">
+                              <object class="GtkBox" id="menuListItemSelected18">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -3362,7 +3363,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected19">
+                              <object class="GtkBox" id="menuListItemSelected19">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>
@@ -3421,7 +3422,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="menuListItemSellected20">
+                              <object class="GtkBox" id="menuListItemSelected20">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <child>

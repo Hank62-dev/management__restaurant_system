@@ -1,5 +1,5 @@
-#ifndef MENU_H
-#define MENU_H
+#ifndef MENU_CUS_H
+#define MENU_CUS_H
 
 #define MAX_MENU_ITEMS 100
 #define MAX_ID_LENGTH 6
@@ -30,13 +30,4 @@ int loadMenuFromFile(MenuItem menu[], int *count);
 void printMenu(MenuItem menu[], int count);
 int saveOrderToFile(OrderItem order[], int count);
 
-// Hàm cho giao diện quản lý
-int saveMenuToFile(MenuItem menu[], int count);
-int checkDuplicate(MenuItem menu[], int count, const char *menuId);
-int addItem(MenuItem menu[], int *count, const char *menuId, const char *dishName, 
-            const char *type, float price, const char *imagePath);
-int deleteItem(MenuItem menu[], int *count, const char *menuId);
-int editItem(MenuItem menu[], int count, const char *menuId, const char *newDishName, 
-             const char *newType, float newPrice, const char *newImagePath);
-
-#endif // MENU_H
+#endif // MENU_CUS_H

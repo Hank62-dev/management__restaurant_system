@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
-  <object class="GtkWindow" id="menuCustomer">
+  <object class="GtkWindow" id="menuManager">
     <property name="can-focus">False</property>
     <property name="border-width">10</property>
     <property name="default-width">1366</property>

@@ -5,7 +5,7 @@
 }
 
 /* Định dạng nền tổng thể */
-#menuManager {
+.menuManager {
     background-color: #f5f5f5;
 }
 
@@ -22,21 +22,21 @@ box {
 }
 
 /* Định dạng thanh điều hướng */
-#header {
+.header {
     background-color: #ffffff;
     border-bottom: 1px solid #dcdcdc;
     padding: 10px;
 }
 
 /* Định dạng logo */
-#logo {
+.logo {
     min-width: 50px;
     min-height: 50px;
     margin: 0 20px 0 0;
 }
 
 /* Định dạng các nút trong thanh điều hướng */
-#buttonHome, #buttonMenu, #buttonBooking, #buttonBill {
+.buttonHome, .buttonMenu, .buttonBooking, .buttonBill {
     font-size: 16px;
     padding: 10px 20px;
     background-color: #007BFF;
@@ -47,17 +47,17 @@ box {
 }
 
 /* Tab đang được chọn */
-#buttonHome {
+.buttonHome {
     background-color: #003087;
 }
 
 /* Định dạng khu vực chính */
-#mainContent {
+.mainContent {
     margin-top: 10px;
 }
 
 /* Định dạng danh sách món ăn */
-#menuListItemSelect {
+.menuListItemSelect {
     background-color: #ffffff;
     border: 1px solid #dcdcdc;
     border-radius: 5px;
@@ -65,12 +65,12 @@ box {
 }
 
 /* Định dạng các box món ăn */
-#menuListItem1, #menuListItem2, #menuListItem3, #menuListItem4,
-#menuListItem5, #menuListItem6, #menuListItem7, #menuListItem8,
-#menuListItem9, #menuListItem10, #menuListItem11, #menuListItem12,
-#menuListItem13, #menuListItem14, #menuListItem15, #menuListItem16,
-#menuListItem17, #menuListItem18, #menuListItem19, #menuListItem20,
-#menuListItem21, #menuListItem22, #menuListItem23, #menuListItem24 {
+.menuListItem1, .menuListItem2, .menuListItem3, .menuListItem4,
+.menuListItem5, .menuListItem6, .menuListItem7, .menuListItem8,
+.menuListItem9, .menuListItem10, .menuListItem11, .menuListItem12,
+.menuListItem13, .menuListItem14, .menuListItem15, .menuListItem16,
+.menuListItem17, .menuListItem18, .menuListItem19, .menuListItem20,
+.menuListItem21, .menuListItem22, .menuListItem23, .menuListItem24 {
     background-color: #ffffff;
     border: 1px solid #dcdcdc;
     border-radius: 5px;
@@ -79,24 +79,24 @@ box {
 }
 
 /* Định dạng hình ảnh món ăn */
-#imageItem1, #imageItem2, #imageItem W3, #imageItem4,
-#imageItem5, #imageItem6, #imageItem7, #imageItem8,
-#imageItem9, #imageItem10, #imageItem11, #imageItem12,
-#imageItem13, #imageItem14, #imageItem15, #imageItem16,
-#imageItem17, #imageItem18, #imageItem19, #imageItem20,
-#imageItem21, #imageItem22, #imageItem23, #imageItem24 {
+.imageItem1, .imageItem2, .imageItem3, .imageItem4,
+.imageItem5, .imageItem6, .imageItem7, .imageItem8,
+.imageItem9, .imageItem10, .imageItem11, .imageItem12,
+.imageItem13, .imageItem14, .imageItem15, .imageItem16,
+.imageItem17, .imageItem18, .imageItem19, .imageItem20,
+.imageItem21, .imageItem22, .imageItem23, .imageItem24 {
     min-width: 100px;
     min-height: 100px;
     margin-bottom: 5px;
 }
 
 /* Định dạng tên món ăn */
-#nameItem1, #nameItem2, #nameItem3, #nameItem4,
-#nameItem5, #nameItem6, #nameItem7, #nameItem8,
-#nameItem9, #nameItem10, #nameItem11, #nameItem12,
-#nameItem13, #nameItem14, #nameItem15, #nameItem16,
-#nameItem17, #nameItem18, #nameItem19, #nameItem20,
-#nameItem21, #nameItem22, #nameItem23, #nameItem24 {
+.nameItem1, .nameItem2, .nameItem3, .nameItem4,
+.nameItem5, .nameItem6, .nameItem7, .nameItem8,
+.nameItem9, .nameItem10, .nameItem11, .nameItem12,
+.nameItem13, .nameItem14, .nameItem15, .nameItem16,
+.nameItem17, .nameItem18, .nameItem19, .nameItem20,
+.nameItem21, .nameItem22, .nameItem23, .nameItem24 {
     font-size: 16px;
     color: #2c3e50;
     font-weight: bold;
@@ -104,18 +104,18 @@ box {
 }
 
 /* Định dạng giá món ăn */
-#costItem1, #costItem2, #costItem3, #costItem4,
-#costItem5, #costItem6, #costItem7, #costItem8,
-#costItem9, #costItem10, #costItem11, #costItem12,
-#costItem13, #costItem14, #costItem15, #costItem16,
-#costItem17, #costItem18, #costItem19, #costItem20,
-#costItem21, #costItem22, #costItem23, #costItem24 {
+.costItem1, .costItem2, .costItem3, .costItem4,
+.costItem5, .costItem6, .costItem7, .costItem8,
+.costItem9, .costItem10, .costItem11, .costItem12,
+.costItem13, .costItem14, .costItem15, .costItem16,
+.costItem17, .costItem18, .costItem19, .costItem20,
+.costItem21, .costItem22, .costItem23, .costItem24 {
     font-size: 14px;
     color: #e67e22;
     font-weight: bold;
 }
 
-#GtkGrid {
+.GtkGrid {
     background-color: #ffffff;
     border: 1px solid #dcdcdc;
     border-radius: 5px;
@@ -123,27 +123,27 @@ box {
 }
 
 /* Định dạng các tiêu đề trong GtkGrid */
-#titleOldId, #titleOldName, #titleOldCategory, #titleOldPrice, #titleOldImage,
-#titleNewId, #titleNewName, #titleNewCategory, #titleNewPrice, #titleNewImage {
+.titleOldId, .titleOldName, .titleOldCategory, .titleOldPrice, .titleOldImage,
+.titleNewId, .titleNewName, .titleNewCategory, .titleNewPrice, .titleNewImage {
     font-size: 16px;
     color: #2c3e50;
 }
 
 /* Định dạng các label giá trị cũ */
-#OldId, #OldName, #OldCategory, #OldPrice, #OldImage {
+.OldId, .OldName, .OldCategory, .OldPrice, .OldImage {
     font-size: 14px;
     color: #555555;
 }
 
 /* Định dạng các ô nhập liệu mới */
-#NewId, #NewName, #NewCategory, #NewPrice, #NewImage {
+.NewId, .NewName, .NewCategory, .NewPrice, .NewImage {
     font-size: 14px;
     padding: 5px;
     border: 1px solid #dcdcdc;
     border-radius: 5px;
 }
 
-box[id^="menuListItem"] {
+box[class^="menuListItem"] {
     background-color: #ffffff;
     border: 1px solid #dcdcdc;
     border-radius: 5px;
@@ -151,27 +151,27 @@ box[id^="menuListItem"] {
     margin: 5px;
 }
 
-image[id^="imageItem"] {
+image[class^="imageItem"] {
     min-width: 100px;
     min-height: 100px;
     margin-bottom: 5px;
 }
 
-label[id^="nameItem"] {
+label[class^="nameItem"] {
     font-size: 16px;
     color: #2c3e50;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-label[id^="costItem"] {
+label[class^="costItem"] {
     font-size: 14px;
     color: #e67e22;
     font-weight: bold;
 }
 
 /* Định dạng khu vực chi tiết món */
-#menuDetails {
+.menuDetails {
     min-width: 300px;
     background-color: #ffffff;
     border: 1px solid #dcdcdc;
@@ -180,36 +180,36 @@ label[id^="costItem"] {
 }
 
 /* Định dạng khu vực thông tin món */
-#infoBox {
+.infoBox {
     margin-bottom: 20px;
 }
 
 /* Định dạng hình ảnh món */
-#imageDisplay {
+.imageDisplay {
     min-width: 150px;
     min-height: 150px;
     margin-bottom: 10px;
 }
 
 /* Định dạng tiêu đề thông tin */
-#titleImage, #titleId, #titleName, #titleCategory, #titlePrice {
+.titleImage, .titleId, .titleName, .titleCategory, .titlePrice {
     font-size: 16px;
     color: #2c3e50;
 }
 
 /* Định dạng giá trị thông tin */
-#labelId, #labelName, #labelCategory, #labelPrice {
+.labelId, .labelName, .labelCategory, .labelPrice {
     font-size: 14px;
     color: #555555;
 }
 
 /* Định dạng các nút hành động */
-#actionButtons {
+.actionButtons {
     margin-bottom: 20px;
 }
 
 /* Định dạng nút "Thêm" */
-#buttonAdd {
+.buttonAdd {
     font-size: 16px;
     padding: 10px 20px;
     background-color: #28a745;
@@ -219,7 +219,7 @@ label[id^="costItem"] {
 }
 
 /* Định dạng nút "Sửa" */
-#buttonEdit {
+.buttonEdit {
     font-size: 16px;
     padding: 10px 20px;
     background-color: #007BFF;
@@ -229,7 +229,7 @@ label[id^="costItem"] {
 }
 
 /* Định dạng nút "Xóa" */
-#buttonDelete {
+.buttonDelete {
     font-size: 16px;
     padding: 10px 20px;
     background-color: #dc3545;
@@ -239,18 +239,18 @@ label[id^="costItem"] {
 }
 
 /* Định dạng khu vực chỉnh sửa */
-#editBox {
+.editBox {
     margin-bottom: 20px;
 }
 
 /* Định dạng tiêu đề chỉnh sửa */
-#titleEditImage, #titleEditName, #titleEditCategory, #titleEditPrice {
+.titleEditImage, .titleEditName, .titleEditCategory, .titleEditPrice {
     font-size: 16px;
     color: #2c3e50;
 }
 
 /* Định dạng nút chọn ảnh */
-#imageChooser {
+.imageChooser {
     font-size: 14px;
     padding: 5px 10px;
     background-color: #f5f5f5;
@@ -260,7 +260,7 @@ label[id^="costItem"] {
 }
 
 /* Định dạng các trường nhập liệu */
-#entryId, #entryName, #entryCategory, #entryPrice {
+.entryId, .entryName, .entryCategory, .entryPrice {
     font-size: 14px;
     padding: 5px;
     border: 1px solid #dcdcdc;
@@ -268,7 +268,7 @@ label[id^="costItem"] {
 }
 
 /* Định dạng nút CONFIRM */
-#buttonConfirm {
+.buttonConfirm {
     font-size: 16px;
     font-weight: bold;
     padding: 10px 30px;
