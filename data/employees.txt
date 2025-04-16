@@ -1,0 +1,10 @@
+1|Nguyen Van A|Manager|15000000
+2|Tran Thi B|Cashier|8500000
+3|Le Van C|Chef|12000000
+4|Pham Thi D|Waiter|7000000
+5|Hoang Van E|Security|6000000
+6|Nguyen Thi F|Cleaner|5000000
+7|Tran Van G|Assistant|8000000
+8|Do Thi H|Receptionist|9000000
+9|Bui Van I|Driver|9500000
+10|Dang Thi J|Accountant|11000000

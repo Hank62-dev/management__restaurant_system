@@ -131,6 +131,9 @@
                     <property name="margin-top">10</property>
                     <property name="margin-bottom">10</property>
                     <property name="text" translatable="yes">Id :</property>
+                    <style>
+                      <class name="entry_id"/>
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -146,6 +149,9 @@
                     <property name="margin-top">10</property>
                     <property name="margin-bottom">10</property>
                     <property name="text" translatable="yes">Name :</property>
+                    <style>
+                      <class name="entry_name"/>
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>

@@ -215,7 +215,7 @@ void addEmployee(Employee employees[], int *count) {
     printf("Employee added successfully!\n");
 }
 
-// Display list of employees
+/*/ Display list of employees
 void displayEmployees(Employee employees[], int count) {
     if (count == 0) {
         printf("No employees found.\n");
@@ -229,10 +229,11 @@ void displayEmployees(Employee employees[], int count) {
                employees[i].position, 
                employees[i].salary);
     }
-}
+}*/
 
 // Search employee by ID
 void searchEmployee(Employee employees[], int count, int id) {
+
     for (int i = 0; i < count; i++) {
         if (employees[i].employeeId == id) {
             printf("Employee found: ID: %d, Name: %s, Position: %s, Salary: %.2f\n", 
