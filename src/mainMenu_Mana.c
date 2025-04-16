@@ -11,6 +11,18 @@ GtkWidget *oldIdLabel, *oldNameLabel, *oldCategoryLabel, *oldPriceLabel, *oldIma
 GtkWidget *newIdEntry, *newNameEntry, *newCategoryEntry, *newPriceEntry, *newImageEntry;
 GtkWidget *menuGrid;
 
+//Hàm load css
+void load_css(const char *css_file_path) {
+    GtkCssProvider *provider = gtk_css_provider_new();
+    GdkDisplay *display = gdk_display_get_default();
+    GdkScreen *screen = gdk_display_get_default_screen(display);
+
+    gtk_css_provider_load_from_path(provider, "Glade_CSS/UI_MenuMana.css", NULL);
+    gtk_style_context_add_provider_for_screen(screen,
+        GTK_STYLE_PROVIDER(provider),
+        GTK_STYLE_PROVIDER_PRIORITY_USER);
+}
+
 // Hàm hiển thị thông báo
 void showMessage(GtkWindow *parent, const char *message) {
     GtkWidget *dialog = gtk_message_dialog_new(parent, GTK_DIALOG_MODAL,
@@ -200,7 +212,7 @@ int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
 
     GtkBuilder *builder = gtk_builder_new();
-    if (!gtk_builder_add_from_file(builder, "UI_MenuMana.glade", NULL)) {
+    if (!gtk_builder_add_from_file(builder, "UI Glade/UI_MenuMana.glade", NULL)) {
         printf("Lỗi tải file UI_MenuMana.glade\n");
         return 1;
     }
@@ -246,7 +258,7 @@ int main(int argc, char *argv[]) {
     g_signal_connect(deleteBtn, "clicked", G_CALLBACK(on_delete_clicked), window);
     g_signal_connect(confirmBtn, "clicked", G_CALLBACK(on_confirm_clicked), window);
 
-    load_css("UI_MenuMana.css");
+    load_css("Glade_CSS/UI_MenuMana.css");
     gtk_widget_show_all(window);
     gtk_main();
 
