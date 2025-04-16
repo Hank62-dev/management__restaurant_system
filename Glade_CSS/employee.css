@@ -1,33 +1,28 @@
 
-
-
 /* ==== nut chung ==== */
-    .btn_home_m, .btn_menu_m, .btn_stats_m, .btn_employee_m{
-        background-color: white;
-        color: black;
-        border: 3px solid black;
-        border-radius: 5px;
-        font-weight: 700;
-        margin-left: 10px;
-        padding: 5px 10px;
+
+.btn_home_m, .btn_menu_m, .btn_stats_m, .btn_employee_m{
+    background: white;
+    color: black;
+    font-weight: 700;
     }
-    .btn_home_m:hover, .btn_menu_m:hover, .btn_stats_m:hover,
-    .btn_employee_m:hover {
-        background-color: green;
-        color: white;
-        border-radius: 5px;
-        font-weight: 700;
-        margin-left: 10px
+.btn_home_m:hover, .btn_menu_m:hover, .btn_stats_m:hover,
+.btn_employee_m:hover {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
     }
-    .btn_home_m:focus, .btn_menu_m:focus, .btn_stats_m:focus,
-    .btn_employee_m:focus {
-        background-color: green;
-        color: white;
-        border-radius: 5px;
-        font-weight: 700;
-        margin-left: 10px
+.btn_home_m:focus, .btn_menu_m:focus, .btn_stats_m:focus,
+.btn_employee_m:focus {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
     }
-    
+   
     /* ==== Logo ==== */
     .logo {
         background-size: 64px 64px;
@@ -35,23 +30,20 @@
 }
 /* ==== nut employee ===*/
 .btn_add, .btn_edit ,.btn_delete, .btn_find { 
-    background-color: white;
+    background: white;
     color: black;
-    border: 3px solid black;
-    border-radius: 5px;
     font-weight: 700;
 }
 .btn_add:hover, .btn_edit:hover, .btn_delete:hover ,.btn_find:hover{
-     background-color: white;
-    color: black;
-    border: 3px solid black;
-    border-radius: 5px;
-    font-weight: 700;
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
 
 }
 .btn_add:focus, .btn_edit:focus, .btn_delete:focus ,.btn_find :focus {
-    background-color: white;
-    color: black;
-    border: 3px solid black;
-    border-radius: 5px; 
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
 }
