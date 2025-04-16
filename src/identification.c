@@ -9,8 +9,8 @@
 
 GtkWidget *entry_firstname, *entry_lastname, *entry_phone, *entry_password, *entry_confirm_password;
 GtkWidget *entry_login_phone, *entry_login_password;*/
-GtkWidget *stack;
-GtkWidget *window_identification, *Login_Register_window, *homewindow;
+
+
 // Áp dụng CSS đệ quy
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
     GtkStyleContext *context = gtk_widget_get_style_context(widget);

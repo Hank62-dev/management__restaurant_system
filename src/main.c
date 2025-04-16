@@ -205,7 +205,9 @@ int main(int argc, char *argv[]) {
 }
 */
 #include <gtk/gtk.h>
-
+#include "identification.h"
+#include "login_register_Cus.h"
+#include "login_register_Mana.h"
 // Khai báo hàm sẽ viết trong identification.c
 void show_identification();
 

@@ -1,15 +1,16 @@
 #include "utils.h"
 #include "stats.h"
-#include "login_register_Cus.h"
+#include "login_register_Mana.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <gtk/gtk.h>
-#define DATA_FILE "data/users.txt"
+#define DATA_FILE "data/management.txt"
 
 GtkWidget *stack;
 GtkWidget *entry_firstname, *entry_lastname, *entry_phone, *entry_password, *entry_confirm_password;
 GtkWidget *entry_login_phone, *entry_login_password;
+GtkWidget  *Login_Register_window, *homewindow;
 /*
 //Áp dụng css
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
@@ -37,6 +38,12 @@ void switch_to_login_now(GtkButton *button, gpointer user_data){
     GtkWidget *home_window = GTK_WIDGET(gtk_builder_get_object(builder,"Revenue_window"));//id home
     gtk_widget_show_all(home_window);
     gtk_widget_hide(Login_Register_window);
+}
+void switch_to_back(GtkButton *button, gpointer data) {
+    GtkWidget *identification = GTK_WIDGET(data);
+    gtk_widget_show_all(identification);
+    gtk_widget_hide(Login_Register_window);
+    
 }
 // Lưu trữ thông tin đăng kí
 void on_register_now_clicked(GtkButton *button, gpointer user_data) {

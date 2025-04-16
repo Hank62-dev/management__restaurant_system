@@ -1,4 +1,4 @@
-// login_register.h
+/*login_register.h*/ 
 
 #ifndef LOGIN_REGISTER_MANA_H
 #define LOGIN_REGISTER_MANA_H

@@ -10,6 +10,7 @@
 GtkWidget *stack;
 GtkWidget *entry_firstname, *entry_lastname, *entry_phone, *entry_password, *entry_confirm_password;
 GtkWidget *entry_login_phone, *entry_login_password;
+GtkWidget  *Login_Register_window, *homewindow;
 /*
 //Áp dụng css
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
@@ -37,6 +38,12 @@ void switch_to_login_now(GtkButton *button, gpointer user_data){
     GtkWidget *home_window = GTK_WIDGET(gtk_builder_get_object(builder,"Revenue_window"));//id home
     gtk_widget_show_all(home_window);
     gtk_widget_hide(Login_Register_window);
+}
+void switch_to_back(GtkButton *button, gpointer data) {
+    GtkWidget *identification = GTK_WIDGET(data);
+    gtk_widget_show_all(identification);
+    gtk_widget_hide(Login_Register_window);
+    
 }
 // Lưu trữ thông tin đăng kí
 void on_register_now_clicked(GtkButton *button, gpointer user_data) {
@@ -94,7 +101,6 @@ void login_register_Customer(){
 
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register_Cus.glade");
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Register_window"));
-    
     //resize ảnh
 	GtkWidget *image = GTK_WIDGET(gtk_builder_get_object(builder, "logo_login_register"));
 	GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file("UI_image/logores.jpg", NULL); 
@@ -119,12 +125,15 @@ void login_register_Customer(){
     
     GtkWidget *btn_login = GTK_WIDGET(gtk_builder_get_object(builder,"btn_login"));
     GtkWidget *btn_register = GTK_WIDGET(gtk_builder_get_object(builder,"btn_register"));
-    
+    GtkWidget *btn_back = GTK_WIDGET(gtk_builder_get_object(builder, "btn_back"));
+
+
     g_signal_connect(btn_register_now, "clicked", G_CALLBACK(on_register_now_clicked), NULL);
     g_signal_connect(btn_login_now, "clicked", G_CALLBACK(on_login_now_clicked), NULL);
     
     g_signal_connect(btn_login,"clicked",G_CALLBACK(switch_to_login), NULL);
     g_signal_connect(btn_register,"clicked",G_CALLBACK(switch_to_register), NULL);
+    g_signal_connect(btn_back, "clicked", G_CALLBACK(switch_to_back), NULL);
     // Áp dụng CSS
     GtkCssProvider *provider = gtk_css_provider_new();
     apply_css(window, provider);
