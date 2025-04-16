@@ -200,7 +200,6 @@ int main(int argc, char *argv[]) {
     GtkCellRenderer *renderer;
 
     gtk_init(&argc, &argv);
-<<<<<<< HEAD
           // === Khởi tạo builder và load file Glade ===
           builder = gtk_builder_new_from_file("UI_Glade/employee.glade");
           if (!gtk_builder_add_from_file(builder, "UI_Glade/employee.glade", NULL)) {
@@ -214,14 +213,6 @@ int main(int argc, char *argv[]) {
               g_print(" Cant find window 'employee_window'in Glade\n");
               return 1;
           }
-=======
-        // === Khởi tạo builder và load file Glade ===
-        builder = gtk_builder_new();
-        if (!gtk_builder_add_from_file(builder, "UI_Glade/employee.glade", NULL)) {
-            g_print("❌ Cant not load file Glade\n");
-            return 1;
-        }
->>>>>>> 18bbe1258c95b014c7991539a7f200188e24719e
     
 
     window = GTK_WIDGET(gtk_builder_get_object(builder, "employee_window"));
