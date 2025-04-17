@@ -24,5 +24,7 @@ void updateEmployee(Employee employees[], int *count, int id);
 //hamUI
 void addEmployeeFromUI(GtkBuilder *builder, Employee employees[], int *count);
 void displayEmployeeInfo(GtkBuilder *builder, Employee emp);
+void load_employees_from_file(GtkListStore *store, const char *filename);
+void updateEmployeeFromUI(GtkBuilder *builder, Employee employees[], int *count,int id);
 
 #endif
