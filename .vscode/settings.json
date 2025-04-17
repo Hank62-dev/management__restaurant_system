@@ -63,6 +63,7 @@
     "login_register_cus.h": "c",
     "string.h": "c",
     "login_register_mana.h": "c",
-    "utils.h": "c"
+    "utils.h": "c",
+    "identification.h": "c"
   }
 }

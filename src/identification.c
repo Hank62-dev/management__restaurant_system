@@ -1,6 +1,7 @@
 #include <gtk/gtk.h>
 #include <string.h>
 #include "utils.h"
+#include "identification.h"
 #include "login_register_Cus.h"
 #include "login_register_Mana.h"
 #define DATA_FILE "data/users.txt"

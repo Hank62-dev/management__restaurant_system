@@ -5,6 +5,7 @@
 #include <time.h>
 #include <gtk/gtk.h>
 #include "stats.h"
+#include "identification.h"
 #define MAX_DAYS 100  
 
 

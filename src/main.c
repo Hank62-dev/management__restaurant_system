@@ -204,13 +204,15 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 */
+#include <string.h>
 #include <gtk/gtk.h>
 #include "identification.h"
 #include "login_register_Cus.h"
 #include "login_register_Mana.h"
 #include "utils.h"
+
 // Khai báo hàm sẽ viết trong identification.c
-void show_identification();
+
 
 int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
