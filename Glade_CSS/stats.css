@@ -5,7 +5,7 @@
     background: white;
     color: black;
     font-weight: 700;
- 
+    
 }
 .btn_home:hover {
     border: 0.5px solid rgb(255, 255, 255);
@@ -23,6 +23,7 @@
     color: white;
 
 }
+
 /*stats button*/
 .btn_stats{
 
@@ -94,7 +95,31 @@
     color: white;
 
 }
+/*menu button*/
+.btn_menu{
 
+    background: white;
+    color: black;
+    font-weight: 700;
+
+}
+
+.btn_menu:hover {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+
+}
+
+.btn_menu:focus {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+}
 .frame_daily_revenue {
     border-width: 0.5px;
     border-style: solid;

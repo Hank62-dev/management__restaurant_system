@@ -7,10 +7,6 @@
 #include <gtk/gtk.h>
 #define DATA_FILE "data/users.txt"
 
-GtkWidget *stack;
-GtkWidget *entry_firstname, *entry_lastname, *entry_phone, *entry_password, *entry_confirm_password;
-GtkWidget *entry_login_phone, *entry_login_password;
-GtkWidget  *Login_Register_window, *homewindow;
 /*
 //Áp dụng css
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {

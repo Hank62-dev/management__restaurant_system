@@ -42,6 +42,9 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <property name="margin-bottom">20</property>
+                <style>
+                  <class name="btn_home"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -56,6 +59,9 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <property name="margin-bottom">20</property>
+                <style>
+                  <class name="btn_orders"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -70,6 +76,9 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <property name="margin-bottom">20</property>
+                <style>
+                  <class name="btn_stats"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -84,6 +93,9 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <property name="margin-bottom">20</property>
+                <style>
+                  <class name="btn_employees"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -145,6 +157,9 @@
                     </attributes>
                   </object>
                 </child>
+                <style>
+                  <class name="frame_daily_revenue"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -189,6 +204,9 @@
                     </attributes>
                   </object>
                 </child>
+                <style>
+                  <class name="frame_monthly_revenue"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -218,6 +236,9 @@
                             <attributes>
                               <attribute name="font-desc" value="Segoe UI Heavy Italic 15"/>
                             </attributes>
+                            <style>
+                              <class name="label_best_food"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -232,6 +253,9 @@
                             <attributes>
                               <attribute name="font-desc" value="Segoe UI Heavy Italic 15"/>
                             </attributes>
+                            <style>
+                              <class name="label_best_drink"/>
+                            </style>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -259,6 +283,9 @@
                     </attributes>
                   </object>
                 </child>
+                <style>
+                  <class name="frame_best_selling"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">False</property>

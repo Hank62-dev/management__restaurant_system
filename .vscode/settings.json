@@ -60,6 +60,9 @@
     "test.h": "c",
     "stdlib.h": "c",
     "stdio.h": "c",
-    "login_register_cus.h": "c"
+    "login_register_cus.h": "c",
+    "string.h": "c",
+    "login_register_mana.h": "c",
+    "utils.h": "c"
   }
 }

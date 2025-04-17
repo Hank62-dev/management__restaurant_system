@@ -19,6 +19,8 @@ void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
         gtk_container_foreach(GTK_CONTAINER(widget), (GtkCallback)apply_css, provider);
     }
 }
+
+
 /*
 // Chuyển form login/register
 void switch_to_login(GtkButton *button, gpointer user_data) {
@@ -214,9 +216,10 @@ int main(int argc, char *argv[]) {
     gtk_main();
     return 0;
 }*/
+
 void show_identification() {
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Identification.glade");
-    window_identification = GTK_WIDGET(gtk_builder_get_object(builder, "identification_window"));
+    GtkWidget *window_identification = GTK_WIDGET(gtk_builder_get_object(builder, "identification_window"));
 
     GtkWidget *btn_customer = GTK_WIDGET(gtk_builder_get_object(builder, "btn_customer"));
     GtkWidget *btn_management = GTK_WIDGET(gtk_builder_get_object(builder, "btn_management"));
