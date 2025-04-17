@@ -77,8 +77,8 @@ box {
 .imageItem1, .imageItem2, .imageItem3, .imageItem4, .imageItem5,
 .imageItem6, .imageItem7, .imageItem8, .imageItem9, .imageItem10,
 .imageItem11, .imageItem12, .imageItem13 {
-    min-width: 39px;
-    min-height: 39px;
+    width: 39px;
+    height: 39px;
     margin-bottom: 5px;
 }
 
