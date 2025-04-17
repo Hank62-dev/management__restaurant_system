@@ -1,0 +1,9 @@
+2,Tran Thi B,Cashier,8500000.00
+3,Le Van C,Chef,12000000.00
+4,Pham Thi D,Waiter,7000000.00
+5,Hoang Van E,Security,6000000.00
+6,Nguyen Thi F,Cleaner,5000000.00
+7,Tran Van G,Assistant,8000000.00
+8,Do Thi H,Receptionist,9000000.00
+9,Bui Van I,Driver,9500000.00
+10,Dang Thi J,Accountant,11000000.00

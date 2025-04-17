@@ -153,14 +153,14 @@ int count = 0;
 
 // Save employee data to file
 void saveToFile(Employee employees[], int *count) {
-    FILE *file = fopen("employees.txt", "w");
+    FILE *file = fopen("data/employees.txt", "w");  // đúng đường dẫn và ghi đè
     if (file == NULL) {
-        printf("Error opening file.\n");
+        g_print("❌ Error opening file.\n");
         return;
     }
 
     for (int i = 0; i < *count; i++) {
-        fprintf(file, "%d,%s,%s,%.2f\n", 
+        fprintf(file, "%d|%s|%s|%.2f\n", 
             employees[i].employeeId, 
             employees[i].fullName, 
             employees[i].position, 
@@ -168,32 +168,136 @@ void saveToFile(Employee employees[], int *count) {
     }
 
     fclose(file);
-    printf("Data saved successfully.\n");
+    g_print("✅ Data saved to file.\n");
 }
-
-// Load employee data from file
-void loadFromFile(Employee employees[], int *count) {
-    FILE *file = fopen("employees.txt", "r");
-    if (file == NULL) {
-        printf("Error opening file.\n");
+/* Load employee data from file
+void loadFromFile(Employee employees[], int *count, const char *filename) {
+    FILE *file = fopen(filename, "r");
+    if (!file) {
+        printf("❌ Cannot open file %s\n", filename);
         return;
     }
 
     *count = 0;
-    while (fscanf(file, "%d,%49[^,],%29[^,],%f\n", 
-                  &employees[*count].employeeId,
-                  employees[*count].fullName,
-                  employees[*count].position,
-                  &employees[*count].salary) == 4) {
-        if (*count >= MAX_EMPLOYEES) {
-            printf("Employee list is full!\n");
-            break;
-        }
+    char line[256];
+    while (fgets(line, sizeof(line), file)) {
+        Employee emp;
+        char *token;
+
+        token = strtok(line, "|");
+        if (token) emp.employeeId = atoi(token);
+
+        token = strtok(NULL, "|");
+        if (token) strcpy(emp.fullName, token);
+
+        token = strtok(NULL, "|");
+        if (token) strcpy(emp.position, token);
+
+        token = strtok(NULL, "|");
+        if (token) emp.salary = atof(token);
+
+        employees[*count] = emp;
         (*count)++;
     }
-    fclose(file);
-}
 
+    fclose(file);
+    printf("✅ Loaded %d employees.\n", *count);
+}*/
+#define MAX_EMPLOYEES 100  // nếu chưa có
+
+void loadEmployeesAll(const char *filename, Employee employees[], int *count, GtkListStore *store) {
+    FILE *file = fopen(filename, "r");
+    if (!file) {
+        g_print("❌ Cannot open file: %s\n", filename);
+        return;
+    }
+
+    *count = 0;
+    char line[256];
+
+    if (store != NULL) {
+        gtk_list_store_clear(store); // Xóa dữ liệu cũ trong TreeView nếu cần
+    }
+
+    while (fgets(line, sizeof(line), file)) {
+        if (*count >= MAX_EMPLOYEES) {
+            g_print("⚠️ Max employee reached!\n");
+            break;
+        }
+
+        Employee emp;
+        char *token;
+
+        token = strtok(line, "|");
+        if (token) emp.employeeId = atoi(token);
+
+        token = strtok(NULL, "|");
+        if (token) strcpy(emp.fullName, token);
+
+        token = strtok(NULL, "|");
+        if (token) strcpy(emp.position, token);
+
+        token = strtok(NULL, "|");
+        if (token) emp.salary = atof(token);
+
+        employees[*count] = emp;
+        (*count)++;
+
+        // Nếu cần hiện TreeView
+        if (store != NULL) {
+            GtkTreeIter iter;
+            gtk_list_store_append(store, &iter);
+            gtk_list_store_set(store, &iter,
+                               0, emp.employeeId,
+                               1, emp.fullName,
+                               2, emp.position,
+                               3, emp.salary,
+                               -1);
+        }
+
+        g_print("Loaded: %d | %s | %s | %.2f\n", emp.employeeId, emp.fullName, emp.position, emp.salary);
+    }
+
+    fclose(file);
+    g_print("✅ Load complete: %d employees\n", *count);
+}
+void loadEmployeesToArrayOnly(const char *filename, Employee employees[], int *count) {
+    FILE *file = fopen(filename, "r");
+    if (!file) {
+        g_print("❌ Cannot open file: %s\n", filename);
+        return;
+    }
+
+    *count = 0;
+    char line[256];
+    while (fgets(line, sizeof(line), file)) {
+        if (*count >= MAX_EMPLOYEES) {
+            g_print("⚠️ Max employee limit reached!\n");
+            break;
+        }
+
+        Employee emp;
+        char *token;
+
+        token = strtok(line, "|");
+        if (token) emp.employeeId = atoi(token);
+
+        token = strtok(NULL, "|");
+        if (token) strcpy(emp.fullName, token);
+
+        token = strtok(NULL, "|");
+        if (token) strcpy(emp.position, token);
+
+        token = strtok(NULL, "|");
+        if (token) emp.salary = atof(token);
+
+        employees[*count] = emp;
+        (*count)++;
+    }
+
+    fclose(file);
+    g_print("✅ Loaded %d employees into array.\n", *count);
+}
 // Add a new employee
 void addEmployee(Employee employees[], int *count) {
     printf("Enter employee ID: ");

@@ -14,17 +14,20 @@ extern Employee employees[MAX_EMPLOYEES];
 extern int count;
 
 void saveToFile(Employee employees[], int *count);
-void loadFromFile(Employee employees[], int *count);
+//void loadFromFile(Employee employees[], int *count, const char *filename)
 void addEmployee(Employee employees[], int *count);
 void displayEmployees(Employee employees[], int count);
 void searchEmployee(Employee employees[], int count, int id);
 void deleteEmployee(Employee employees[], int *count, int id);
 void updateEmployee(Employee employees[], int *count, int id);
 
+
 //hamUI
+void loadEmployeesToArrayOnly(const char *filename, Employee employees[], int *count);
+void loadEmployeesAll(const char *filename, Employee employees[], int *count, GtkListStore *store);
+void load_employees_from_file(GtkListStore *store, const char *filename, Employee employees[], int *count);
 void addEmployeeFromUI(GtkBuilder *builder, Employee employees[], int *count);
 void displayEmployeeInfo(GtkBuilder *builder, Employee emp);
-void load_employees_from_file(GtkListStore *store, const char *filename);
 void updateEmployeeFromUI(GtkBuilder *builder, Employee employees[], int *count,int id);
 
 #endif
