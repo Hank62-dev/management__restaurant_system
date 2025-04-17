@@ -2790,6 +2790,7 @@
             </child>
             <child>
               <object class="GtkBox" id="menuListCofirm">
+                <property name="width-request">50</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="orientation">vertical</property>
@@ -2807,7 +2808,6 @@
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <property name="orientation">vertical</property>
-                            <property name="homogeneous">True</property>
                             <child>
                               <object class="GtkBox" id="menuListItemSelected1">
                                 <property name="visible">True</property>
