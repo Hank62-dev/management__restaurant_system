@@ -2759,10 +2759,12 @@
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <property name="orientation">vertical</property>
+                            <property name="homogeneous">True</property>
                             <child>
                               <object class="GtkBox" id="menuListItemSelected1">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
+                                <property name="homogeneous">True</property>
                                 <child>
                                   <object class="GtkLabel" id="stt1">
                                     <property name="visible">True</property>
@@ -2911,6 +2913,7 @@
                               <object class="GtkBox" id="menuListItemSelected3">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
+                                <property name="homogeneous">True</property>
                                 <child>
                                   <object class="GtkLabel" id="stt3">
                                     <property name="visible">True</property>
@@ -2985,6 +2988,7 @@
                               <object class="GtkBox" id="menuListItemSelected5">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
+                                <property name="homogeneous">True</property>
                                 <child>
                                   <object class="GtkLabel" id="stt4">
                                     <property name="visible">True</property>
@@ -3059,6 +3063,7 @@
                               <object class="GtkBox" id="menuListItemSelected4">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
+                                <property name="homogeneous">True</property>
                                 <child>
                                   <object class="GtkLabel" id="stt5">
                                     <property name="visible">True</property>
@@ -3133,6 +3138,7 @@
                               <object class="GtkBox" id="menuListItemSellected7">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
+                                <property name="homogeneous">True</property>
                                 <child>
                                   <object class="GtkLabel" id="stt6">
                                     <property name="visible">True</property>
