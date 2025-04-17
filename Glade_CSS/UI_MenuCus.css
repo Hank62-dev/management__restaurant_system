@@ -11,7 +11,7 @@
 
 /* Định dạng chữ mặc định */
 label {
-    color: #333333;
+    color: black;
     font-weight: bold;
 }
 
@@ -39,7 +39,7 @@ box {
 .buttonHome, .buttonMenu, .buttonBooking, .buttonBill {
     font-size: 16px;
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: rgb(23, 125, 23);
     color: white;
     border: none;
     border-radius: 5px;
@@ -48,7 +48,7 @@ box {
 
 /* Tab đang được chọn */
 .buttonHome {
-    background-color: #003087;
+    background-color: rgb(23, 125, 23);
 }
 
 /* Định dạng khu vực chính */
@@ -75,15 +75,15 @@ box {
 
 /* Định dạng hình ảnh món ăn */
 .menuListItemSelect image {
-    min-width: 100px;
-    min-height: 100px;
+    min-width: 39px;
+    min-height: 39px;
     margin-bottom: 5px;
 }
 
 /* Định dạng tên món */
 .menuListItemSelect label {
     font-size: 16px;
-    color: #2c3e50;
+    color: black;
     font-weight: bold;
     margin-bottom: 5px;
 }
@@ -91,7 +91,7 @@ box {
 /* Định dạng giá (trong button_box) */
 .menuListItemSelect box box label {
     font-size: 14px;
-    color: #e67e22;
+    color: black;
     font-weight: bold;
     margin-left: 10px;
     margin-right: 10px;
@@ -101,7 +101,7 @@ box {
 .menuListItemSelect box box button:first-child {
     font-size: 16px;
     padding: 5px 10px;
-    background-color: #dc3545;
+    background-color: rgb(23, 125, 23);
     color: white;
     border: none;
     border-radius: 5px;
@@ -113,7 +113,7 @@ box {
 .menuListItemSelect box box button:last-child {
     font-size: 16px;
     padding: 5px 10px;
-    background-color: #28a745;
+    background-color: rgb(23, 125, 23);
     color: white;
     border: none;
     border-radius: 5px;
@@ -126,29 +126,29 @@ box {
     background-color: #ffffff;
     border: 1px solid #dcdcdc;
     border-radius: 5px;
-}
-
-/* Định dạng tiêu đề cột */
-.menuListItemSelected treeview header button {
-    background-color: #007BFF;
-    color: white;
-    font-weight: bold;
     padding: 8px;
 }
 
-/* Định dạng các ô trong bảng */
-.menuListItemSelected treeview row {
-    font-size: 14px;
-    color: #333333;
-}
-
-/* Dòng chẵn và lẻ */
-.menuListItemSelected treeview row:nth-child(even) {
+.menuListItemSelected:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.menuListItemSelected treeview row:nth-child(odd) {
+.menuListItemSelected:nth-child(odd) {
     background-color: #ffffff;
+}
+
+.menuListItemSelected label {
+    font-size: 14px;
+    color: black;
+    padding: 8px;
+}
+
+/* Định dạng tiêu đề (nếu cần) */
+.menuListItemSelected:first-child label {
+    background-color: rgb(23, 125, 23);
+    color: white;
+    font-weight: bold;
+    padding: 8px;
 }
 
 /* Định dạng nút CONFIRM */
@@ -156,7 +156,7 @@ box {
     font-size: 16px;
     font-weight: bold;
     padding: 10px 30px;
-    background-color: #28a745;
+    background-color: rgb(23, 125, 23);
     color: white;
     border: none;
     border-radius: 5px;
