@@ -11,7 +11,7 @@
 
 /* Định dạng chữ mặc định */
 label {
-    color: #333333;
+    color: black;
     font-weight: bold;
 }
 
@@ -39,7 +39,7 @@ box {
 .buttonHome, .buttonMenu, .buttonBooking, .buttonBill {
     font-size: 16px;
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: rgb(23, 125, 23);
     color: white;
     border: none;
     border-radius: 5px;
@@ -48,7 +48,7 @@ box {
 
 /* Tab đang được chọn */
 .buttonHome {
-    background-color: #003087;
+    background-color: rgb(23, 125, 23);
 }
 
 /* Định dạng khu vực chính */
@@ -78,18 +78,6 @@ box {
     margin: 5px;
 }
 
-/* Định dạng hình ảnh món ăn */
-.imageItem1, .imageItem2, .imageItem3, .imageItem4,
-.imageItem5, .imageItem6, .imageItem7, .imageItem8,
-.imageItem9, .imageItem10, .imageItem11, .imageItem12,
-.imageItem13, .imageItem14, .imageItem15, .imageItem16,
-.imageItem17, .imageItem18, .imageItem19, .imageItem20,
-.imageItem21, .imageItem22, .imageItem23, .imageItem24 {
-    min-width: 100px;
-    min-height: 100px;
-    margin-bottom: 5px;
-}
-
 /* Định dạng tên món ăn */
 .nameItem1, .nameItem2, .nameItem3, .nameItem4,
 .nameItem5, .nameItem6, .nameItem7, .nameItem8,
@@ -98,7 +86,7 @@ box {
 .nameItem17, .nameItem18, .nameItem19, .nameItem20,
 .nameItem21, .nameItem22, .nameItem23, .nameItem24 {
     font-size: 16px;
-    color: #2c3e50;
+    color: black;
     font-weight: bold;
     margin-bottom: 5px;
 }
@@ -111,7 +99,7 @@ box {
 .costItem17, .costItem18, .costItem19, .costItem20,
 .costItem21, .costItem22, .costItem23, .costItem24 {
     font-size: 14px;
-    color: #e67e22;
+    color: black;
     font-weight: bold;
 }
 
@@ -126,13 +114,13 @@ box {
 .titleOldId, .titleOldName, .titleOldCategory, .titleOldPrice, .titleOldImage,
 .titleNewId, .titleNewName, .titleNewCategory, .titleNewPrice, .titleNewImage {
     font-size: 16px;
-    color: #2c3e50;
+    color: rgb(23, 125, 23);
 }
 
 /* Định dạng các label giá trị cũ */
 .OldId, .OldName, .OldCategory, .OldPrice, .OldImage {
     font-size: 14px;
-    color: #555555;
+    color: black;
 }
 
 /* Định dạng các ô nhập liệu mới */
@@ -159,14 +147,14 @@ image[class^="imageItem"] {
 
 label[class^="nameItem"] {
     font-size: 16px;
-    color: #2c3e50;
+    color: black;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 label[class^="costItem"] {
     font-size: 14px;
-    color: #e67e22;
+    color: black;
     font-weight: bold;
 }
 
@@ -186,21 +174,21 @@ label[class^="costItem"] {
 
 /* Định dạng hình ảnh món */
 .imageDisplay {
-    min-width: 150px;
-    min-height: 150px;
+    min-width: 200px;
+    min-height: 200px;
     margin-bottom: 10px;
 }
 
 /* Định dạng tiêu đề thông tin */
 .titleImage, .titleId, .titleName, .titleCategory, .titlePrice {
     font-size: 16px;
-    color: #2c3e50;
+    color: rgb(23, 125, 23);
 }
 
 /* Định dạng giá trị thông tin */
 .labelId, .labelName, .labelCategory, .labelPrice {
     font-size: 14px;
-    color: #555555;
+    color: black;
 }
 
 /* Định dạng các nút hành động */
@@ -212,7 +200,7 @@ label[class^="costItem"] {
 .buttonAdd {
     font-size: 16px;
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: rgb(23, 125, 23);
     color: white;
     border: none;
     border-radius: 5px;
@@ -222,7 +210,7 @@ label[class^="costItem"] {
 .buttonEdit {
     font-size: 16px;
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: rgb(23, 125, 23);
     color: white;
     border: none;
     border-radius: 5px;
@@ -232,7 +220,7 @@ label[class^="costItem"] {
 .buttonDelete {
     font-size: 16px;
     padding: 10px 20px;
-    background-color: #dc3545;
+    background-color: rgb(23, 125, 23);
     color: white;
     border: none;
     border-radius: 5px;
@@ -246,7 +234,7 @@ label[class^="costItem"] {
 /* Định dạng tiêu đề chỉnh sửa */
 .titleEditImage, .titleEditName, .titleEditCategory, .titleEditPrice {
     font-size: 16px;
-    color: #2c3e50;
+    color: rgb(23, 125, 23);
 }
 
 /* Định dạng nút chọn ảnh */
@@ -267,12 +255,17 @@ label[class^="costItem"] {
     border-radius: 5px;
 }
 
+.menuListCofirm {
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+}
+
 /* Định dạng nút CONFIRM */
 .buttonConfirm {
     font-size: 16px;
     font-weight: bold;
     padding: 10px 30px;
-    background-color: #28a745;
+    background-color: rgb(23, 125, 23);
     color: white;
     border: none;
     border-radius: 5px;
