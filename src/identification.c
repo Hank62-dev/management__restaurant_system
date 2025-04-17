@@ -11,7 +11,9 @@
 GtkWidget *entry_firstname, *entry_lastname, *entry_phone, *entry_password, *entry_confirm_password;
 GtkWidget *entry_login_phone, *entry_login_password;*/
 
-
+GtkWidget *window_identification = NULL;
+GtkWidget *btn_customer = NULL;
+GtkWidget *btn_management = NULL;
 // Áp dụng CSS đệ quy
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
     GtkStyleContext *context = gtk_widget_get_style_context(widget);

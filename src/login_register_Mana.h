@@ -5,11 +5,11 @@
 
 #include <gtk/gtk.h>
 
-GtkWidget *stack_m;
-GtkWidget *entry_firstname_m, *entry_lastname_m, *entry_phone_m;
-GtkWidget *entry_password_m, *entry_confirm_password_m;
-GtkWidget *entry_login_phone_m, *entry_login_password_m;
-GtkWidget *Login_Register_window_m, *home_window_m, *window_m;
+extern GtkWidget *stack_m;
+extern GtkWidget *entry_firstname_m, *entry_lastname_m, *entry_phone_m;
+extern GtkWidget *entry_password_m, *entry_confirm_password_m;
+extern GtkWidget *entry_login_phone_m, *entry_login_password_m;
+extern GtkWidget *Login_Register_window_m, *home_window_m, *window_m;
 
 //khai báo các hàm sẽ xử lý
 void show_identification();

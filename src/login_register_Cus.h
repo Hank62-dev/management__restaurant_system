@@ -5,12 +5,12 @@
 
 #include <gtk/gtk.h>
 
- GtkWidget *stack_c;
- GtkWidget *entry_firstname_c, *entry_lastname_c, *entry_phone_c;
- GtkWidget *entry_password_c, *entry_confirm_password_c;
- GtkWidget *entry_login_phone_c, *entry_login_password_c;
- GtkWidget *Login_Register_window_c, *home_window_c, *window_c;
- 
+ extern GtkWidget *stack_c;
+ extern GtkWidget *entry_firstname_c, *entry_lastname_c, *entry_phone_c;
+ extern GtkWidget *entry_password_c, *entry_confirm_password_c;
+ extern GtkWidget *entry_login_phone_c, *entry_login_password_c;
+ extern GtkWidget *Login_Register_window_c, *home_window_c, *window_c;
+
 //khai báo các hàm sẽ xử lý
 void show_identification();
 void login_register_Customer();
