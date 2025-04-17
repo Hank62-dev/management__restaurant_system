@@ -73,15 +73,6 @@ box {
     margin: 5px;
 }
 
-/* Định dạng hình ảnh món ăn */
-.imageItem1, .imageItem2, .imageItem3, .imageItem4, .imageItem5,
-.imageItem6, .imageItem7, .imageItem8, .imageItem9, .imageItem10,
-.imageItem11, .imageItem12, .imageItem13 {
-    width: 39px;
-    height: 39px;
-    margin-bottom: 5px;
-}
-
 /* Định dạng tên món */
 .menuListItemSelect label {
     font-size: 16px;
@@ -147,10 +138,15 @@ box {
 
 /* Định dạng tiêu đề (nếu cần) */
 .menuListItemSelected:first-child label {
-    background-color: rgb(23, 125, 23);
-    color: white;
+    background-color:white;
+    color:black;
     font-weight: bold;
     padding: 8px;
+}
+
+.menuListCofirm {
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
 }
 
 /* Định dạng nút CONFIRM */
