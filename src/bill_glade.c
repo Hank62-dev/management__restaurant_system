@@ -61,12 +61,13 @@ int main(int argc, char *argv[]) {
     GtkWidget *tar = GTK_WIDGET(gtk_builder_get_object(builder, "tar"));
     GtkWidget *total_bill = GTK_WIDGET(gtk_builder_get_object(builder, "total_bill"));
     // khai bao
-    const char *customer ;
-    const char *table ;
-    const char *date ;
-    double subtotal ;
-    double tax ;
-    double total ;
+    const char *customer = "Nguyen Van A";
+    const char *table = "Table 1";
+    const char *date = "2025-04-18";
+    double subtotal = 500.0;
+    double tax = 50.0;
+    double total = 550.0;
+
 
 
     // Update bill information on the GUI
