@@ -257,10 +257,8 @@ void show_Menu_Mana() {
     // Thêm widget cho imagePath vào Glade
     GtkWidget *grid = GTK_WIDGET(gtk_builder_get_object(builder, "GtkGrid"));
     gtk_grid_insert_row(GTK_GRID(grid), 4);
-    gtk_grid_attach(GTK_GRID(grid), gtk_label_new("Hình ảnh cũ:"), 0, 4, 1, 1);
     gtk_grid_attach(GTK_GRID(grid), oldImageLabel, 1, 4, 1, 1);
     gtk_grid_insert_row(GTK_GRID(grid), 9);
-    gtk_grid_attach(GTK_GRID(grid), gtk_label_new("Hình ảnh mới:"), 0, 9, 1, 1);
     gtk_grid_attach(GTK_GRID(grid), newImageEntry, 1, 9, 1, 1);
 
     if (!loadMenuFromFile(menuList, &menuCount)) {

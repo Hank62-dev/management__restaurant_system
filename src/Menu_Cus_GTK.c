@@ -150,7 +150,11 @@ void show_Menu_Cus() {
     GtkBuilder *builder = gtk_builder_new();
     if (!gtk_builder_add_from_file(builder, "UI Glade/UI_MenuCus.glade", NULL)) {
         printf("Lỗi tải file UI_MenuCus.glade\n");
+<<<<<<< HEAD
         return ;
+=======
+        return;
+>>>>>>> 8ad46c36ca6b0647fbb7fe46a4f6747a1911796a
     }
 
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "menuCustomer"));
@@ -160,7 +164,11 @@ void show_Menu_Cus() {
 
     if (!loadMenuFromFile(menuList, &menuCount)) {
         printf("Lỗi tải menu\n");
+<<<<<<< HEAD
         return ;
+=======
+        return;
+>>>>>>> 8ad46c36ca6b0647fbb7fe46a4f6747a1911796a
     }
 
     printMenu(menuList, menuCount);
@@ -174,5 +182,8 @@ void show_Menu_Cus() {
     gtk_widget_show_all(window);
 
     g_object_unref(builder);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8ad46c36ca6b0647fbb7fe46a4f6747a1911796a
 }
