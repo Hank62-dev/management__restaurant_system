@@ -1,7 +1,6 @@
 #include <gtk/gtk.h>
 #include <string.h>
 #include "table_booking.h"
-<<<<<<< HEAD
 
 // Structure to hold application data
 typedef struct {
@@ -11,8 +10,6 @@ typedef struct {
     GtkBuilder *builder_bill_layout;
     char *selected_table; // Store selected table number
 } AppData;
-=======
->>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
 
 // Callback functions for navigation buttons
 static void on_home3_clicked(GtkButton *button, gpointer data) {
@@ -34,7 +31,6 @@ static void on_menu3_clicked(GtkButton *button, gpointer data) {
 static void on_booking3_clicked(GtkButton *button, gpointer data) {
     AppData *app_data = (AppData *)data;
     gtk_widget_hide(app_data->window_booking_table);
-<<<<<<< HEAD
     
     // Load bill_layout.glade if not already loaded
     if (!app_data->builder_bill_layout) {
@@ -65,9 +61,6 @@ static void on_booking3_clicked(GtkButton *button, gpointer data) {
     
     // Show bill window
     gtk_widget_show_all(app_data->window_bill_layout);
-=======
-    show_booking_information(app_data);
->>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
 }
 
 // Callback for table buttons to store selected table number
@@ -148,11 +141,7 @@ static void load_css_layout(void) {
                                              GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
     
     GError *error = NULL;
-<<<<<<< HEAD
     gtk_css_provider_load_from_path(provider, "Glade_CSS/edit1.css", &error);
-=======
-    gtk_css_provider_load_from_path(provider, "style.css", &error);
->>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
     
     if (error != NULL) {
         g_printerr("Error loading CSS: %s\n", error->message);
@@ -167,11 +156,7 @@ void book_table_show(AppData *app_data) {
     app_data->builder_booking_table = gtk_builder_new();
     GError *error = NULL;
     
-<<<<<<< HEAD
     if (!gtk_builder_add_from_file(builder_booking_table, "UI Glade/window_booking_table.glade", &error)) {
-=======
-    if (!gtk_builder_add_from_file(app_data->builder_booking_table, "window_booking_table.glade", &error)) {
->>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
         g_printerr("Error loading window_booking_table.glade: %s\n", error->message);
         g_error_free(error);
         g_object_unref(app_data->builder_booking_table);
@@ -180,14 +165,11 @@ void book_table_show(AppData *app_data) {
     
     // Load CSS
     load_css_layout();
-<<<<<<< HEAD
     
     // Create AppData structure
     AppData app_data = {0};
     app_data.builder_booking_table = builder_booking_table;
     app_data.selected_table = NULL;
-=======
->>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
     
     // Get the booking table window
     app_data->window_booking_table = GTK_WIDGET(gtk_builder_get_object(app_data->builder_booking_table, "window_booking_table"));

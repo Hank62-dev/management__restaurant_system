@@ -1,13 +1,6 @@
 #include <gtk/gtk.h>
 #include <stdio.h>
-<<<<<<< HEAD
 #include "table_booking.h"
-=======
-#include <time.h>
-#include <string.h>
-#include "table_booking.h"
-
->>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
 // Callback functions for navigation buttons
 static void on_home3_clicked(GtkButton *button, gpointer data) {
     GtkWidget *dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, 
@@ -110,38 +103,22 @@ static void load_css_bill(void) {
     g_object_unref(provider);
 }
 
-<<<<<<< HEAD
 void run_bill() {
     
-=======
-void run_bill(AppData *app_data) {
->>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
     // Load the Glade file
     app_data->builder_bill_layout = gtk_builder_new();
     GError *error = NULL;
     
-<<<<<<< HEAD
     if (!gtk_builder_add_from_file(builder, "UI Glade/bill_layout.glade", &error)) {
         g_printerr("Error loading Glade file: %s\n", error->message);
         g_error_free(error);
         g_object_unref(builder);
         return ;
-=======
-    if (!gtk_builder_add_from_file(app_data->builder_bill_layout, "bill_layout.glade", &error)) {
-        g_printerr("Error loading bill_layout.glade: %s\n", error->message);
-        g_error_free(error);
-        g_object_unref(app_data->builder_bill_layout);
-        return;
->>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
     }
     
     // Load CSS
     load_css_bill();
-<<<<<<< HEAD
     
-=======
-
->>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
     // Get the main window
     app_data->window_bill_layout = GTK_WIDGET(gtk_builder_get_object(app_data->builder_bill_layout, "bill_layout"));
     
@@ -202,7 +179,6 @@ void run_bill(AppData *app_data) {
     }
     
     // Show the window
-<<<<<<< HEAD
     gtk_widget_show_all(window);
     
 
@@ -210,7 +186,4 @@ void run_bill(AppData *app_data) {
     // Cleanup
     g_object_unref(builder);
 
-=======
-    gtk_widget_show_all(app_data->window_bill_layout);
->>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
 }
