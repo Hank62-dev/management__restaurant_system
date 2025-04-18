@@ -1,3 +1,4 @@
+#include <gtk/gtk.h>
 #ifndef MENU_MANA_H
 #define MENU_MANA_H
 
@@ -18,6 +19,7 @@ typedef struct {
 
 // Hàm cho giao diện quản lý
 int loadMenuFromFile(MenuItem menu[], int *count);
+void on_select_item_clicked(GtkButton *button, gpointer user_data);
 void printMenu(MenuItem menu[], int count);
 int saveMenuToFile(MenuItem menu[], int count);
 int checkDuplicate(MenuItem menu[], int count, const char *menuId);
