@@ -1,6 +1,13 @@
 #include <gtk/gtk.h>
 #include <stdio.h>
+<<<<<<< HEAD
 #include "table_booking.h"
+=======
+#include <time.h>
+#include <string.h>
+#include "table_booking.h"
+
+>>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
 // Callback functions for navigation buttons
 static void on_home3_clicked(GtkButton *button, gpointer data) {
     GtkWidget *dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, 
@@ -19,34 +26,24 @@ static void on_menu3_clicked(GtkButton *button, gpointer data) {
 }
 
 static void on_booking3_clicked(GtkButton *button, gpointer data) {
-    GtkWidget *dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, 
-                                              GTK_MESSAGE_INFO, GTK_BUTTONS_OK, 
-                                              "Booking button clicked!");
-    gtk_dialog_run(GTK_DIALOG(dialog));
-    gtk_widget_destroy(dialog);
-}
-
-static void on_bill3_clicked(GtkButton *button, gpointer data) {
-    GtkWidget *dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, 
-                                              GTK_MESSAGE_INFO, GTK_BUTTONS_OK, 
-                                              "Bill button clicked!");
-    gtk_dialog_run(GTK_DIALOG(dialog));
-    gtk_widget_destroy(dialog);
+    AppData *app_data = (AppData *)data;
+    gtk_widget_hide(app_data->window_bill_layout);
+    show_booking_information(app_data);
 }
 
 // Callback for the CONFIRM button to save bill to bill.txt
 static void on_confirm_bill_button_clicked(GtkButton *button, gpointer data) {
-    GtkBuilder *builder = GTK_BUILDER(data);
+    AppData *app_data = (AppData *)data;
     
     // Get label widgets
-    GtkLabel *restaurant_name = GTK_LABEL(gtk_builder_get_object(builder, "restaurant_name"));
-    GtkLabel *phone_contact = GTK_LABEL(gtk_builder_get_object(builder, "phone_contact"));
-    GtkLabel *table_ordered = GTK_LABEL(gtk_builder_get_object(builder, "table_ordered"));
-    GtkLabel *date_ordered = GTK_LABEL(gtk_builder_get_object(builder, "date_ordered"));
-    GtkLabel *customer_name = GTK_LABEL(gtk_builder_get_object(builder, "customer_name"));
-    GtkLabel *subtotal_bill = GTK_LABEL(gtk_builder_get_object(builder, "subtotal_bill"));
-    GtkLabel *tar = GTK_LABEL(gtk_builder_get_object(builder, "tar"));
-    GtkLabel *total_bill = GTK_LABEL(gtk_builder_get_object(builder, "total_bill"));
+    GtkLabel *restaurant_name = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "restaurant_name"));
+    GtkLabel *phone_contact = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "phone_contact"));
+    GtkLabel *table_ordered = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "table_ordered"));
+    GtkLabel *date_ordered = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "date_ordered"));
+    GtkLabel *customer_name = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "customer_name"));
+    GtkLabel *subtotal_bill = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "subtotal_bill"));
+    GtkLabel *tar = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "tar"));
+    GtkLabel *total_bill = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "total_bill"));
     
     // Get text from labels
     const gchar *restaurant = gtk_label_get_text(restaurant_name);
@@ -59,7 +56,7 @@ static void on_confirm_bill_button_clicked(GtkButton *button, gpointer data) {
     const gchar *total = gtk_label_get_text(total_bill);
     
     // Open file to write bill details
-    FILE *file = fopen("bill.txt", "w");
+    FILE *file = fopen("bill.txt", "a"); // Append mode to keep history
     if (file == NULL) {
         GtkWidget *dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, 
                                                   GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, 
@@ -79,7 +76,7 @@ static void on_confirm_bill_button_clicked(GtkButton *button, gpointer data) {
     fprintf(file, "Subtotal: %s\n", subtotal);
     fprintf(file, "Tax: %s\n", tax);
     fprintf(file, "Total: %s\n", total);
-    fprintf(file, "===========================\n");
+    fprintf(file, "===========================\n\n");
     
     // Close the file
     fclose(file);
@@ -113,29 +110,99 @@ static void load_css_bill(void) {
     g_object_unref(provider);
 }
 
+<<<<<<< HEAD
 void run_bill() {
     
+=======
+void run_bill(AppData *app_data) {
+>>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
     // Load the Glade file
-    GtkBuilder *builder = gtk_builder_new();
+    app_data->builder_bill_layout = gtk_builder_new();
     GError *error = NULL;
     
+<<<<<<< HEAD
     if (!gtk_builder_add_from_file(builder, "UI Glade/bill_layout.glade", &error)) {
         g_printerr("Error loading Glade file: %s\n", error->message);
         g_error_free(error);
         g_object_unref(builder);
         return ;
+=======
+    if (!gtk_builder_add_from_file(app_data->builder_bill_layout, "bill_layout.glade", &error)) {
+        g_printerr("Error loading bill_layout.glade: %s\n", error->message);
+        g_error_free(error);
+        g_object_unref(app_data->builder_bill_layout);
+        return;
+>>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
     }
     
     // Load CSS
     load_css_bill();
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
     // Get the main window
-    GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "bill_layout"));
+    app_data->window_bill_layout = GTK_WIDGET(gtk_builder_get_object(app_data->builder_bill_layout, "bill_layout"));
     
     // Connect signals
-    gtk_builder_connect_signals(builder, builder);
+    gtk_builder_connect_signals(app_data->builder_bill_layout, app_data);
+    
+    // Update labels with data from AppData
+    if (app_data->selected_table) {
+        GtkLabel *table_ordered = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "table_ordered"));
+        char *table_text = g_strdup_printf("Table: %s", app_data->selected_table);
+        gtk_label_set_text(table_ordered, table_text);
+        g_free(table_text);
+    }
+    if (app_data->name) {
+        GtkLabel *customer_name = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "customer_name"));
+        char *customer_text = g_strdup_printf("Customer: %s", app_data->name);
+        gtk_label_set_text(customer_name, customer_text);
+        g_free(customer_text);
+    }
+    
+    // Set current date
+    time_t now = time(NULL);
+    struct tm *tm = localtime(&now);
+    char date_str[20];
+    strftime(date_str, sizeof(date_str), "%d/%m/%Y", tm);
+    GtkLabel *date_ordered = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "date_ordered"));
+    gtk_label_set_text(date_ordered, date_str);
+    
+    // Read from orders.txt (assuming format: Subtotal: X, Tax: Y, Total: Z)
+    FILE *file = fopen("orders.txt", "r");
+    if (file) {
+        char line[256];
+        while (fgets(line, sizeof(line), file)) {
+            if (strstr(line, "Subtotal:")) {
+                char *value = strchr(line, ':') + 2;
+                value[strcspn(value, "\n")] = 0;
+                char *subtotal_text = g_strdup_printf("Subtotal: %s", value);
+                GtkLabel *subtotal_bill = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "subtotal_bill"));
+                gtk_label_set_text(subtotal_bill, subtotal_text);
+                g_free(subtotal_text);
+            } else if (strstr(line, "Tax:")) {
+                char *value = strchr(line, ':') + 2;
+                value[strcspn(value, "\n")] = 0;
+                char *tax_text = g_strdup_printf("Tax: %s", value);
+                GtkLabel *tar = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "tar"));
+                gtk_label_set_text(tar, tax_text);
+                g_free(tax_text);
+            } else if (strstr(line, "Total:")) {
+                char *value = strchr(line, ':') + 2;
+                value[strcspn(value, "\n")] = 0;
+                char *total_text = g_strdup_printf("Total: %s", value);
+                GtkLabel *total_bill = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "total_bill"));
+                gtk_label_set_text(total_bill, total_text);
+                g_free(total_text);
+            }
+        }
+        fclose(file);
+    }
     
     // Show the window
+<<<<<<< HEAD
     gtk_widget_show_all(window);
     
 
@@ -143,4 +210,7 @@ void run_bill() {
     // Cleanup
     g_object_unref(builder);
 
+=======
+    gtk_widget_show_all(app_data->window_bill_layout);
+>>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
 }

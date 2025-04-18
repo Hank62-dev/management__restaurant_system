@@ -1,5 +1,5 @@
 /* Style chung cho các button */
-.home3, .menu3, .booking3, .bill3 {
+.home3, .menu3, .booking3, .bill3, .confirm_booking_table_button, .button_booking_table, .confirm_bill_button {
     background-color: white;
     color: black;
     border: 3px solid black;
@@ -9,7 +9,8 @@
 }
 
 /* Hover effect */
-.home3:hover, .menu3:hover, .booking3:hover, .bill3:hover {
+.home3:hover, .menu3:hover, .booking3:hover, .bill3:hover, 
+.confirm_booking_table_button:hover, .button_booking_table:hover, .confirm_bill_button:hover {
     background-color: green;
     color: white;
     border-radius: 5px;
@@ -18,10 +19,28 @@
 }
 
 /* Focus effect */
-.home3:focus, .menu3:focus, .booking3:focus, .bill3:focus {
+.home3:focus, .menu3:focus, .booking3:focus, .bill3:focus, 
+.confirm_booking_table_button:focus, .button_booking_table:focus, .confirm_bill_button:focus {
     background-color: green;
     color: white;
     border-radius: 5px;
     font-weight: 700;
     text-align: center;
+}
+
+/* Style cho các nút bàn */
+.table {
+    background-color: #4CAF50;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+
+/* Hiệu ứng sáng lên khi chọn */
+.table:checked, .table:active {
+    background-color: #FFC107;
+    border: 2px solid #FF5722;
+    font-weight: bold;
 }

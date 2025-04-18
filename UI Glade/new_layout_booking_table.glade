@@ -137,6 +137,7 @@
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
                       <class name="table"/>
                     </style>
@@ -155,6 +156,7 @@
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
                       <class name="table"/>
                     </style>
@@ -173,6 +175,7 @@
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
                       <class name="table"/>
                     </style>
@@ -191,6 +194,7 @@
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
                       <class name="table"/>
                     </style>
@@ -235,6 +239,7 @@
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
                       <class name="table"/>
                     </style>
@@ -253,6 +258,7 @@
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
                       <class name="table"/>
                     </style>
@@ -271,6 +277,7 @@
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
                       <class name="table"/>
                     </style>
@@ -289,6 +296,7 @@
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
                       <class name="table"/>
                     </style>
