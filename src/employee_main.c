@@ -16,7 +16,7 @@ GtkWidget *entry_search_id;
 GtkWidget *employee_treeview;
 
 //load css
-void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
+void apply_css_employee(GtkWidget *widget, GtkCssProvider *provider) {
 	
     if( gtk_css_provider_load_from_path(provider, "Glade_CSS/employee.css", NULL) ){
     	g_print("CSS loaded successfully!!\n");
@@ -26,7 +26,7 @@ void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
     GtkStyleContext *context = gtk_widget_get_style_context(widget);
     gtk_style_context_add_provider(context, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
     if (GTK_IS_CONTAINER(widget)) {
-        gtk_container_foreach(GTK_CONTAINER(widget), (GtkCallback)apply_css, provider);
+        gtk_container_foreach(GTK_CONTAINER(widget), (GtkCallback)apply_css_employee, provider);
     };
 }
     // lay du lieu tu entry vào add 
@@ -58,7 +58,7 @@ void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
         // 🔁 Kiểm tra trùng ID
         for (int i = 0; i < *count; i++) {
             if (employees[i].employeeId == new_id) {
-                g_print("❌ Employee ID %d already exists. Cannot add.\n", new_id);
+                g_print("❌Employee ID %d already exists. Cannot add.\n", new_id);
                 return;
             }
         }
@@ -247,11 +247,9 @@ void on_btn_find_clicked(GtkWidget *widget, gpointer data) {
 
     // Load dữ liệu từ file vào mảng (không cần TreeView)
     loadEmployeesAll("data/employees.txt", employees, &count, NULL);
-
     // Tìm nhân viên theo ID
     for (int i = 0; i < count; i++) {
         if (employees[i].employeeId == id) {
-            // Gán dữ liệu lên các ô nhập
             GtkEntry *entry_id     = GTK_ENTRY(gtk_builder_get_object(builder, "entry_id"));
             GtkEntry *entry_name     = GTK_ENTRY(gtk_builder_get_object(builder, "entry_name"));
             GtkEntry *entry_position = GTK_ENTRY(gtk_builder_get_object(builder, "entry_position"));
@@ -311,33 +309,32 @@ void on_btn_find_clicked(GtkWidget *widget, gpointer data) {
     
 // ==== lay entry ===
 
-int main(int argc, char *argv[]) {
+void show_employee() {
+
     GtkWidget *treeview;
     GtkBuilder *builder;
     GtkWidget *window;
     GtkListStore *store;
     GtkCellRenderer *renderer;
 
-    gtk_init(&argc, &argv);
-
-
           // === Khởi tạo builder và load file Glade ===
           builder = gtk_builder_new_from_file("UI_Glade/employee.glade");
+          
           if (!gtk_builder_add_from_file(builder, "UI_Glade/employee.glade", NULL)) {
               g_print(" Cant not load file Glade\n");
-              return 1;
+              return ;
           }
       
           // === Lấy window chính ===
           window = GTK_WIDGET(gtk_builder_get_object(builder, "employee_window"));
           if (!window) {
               g_print(" Cant find window 'employee_window'in Glade\n");
-              return 1;
+              return ;
         // === Khởi tạo builder và load file Glade ===
         builder = gtk_builder_new();
         if (!gtk_builder_add_from_file(builder, "UI_Glade/employee.glade", NULL)) {
-            g_print("❌ Cant not load file Glade\n");
-            return 1;
+            g_print("Cant not load file Glade\n");
+            return ;
         }
           }
     
@@ -380,11 +377,7 @@ int main(int argc, char *argv[]) {
 
  // Áp dụng CSS
  GtkCssProvider *provider = gtk_css_provider_new();
-    apply_css(window, provider);
+    apply_css_employee(window, provider);
     g_object_unref(provider);
-   
     gtk_widget_show_all(window);
-    gtk_main();
-
-    return 0;
 }   

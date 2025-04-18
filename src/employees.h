@@ -1,4 +1,4 @@
-#ifndef STATS_H  
+#ifndef EMPLOYEES_H
 #define EMPLOYEES_H
 #define MAX_EMPLOYEES 100
 #include <gtk/gtk.h>
@@ -30,4 +30,12 @@ void addEmployeeFromUI(GtkBuilder *builder, Employee employees[], int *count);
 void displayEmployeeInfo(GtkBuilder *builder, Employee emp);
 void updateEmployeeFromUI(GtkBuilder *builder, Employee employees[], int *count,int id);
 
+//show
+void show_home_m();
+void show_employee();
+void on_btn_home_m_clicked(GtkWidget *widget, gpointer data);
+void on_btn_menu_m_clicked(GtkWidget *widget, gpointer data);
+void on_btn_stats_m_clicked(GtkWidget *widget, gpointer data);
+void on_btn_employee_m_clicked(GtkWidget *widget, gpointer data);
+void on_btn_orders_m_clicked(GtkWidget *widget, gpointer data);
 #endif

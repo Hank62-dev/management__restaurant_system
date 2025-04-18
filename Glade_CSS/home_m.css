@@ -1,37 +1,33 @@
 /*home bg*/
-.home_m{
-background-image: url("../images/bg.jpg");
-background-size: cover;
+.home_m_window{
 background-color: white;
-background-repeat: no-repeat;
-filter: blur(8px);
-
+border: 2px solid black;
+border-radius: 10px;
 }
 
 /*home btn*/
 
-.btn_home,.btn_menu,.btn_stats,.btn_employee {
-    background-color: white;
+.btn_home_m, .btn_menu_m, .btn_stats_m, .btn_employee_m, .btn_orders_m{
+    background: white;
     color: black;
-    border: 3px solid black;
-    border-radius: 5px;
     font-weight: 700;
-    margin-left: 10px
-}
-.btn_home:hover,.btn_menu:hover,.btn_stats :hover, .btn_employee:focus  {
-    background-color: green;
+    }
+.btn_home_m:hover, .btn_menu_m:hover, .btn_stats_m:hover, .btn_orders_m:hover,
+.btn_employee_m:hover {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
     color: white;
-    border-radius: 5px;
-    font-weight: 700;
-    margin-left: 10px
-}
-.btn_home:focus,.btn_menu:focus,.btn_stats:focus,.btn_employee:focus {
-    background-color: green;
+
+    }
+.btn_home_m:focus, .btn_menu_m:focus, .btn_stats_m:focus,.btn_orders_m:focus,
+.btn_employee_m:focus {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
     color: white;
-    border-radius: 5px;
-    font-weight: 700;
-    margin-left: 10px
-}
+
+    }
 /*image*/
 #logo {
     background-size: cover;

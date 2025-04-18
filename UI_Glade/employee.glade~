@@ -67,6 +67,22 @@
               </packing>
             </child>
             <child>
+              <object class="GtkButton" id="btn_orders_m">
+                <property name="label" translatable="yes">ORDERS</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <style>
+                  <class name="btn_orders_m"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="btn_stats_m">
                 <property name="label" translatable="yes">STATS</property>
                 <property name="visible">True</property>
@@ -79,7 +95,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">3</property>
+                <property name="position">4</property>
               </packing>
             </child>
             <child>
@@ -95,7 +111,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">4</property>
+                <property name="position">5</property>
               </packing>
             </child>
           </object>
@@ -307,10 +323,13 @@
                     <child>
                       <object class="GtkTreeView" id="employee_treeview">
                         <property name="width-request">10</property>
-                        <property name="height-request">20</property>
+                        <property name="height-request">30</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
+                        <property name="border-width">10</property>
                         <property name="search-column">4</property>
+                        <property name="fixed-height-mode">True</property>
+                        <property name="enable-grid-lines">both</property>
                         <child internal-child="selection">
                           <object class="GtkTreeSelection"/>
                         </child>

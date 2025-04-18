@@ -72,6 +72,9 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <style>
+                  <class name="btn_orders_m"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -320,10 +323,16 @@
                     <child>
                       <object class="GtkTreeView" id="employee_treeview">
                         <property name="width-request">10</property>
-                        <property name="height-request">20</property>
+                        <property name="height-request">30</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
+                        <property name="border-width">10</property>
                         <property name="search-column">4</property>
+                        <property name="fixed-height-mode">True</property>
+                        <property name="enable-grid-lines">both</property>
+                        <child internal-child="selection">
+                          <object class="GtkTreeSelection"/>
+                        </child>
                         <style>
                           <class name="employee_treeview"/>
                         </style>

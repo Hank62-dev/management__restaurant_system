@@ -41,14 +41,14 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <style>
-                  <class name="btn_home"/>
+                  <class name="btn_home_m"/>
                   <class name="btn_c"/>
                 </style>
               </object>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">2</property>
+                <property name="position">1</property>
               </packing>
             </child>
             <child>
@@ -60,6 +60,22 @@
                 <style>
                   <class name="btn_menu_m"/>
                   <class name="btn_c"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_orders_m">
+                <property name="label" translatable="yes">ORDERS</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <style>
+                  <class name="btn_orders_m"/>
                 </style>
               </object>
               <packing>

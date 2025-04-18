@@ -174,6 +174,7 @@ g_signal_connect(btn_find, "clicked", G_CALLBACK(on_btn_find_clicked), NULL);
 
 }
 */
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include "employees.h"
@@ -274,4 +275,14 @@ int main(int argc, char *argv[]) {
     gtk_main();
 
     return 0;
+}*/
+#include <stdio.h>
+#include <stdlib.h>
+#include "employees.h"
+#include <gtk/gtk.h>
+
+int main(int argc, char *argv[]) {
+    gtk_init(&argc, &argv);
+    show_home_m();
+    gtk_main();
 }

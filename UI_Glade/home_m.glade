@@ -41,7 +41,7 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <style>
-                  <class name="btn_home"/>
+                  <class name="btn_home_m"/>
                   <class name="btn_c"/>
                 </style>
               </object>
@@ -74,6 +74,9 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <style>
+                  <class name="btn_orders_m"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -144,7 +147,28 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkOverlay" id="overlay_1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkImage" id="image_2">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="stock">gtk-missing-image</property>
+                  </object>
+                  <packing>
+                    <property name="index">-1</property>
+                  </packing>
+                </child>
+                <style>
+                  <class name="overlay_1"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
             </child>
             <child>
               <object class="GtkLabel" id="text_name">
@@ -165,7 +189,28 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkOverlay" id="overlay_2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkImage" id="image_1">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="stock">gtk-missing-image</property>
+                  </object>
+                  <packing>
+                    <property name="index">-1</property>
+                  </packing>
+                </child>
+                <style>
+                  <class name="overlay_2"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">3</property>
+              </packing>
             </child>
             <child>
               <object class="GtkBox" id="box_intro">
