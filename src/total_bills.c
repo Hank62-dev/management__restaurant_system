@@ -2,6 +2,7 @@
 #include <gtk/gtk.h>
 #include <stdio.h>
 #include <string.h>
+#include "total_bills.h"
 
 #define MAX_ROWS 100
 #define MAX_LINE_LEN 256
@@ -72,19 +73,16 @@ void load_labels_from_file(GtkBuilder *builder) {
     fclose(file);
 }
 
-int main(int argc, char *argv[]) {
-    gtk_init(&argc, &argv);
+void total_bills() {
 
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Orders.glade");
-    GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "Orders_Window"));
+    GtkWidget *window_bills = GTK_WIDGET(gtk_builder_get_object(builder, "Orders_Window"));
 
     load_css_orders("Glade_CSS/orders.css");
     load_labels_from_file(builder);
 
-    gtk_widget_show_all(window);
-    gtk_main();
-
-    return 0;
+    gtk_widget_show_all(window_bills);
+ 
 }
 
 
