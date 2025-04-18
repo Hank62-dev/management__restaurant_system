@@ -22,8 +22,13 @@ void on_button_booking_table_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_hide(window_booking_information);
 
     GtkBuilder *builder2 = gtk_builder_new_from_file("UI Glade/window_booking_table.glade");
-    window_booking_table = GTK_WIDGET(gtk_builder_get_object(builder2, "UI Glade/window_booking_table"));
     gtk_builder_connect_signals(builder2, NULL);
+<<<<<<< HEAD
+=======
+    window_booking_table = GTK_WIDGET(gtk_builder_get_object(builder2, "UI Glade/window_booking_table"));
+
+
+>>>>>>> 38f7e82520f8465f6f5cf8244493d4fcda7eebbc
     gtk_widget_show_all(window_booking_table);
 }
 
@@ -37,6 +42,7 @@ int main(int argc, char *argv[]) {
 
 <<<<<<< HEAD
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/window_booking_information.glade");
+    gtk_builder_connect_signals(builder, NULL);
     window_booking_information = GTK_WIDGET(gtk_builder_get_object(builder, "UI Glade/window_booking_information"));
 =======
     GtkBuilder *builder = gtk_builder_new_from_file("window_booking_information.glade");
@@ -54,12 +60,16 @@ int main(int argc, char *argv[]) {
     entry_time = GTK_ENTRY(gtk_builder_get_object(builder, "enter_time"));
     entry_number_of_guest = GTK_ENTRY(gtk_builder_get_object(builder, "enter_number_of_guest"));
 
+<<<<<<< HEAD
     if (!entry_name || !entry_phone || !entry_date || !entry_time || !entry_number_of_guest) {
         g_print("LỖI: Một hoặc nhiều GtkEntry không load được từ Glade\n");
         return 1;
     }
 
     gtk_builder_connect_signals(builder, NULL);
+=======
+  
+>>>>>>> 38f7e82520f8465f6f5cf8244493d4fcda7eebbc
 
     // Load CSS
     GtkCssProvider *cssProvider = gtk_css_provider_new();
