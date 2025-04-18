@@ -93,6 +93,32 @@
 
 }
 
+/*menu button*/
+.btn_menu{
+
+    background: white;
+    color: black;
+    font-weight: 700;
+
+}
+
+.btn_menu:hover {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+
+}
+
+.btn_menu:focus {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+}
+
 .orders_view {
     border: 2px solid #4CAF50;
     border-radius: 5%;
@@ -100,3 +126,9 @@
     background-color: #ffffff;
 }
 
+.bill_view{
+    border: 2px solid #4CAF50;
+    border-radius: 5%;
+    padding: 20px;
+    background-color: #ffffff;
+}

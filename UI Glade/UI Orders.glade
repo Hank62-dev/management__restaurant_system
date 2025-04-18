@@ -52,6 +52,23 @@
               </packing>
             </child>
             <child>
+              <object class="GtkButton" id="btn_menu">
+                <property name="label" translatable="yes">MENU</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="margin-bottom">30</property>
+                <style>
+                  <class name="btn_menu"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="btn_orders">
                 <property name="label" translatable="yes">ORDERS</property>
                 <property name="visible">True</property>
@@ -65,7 +82,7 @@
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">2</property>
+                <property name="position">3</property>
               </packing>
             </child>
             <child>
@@ -82,7 +99,7 @@
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">3</property>
+                <property name="position">4</property>
               </packing>
             </child>
             <child>
@@ -99,7 +116,7 @@
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">4</property>
+                <property name="position">5</property>
               </packing>
             </child>
             <style>
@@ -113,7 +130,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkScrolledWindow">
+          <object class="GtkScrolledWindow" id="view_bill">
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="shadow-type">in</property>
@@ -198,6 +215,9 @@
                 </child>
               </object>
             </child>
+            <style>
+              <class name="bill_view"/>
+            </style>
           </object>
           <packing>
             <property name="expand">True</property>
