@@ -113,7 +113,7 @@ static void load_css(void) {
     g_object_unref(provider);
 }
 
-int main(int argc, char *argv[]) {
+int run_bill(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
     
     // Load the Glade file
