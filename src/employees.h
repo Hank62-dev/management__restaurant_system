@@ -32,6 +32,7 @@ void updateEmployeeFromUI(GtkBuilder *builder, Employee employees[], int *count,
 
 //show
 void show_home_m();
+void show_home_c();
 void show_employee();
 void on_btn_home_m_clicked(GtkWidget *widget, gpointer data);
 void on_btn_menu_m_clicked(GtkWidget *widget, gpointer data);

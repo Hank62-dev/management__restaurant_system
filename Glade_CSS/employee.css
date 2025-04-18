@@ -1,35 +1,29 @@
 
 /* ==== nut chung ==== */
 
-<<<<<<< HEAD
-.btn_home_m, .btn_menu_m, .btn_stats_m, .btn_employee_m ,.btn_orders_m {
-=======
+
+
 .btn_home_m, .btn_menu_m, .btn_stats_m, .btn_employee_m, .btn_orders_m{
->>>>>>> 0943acd16952d82d3396159bce2107983884d1ef
+
     background: white;
     color: black;
     font-weight: 700;
     }
-<<<<<<< HEAD
-.btn_home_m:hover, .btn_menu_m:hover, .btn_stats_m:hover,
-.btn_employee_m:hover,.btn_orders_m:hover {
-=======
+
 .btn_home_m:hover, .btn_menu_m:hover, .btn_stats_m:hover, .btn_orders_m:hover,
 .btn_employee_m:hover {
->>>>>>> 0943acd16952d82d3396159bce2107983884d1ef
+
     border: 0.5px solid rgb(255, 255, 255);
     border-radius: 1px;
     background: green;
     color: white;
 
     }
-<<<<<<< HEAD
-.btn_home_m:focus, .btn_menu_m:focus, .btn_stats_m:focus,
-.btn_employee_m:focus, .btn_orders_m:focus {
-=======
+
+
 .btn_home_m:focus, .btn_menu_m:focus, .btn_stats_m:focus,.btn_orders_m:focus,
 .btn_employee_m:focus {
->>>>>>> 0943acd16952d82d3396159bce2107983884d1ef
+
     border: 0.5px solid rgb(255, 255, 255);
     border-radius: 1px;
     background: green;

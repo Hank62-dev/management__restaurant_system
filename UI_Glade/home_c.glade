@@ -17,12 +17,14 @@
           <object class="GtkBox" id="upper_box">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
+            <property name="border-width">20</property>
             <property name="spacing">10</property>
             <property name="homogeneous">True</property>
             <child>
               <object class="GtkImage" id="image_logo">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+                <property name="pixbuf">../UI_image\logo.png</property>
                 <style>
                   <class name="image_logo"/>
                 </style>
@@ -40,6 +42,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="btn_home_c"/>
                   <class name="btn_c"/>
@@ -57,6 +60,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="btn_menu_c"/>
                   <class name="btn_c"/>
@@ -74,6 +78,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="btn_booking_c"/>
                   <class name="btn_c"/>
@@ -91,8 +96,9 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
-                  <class name="btn_orders"/>
+                  <class name="btn_orders_c"/>
                   <class name="btn_c"/>
                 </style>
               </object>
@@ -114,7 +120,6 @@
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="orientation">vertical</property>
-            <property name="homogeneous">True</property>
             <child>
               <object class="GtkLabel" id="text_slogan">
                 <property name="visible">True</property>
@@ -131,7 +136,16 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">../UI_image\bg1.png</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
             </child>
             <child>
               <object class="GtkLabel" id="name">
@@ -149,45 +163,26 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
-            </child>
-            <child>
-              <object class="GtkBox" id="box_intro">
+              <object class="GtkLabel" id="text_intro">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="text_intro">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="halign">center</property>
-                    <property name="label" translatable="yes">Nhà hàng VQHT - Vị Quê Hương Tươi mang đến hương vị truyền thống kết hợp hiện đại, 
-phục vụ các món ăn đậm đà bản sắc Việt trong không gian ấm cúng, gần gũi.</property>
-                    <property name="justify">center</property>
-                    <property name="width-chars">0</property>
-                    <attributes>
-                      <attribute name="font-desc" value="Segoe UI Heavy 10"/>
-                    </attributes>
-                    <style>
-                      <class name="text_intro"/>
-                    </style>
-                  </object>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
+                <property name="halign">center</property>
+                <property name="label" translatable="yes">Nhà hàng VQHT - Vị Quê Hương Tươi mang đến hương vị truyền thống kết hợp hiện đại, 
+phục vụ các món ăn đậm đà bản sắc Việt trong không gian ấm cúng, gần gũi.
+📍 123 Đường Ẩm Thực, Q.1, TP.HCM     |     📞 0123 456 789     |     🌐 www.vqht.vn     |     © 2025 VQHT</property>
+                <property name="justify">center</property>
+                <property name="width-chars">0</property>
+                <attributes>
+                  <attribute name="font-desc" value="Segoe UI Heavy 10"/>
+                </attributes>
+                <style>
+                  <class name="text_intro"/>
+                </style>
               </object>
               <packing>
-                <property name="expand">False</property>
+                <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">4</property>
+                <property name="position">3</property>
               </packing>
             </child>
           </object>

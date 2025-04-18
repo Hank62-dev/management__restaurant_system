@@ -283,6 +283,6 @@ int main(int argc, char *argv[]) {
 
 int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
-    show_home_m();
+    show_employee();
     gtk_main();
 }

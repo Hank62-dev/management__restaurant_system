@@ -17,18 +17,20 @@
           <object class="GtkBox" id="upper_box">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
+            <property name="border-width">20</property>
             <property name="spacing">10</property>
             <property name="homogeneous">True</property>
             <child>
               <object class="GtkImage" id="image_logo">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+                <property name="pixbuf">../UI_image\logo.png</property>
                 <style>
                   <class name="image_logo"/>
                 </style>
               </object>
               <packing>
-                <property name="expand">False</property>
+                <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">0</property>
               </packing>
@@ -40,6 +42,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="btn_home_m"/>
                   <class name="btn_c"/>
@@ -57,6 +60,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="btn_menu_m"/>
                   <class name="btn_c"/>
@@ -74,6 +78,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="btn_orders_m"/>
                 </style>
@@ -90,6 +95,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="btn_stats_m"/>
                   <class name="btn_m"/>
@@ -107,6 +113,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="btn_employee_m"/>
                   <class name="btn_c"/>
@@ -130,7 +137,6 @@
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="orientation">vertical</property>
-            <property name="homogeneous">True</property>
             <child>
               <object class="GtkLabel" id="text_slogan">
                 <property name="visible">True</property>
@@ -141,32 +147,20 @@
                 </attributes>
               </object>
               <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
                 <property name="position">0</property>
               </packing>
             </child>
             <child>
-              <object class="GtkOverlay" id="overlay_1">
+              <object class="GtkImage">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <child>
-                  <object class="GtkImage" id="image_2">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="stock">gtk-missing-image</property>
-                  </object>
-                  <packing>
-                    <property name="index">-1</property>
-                  </packing>
-                </child>
-                <style>
-                  <class name="overlay_1"/>
-                </style>
+                <property name="pixbuf">../UI_image\bg1.png</property>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
+                <property name="expand">True</property>
+                <property name="fill">False</property>
                 <property name="position">1</property>
               </packing>
             </child>
@@ -176,7 +170,9 @@
                 <property name="can-focus">False</property>
                 <property name="label" translatable="yes">VQHT</property>
                 <attributes>
-                  <attribute name="font-desc" value="Segoe Print 60"/>
+                  <attribute name="font-desc" value="Segoe Script Oblique 72"/>
+                  <attribute name="style" value="normal"/>
+                  <attribute name="weight" value="ultralight"/>
                 </attributes>
                 <style>
                   <class name="text_name"/>
@@ -189,25 +185,22 @@
               </packing>
             </child>
             <child>
-              <object class="GtkOverlay" id="overlay_2">
+              <object class="GtkLabel" id="text_intr">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <child>
-                  <object class="GtkImage" id="image_1">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="stock">gtk-missing-image</property>
-                  </object>
-                  <packing>
-                    <property name="index">-1</property>
-                  </packing>
-                </child>
-                <style>
-                  <class name="overlay_2"/>
-                </style>
+                <property name="halign">center</property>
+                <property name="label" translatable="yes">Nhà hàng VQHT - Vị Quê Hương Tươi mang đến hương vị truyền thống kết hợp hiện đại, 
+phục vụ các món ăn đậm đà bản sắc Việt trong không gian ấm cúng, gần gũi.
+📍 123 Đường Ẩm Thực, Q.1, TP.HCM     |     📞 0123 456 789     |     🌐 www.vqht.vn     |     © 2025 VQHT
+</property>
+                <property name="justify">center</property>
+                <property name="width-chars">0</property>
+                <attributes>
+                  <attribute name="font-desc" value="Segoe UI Heavy 10"/>
+                </attributes>
               </object>
               <packing>
-                <property name="expand">False</property>
+                <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">3</property>
               </packing>
@@ -216,28 +209,6 @@
               <object class="GtkBox" id="box_intro">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="text_intr">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="halign">center</property>
-                    <property name="label" translatable="yes">Nhà hàng VQHT - Vị Quê Hương Tươi mang đến hương vị truyền thống kết hợp hiện đại, 
-phục vụ các món ăn đậm đà bản sắc Việt trong không gian ấm cúng, gần gũi.</property>
-                    <property name="justify">center</property>
-                    <property name="width-chars">0</property>
-                    <attributes>
-                      <attribute name="font-desc" value="Segoe UI Heavy 10"/>
-                    </attributes>
-                  </object>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
                 <child>
                   <placeholder/>
                 </child>
@@ -253,7 +224,7 @@ phục vụ các món ăn đậm đà bản sắc Việt trong không gian ấm 
             </child>
           </object>
           <packing>
-            <property name="expand">True</property>
+            <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">1</property>
           </packing>

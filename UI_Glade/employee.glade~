@@ -24,12 +24,13 @@
               <object class="GtkImage" id="image_logo">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+                <property name="pixbuf">../UI_image\logo.png</property>
                 <style>
                   <class name="image_logo"/>
                 </style>
               </object>
               <packing>
-                <property name="expand">False</property>
+                <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">0</property>
               </packing>
