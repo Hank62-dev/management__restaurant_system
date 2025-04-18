@@ -1,23 +1,16 @@
-/*#include <gtk/gtk.h>
-#include "test.h"
 
-int main(int argc, char *argv[]) {
-    gtk_init(&argc, &argv);
-    setup_orders_ui();
-    gtk_main();
-    return 0;
-}*/
 #include <gtk/gtk.h>
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_ROWS 100  // Số dòng tối đa từ file
+#define MAX_ROWS 100
+#define MAX_LINE_LEN 256
 
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
     GtkStyleContext *context = gtk_widget_get_style_context(widget);
     gtk_style_context_add_provider(context,
-        GTK_STYLE_PROVIDER(provider),
-        GTK_STYLE_PROVIDER_PRIORITY_USER);
+                                   GTK_STYLE_PROVIDER(provider),
+                                   GTK_STYLE_PROVIDER_PRIORITY_USER);
 }
 
 void load_css(const char *css_path, GtkWidget *widget) {
@@ -30,26 +23,39 @@ void load_css(const char *css_path, GtkWidget *widget) {
 void load_labels_from_file(GtkBuilder *builder) {
     FILE *file = fopen("data/view_bill.txt", "r");
     if (!file) {
-        g_print("Không thể mở file view_bill.txt\n");
+        g_print("Not open file view_bill.txt\n");
         return;
     }
 
-    char name[100], price[50], date[50], id[50];
-    int i = 1;
+    char line[MAX_LINE_LEN];
+    int i = 0;
 
-    while (fscanf(file, "%s %s %s %s", id, name, date, price) == 4 && i <= MAX_ROWS) {
+    while (fgets(line, sizeof(line), file) && i <= MAX_ROWS) {
+        char id[50], name[100], date[50], price[50];
+
+        // Gỡ xuống dòng \n nếu có
+        line[strcspn(line, "\n")] = 0;
+
+        // Phân tích dòng bằng sscanf
+        if (sscanf(line, "%s %s %s %s", id, name, date, price) != 4) {
+            g_print("Dòng %d không hợp lệ: %s\n", i, line);
+            continue;
+        }
+
+        // Tạo ID label name như trong Glade
         char id_label[32], name_label[32], date_label[32], price_label[32];
-
         sprintf(id_label, "id%d", i);
         sprintf(name_label, "name%d", i);
         sprintf(date_label, "date%d", i);
         sprintf(price_label, "price%d", i);
 
+        // Lấy widget từ Glade
         GtkLabel *label_id = GTK_LABEL(gtk_builder_get_object(builder, id_label));
         GtkLabel *label_name = GTK_LABEL(gtk_builder_get_object(builder, name_label));
         GtkLabel *label_date = GTK_LABEL(gtk_builder_get_object(builder, date_label));
         GtkLabel *label_price = GTK_LABEL(gtk_builder_get_object(builder, price_label));
 
+        // Nếu đủ label thì in ra
         if (label_id && label_name && label_date && label_price) {
             gtk_label_set_text(label_id, id);
             gtk_label_set_text(label_name, name);
@@ -79,3 +85,5 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
+
