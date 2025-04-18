@@ -13,9 +13,10 @@ GtkWidget *entry_firstname_c, *entry_lastname_c, *entry_phone_c;
 GtkWidget *entry_password_c, *entry_confirm_password_c;
 GtkWidget *entry_login_phone_c, *entry_login_password_c;
 GtkWidget *Login_Register_window_c, *home_window_c, *window_c;
+static GtkWidget *identification = NULL;
 /*
 //Áp dụng css
-void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
+void apply_css_Cus(GtkWidget *widget, GtkCssProvider *provider) {
 	
     if( gtk_css_provider_load_from_path(provider, "Glade_CSS/login_register.css", NULL) ){
     	g_print("CSS loaded successfully!!\n");
@@ -25,7 +26,7 @@ void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
     GtkStyleContext *context = gtk_widget_get_style_context(widget);
     gtk_style_context_add_provider(context, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
     if (GTK_IS_CONTAINER(widget)) {
-        gtk_container_foreach(GTK_CONTAINER(widget), (GtkCallback)apply_css, provider);
+        gtk_container_foreach(GTK_CONTAINER(widget), (GtkCallback)apply_css_Cus, provider);
     }
 }*/
 // Chuyển form khi nhấn nút login/register
@@ -42,7 +43,7 @@ void switch_to_login_now_c(GtkButton *button, gpointer user_data){
     gtk_widget_hide(Login_Register_window_c);
 }
 void switch_to_back_c(GtkButton *button, gpointer data) {
-    GtkWidget *identification = GTK_WIDGET(data);
+    //GtkWidget *identification = GTK_WIDGET(data);
     gtk_widget_show_all(identification);
     gtk_widget_hide(Login_Register_window_c);
     
@@ -99,11 +100,14 @@ void on_login_now_clicked_c(GtkButton *button, gpointer user_data) {
         g_print("Invalid login credentials!\n");
     }
 }
-void login_register_Customer(){
+
+
+void login_register_Customer(GtkWidget *identification_window){
 
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register_Cus.glade");
-    GtkWidget *window_c = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Register_window"));
+    window_c = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Register_window"));
     Login_Register_window_c = window_c;
+    identification = identification_window;
     //resize ảnh
 	GtkWidget *image = GTK_WIDGET(gtk_builder_get_object(builder, "logo_login_register"));
 	GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file("UI_image/logores.jpg", NULL); 
@@ -111,6 +115,10 @@ void login_register_Customer(){
 	pixbuf = gdk_pixbuf_scale_simple(pixbuf, width, height, GDK_INTERP_BILINEAR);
 	gtk_image_set_from_pixbuf(GTK_IMAGE(image), pixbuf);
 
+    GtkCssProvider *provider = gtk_css_provider_new();
+    gtk_css_provider_load_from_path(provider, "Glade_CSS/login_register.css", NULL);
+    apply_css_Cus(window_c, provider);
+    g_object_unref(provider);
 
     stack_c = GTK_WIDGET(gtk_builder_get_object(builder, "stack_form"));
     
@@ -138,9 +146,7 @@ void login_register_Customer(){
     g_signal_connect(btn_register_c,"clicked",G_CALLBACK(switch_to_register_c), NULL);
     g_signal_connect(btn_back_c, "clicked", G_CALLBACK(switch_to_back_c), NULL);
     // Áp dụng CSS
-    GtkCssProvider *provider = gtk_css_provider_new();
-    apply_css(window_c, provider);
-    g_object_unref(provider);
-    
+
     gtk_widget_show_all(window_c);
+    
 }

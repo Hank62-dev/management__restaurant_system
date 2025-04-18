@@ -12,7 +12,7 @@
 // Các biến toàn cục để truy cập widget
 GtkLabel *label_daily, *label_monthly, *label_best_food, *label_best_drink;
 // Hàm áp dụng CSS cho giao diện
-void apply_css(GtkWidget *window) {
+void apply_css_stats(GtkWidget *window) {
     GtkCssProvider *provider = gtk_css_provider_new();
     if (gtk_css_provider_load_from_path(provider, "Glade_CSS/stats.css", NULL)) {
         g_print("CSS loaded successfully.\n");
@@ -217,7 +217,7 @@ void show_stats() {
     g_signal_connect(btn_stats, "clicked", G_CALLBACK(update_stats), NULL);
 
     // Hiển thị cửa sổ và áp dụng CSS
-    apply_css(window);
+    apply_css_stats(window);
     gtk_widget_show_all(window);
 
 

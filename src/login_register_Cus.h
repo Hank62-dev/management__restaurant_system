@@ -13,7 +13,7 @@
 
 //khai báo các hàm sẽ xử lý
 void show_identification();
-void login_register_Customer();
+void login_register_Customer(GtkWidget *identification_window);
 void on_login_now_clicked_c(GtkButton *button, gpointer user_data);
 void on_register_now_clicked_c(GtkButton *button, gpointer user_data);
 void switch_to_back_c(GtkButton *button, gpointer data);

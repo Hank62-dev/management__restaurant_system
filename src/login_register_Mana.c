@@ -13,7 +13,7 @@ GtkWidget *entry_firstname_m, *entry_lastname_m, *entry_phone_m;
 GtkWidget *entry_password_m, *entry_confirm_password_m;
 GtkWidget *entry_login_phone_m, *entry_login_password_m;
 GtkWidget *Login_Register_window_m, *home_window_m, *window_m;
-
+static GtkWidget *identification = NULL;
 /*
 //Áp dụng css
 void apply_css(GtkWidget *widget, GtkCssProvider *provider) {
@@ -43,7 +43,7 @@ void switch_to_login_now_m(GtkButton *button, gpointer user_data){
     gtk_widget_hide(Login_Register_window_m);
 }
 void switch_to_back_m(GtkButton *button, gpointer data) {
-    GtkWidget *identification = GTK_WIDGET(data);
+    //GtkWidget *identification = GTK_WIDGET(data);
     gtk_widget_show_all(identification);
     gtk_widget_hide(Login_Register_window_m);
     
@@ -100,10 +100,11 @@ void on_login_now_clicked_m(GtkButton *button, gpointer user_data) {
         g_print("Invalid login credentials!\n");
     }
 }
-void login_register_Management(){
+void login_register_Management(GtkWidget *identification_window){
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register_Mana.glade");
-    GtkWidget *window_m = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Register_window"));
+    window_m = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Register_window"));
     Login_Register_window_m = window_m;
+    identification = identification_window;
     //resize ảnh
     GtkWidget *image = GTK_WIDGET(gtk_builder_get_object(builder,"logo_login_register"));
     GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file("UI_image/logores.jpg", NULL);
@@ -142,4 +143,5 @@ void login_register_Management(){
 
     // Hiện cửa sổ
     gtk_widget_show_all(window_m);
+    
 }

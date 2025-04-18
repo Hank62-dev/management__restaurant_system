@@ -13,7 +13,7 @@ extern GtkWidget *Login_Register_window_m, *home_window_m, *window_m;
 
 //khai báo các hàm sẽ xử lý
 void show_identification();
-void login_register_Management();
+void login_register_Management(GtkWidget *identification_window);
 void on_login_now_clicked_m(GtkButton *button, gpointer user_data);
 void on_register_now_clicked_m(GtkButton *button, gpointer user_data);
 void switch_to_back_m(GtkButton *button, gpointer data);
