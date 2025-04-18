@@ -18,6 +18,7 @@ typedef struct {
 } MenuItem;
 
 // Hàm cho giao diện quản lý
+void show_Menu_Mana();
 int loadMenuFromFile(MenuItem menu[], int *count);
 void on_select_item_clicked(GtkButton *button, gpointer user_data);
 void printMenu(MenuItem menu[], int count);

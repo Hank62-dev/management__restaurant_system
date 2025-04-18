@@ -228,12 +228,12 @@ void on_confirm_clicked(GtkButton *button, gpointer user_data) {
     showMessage(GTK_WINDOW(user_data), "Danh sách món đã được lưu!");
 }
 
-int show_Menu_Mana(int argc, char *argv[]) {
+void show_Menu_Mana() {
 
     GtkBuilder *builder = gtk_builder_new();
     if (!gtk_builder_add_from_file(builder, "UI Glade/UI_MenuMana.glade", NULL)) {
         printf("Lỗi tải file UI_MenuMana.glade\n");
-        return 1;
+        return ;
     }
 
     // Lấy widget
@@ -263,7 +263,6 @@ int show_Menu_Mana(int argc, char *argv[]) {
 
     if (!loadMenuFromFile(menuList, &menuCount)) {
         printf("Lỗi tải menu\n");
-        return 1;
     }
 
     printMenu(menuList, menuCount);
@@ -279,5 +278,4 @@ int show_Menu_Mana(int argc, char *argv[]) {
     gtk_widget_show_all(window);
 
     g_object_unref(builder);
-    return 0;
 }
