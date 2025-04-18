@@ -1,3 +1,4 @@
+#include <gtk/gtk.h>
 #ifndef MENU_CUS_H
 #define MENU_CUS_H
 
