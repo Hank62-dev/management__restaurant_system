@@ -103,7 +103,7 @@ static void load_css(void) {
                                              GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
     
     GError *error = NULL;
-    gtk_css_provider_load_from_path(provider, "style.css", &error);
+    gtk_css_provider_load_from_path(provider, "Glade_CSS/edit1.css", &error);
     
     if (error != NULL) {
         g_printerr("Error loading CSS: %s\n", error->message);
@@ -120,7 +120,7 @@ int main(int argc, char *argv[]) {
     GtkBuilder *builder = gtk_builder_new();
     GError *error = NULL;
     
-    if (!gtk_builder_add_from_file(builder, "bill_layout.glade", &error)) {
+    if (!gtk_builder_add_from_file(builder, "UI Glade/bill_layout.glade", &error)) {
         g_printerr("Error loading Glade file: %s\n", error->message);
         g_error_free(error);
         g_object_unref(builder);
