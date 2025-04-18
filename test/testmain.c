@@ -37,7 +37,7 @@ void load_labels_from_file(GtkBuilder *builder) {
     char name[100], price[50], date[50], id[50];
     int i = 1;
 
-    while (fscanf(file, "%s %s %s %s", name, price, date, id) == 4 && i <= MAX_ROWS) {
+    while (fscanf(file, "%s %s %s %s", id, name, date, price) == 4 && i <= MAX_ROWS) {
         char id_label[32], name_label[32], date_label[32], price_label[32];
 
         sprintf(id_label, "ID%d", i);

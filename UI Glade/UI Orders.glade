@@ -138,7 +138,7 @@
               <object class="GtkLabel" id="ID">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">ID</property>
+                <property name="label" translatable="yes">STT</property>
                 <style>
                   <class name="ID"/>
                 </style>
