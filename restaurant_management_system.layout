@@ -3,13 +3,14 @@
 Order=0
 Focused=0
 [Editor_0]
-CursorCol=37
+CursorCol=34
 CursorRow=149
 <<<<<<< HEAD
 TopLine=125
 =======
 Order=0,1,2
 Focused=2
+LeftChar=1
 [Editor_0]
 CursorCol=14
 CursorRow=238
