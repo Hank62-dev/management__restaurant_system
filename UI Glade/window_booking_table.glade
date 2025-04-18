@@ -130,16 +130,16 @@
                 <property name="spacing">25</property>
                 <property name="homogeneous">True</property>
                 <child>
-                  <object class="GtkButton" id="table1">
+                  <object class="GtkToggleButton" id="table1">
                     <property name="label" translatable="yes">TABLE 1</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
-                    <signal name="clicked" handler="on_table_clicked" swapped="no"/>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
-                      <class name="bill3"/>
+                      <class name="table"/>
                     </style>
                   </object>
                   <packing>
@@ -149,16 +149,16 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="table2">
+                  <object class="GtkToggleButton" id="table2">
                     <property name="label" translatable="yes">TABLE 2</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
-                    <signal name="clicked" handler="on_table_clicked" swapped="no"/>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
-                      <class name="bill3"/>
+                      <class name="table"/>
                     </style>
                   </object>
                   <packing>
@@ -168,16 +168,16 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="table3">
+                  <object class="GtkToggleButton" id="table3">
                     <property name="label" translatable="yes">TABLE 3</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
-                    <signal name="clicked" handler="on_table_clicked" swapped="no"/>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
-                      <class name="bill3"/>
+                      <class name="table"/>
                     </style>
                   </object>
                   <packing>
@@ -187,16 +187,16 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="table4">
+                  <object class="GtkToggleButton" id="table4">
                     <property name="label" translatable="yes">TABLE 4</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
-                    <signal name="clicked" handler="on_table_clicked" swapped="no"/>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
-                      <class name="bill3"/>
+                      <class name="table"/>
                     </style>
                   </object>
                   <packing>
@@ -232,16 +232,16 @@
                 <property name="spacing">25</property>
                 <property name="homogeneous">True</property>
                 <child>
-                  <object class="GtkButton" id="table5">
+                  <object class="GtkToggleButton" id="table5">
                     <property name="label" translatable="yes">TABLE 5</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
-                    <signal name="clicked" handler="on_table_clicked" swapped="no"/>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
-                      <class name="bill3"/>
+                      <class name="table"/>
                     </style>
                   </object>
                   <packing>
@@ -251,16 +251,16 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="table6">
+                  <object class="GtkToggleButton" id="table6">
                     <property name="label" translatable="yes">TABLE 6</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
-                    <signal name="clicked" handler="on_table_clicked" swapped="no"/>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
-                      <class name="bill3"/>
+                      <class name="table"/>
                     </style>
                   </object>
                   <packing>
@@ -270,16 +270,16 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="table7">
-                    <property name="label" translatable="yes">TABLE7</property>
+                  <object class="GtkToggleButton" id="table7">
+                    <property name="label" translatable="yes">TABLE 7</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
-                    <signal name="clicked" handler="on_table_clicked" swapped="no"/>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
-                      <class name="bill3"/>
+                      <class name="table"/>
                     </style>
                   </object>
                   <packing>
@@ -289,16 +289,16 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="table8">
-                    <property name="label" translatable="yes">TABLE8</property>
+                  <object class="GtkToggleButton" id="table8">
+                    <property name="label" translatable="yes">TABLE 8</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
-                    <signal name="clicked" handler="on_table_clicked" swapped="no"/>
+                    <signal name="toggled" handler="on_table_clicked" swapped="no"/>
                     <style>
-                      <class name="bill3"/>
+                      <class name="table"/>
                     </style>
                   </object>
                   <packing>

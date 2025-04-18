@@ -1,18 +1,6 @@
 #include <gtk/gtk.h>
 #include <string.h>
-
-// Structure to hold application data
-typedef struct {
-    GtkWidget *window_booking_information;
-    GtkWidget *window_booking_table;
-    GtkBuilder *builder_booking_information;
-    GtkBuilder *builder_booking_table;
-    char *name;
-    char *date;
-    char *phone;
-    char *time;
-    char *guests;
-} AppData;
+#include "table_booking.h"
 
 // Callback functions for navigation buttons
 static void on_home3_clicked(GtkButton *button, gpointer data) {
@@ -40,11 +28,9 @@ static void on_booking3_clicked(GtkButton *button, gpointer data) {
 }
 
 static void on_bill3_clicked(GtkButton *button, gpointer data) {
-    GtkWidget *dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, 
-                                              GTK_MESSAGE_INFO, GTK_BUTTONS_OK, 
-                                              "Bill button clicked!");
-    gtk_dialog_run(GTK_DIALOG(dialog));
-    gtk_widget_destroy(dialog);
+    AppData *app_data = (AppData *)data;
+    gtk_widget_hide(app_data->window_booking_information);
+    run_bill(app_data);
 }
 
 // Callback for BOOK TABLE HERE button to switch to window_booking_table
@@ -92,39 +78,12 @@ static void on_button_booking_table_clicked(GtkButton *button, gpointer data) {
     // Hide booking information window
     gtk_widget_hide(app_data->window_booking_information);
     
-    // Load window_booking_table.glade
-    app_data->builder_booking_table = gtk_builder_new();
-    GError *error = NULL;
-    
-    if (!gtk_builder_add_from_file(app_data->builder_booking_table, "window_booking_table.glade", &error)) {
-        g_printerr("Error loading window_booking_table.glade: %s\n", error->message);
-        g_error_free(error);
-        g_object_unref(app_data->builder_booking_table);
-        return;
-    }
-    
-    // Get booking table window
-    app_data->window_booking_table = GTK_WIDGET(gtk_builder_get_object(app_data->builder_booking_table, "window_booking_table"));
-    
-    // Connect signals
-    gtk_builder_connect_signals(app_data->builder_booking_table, app_data);
-    
     // Show booking table window
-    gtk_widget_show_all(app_data->window_booking_table);
-    
-    // Show booking details in a dialog
-    char *message = g_strdup_printf("Booking Details:\nName: %s\nDate: %s\nPhone: %s\nTime: %s\nGuests: %s",
-                                    name, date, phone, time, guests);
-    GtkWidget *dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, 
-                                              GTK_MESSAGE_INFO, GTK_BUTTONS_OK, 
-                                              "%s", message);
-    gtk_dialog_run(GTK_DIALOG(dialog));
-    gtk_widget_destroy(dialog);
-    g_free(message);
+    book_table_show(app_data);
 }
 
 // Function to load CSS
-static void load_css(void) {
+static void load_css_information(void) {
     GtkCssProvider *provider = gtk_css_provider_new();
     GdkDisplay *display = gdk_display_get_default();
     GdkScreen *screen = gdk_display_get_default_screen(display);
@@ -144,52 +103,27 @@ static void load_css(void) {
     g_object_unref(provider);
 }
 
-int main(int argc, char *argv[]) {
-    gtk_init(&argc, &argv);
-    
+void show_booking_information(AppData *app_data) {
     // Load the booking information Glade file
-    GtkBuilder *builder_booking_information = gtk_builder_new();
+    app_data->builder_booking_information = gtk_builder_new();
     GError *error = NULL;
     
-    if (!gtk_builder_add_from_file(builder_booking_information, "window_booking_information.glade", &error)) {
+    if (!gtk_builder_add_from_file(app_data->builder_booking_information, "window_booking_information.glade", &error)) {
         g_printerr("Error loading window_booking_information.glade: %s\n", error->message);
         g_error_free(error);
-        g_object_unref(builder_booking_information);
-        return 1;
+        g_object_unref(app_data->builder_booking_information);
+        return;
     }
     
     // Load CSS
-    load_css();
-    
-    // Create AppData structure
-    AppData app_data = {0};
-    app_data.builder_booking_information = builder_booking_information;
-    app_data.name = NULL;
-    app_data.date = NULL;
-    app_data.phone = NULL;
-    app_data.time = NULL;
-    app_data.guests = NULL;
+    load_css_information();
     
     // Get the booking information window
-    app_data.window_booking_information = GTK_WIDGET(gtk_builder_get_object(builder_booking_information, "window_booking_information"));
+    app_data->window_booking_information = GTK_WIDGET(gtk_builder_get_object(app_data->builder_booking_information, "window_booking_information"));
     
     // Connect signals
-    gtk_builder_connect_signals(builder_booking_information, &app_data);
+    gtk_builder_connect_signals(app_data->builder_booking_information, app_data);
     
     // Show the booking information window
-    gtk_widget_show_all(app_data.window_booking_information);
-    
-    // Start the main loop
-    gtk_main();
-    
-    // Cleanup
-    if (app_data.name) g_free(app_data.name);
-    if (app_data.date) g_free(app_data.date);
-    if (app_data.phone) g_free(app_data.phone);
-    if (app_data.time) g_free(app_data.time);
-    if (app_data.guests) g_free(app_data.guests);
-    if (app_data.builder_booking_information) g_object_unref(app_data.builder_booking_information);
-    if (app_data.builder_booking_table) g_object_unref(app_data.builder_booking_table);
-    
-    return 0;
+    gtk_widget_show_all(app_data->window_booking_information);
 }
