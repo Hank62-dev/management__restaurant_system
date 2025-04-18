@@ -199,8 +199,7 @@ static void load_css(void) {
     g_object_unref(provider);
 }
 
-int main(int argc, char *argv[]) {
-    gtk_init(&argc, &argv);
+void book_table_show () {
     
     // Load the booking table Glade file
     GtkBuilder *builder_booking_table = gtk_builder_new();
@@ -210,7 +209,7 @@ int main(int argc, char *argv[]) {
         g_printerr("Error loading window_booking_table.glade: %s\n", error->message);
         g_error_free(error);
         g_object_unref(builder_booking_table);
-        return 1;
+        return ;
     }
     
     // Load CSS
@@ -230,13 +229,10 @@ int main(int argc, char *argv[]) {
     // Show the booking table window
     gtk_widget_show_all(app_data.window_booking_table);
     
-    // Start the main loop
-    gtk_main();
     
     // Cleanup
     if (app_data.selected_table) g_free(app_data.selected_table);
     if (app_data.builder_booking_table) g_object_unref(app_data.builder_booking_table);
     if (app_data.builder_bill_layout) g_object_unref(app_data.builder_bill_layout);
     
-    return 0;
 }

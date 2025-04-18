@@ -6,6 +6,7 @@
     <property name="width-request">1366</property>
     <property name="height-request">768</property>
     <property name="can-focus">False</property>
+    <property name="border-width">10</property>
     <property name="default-width">1366</property>
     <property name="default-height">768</property>
     <child>
@@ -19,6 +20,7 @@
           <object class="GtkBox" id="boxdoc3">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
+            <property name="border-width">20</property>
             <property name="spacing">10</property>
             <property name="homogeneous">True</property>
             <child>
@@ -39,6 +41,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <signal name="clicked" handler="on_home3_clicked" swapped="no"/>
                 <style>
                   <class name="home3"/>
@@ -56,6 +59,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <signal name="clicked" handler="on_menu3_clicked" swapped="no"/>
                 <style>
                   <class name="menu3"/>
@@ -73,6 +77,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <signal name="clicked" handler="on_booking3_clicked" swapped="no"/>
                 <style>
                   <class name="booking3"/>
@@ -90,6 +95,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <signal name="clicked" handler="on_bill3_clicked" swapped="no"/>
                 <style>
                   <class name="bill3"/>
@@ -163,7 +169,6 @@
                 <property name="height-request">39</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="text" translatable="yes">YOUR FULL NAME</property>
                 <property name="placeholder-text" translatable="yes">Enter your name</property>
                 <style>
                   <class name="enter_name"/>
@@ -180,8 +185,7 @@
                 <property name="height-request">37</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="text" translatable="yes">DATE</property>
-                <property name="placeholder-text" translatable="yes">Enter the date you will arrive</property>
+                <property name="placeholder-text" translatable="yes">Enter the date</property>
                 <style>
                   <class name="enter_date"/>
                 </style>
@@ -197,7 +201,6 @@
                 <property name="height-request">31</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="text" translatable="yes">PHONE</property>
                 <property name="placeholder-text" translatable="yes">Enter your phone number</property>
                 <style>
                   <class name="enter_phone"/>
@@ -214,7 +217,6 @@
                 <property name="height-request">38</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="text" translatable="yes">TIME</property>
                 <property name="placeholder-text" translatable="yes">Enter the time you will arrive</property>
                 <style>
                   <class name="enter_time"/>
@@ -231,8 +233,7 @@
                 <property name="height-request">32</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="text" translatable="yes">NUMBER OF GUEST</property>
-                <property name="placeholder-text" translatable="yes">Enter your number of guest</property>
+                <property name="placeholder-text" translatable="yes">Enter number guest</property>
                 <style>
                   <class name="enter_number_of_guest"/>
                 </style>
