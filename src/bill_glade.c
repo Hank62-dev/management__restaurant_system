@@ -60,6 +60,14 @@ int main(int argc, char *argv[]) {
     GtkWidget *subtotal_bill = GTK_WIDGET(gtk_builder_get_object(builder, "subtotal_bill"));
     GtkWidget *tar = GTK_WIDGET(gtk_builder_get_object(builder, "tar"));
     GtkWidget *total_bill = GTK_WIDGET(gtk_builder_get_object(builder, "total_bill"));
+    // khai bao
+const char *customer ;
+const char *table ;
+const char *date ;
+double subtotal ;
+double tax ;
+double total ;
+
 
     // Update bill information on the GUI
     update_bill_info(customer_name, table_ordered, date_ordered, subtotal_bill, tar, total_bill, 
