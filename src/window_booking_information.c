@@ -26,8 +26,8 @@ void on_button_booking_table_clicked(GtkButton *button, gpointer user_data) {
     // Chuyển sang giao diện đặt bàn
     gtk_widget_hide(window_booking_information);
 
-    GtkBuilder *builder2 = gtk_builder_new_from_file("window_booking_table.glade");
-    window_booking_table = GTK_WIDGET(gtk_builder_get_object(builder2, "window_booking_table"));
+    GtkBuilder *builder2 = gtk_builder_new_from_file("UI Glade/window_booking_table.glade");
+    window_booking_table = GTK_WIDGET(gtk_builder_get_object(builder2, "UI Glade/window_booking_table"));
     gtk_builder_connect_signals(builder2, NULL);
 
     gtk_widget_show_all(window_booking_table);
@@ -48,10 +48,10 @@ void on_bill3_clicked(GtkButton *button, gpointer user_data) {
 }
 
 int main(int argc, char *argv[]) {
-    gtk_init(&argc, &argv__);
+    gtk_init(&argc, &argv);
 
-    GtkBuilder *builder = gtk_builder_new_from_file("window_booking_information.glade");
-    window_booking_information = GTK_WIDGET(gtk_builder_get_object(builder, "window_booking_information"));
+    GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/window_booking_information.glade");
+    window_booking_information = GTK_WIDGET(gtk_builder_get_object(builder, "UI Glade/window_booking_information"));
 
     // Lưu các GtkEntry để dùng trong handler
     entry_name = GTK_ENTRY(gtk_builder_get_object(builder, "enter_name"));
