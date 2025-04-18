@@ -47,7 +47,7 @@ static void on_bill3_clicked(GtkButton *button, gpointer data) {
         app_data->builder_bill_layout = gtk_builder_new();
         GError *error = NULL;
         
-        if (!gtk_builder_add_from_file(app_data->builder_bill_layout, "bill_layout.glade", &error)) {
+        if (!gtk_builder_add_from_file(app_data->builder_bill_layout, "UI Glade/bill_layout.glade", &error)) {
             g_printerr("Error loading bill_layout.glade: %s\n", error->message);
             g_error_free(error);
             g_object_unref(app_data->builder_bill_layout);
@@ -189,7 +189,7 @@ static void load_css(void) {
                                              GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
     
     GError *error = NULL;
-    gtk_css_provider_load_from_path(provider, "edit1.css", &error);
+    gtk_css_provider_load_from_path(provider, "Glade_CSS/edit1.css", &error);
     
     if (error != NULL) {
         g_printerr("Error loading CSS: %s\n", error->message);
@@ -206,7 +206,7 @@ int main(int argc, char *argv[]) {
     GtkBuilder *builder_booking_table = gtk_builder_new();
     GError *error = NULL;
     
-    if (!gtk_builder_add_from_file(builder_booking_table, "window_booking_table.glade", &error)) {
+    if (!gtk_builder_add_from_file(builder_booking_table, "UI Glade/window_booking_table.glade", &error)) {
         g_printerr("Error loading window_booking_table.glade: %s\n", error->message);
         g_error_free(error);
         g_object_unref(builder_booking_table);
