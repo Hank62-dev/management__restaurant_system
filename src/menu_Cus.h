@@ -16,7 +16,7 @@ typedef struct {
     char type[MAX_TYPE_LENGTH];
     float price;
     char imagePath[MAX_IMAGE_PATH];
-} MenuItem;
+} MenuItemCus;
 
 // Cấu trúc cho món được chọn (khách hàng)
 typedef struct {
@@ -28,8 +28,8 @@ typedef struct {
 
 // Hàm cho giao diện khách hàng
 void show_Menu_Cus();
-int loadMenuFromFile(MenuItem menu[], int *count);
-void printMenu(MenuItem menu[], int count);
+int loadMenuFromFile(MenuItemCus menu[], int *count);
+void printMenu(MenuItemCus menu[], int count);
 int saveOrderToFile(OrderItem order[], int count);
 
 #endif // MENU_CUS_H

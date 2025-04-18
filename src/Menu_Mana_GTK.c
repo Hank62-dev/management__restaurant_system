@@ -5,7 +5,7 @@
 #include "menu_Mana.h"
 
 // Biến toàn cục
-MenuItem menuList[MAX_MENU_ITEMS];
+MenuItemMana menuList[MAX_MENU_ITEMS];
 int menuCount = 0;
 GtkWidget *oldIdLabel, *oldNameLabel, *oldCategoryLabel, *oldPriceLabel, *oldImageLabel;
 GtkWidget *newIdEntry, *newNameEntry, *newCategoryEntry, *newPriceEntry, *newImageEntry;

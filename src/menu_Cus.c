@@ -2,7 +2,7 @@
 #include <string.h>
 #include "menu_Cus.h"
 
-int loadMenuFromFile(MenuItem menu[], int *count) {
+int loadMenuFromFile(MenuItemCus menu[], int *count) {
     FILE *file = fopen("data/menu.txt", "r");
     if (!file) {
         perror("Lỗi mở file menu.txt");
@@ -34,7 +34,7 @@ int loadMenuFromFile(MenuItem menu[], int *count) {
     return 1;
 }
 
-void printMenu(MenuItem menu[], int count) {
+void printMenu(MenuItemCus menu[], int count) {
     for (int i = 0; i < count; i++) {
         printf("%s \"%s\" \"%s\" %.0f \"%s\"\n", 
                menu[i].menuId, menu[i].dishName, menu[i].type, 

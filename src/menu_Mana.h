@@ -15,19 +15,19 @@ typedef struct {
     char type[MAX_TYPE_LENGTH];
     float price;
     char imagePath[MAX_IMAGE_PATH];
-} MenuItem;
+} MenuItemMana;
 
 // Hàm cho giao diện quản lý
 void show_Menu_Mana();
-int loadMenuFromFile(MenuItem menu[], int *count);
+int loadMenuFromFile(MenuItemMana menu[], int *count);
 void on_select_item_clicked(GtkButton *button, gpointer user_data);
-void printMenu(MenuItem menu[], int count);
-int saveMenuToFile(MenuItem menu[], int count);
-int checkDuplicate(MenuItem menu[], int count, const char *menuId);
-int addItem(MenuItem menu[], int *count, const char *menuId, const char *dishName, 
+void printMenu(MenuItemMana menu[], int count);
+int saveMenuToFile(MenuItemMana menu[], int count);
+int checkDuplicate(MenuItemMana menu[], int count, const char *menuId);
+int addItem(MenuItemMana menu[], int *count, const char *menuId, const char *dishName, 
             const char *type, float price, const char *imagePath);
-int deleteItem(MenuItem menu[], int *count, const char *menuId);
-int editItem(MenuItem menu[], int count, const char *menuId, const char *newDishName, 
+int deleteItem(MenuItemMana menu[], int *count, const char *menuId);
+int editItem(MenuItemMana menu[], int count, const char *menuId, const char *newDishName, 
              const char *newType, float newPrice, const char *newImagePath);
 
 #endif // MENU_MANA_H

@@ -5,7 +5,7 @@
 #include "menu_Cus.h"
 
 // Biến toàn cục
-MenuItem menuList[MAX_MENU_ITEMS];
+MenuItemCus menuList[MAX_MENU_ITEMS];
 int menuCount = 0;
 OrderItem orderItems[MAX_ORDER_ITEMS];
 int orderCount = 0;

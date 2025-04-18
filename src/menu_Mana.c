@@ -2,7 +2,7 @@
 #include <string.h>
 #include "menu_Mana.h"
 
-int loadMenuFromFile(MenuItem menu[], int *count) {
+int loadMenuFromFile(MenuItemMana menu[], int *count) {
     FILE *file = fopen("data/menu.txt", "r");
     if (!file) {
         perror("Lỗi mở file menu.txt");
@@ -42,7 +42,7 @@ int loadMenuFromFile(MenuItem menu[], int *count) {
     return 1;
 }
 
-void printMenu(MenuItem menu[], int count) {
+void printMenu(MenuItemMana menu[], int count) {
     for (int i = 0; i < count; i++) {
         printf("%s \"%s\" \"%s\" %.0f \"%s\"\n", 
                menu[i].menuId, menu[i].dishName, menu[i].type, 
@@ -50,7 +50,7 @@ void printMenu(MenuItem menu[], int count) {
     }
 }
 
-int saveMenuToFile(MenuItem menu[], int count) {
+int saveMenuToFile(MenuItemMana menu[], int count) {
     FILE *file = fopen("data/menu.txt", "w");
     if (!file) {
         perror("Lỗi mở file menu.txt");
@@ -67,7 +67,7 @@ int saveMenuToFile(MenuItem menu[], int count) {
     return 1;
 }
 
-int checkDuplicate(MenuItem menu[], int count, const char *menuId) {
+int checkDuplicate(MenuItemMana menu[], int count, const char *menuId) {
     for (int i = 0; i < count; i++) {
         if (strcmp(menu[i].menuId, menuId) == 0) {
             return 1;
@@ -76,7 +76,7 @@ int checkDuplicate(MenuItem menu[], int count, const char *menuId) {
     return 0;
 }
 
-int addItem(MenuItem menu[], int *count, const char *menuId, const char *dishName, 
+int addItem(MenuItemMana menu[], int *count, const char *menuId, const char *dishName, 
             const char *type, float price, const char *imagePath) {
     if (*count >= MAX_MENU_ITEMS || checkDuplicate(menu, *count, menuId)) {
         return 0;
@@ -91,7 +91,7 @@ int addItem(MenuItem menu[], int *count, const char *menuId, const char *dishNam
     return 1;
 }
 
-int deleteItem(MenuItem menu[], int *count, const char *menuId) {
+int deleteItem(MenuItemMana menu[], int *count, const char *menuId) {
     for (int i = 0; i < *count; i++) {
         if (strcmp(menu[i].menuId, menuId) == 0) {
             for (int j = i; j < *count - 1; j++) {
@@ -104,7 +104,7 @@ int deleteItem(MenuItem menu[], int *count, const char *menuId) {
     return 0;
 }
 
-int editItem(MenuItem menu[], int count, const char *menuId, 
+int editItem(MenuItemMana menu[], int count, const char *menuId, 
              const char *newDishName, const char *newType, 
              float newPrice, const char *newImagePath) {
     for (int i = 0; i < count; i++) {
