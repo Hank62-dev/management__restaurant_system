@@ -27,8 +27,9 @@ void on_button_booking_table_clicked(GtkButton *button, gpointer user_data) {
     gtk_widget_hide(window_booking_information);
 
     GtkBuilder *builder2 = gtk_builder_new_from_file("UI Glade/window_booking_table.glade");
-    window_booking_table = GTK_WIDGET(gtk_builder_get_object(builder2, "UI Glade/window_booking_table"));
     gtk_builder_connect_signals(builder2, NULL);
+    window_booking_table = GTK_WIDGET(gtk_builder_get_object(builder2, "UI Glade/window_booking_table"));
+
 
     gtk_widget_show_all(window_booking_table);
 }
@@ -51,6 +52,7 @@ int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
 
     GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/window_booking_information.glade");
+    gtk_builder_connect_signals(builder, NULL);
     window_booking_information = GTK_WIDGET(gtk_builder_get_object(builder, "UI Glade/window_booking_information"));
 
     // Lưu các GtkEntry để dùng trong handler
@@ -60,7 +62,7 @@ int main(int argc, char *argv[]) {
     entry_time = GTK_ENTRY(gtk_builder_get_object(builder, "enter_time"));
     entry_number_of_guest = GTK_ENTRY(gtk_builder_get_object(builder, "enter_number_of_guest"));
 
-    gtk_builder_connect_signals(builder, NULL);
+  
 
     // Load CSS
     GtkCssProvider *cssProvider = gtk_css_provider_new();
