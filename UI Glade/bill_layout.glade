@@ -6,6 +6,7 @@
     <property name="width-request">1366</property>
     <property name="height-request">768</property>
     <property name="can-focus">False</property>
+    <property name="border-width">10</property>
     <child>
       <object class="GtkBox" id="boxngang3">
         <property name="visible">True</property>
@@ -15,6 +16,7 @@
           <object class="GtkBox" id="boxdoc3">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
+            <property name="border-width">20</property>
             <property name="spacing">10</property>
             <property name="homogeneous">True</property>
             <child>
@@ -35,6 +37,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <signal name="clicked" handler="on_home3_clicked" swapped="no"/>
                 <style>
                   <class name="home3"/>
@@ -52,6 +55,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <signal name="clicked" handler="on_menu3_clicked" swapped="no"/>
                 <style>
                   <class name="menu3"/>
@@ -69,6 +73,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <signal name="clicked" handler="on_booking3_clicked" swapped="no"/>
                 <style>
                   <class name="booking3"/>
@@ -86,6 +91,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <signal name="clicked" handler="on_bill3_clicked" swapped="no"/>
                 <style>
                   <class name="bill3"/>
