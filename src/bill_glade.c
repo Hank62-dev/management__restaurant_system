@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
 
     // Load the .glade file
-    builder = gtk_builder_new_from_file("bill_layout.glade");
+    builder = gtk_builder_new_from_file("UI Glade/bill_layout.glade");
 
     // Get the window and connect signals
     window = GTK_WIDGET(gtk_builder_get_object(builder, "bill_layout"));
