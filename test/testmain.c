@@ -3,10 +3,7 @@
 
 int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
-
-
-    show_stats();
-
+    setup_orders_ui();
     gtk_main();
     return 0;
 }
