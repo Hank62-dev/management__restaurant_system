@@ -162,7 +162,6 @@
                         <child>
                           <object class="GtkCellRendererText" id="Customer_text"/>
                           <attributes>
-                            <attribute name="single-paragraph-mode">0</attribute>
                             <attribute name="width-chars">0</attribute>
                           </attributes>
                         </child>

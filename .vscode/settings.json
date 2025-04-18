@@ -64,6 +64,9 @@
     "string.h": "c",
     "login_register_mana.h": "c",
     "utils.h": "c",
-    "identification.h": "c"
+    "identification.h": "c",
+    "text_encoding": "c",
+    "typeinfo": "c",
+    "atomic": "c"
   }
 }
