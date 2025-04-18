@@ -119,15 +119,15 @@
 
 }
 
-.orders_view {
-    background-color: #ffffff;
-    color: black;
-}
 
-.bill_view{
+.toolbar_view{
     border: 2px solid #4CAF50;
     border-radius: 5%;
     padding: 20px;
     background-color: #ffffff;
     color: black;
+}
+.view_bill{
+    border: 2px solid #4CAF50;
+    border-radius: 5%;
 }
