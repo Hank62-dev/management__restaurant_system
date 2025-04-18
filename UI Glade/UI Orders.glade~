@@ -162,7 +162,9 @@
                         <child>
                           <object class="GtkCellRendererText" id="Customer_text"/>
                           <attributes>
-                            <attribute name="width-chars">0</attribute>
+                            <attribute name="width-chars">2147483647</attribute>
+                            <attribute name="wrap-width">2147483647</attribute>
+                            <attribute name="max-width-chars">2147483647</attribute>
                           </attributes>
                         </child>
                       </object>
@@ -178,6 +180,10 @@
                         <property name="sort-indicator">True</property>
                         <child>
                           <object class="GtkCellRendererText" id="Price_text"/>
+                          <attributes>
+                            <attribute name="width-chars">2147483647</attribute>
+                            <attribute name="max-width-chars">2147483647</attribute>
+                          </attributes>
                         </child>
                       </object>
                     </child>
@@ -191,6 +197,10 @@
                         <property name="sort-indicator">True</property>
                         <child>
                           <object class="GtkCellRendererText" id="Date_text"/>
+                          <attributes>
+                            <attribute name="width-chars">2147483647</attribute>
+                            <attribute name="max-width-chars">2147483647</attribute>
+                          </attributes>
                         </child>
                       </object>
                     </child>
@@ -204,6 +214,10 @@
                         <property name="sort-indicator">True</property>
                         <child>
                           <object class="GtkCellRendererText" id="ID_text"/>
+                          <attributes>
+                            <attribute name="width-chars">2147483647</attribute>
+                            <attribute name="max-width-chars">2147483647</attribute>
+                          </attributes>
                         </child>
                       </object>
                     </child>
