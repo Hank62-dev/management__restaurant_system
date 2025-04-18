@@ -22,10 +22,10 @@
             <property name="spacing">10</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkLabel" id="hinhanhlogo">
+              <object class="GtkImage" id="logo">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">logo</property>
+                <property name="pixbuf">../UI_image\logomini.png</property>
               </object>
               <packing>
                 <property name="expand">False</property>
