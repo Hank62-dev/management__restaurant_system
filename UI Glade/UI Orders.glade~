@@ -225,7 +225,6 @@
                       <object class="GtkLabel" id="id0">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -236,7 +235,6 @@
                       <object class="GtkLabel" id="name0">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -247,7 +245,6 @@
                       <object class="GtkLabel" id="date0">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -258,7 +255,6 @@
                       <object class="GtkLabel" id="price0">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -269,7 +265,6 @@
                       <object class="GtkLabel" id="id1">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -280,7 +275,6 @@
                       <object class="GtkLabel" id="name1">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -291,7 +285,6 @@
                       <object class="GtkLabel" id="date1">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -302,7 +295,6 @@
                       <object class="GtkLabel" id="price1">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -313,7 +305,6 @@
                       <object class="GtkLabel" id="id2">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -324,7 +315,6 @@
                       <object class="GtkLabel" id="name2">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -335,7 +325,6 @@
                       <object class="GtkLabel" id="date2">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -346,7 +335,6 @@
                       <object class="GtkLabel" id="price2">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -357,7 +345,6 @@
                       <object class="GtkLabel" id="id3">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -368,7 +355,6 @@
                       <object class="GtkLabel" id="name3">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -379,7 +365,6 @@
                       <object class="GtkLabel" id="date3">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -390,7 +375,6 @@
                       <object class="GtkLabel" id="price3">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -401,7 +385,6 @@
                       <object class="GtkLabel" id="id4">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -412,7 +395,6 @@
                       <object class="GtkLabel" id="name4">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -423,7 +405,6 @@
                       <object class="GtkLabel" id="date4">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -434,7 +415,6 @@
                       <object class="GtkLabel" id="price4">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -445,7 +425,6 @@
                       <object class="GtkLabel" id="id5">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -456,7 +435,6 @@
                       <object class="GtkLabel" id="name5">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -467,7 +445,6 @@
                       <object class="GtkLabel" id="date5">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -478,7 +455,6 @@
                       <object class="GtkLabel" id="price5">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -489,7 +465,6 @@
                       <object class="GtkLabel" id="id6">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -500,7 +475,6 @@
                       <object class="GtkLabel" id="name6">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -511,7 +485,6 @@
                       <object class="GtkLabel" id="date6">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -522,7 +495,6 @@
                       <object class="GtkLabel" id="price6">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -533,7 +505,6 @@
                       <object class="GtkLabel" id="id7">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -544,7 +515,6 @@
                       <object class="GtkLabel" id="name7">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -555,7 +525,6 @@
                       <object class="GtkLabel" id="date7">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -566,7 +535,6 @@
                       <object class="GtkLabel" id="price7">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -577,7 +545,6 @@
                       <object class="GtkLabel" id="id8">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -588,7 +555,6 @@
                       <object class="GtkLabel" id="name8">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -599,7 +565,6 @@
                       <object class="GtkLabel" id="date8">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -610,7 +575,6 @@
                       <object class="GtkLabel" id="price8">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -621,7 +585,6 @@
                       <object class="GtkLabel" id="id9">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -632,7 +595,6 @@
                       <object class="GtkLabel" id="name9">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -643,7 +605,6 @@
                       <object class="GtkLabel" id="date9">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -654,7 +615,6 @@
                       <object class="GtkLabel" id="price9">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -665,7 +625,6 @@
                       <object class="GtkLabel" id="id10">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -676,7 +635,6 @@
                       <object class="GtkLabel" id="name10">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -687,7 +645,6 @@
                       <object class="GtkLabel" id="date10">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -698,7 +655,6 @@
                       <object class="GtkLabel" id="price10">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -709,7 +665,6 @@
                       <object class="GtkLabel" id="id11">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -720,7 +675,6 @@
                       <object class="GtkLabel" id="name11">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -731,7 +685,6 @@
                       <object class="GtkLabel" id="date11">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -742,7 +695,6 @@
                       <object class="GtkLabel" id="price11">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -753,7 +705,6 @@
                       <object class="GtkLabel" id="id12">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -764,7 +715,6 @@
                       <object class="GtkLabel" id="name12">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -775,7 +725,6 @@
                       <object class="GtkLabel" id="date12">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -786,7 +735,6 @@
                       <object class="GtkLabel" id="price12">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -797,7 +745,6 @@
                       <object class="GtkLabel" id="id13">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -808,7 +755,6 @@
                       <object class="GtkLabel" id="name13">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -819,7 +765,6 @@
                       <object class="GtkLabel" id="date13">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -830,7 +775,6 @@
                       <object class="GtkLabel" id="price13">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -841,7 +785,6 @@
                       <object class="GtkLabel" id="id14">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -852,7 +795,6 @@
                       <object class="GtkLabel" id="name14">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -863,7 +805,6 @@
                       <object class="GtkLabel" id="date14">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -874,7 +815,6 @@
                       <object class="GtkLabel" id="price14">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -885,7 +825,6 @@
                       <object class="GtkLabel" id="id15">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -896,7 +835,6 @@
                       <object class="GtkLabel" id="name15">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -907,7 +845,6 @@
                       <object class="GtkLabel" id="date15">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -918,7 +855,6 @@
                       <object class="GtkLabel" id="price15">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -929,7 +865,6 @@
                       <object class="GtkLabel" id="id16">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -940,7 +875,6 @@
                       <object class="GtkLabel" id="name16">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -951,7 +885,6 @@
                       <object class="GtkLabel" id="date16">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -962,7 +895,6 @@
                       <object class="GtkLabel" id="price16">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -973,7 +905,6 @@
                       <object class="GtkLabel" id="id17">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -984,7 +915,6 @@
                       <object class="GtkLabel" id="name17">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -995,7 +925,6 @@
                       <object class="GtkLabel" id="date17">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -1006,7 +935,6 @@
                       <object class="GtkLabel" id="price17">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -1017,7 +945,6 @@
                       <object class="GtkLabel" id="id18">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -1028,7 +955,6 @@
                       <object class="GtkLabel" id="name18">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -1039,7 +965,6 @@
                       <object class="GtkLabel" id="date18">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -1050,7 +975,6 @@
                       <object class="GtkLabel" id="price18">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
@@ -1061,7 +985,6 @@
                       <object class="GtkLabel" id="id19">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">0</property>
@@ -1072,7 +995,6 @@
                       <object class="GtkLabel" id="name19">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">1</property>
@@ -1083,7 +1005,6 @@
                       <object class="GtkLabel" id="date19">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">2</property>
@@ -1094,7 +1015,6 @@
                       <object class="GtkLabel" id="price19">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
                       </object>
                       <packing>
                         <property name="left-attach">3</property>
