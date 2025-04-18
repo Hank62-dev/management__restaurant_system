@@ -6,5 +6,8 @@
 7|Tran Van G|Assistant|8000000.00
 8|Do Thi H|Receptionist|9000000.00
 10|Dang Thi J|Accountant|11000000.00
+<<<<<<< HEAD
 1221|wxrdie|mck|1222.00
 12|Henry pham|dog ngu|0.00
+=======
+>>>>>>> 0943acd16952d82d3396159bce2107983884d1ef
