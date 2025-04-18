@@ -20,12 +20,21 @@ int loadMenuFromFile(MenuItem menu[], int *count) {
 
         if (sscanf(line, "%5s \"%[^\"]\" \"%[^\"]\" %f \"%[^\"]\"", 
                    menuId, dishName, type, &price, imagePath) == 5) {
+            if (strlen(menuId) >= MAX_ID_LENGTH || 
+                strlen(dishName) >= MAX_NAME_LENGTH || 
+                strlen(type) >= MAX_TYPE_LENGTH || 
+                strlen(imagePath) >= MAX_IMAGE_PATH) {
+                printf("Dữ liệu không hợp lệ trong dòng: %s\n", line);
+                continue;
+            }
             strcpy(menu[*count].menuId, menuId);
             strcpy(menu[*count].dishName, dishName);
             strcpy(menu[*count].type, type);
             menu[*count].price = price;
             strcpy(menu[*count].imagePath, imagePath);
             (*count)++;
+        } else {
+            printf("Định dạng dòng không hợp lệ: %s\n", line);
         }
     }
 

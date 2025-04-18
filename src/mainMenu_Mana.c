@@ -54,6 +54,12 @@ void clearSelectedItemInfo() {
 
 // Hàm cập nhật danh sách món
 void updateMenuList() {
+    if (!menuGrid) {
+        printf("Lỗi: menuGrid là NULL\n");
+        return;
+    }
+
+    // Xóa các widget con hiện có
     GList *children, *iter;
     children = gtk_container_get_children(GTK_CONTAINER(menuGrid));
     for (iter = children; iter != NULL; iter = g_list_next(iter)) {
@@ -61,6 +67,7 @@ void updateMenuList() {
     }
     g_list_free(children);
 
+    // Tạo lại danh sách món
     for (int i = 0; i < menuCount; i++) {
         int row = i / 4;
         int col = i % 4;
@@ -78,8 +85,9 @@ void updateMenuList() {
         gtk_box_pack_start(GTK_BOX(box), price, FALSE, FALSE, 0);
         gtk_box_pack_start(GTK_BOX(box), selectBtn, FALSE, FALSE, 0);
 
+        // Lưu chỉ số và kết nối tín hiệu
         g_object_set_data(G_OBJECT(selectBtn), "index", GINT_TO_POINTER(i));
-        g_signal_connect(selectBtn, "clicked", G_CALLBACK(on_select_item_clicked), NULL);
+        g_signal_connect(G_OBJECT(selectBtn), "clicked", G_CALLBACK(on_select_item_clicked), NULL);
 
         gtk_grid_attach(GTK_GRID(menuGrid), box, col, row, 1, 1);
     }
@@ -91,9 +99,13 @@ void updateMenuList() {
 // Hàm xử lý nút "Chọn"
 void on_select_item_clicked(GtkButton *button, gpointer user_data) {
     int index = GPOINTER_TO_INT(g_object_get_data(G_OBJECT(button), "index"));
-    updateSelectedItemInfo(menuList[index].menuId, menuList[index].dishName,
-                          menuList[index].type, menuList[index].price, 
-                          menuList[index].imagePath);
+    if (index >= 0 && index < menuCount) {
+        updateSelectedItemInfo(menuList[index].menuId, menuList[index].dishName,
+                              menuList[index].type, menuList[index].price, 
+                              menuList[index].imagePath);
+    } else {
+        printf("Lỗi: Chỉ số không hợp lệ: %d\n", index);
+    }
 }
 
 // Hàm xử lý nút "Thêm"
@@ -102,16 +114,18 @@ void on_add_clicked(GtkButton *button, gpointer user_data) {
     const char *name = gtk_entry_get_text(GTK_ENTRY(newNameEntry));
     const char *category = gtk_entry_get_text(GTK_ENTRY(newCategoryEntry));
     const char *priceStr = gtk_entry_get_text(GTK_ENTRY(newPriceEntry));
-    const char *imagePath = gtk_entry_get_text(GTK_ENTRY(newImageEntry));
+    char *imagePath = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(newImageEntry));
     float price;
 
     if (strlen(id) == 0 || strlen(name) == 0 || strlen(category) == 0 || 
-        strlen(priceStr) == 0 || strlen(imagePath) == 0) {
+        strlen(priceStr) == 0 || imagePath == NULL) {
         showMessage(GTK_WINDOW(user_data), "Vui lòng điền đầy đủ thông tin!");
+        if (imagePath) g_free(imagePath);
         return;
     }
     if (sscanf(priceStr, "%f", &price) != 1 || price <= 0) {
         showMessage(GTK_WINDOW(user_data), "Giá không hợp lệ!");
+        g_free(imagePath);
         return;
     }
 
@@ -122,11 +136,12 @@ void on_add_clicked(GtkButton *button, gpointer user_data) {
         gtk_entry_set_text(GTK_ENTRY(newNameEntry), "");
         gtk_entry_set_text(GTK_ENTRY(newCategoryEntry), "");
         gtk_entry_set_text(GTK_ENTRY(newPriceEntry), "");
-        gtk_entry_set_text(GTK_ENTRY(newImageEntry), "");
+        gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(newImageEntry), "");
         showMessage(GTK_WINDOW(user_data), "Thêm món thành công!");
     } else {
         showMessage(GTK_WINDOW(user_data), "Mã món đã tồn tại!");
     }
+    g_free(imagePath);
 }
 
 // Hàm xử lý nút "Sửa"
@@ -136,25 +151,29 @@ void on_edit_clicked(GtkButton *button, gpointer user_data) {
     const char *newName = gtk_entry_get_text(GTK_ENTRY(newNameEntry));
     const char *newCategory = gtk_entry_get_text(GTK_ENTRY(newCategoryEntry));
     const char *newPriceStr = gtk_entry_get_text(GTK_ENTRY(newPriceEntry));
-    const char *newImagePath = gtk_entry_get_text(GTK_ENTRY(newImageEntry));
+    char *newImagePath = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(newImageEntry));
     float newPrice;
 
     if (strcmp(oldId, "...") == 0) {
         showMessage(GTK_WINDOW(user_data), "Vui lòng chọn món để sửa!");
+        if (newImagePath) g_free(newImagePath);
         return;
     }
     if (strlen(newId) == 0 || strlen(newName) == 0 || strlen(newCategory) == 0 || 
-        strlen(newPriceStr) == 0 || strlen(newImagePath) == 0) {
+        strlen(newPriceStr) == 0 || newImagePath == NULL) {
         showMessage(GTK_WINDOW(user_data), "Vui lòng điền đầy đủ thông tin mới!");
+        if (newImagePath) g_free(newImagePath);
         return;
     }
     if (sscanf(newPriceStr, "%f", &newPrice) != 1 || newPrice <= 0) {
         showMessage(GTK_WINDOW(user_data), "Giá mới không hợp lệ!");
+        g_free(newImagePath);
         return;
     }
 
     if (strcmp(oldId, newId) != 0 && checkDuplicate(menuList, menuCount, newId)) {
         showMessage(GTK_WINDOW(user_data), "Mã mới đã tồn tại!");
+        g_free(newImagePath);
         return;
     }
 
@@ -173,11 +192,12 @@ void on_edit_clicked(GtkButton *button, gpointer user_data) {
         gtk_entry_set_text(GTK_ENTRY(newNameEntry), "");
         gtk_entry_set_text(GTK_ENTRY(newCategoryEntry), "");
         gtk_entry_set_text(GTK_ENTRY(newPriceEntry), "");
-        gtk_entry_set_text(GTK_ENTRY(newImageEntry), "");
+        gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(newImageEntry), "");
         showMessage(GTK_WINDOW(user_data), "Sửa món thành công!");
     } else {
         showMessage(GTK_WINDOW(user_data), "Không tìm thấy món để sửa!");
     }
+    g_free(newImagePath);
 }
 
 // Hàm xử lý nút "Xóa"
@@ -196,7 +216,7 @@ void on_delete_clicked(GtkButton *button, gpointer user_data) {
         gtk_entry_set_text(GTK_ENTRY(newNameEntry), "");
         gtk_entry_set_text(GTK_ENTRY(newCategoryEntry), "");
         gtk_entry_set_text(GTK_ENTRY(newPriceEntry), "");
-        gtk_entry_set_text(GTK_ENTRY(newImageEntry), "");
+        gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(newImageEntry), "");
         showMessage(GTK_WINDOW(user_data), "Xóa món thành công!");
     } else {
         showMessage(GTK_WINDOW(user_data), "Không tìm thấy món để xóa!");
@@ -218,18 +238,18 @@ int main(int argc, char *argv[]) {
     }
 
     // Lấy widget
-    GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "menuCustomer"));
+    GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "menuManager"));
     menuGrid = GTK_WIDGET(gtk_builder_get_object(builder, "menuListItemSelect"));
     oldIdLabel = GTK_WIDGET(gtk_builder_get_object(builder, "OldId"));
     oldNameLabel = GTK_WIDGET(gtk_builder_get_object(builder, "OldName"));
     oldCategoryLabel = GTK_WIDGET(gtk_builder_get_object(builder, "OldCategory"));
     oldPriceLabel = GTK_WIDGET(gtk_builder_get_object(builder, "OldPrice"));
-    oldImageLabel = gtk_label_new("...");
+    oldImageLabel = GTK_WIDGET(gtk_builder_get_object(builder, "OldImage"));
     newIdEntry = GTK_WIDGET(gtk_builder_get_object(builder, "NewId"));
     newNameEntry = GTK_WIDGET(gtk_builder_get_object(builder, "NewName"));
     newCategoryEntry = GTK_WIDGET(gtk_builder_get_object(builder, "NewCategory"));
     newPriceEntry = GTK_WIDGET(gtk_builder_get_object(builder, "NewPrice"));
-    newImageEntry = gtk_entry_new();
+    newImageEntry = GTK_WIDGET(gtk_builder_get_object(builder, "NewImage"));
     GtkWidget *addBtn = GTK_WIDGET(gtk_builder_get_object(builder, "buttonAdd"));
     GtkWidget *editBtn = GTK_WIDGET(gtk_builder_get_object(builder, "buttonEdit"));
     GtkWidget *deleteBtn = GTK_WIDGET(gtk_builder_get_object(builder, "buttonDelete"));
