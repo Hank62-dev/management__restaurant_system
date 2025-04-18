@@ -26,6 +26,7 @@ typedef struct {
 } OrderItem;
 
 // Hàm cho giao diện khách hàng
+void show_Menu_Cus();
 int loadMenuFromFile(MenuItem menu[], int *count);
 void printMenu(MenuItem menu[], int count);
 int saveOrderToFile(OrderItem order[], int count);

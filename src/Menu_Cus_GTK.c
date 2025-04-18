@@ -145,7 +145,7 @@ void initMenuList(GtkWidget *grid) {
     gtk_widget_show_all(grid);
 }
 
-int show_Menu_Cus(int argc, char *argv[]) {
+void show_Menu_Cus() {
 
     GtkBuilder *builder = gtk_builder_new();
     if (!gtk_builder_add_from_file(builder, "UI Glade/UI_MenuCus.glade", NULL)) {
