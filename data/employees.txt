@@ -7,7 +7,3 @@
 8|Do Thi H|Receptionist|9000000.00
 9|Bui Van I|Driver|9500000.00
 10|Dang Thi J|Accountant|11000000.00
-1|mck|tlinh|123.00
-1|mck|tlinh|123.00
-122|wxrdie|mck|1222.00
-1221|wxrdie|mck|1222.00
