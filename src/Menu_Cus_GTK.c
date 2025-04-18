@@ -11,7 +11,7 @@ OrderItem orderItems[MAX_ORDER_ITEMS];
 int orderCount = 0;
 GtkWidget *menuListItemSelected;
 //Hàm load css
-void load_css(const char *css_file_path) {
+void applyCSS_MenuCus(const char *css_file_path) {
     GtkCssProvider *provider = gtk_css_provider_new();
     GdkDisplay *display = gdk_display_get_default();
     GdkScreen *screen = gdk_display_get_default_screen(display);
@@ -145,8 +145,7 @@ void initMenuList(GtkWidget *grid) {
     gtk_widget_show_all(grid);
 }
 
-int main(int argc, char *argv[]) {
-    gtk_init(&argc, &argv);
+int show_Menu_Cus(int argc, char *argv[]) {
 
     GtkBuilder *builder = gtk_builder_new();
     if (!gtk_builder_add_from_file(builder, "UI Glade/UI_MenuCus.glade", NULL)) {
@@ -171,9 +170,8 @@ int main(int argc, char *argv[]) {
     g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
     g_signal_connect(confirmBtn, "clicked", G_CALLBACK(on_confirm_clicked), window);
 
-    load_css("Glade_CSS/UI_MenuCus.css");
+    applyCSS_MenuCus("Glade_CSS/UI_MenuCus.css");
     gtk_widget_show_all(window);
-    gtk_main();
 
     g_object_unref(builder);
     return 0;
