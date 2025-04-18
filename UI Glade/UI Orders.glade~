@@ -155,7 +155,7 @@
                 <property name="can-focus">False</property>
                 <property name="label" translatable="yes">Tên Khách</property>
                 <style>
-                  <class name="Tên Khách"/>
+                  <class name="customer's name"/>
                 </style>
               </object>
               <packing>
