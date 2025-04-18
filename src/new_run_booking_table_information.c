@@ -1,6 +1,6 @@
 #include <gtk/gtk.h>
 #include <string.h>
-
+#include "table_booking.h"
 // Structure to hold application data
 typedef struct {
     GtkWidget *window_booking_information;
@@ -124,7 +124,7 @@ static void on_button_booking_table_clicked(GtkButton *button, gpointer data) {
 }
 
 // Function to load CSS
-static void load_css(void) {
+static void load_css_information(void) {
     GtkCssProvider *provider = gtk_css_provider_new();
     GdkDisplay *display = gdk_display_get_default();
     GdkScreen *screen = gdk_display_get_default_screen(display);
@@ -144,8 +144,7 @@ static void load_css(void) {
     g_object_unref(provider);
 }
 
-int main(int argc, char *argv[]) {
-    gtk_init(&argc, &argv);
+void show_booking_information() {
     
     // Load the booking information Glade file
     GtkBuilder *builder_booking_information = gtk_builder_new();
@@ -155,11 +154,11 @@ int main(int argc, char *argv[]) {
         g_printerr("Error loading window_booking_information.glade: %s\n", error->message);
         g_error_free(error);
         g_object_unref(builder_booking_information);
-        return 1;
+        return ;
     }
     
     // Load CSS
-    load_css();
+    load_css_information();
     
     // Create AppData structure
     AppData app_data = {0};
@@ -179,8 +178,7 @@ int main(int argc, char *argv[]) {
     // Show the booking information window
     gtk_widget_show_all(app_data.window_booking_information);
     
-    // Start the main loop
-    gtk_main();
+
     
     // Cleanup
     if (app_data.name) g_free(app_data.name);
@@ -191,5 +189,5 @@ int main(int argc, char *argv[]) {
     if (app_data.builder_booking_information) g_object_unref(app_data.builder_booking_information);
     if (app_data.builder_booking_table) g_object_unref(app_data.builder_booking_table);
     
-    return 0;
+
 }

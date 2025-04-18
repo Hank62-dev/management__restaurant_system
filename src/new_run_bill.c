@@ -1,6 +1,6 @@
 #include <gtk/gtk.h>
 #include <stdio.h>
-
+#include "table_booking.h"
 // Callback functions for navigation buttons
 static void on_home3_clicked(GtkButton *button, gpointer data) {
     GtkWidget *dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, 
@@ -93,7 +93,7 @@ static void on_confirm_bill_button_clicked(GtkButton *button, gpointer data) {
 }
 
 // Function to load CSS
-static void load_css(void) {
+static void load_css_bill(void) {
     GtkCssProvider *provider = gtk_css_provider_new();
     GdkDisplay *display = gdk_display_get_default();
     GdkScreen *screen = gdk_display_get_default_screen(display);
@@ -113,8 +113,7 @@ static void load_css(void) {
     g_object_unref(provider);
 }
 
-int run_bill(int argc, char *argv[]) {
-    gtk_init(&argc, &argv);
+void run_bill() {
     
     // Load the Glade file
     GtkBuilder *builder = gtk_builder_new();
@@ -124,11 +123,11 @@ int run_bill(int argc, char *argv[]) {
         g_printerr("Error loading Glade file: %s\n", error->message);
         g_error_free(error);
         g_object_unref(builder);
-        return 1;
+        return ;
     }
     
     // Load CSS
-    load_css();
+    load_css_bill();
     
     // Get the main window
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "bill_layout"));
@@ -139,11 +138,9 @@ int run_bill(int argc, char *argv[]) {
     // Show the window
     gtk_widget_show_all(window);
     
-    // Start the main loop
-    gtk_main();
+
     
     // Cleanup
     g_object_unref(builder);
-    
-    return 0;
+
 }

@@ -1,5 +1,6 @@
 #include <gtk/gtk.h>
 #include <string.h>
+#include "table_booking.h"
 
 // Structure to hold application data
 typedef struct {
@@ -179,7 +180,7 @@ static void on_confirm_bill_button_clicked(GtkButton *button, gpointer data) {
 }
 
 // Function to load CSS
-static void load_css(void) {
+static void load_css_layout(void) {
     GtkCssProvider *provider = gtk_css_provider_new();
     GdkDisplay *display = gdk_display_get_default();
     GdkScreen *screen = gdk_display_get_default_screen(display);
@@ -213,7 +214,7 @@ void book_table_show () {
     }
     
     // Load CSS
-    load_css();
+    load_css_layout();
     
     // Create AppData structure
     AppData app_data = {0};
