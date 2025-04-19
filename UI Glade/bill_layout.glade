@@ -218,7 +218,7 @@
               </object>
               <packing>
                 <property name="x">636</property>
-                <property name="y">320</property>
+                <property name="y">340</property>
               </packing>
             </child>
             <child>
@@ -234,7 +234,7 @@
               </object>
               <packing>
                 <property name="x">636</property>
-                <property name="y">350</property>
+                <property name="y">370</property>
               </packing>
             </child>
             <child>
@@ -250,7 +250,7 @@
               </object>
               <packing>
                 <property name="x">636</property>
-                <property name="y">380</property>
+                <property name="y">400</property>
               </packing>
             </child>
             <child>
@@ -268,20 +268,18 @@
               </object>
               <packing>
                 <property name="x">636</property>
-                <property name="y">440</property>
+                <property name="y">460</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel" id="bill_information">
-                <property name="width-request">104</property>
-                <property name="height-request">80</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="label" translatable="yes">BILL INFORMATION</property>
               </object>
               <packing>
                 <property name="x">636</property>
-                <property name="y">225</property>
+                <property name="y">220</property>
               </packing>
             </child>
           </object>
