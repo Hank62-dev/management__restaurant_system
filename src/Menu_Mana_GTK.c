@@ -263,11 +263,11 @@ void show_Menu_Mana() {
     gtk_grid_attach(GTK_GRID(grid), gtk_label_new(""), 0, 9, 1, 1);
     gtk_grid_attach(GTK_GRID(grid), newImageEntry, 1, 9, 1, 1);
 
-    if (!loadMenuFromFile(menuList, &menuCount)) {
+    if (!loadMenuFromFile_m(menuList, &menuCount)) {
         printf("Lỗi tải menu\n");
     }
 
-    printMenu(menuList, menuCount);
+    printMenu_m(menuList, menuCount);
     updateMenuList();
 
     g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);

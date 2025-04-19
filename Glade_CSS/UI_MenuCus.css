@@ -11,7 +11,7 @@
 
 /* Định dạng chữ mặc định */
 label {
-    color: black;
+
     font-weight: bold;
 }
 
@@ -163,12 +163,21 @@ box {
 
 /* Định dạng nút CONFIRM */
 .buttonConfirm {
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 30px;
-    background-color: rgb(23, 125, 23);
+    background: white;
+    color: black;
+    font-weight: 700;
+}
+
+.buttonConfirm:hover{
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
     color: white;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
+}
+
+.buttonConfirm:focus{
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
 }

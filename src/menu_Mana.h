@@ -19,9 +19,9 @@ typedef struct {
 
 // Hàm cho giao diện quản lý
 void show_Menu_Mana();
-int loadMenuFromFile(MenuItemMana menu[], int *count);
+int loadMenuFromFile_m(MenuItemMana menu[], int *count);
 void on_select_item_clicked(GtkButton *button, gpointer user_data);
-void printMenu(MenuItemMana menu[], int count);
+void printMenu_m(MenuItemMana menu[], int count);
 int saveMenuToFile(MenuItemMana menu[], int count);
 int checkDuplicate(MenuItemMana menu[], int count, const char *menuId);
 int addItem(MenuItemMana menu[], int *count, const char *menuId, const char *dishName, 
