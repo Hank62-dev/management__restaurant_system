@@ -1,4 +1,4 @@
-
+F0001 "Cơm cà ri" "Đồ ăn" 50000 "UI_image/com_ca_ri.jpg"
 F0002 "Cơm sườn" "Đồ ăn" 50000 "UI_image/com_suon.jpg"
 F0003 "Miến gà" "Đồ ăn" 50000 "UI_image/mien_ga.jpg"
 F0004 "Bún riêu cua" "Đồ ăn" 50000 "UI_image/bun_rieu_cua.jpg"
