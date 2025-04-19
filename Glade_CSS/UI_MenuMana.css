@@ -36,19 +36,18 @@ box {
 }
 
 /* Định dạng các nút trong thanh điều hướng */
-.buttonHome, .buttonMenu, .buttonBooking, .buttonBill {
-    font-size: 16px;
-    padding: 10px 20px;
-    background-color: rgb(23, 125, 23);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    margin: 0 5px;
+.buttonHome, .buttonMenu, .buttonOrders, .buttonStats, .buttonEmployee {
+    background: white;
+    color: black;
+    font-weight: 700;
 }
 
 /* Tab đang được chọn */
-.buttonHome {
-    background-color: rgb(23, 125, 23);
+.buttonMenu {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
 }
 
 /* Định dạng khu vực chính */
