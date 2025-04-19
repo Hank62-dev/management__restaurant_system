@@ -11,8 +11,7 @@
 
 int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
-    //show_identification();  
-    total_bills();
+    show_identification();  
     gtk_main();
     return 0;
 }
