@@ -1,0 +1,23 @@
+/* Style chung cho các button */
+.home3, .menu3, .booking3, .bill3 {
+    background: white;
+    color: black;
+    font-weight: 700;
+}
+
+/* Hover effect */
+.home3:hover, .menu3:hover, .booking3:hover, .bill3:hover {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+}
+
+/* Focus effect */
+.home3:focus, .menu3:focus, .booking3:focus, .bill3:focus {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+}
+/*main css*/

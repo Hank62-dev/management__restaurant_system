@@ -29,7 +29,11 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=1
 CompilerSettings=0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0
+<<<<<<< HEAD
 UnitCount=5
+=======
+UnitCount=1
+>>>>>>> orders
 
 [VersionInfo]
 Major=1
@@ -53,6 +57,21 @@ SyncProduct=1
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+[Unit1]
+FileName=src\orders.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+=======
+>>>>>>> 1694768cdf3c64d6e7510a805afb6415b8faa5da
+>>>>>>> orders
 [Unit2]
 FileName=test\test.h
 =======

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="window_booking_information">
+    <property name="width-request">1366</property>
+    <property name="height-request">768</property>
+    <property name="can-focus">False</property>
+    <property name="border-width">10</property>
+    <property name="default-width">1366</property>
+    <property name="default-height">768</property>
+    <child>
+      <object class="GtkBox" id="boxtong">
+        <property name="width-request">1366</property>
+        <property name="height-request">768</property>
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkBox" id="boxdoc3">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="border-width">20</property>
+            <property name="spacing">10</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkImage" id="logo">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="pixbuf">../UI_image\logomini.png</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="home3">
+                <property name="label" translatable="yes">HOME</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
+                <signal name="clicked" handler="on_home3_clicked" swapped="no"/>
+                <style>
+                  <class name="home3"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="menu3">
+                <property name="label" translatable="yes">MENU</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
+                <signal name="clicked" handler="on_menu3_clicked" swapped="no"/>
+                <style>
+                  <class name="menu3"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="booking3">
+                <property name="label" translatable="yes">BOOKING</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
+                <signal name="clicked" handler="on_booking3_clicked" swapped="no"/>
+                <style>
+                  <class name="booking3"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="bill3">
+                <property name="label" translatable="yes">BILL</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
+                <signal name="clicked" handler="on_bill3_clicked" swapped="no"/>
+                <style>
+                  <class name="bill3"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">5</property>
+              </packing>
+            </child>
+            <style>
+              <class name="boxdoc3"/>
+            </style>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFixed" id="fixed1">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkButton" id="button_booking_table">
+                <property name="label" translatable="yes">BOOK TABLE HERE</property>
+                <property name="width-request">100</property>
+                <property name="height-request">49</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <signal name="clicked" handler="on_button_booking_table_clicked" swapped="no"/>
+                <style>
+                  <class name="home3"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">621</property>
+                <property name="y">350</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_booking">
+                <property name="width-request">335</property>
+                <property name="height-request">79</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">BOOKING</property>
+                <attributes>
+                  <attribute name="font-desc" value="Bookman Old Style Semi-Bold 10"/>
+                  <attribute name="foreground" value="#ffffffffffff"/>
+                  <attribute name="background" value="#2626a2a26969"/>
+                  <attribute name="size" value="37888"/>
+                </attributes>
+                <style>
+                  <class name="label_booking"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">516</property>
+                <property name="y">50</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="enter_name">
+                <property name="width-request">168</property>
+                <property name="height-request">39</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="placeholder-text" translatable="yes">Enter your name</property>
+                <style>
+                  <class name="enter_name"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">450</property>
+                <property name="y">150</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="enter_date">
+                <property name="width-request">168</property>
+                <property name="height-request">37</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="placeholder-text" translatable="yes">Enter the date</property>
+                <style>
+                  <class name="enter_date"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">450</property>
+                <property name="y">210</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="enter_phone">
+                <property name="width-request">168</property>
+                <property name="height-request">31</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="placeholder-text" translatable="yes">Enter your phone number</property>
+                <style>
+                  <class name="enter_phone"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">750</property>
+                <property name="y">150</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="enter_time">
+                <property name="width-request">168</property>
+                <property name="height-request">38</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="placeholder-text" translatable="yes">Enter the time</property>
+                <style>
+                  <class name="enter_time"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">750</property>
+                <property name="y">210</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="enter_number_of_guest">
+                <property name="width-request">168</property>
+                <property name="height-request">32</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="placeholder-text" translatable="yes">Enter number guest</property>
+                <style>
+                  <class name="enter_number_of_guest"/>
+                </style>
+              </object>
+              <packing>
+                <property name="x">750</property>
+                <property name="y">270</property>
+              </packing>
+            </child>
+            <style>
+              <class name="fixed1"/>
+            </style>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <style>
+          <class name="boxtong"/>
+        </style>
+      </object>
+    </child>
+    <style>
+      <class name="window_booking_information"/>
+    </style>
+  </object>
+</interface>
