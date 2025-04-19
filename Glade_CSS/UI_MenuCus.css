@@ -37,6 +37,7 @@ box {
 
 
 /* Định dạng các nút trong thanh điều hướng */
+
 .buttonHome, .buttonMenu, .buttonBooking, .buttonBill {
     background: white;
     color: black;
@@ -50,7 +51,7 @@ box {
     background: green;
     color: white;
 }
-.buttonHome:focus, .buttonMenu:focus, .buttonBooking:focus, .buttonBill:focus {
+.buttonHome:focus, .buttonBooking:focus, .buttonBill:focus {
     border: 0.5px solid rgb(255, 255, 255);
     border-radius: 0.5px;
     background: green;

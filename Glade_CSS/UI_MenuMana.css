@@ -48,7 +48,7 @@ box {
     background: green;
     color: white;
 }
-.buttonHome:focus, .buttonMenu:focus, .buttonOrders:focus, .buttonStats:focus, .buttonEmployee:focus{
+.buttonHome:focus, .buttonOrders:focus, .buttonStats:focus, .buttonEmployee:focus{
     border: 0.5px solid rgb(255, 255, 255);
     border-radius: 0.5px;
     background: green;

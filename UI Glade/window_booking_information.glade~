@@ -137,7 +137,7 @@
                 </style>
               </object>
               <packing>
-                <property name="x">620</property>
+                <property name="x">621</property>
                 <property name="y">350</property>
               </packing>
             </child>

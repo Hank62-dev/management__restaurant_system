@@ -108,7 +108,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_emloyee_m">
+              <object class="GtkButton" id="btn_employee_m">
                 <property name="label" translatable="yes">EMPLOYEE</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
@@ -116,7 +116,6 @@
                 <property name="margin-bottom">20</property>
                 <style>
                   <class name="btn_employee_m"/>
-                  <class name="btn_c"/>
                 </style>
               </object>
               <packing>
@@ -161,27 +160,8 @@
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">False</property>
+                <property name="padding">25</property>
                 <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="text_name">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="label" translatable="yes">VQHT</property>
-                <attributes>
-                  <attribute name="font-desc" value="Segoe Script Oblique 72"/>
-                  <attribute name="style" value="normal"/>
-                  <attribute name="weight" value="ultralight"/>
-                </attributes>
-                <style>
-                  <class name="text_name"/>
-                </style>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">2</property>
               </packing>
             </child>
             <child>
@@ -201,6 +181,26 @@ phục vụ các món ăn đậm đà bản sắc Việt trong không gian ấm 
               </object>
               <packing>
                 <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="padding">50</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="text_name">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <attributes>
+                  <attribute name="font-desc" value="Segoe Script Oblique 72"/>
+                  <attribute name="style" value="normal"/>
+                  <attribute name="weight" value="ultralight"/>
+                </attributes>
+                <style>
+                  <class name="text_name"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
                 <property name="fill">True</property>
                 <property name="position">3</property>
               </packing>

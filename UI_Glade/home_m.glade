@@ -108,7 +108,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_emloyee_m">
+              <object class="GtkButton" id="btn_employee_m">
                 <property name="label" translatable="yes">EMPLOYEE</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
@@ -116,7 +116,6 @@
                 <property name="margin-bottom">20</property>
                 <style>
                   <class name="btn_employee_m"/>
-                  <class name="btn_c"/>
                 </style>
               </object>
               <packing>
@@ -161,7 +160,7 @@
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">False</property>
-                <property name="padding">25</property>
+                <property name="padding">5</property>
                 <property name="position">1</property>
               </packing>
             </child>
