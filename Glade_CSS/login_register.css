@@ -1,0 +1,131 @@
+
+
+/* tạo khung cho form */
+#right_box {
+    border: 2px solid black;
+    border-radius: 5%;
+    padding: 20px;
+
+}
+
+/* login button */
+.login {
+    background: white;
+    color: black;
+    border: 0.5px solid black;
+    border-radius: 5%;
+    font-weight: 700;
+    padding: 10px 20px;
+    
+}
+
+.login:focus {
+    background: green;
+    color: white;
+}
+.login:hover {
+    background: green;
+    color: white;
+}
+
+/* register button */
+.register {
+    background: white;
+    color: black;
+    border: 0.5px solid black;
+    border-radius: 5%;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+.register:hover {
+    background: green;
+    color: white;
+}
+
+.register:focus {
+    background: green;
+    color: white;
+}
+
+/* login button finish */
+.login_now {
+    background: white;
+    color: black;
+    border: 0.5px solid black;
+    border-radius: 5%;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+
+
+.login_now:focus {
+    background: green;
+    color: white;
+}
+.login:active {
+    background: green;
+    color: white;
+}
+.login_now:hover {
+    background: green;
+    color: white;
+    outline: none;
+}
+
+/* register button finish */
+.register_now {
+    background: white;
+    color: black;
+    border: 0.5px solid black;
+    border-radius: 5%;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+.register_now:hover {
+    background: green;
+    color: white;
+}
+.register_now:focus {
+    background: green;
+    color: white;
+}
+.register_now:active {
+    background: green;
+    color: white;
+}
+/*tạo khung cho các form*/
+.entry_login_phone, .entry_login_password, .entry_firstname,
+.entry_lastname, .entry_phone, .entry_password, .entry_confirm_password {
+    border: 0.5px solid black;
+    border-radius: 5%;
+}
+/*tạo khung*/
+.right-frame {
+    border: 2px solid #4CAF50;
+    border-radius: 5%;
+    padding: 20px;
+    background-color: #ffffff;
+  }
+.btn_back{
+    background: white;
+    color: black;
+    font-weight: 700;
+    border: 0.5px solid black;
+    border-radius: 5%;
+}
+.btn_back:hover {
+    background: #3b973e;
+    color: white;
+ 
+}
+.btn_back:focus {
+    background: #3b973e;
+    color: white;
+
+}
+.btn_back:active {
+    background: #3b973e;
+    color: white;
+
+}

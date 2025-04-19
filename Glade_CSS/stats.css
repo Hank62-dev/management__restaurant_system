@@ -1,0 +1,169 @@
+
+
+/*home button*/
+.btn_home {
+    background: white;
+    color: black;
+    font-weight: 700;
+    
+}
+.btn_home:hover {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+
+}
+
+.btn_home:focus {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+}
+
+/*stats button*/
+.btn_stats{
+
+    background: white;
+    color: black;
+    font-weight: 700;
+
+}
+
+.btn_stats:hover {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+
+}
+
+.btn_stats:focus {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+}
+/*orders button*/
+.btn_orders {
+    background: white;
+    color: black;
+    font-weight: 700;
+
+}
+.btn_orders:hover {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+
+}
+
+.btn_orders:focus {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+}
+/*employees button*/
+.btn_employees {
+    background: white;
+    color: black;
+    font-weight: 700;
+
+}
+.btn_employees:hover {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+
+}
+
+.btn_employees:focus {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+}
+/*menu button*/
+.btn_menu{
+
+    background: white;
+    color: black;
+    font-weight: 700;
+
+}
+
+.btn_menu:hover {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+
+}
+
+.btn_menu:focus {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+}
+.frame_daily_revenue {
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: black;
+}
+
+.frame_monthly_revenue {
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: black;
+}   
+
+.frame_best_selling {
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: black;
+}
+
+.label_daily_data {
+
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+.label_monthly_data {
+
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+.label_best_food {
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.label_best_drink {
+
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+
+}

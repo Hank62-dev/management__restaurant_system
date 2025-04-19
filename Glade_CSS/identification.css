@@ -1,0 +1,53 @@
+.iden_window {
+    background: rgb(255, 255, 255);
+    opacity: 0.5;
+}
+.main_box{
+    border: 2px solid rgb(23, 125, 23);
+}
+.label_intro{
+    all: unset;
+    color: rgb(23, 125, 23);
+}
+.btn_customer{
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: 700;
+}
+.btn_customer:hover {
+    font-size: 25px;
+    font-weight: 700;
+    background: rgb(23, 125, 23);
+    color: white;
+}
+
+/*button management*/
+.btn_management {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: 700;
+}
+.btn_management:hover {
+    font-size: 25px;
+    font-weight: 700;
+    background: rgb(23, 125, 23);
+    color: white;
+}
+.btn_managemnt:focus{
+    font-size: 25px;
+    font-weight: 700;
+    background: rgb(23, 125, 23);
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+

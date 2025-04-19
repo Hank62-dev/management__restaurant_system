@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="identification_window">
+    <property name="can-focus">False</property>
+    <property name="border-width">10</property>
+    <property name="default-width">1080</property>
+    <property name="default-height">540</property>
+    <child>
+      <object class="GtkBox" id="main_box">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="border-width">0</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">YOU ARE</property>
+            <attributes>
+              <attribute name="font-desc" value="Segoe UI Heavy 20"/>
+              <attribute name="style" value="normal"/>
+              <attribute name="foreground" value="#2626a2a26969"/>
+              <attribute name="underline-color" value="#000000000000"/>
+              <attribute name="strikethrough-color" value="#000000000000"/>
+            </attributes>
+            <style>
+              <class name="label_youare"/>
+            </style>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="choice_box">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="border-width">10</property>
+            <property name="spacing">10</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkButton" id="btn_customer">
+                <property name="label" translatable="yes">CUSTOMER</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="relief">half</property>
+                <style>
+                  <class name="btn_customer"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_management">
+                <property name="label" translatable="yes">MANAGEMENT</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="relief">half</property>
+                <style>
+                  <class name="btn_management"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Welcome to VQHT Restaurant
+         @VQHT Restaurant </property>
+            <attributes>
+              <attribute name="font-desc" value="Serif Bold 11"/>
+              <attribute name="foreground" value="#3333d1d17a7a"/>
+              <attribute name="underline-color" value="#2626a2a26969"/>
+            </attributes>
+            <style>
+              <class name="label_intro"/>
+            </style>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <style>
+          <class name="main_box"/>
+        </style>
+      </object>
+    </child>
+    <style>
+      <class name="iden_window"/>
+    </style>
+  </object>
+</interface>
