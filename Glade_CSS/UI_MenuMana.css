@@ -43,9 +43,10 @@ box {
 
 /* Tab đang được chọn */
 .buttonHome:hover, .buttonMenu:hover, .buttonOrders:hover, .buttonStats:hover, .buttonEmployee:hover{
-    background: white;
-    color: black;
-    font-weight: 700;
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
 }
 .buttonHome:focus, .buttonMenu:focus, .buttonOrders:focus, .buttonStats:focus, .buttonEmployee:focus{
     border: 0.5px solid rgb(255, 255, 255);
