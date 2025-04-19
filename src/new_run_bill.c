@@ -13,7 +13,7 @@ void load_css_bill(void)
     gtk_style_context_add_provider_for_screen(screen, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
     GError *error = NULL;
-    gtk_css_provider_load_from_path(provider, "style.css", &error);
+    gtk_css_provider_load_from_path(provider, "Glade_CSS/style.css", &error);
 
     if (error != NULL)
     {
@@ -29,7 +29,7 @@ static void on_confirm_bill_button_clicked(GtkButton *button, gpointer user_data
     GtkWidget *window = GTK_WIDGET(user_data);
 
     // Open file to write bill
-    FILE *file = fopen("bill.txt", "a");
+    FILE *file = fopen("data/view_bill.txt", "a");
     if (file == NULL)
     {
         g_printerr("Error opening bill.txt\n");
@@ -53,7 +53,7 @@ static void on_confirm_bill_button_clicked(GtkButton *button, gpointer user_data
     fprintf(file, "===== Bill =====\n");
 
     // Read temp_data.txt to write to bill
-    FILE *temp_file = fopen("temp_data.txt", "r");
+    FILE *temp_file = fopen("data/temp_data.txt", "r");
     if (temp_file == NULL)
     {
         g_printerr("Error opening temp_data.txt\n");
@@ -74,7 +74,7 @@ static void on_confirm_bill_button_clicked(GtkButton *button, gpointer user_data
 
     // Read orders.txt to write items, calculate subtotal, tax, and total
     double subtotal = 0.0;
-    FILE *orders_file = fopen("orders.txt", "r");
+    FILE *orders_file = fopen("data/orders.txt", "r");
     if (orders_file == NULL)
     {
         g_printerr("Error opening orders.txt\n");
@@ -118,7 +118,7 @@ void run_bill()
     GtkBuilder *builder = gtk_builder_new();
     GError *error = NULL;
 
-    if (!gtk_builder_add_from_file(builder, "bill_layout.glade", &error))
+    if (!gtk_builder_add_from_file(builder, "UI Glade/bill_layout.glade", &error))
     {
         g_printerr("Error loading file: %s\n", error->message);
         GtkWidget *dialog = gtk_message_dialog_new(NULL, 
@@ -137,7 +137,7 @@ void run_bill()
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "bill_layout"));
 
     // Read temp_data.txt to set labels
-    FILE *temp_file = fopen("temp_data.txt", "r");
+    FILE *temp_file = fopen("data/temp_data.txt", "r");
     if (temp_file == NULL)
     {
         g_printerr("Error opening temp_data.txt\n");
@@ -180,7 +180,7 @@ void run_bill()
     // Read orders.txt to display items in bill_information label and calculate subtotal, tax, and total
     double subtotal = 0.0;
     GString *items_text = g_string_new("Items:\n");
-    FILE *orders_file = fopen("orders.txt", "r");
+    FILE *orders_file = fopen("data/orders.txt", "r");
     if (orders_file == NULL)
     {
         g_printerr("Error opening orders.txt\n");

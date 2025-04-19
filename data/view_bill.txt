@@ -1,0 +1,26 @@
+===== Bill =====
+Name: 
+Date: 
+Phone: 
+Time: 
+Guests: 
+Bill Date: 2025-04-19
+Items:
+Subtotal: 0.00
+Tax: 0.00
+Total: 0.00
+================
+
+===== Bill =====
+Name: 
+Date: 
+Phone: 
+Time: 
+Guests: 
+Bill Date: 2025-04-19
+Items:
+Subtotal: 0.00
+Tax: 0.00
+Total: 0.00
+================
+

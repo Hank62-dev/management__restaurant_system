@@ -96,7 +96,7 @@ static void on_button_booking_table_clicked(GtkButton *button, gpointer data) {
     app_data->builder_booking_table = gtk_builder_new();
     GError *error = NULL;
     
-    if (!gtk_builder_add_from_file(app_data->builder_booking_table, "window_booking_table.glade", &error)) {
+    if (!gtk_builder_add_from_file(app_data->builder_booking_table, "UI Glade/window_booking_table.glade", &error)) {
         g_printerr("Error loading window_booking_table.glade: %s\n", error->message);
         g_error_free(error);
         g_object_unref(app_data->builder_booking_table);

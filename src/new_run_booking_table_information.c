@@ -11,7 +11,7 @@ void load_css_information(void)
     gtk_style_context_add_provider_for_screen(screen, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
     GError *error = NULL;
-    gtk_css_provider_load_from_path(provider, "style.css", &error);
+    gtk_css_provider_load_from_path(provider, "Glade_CSS/style.css", &error);
 
     if (error != NULL)
     {
@@ -34,7 +34,7 @@ static void on_button_booking_table_clicked(GtkButton *button, gpointer user_dat
     GtkEntry *entry_guests = GTK_ENTRY(gtk_builder_get_object(g_object_get_data(G_OBJECT(window), "builder"), "enter_number_of_guest"));
 
     // Open file to write data
-    FILE *file = fopen("temp_data.txt", "w");
+    FILE *file = fopen("data/temp_data.txt", "w");
     if (file == NULL)
     {
         g_printerr("Error opening temp_data.txt\n");
@@ -65,7 +65,7 @@ void show_booking_information()
     GtkBuilder *builder = gtk_builder_new();
     GError *error = NULL;
 
-    if (!gtk_builder_add_from_file(builder, "window_booking_information.glade", &error))
+    if (!gtk_builder_add_from_file(builder, "UI Glade/window_booking_information.glade", &error))
     {
         g_printerr("Error loading file: %s\n", error->message);
         GtkWidget *dialog = gtk_message_dialog_new(NULL, 
