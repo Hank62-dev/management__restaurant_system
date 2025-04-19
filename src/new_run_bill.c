@@ -1,12 +1,11 @@
 #include <gtk/gtk.h>
 #include <stdio.h>
-#include "table_booking.h"
 #include <time.h>
 #include <string.h>
 #include "table_booking.h"
 
-
-void load_css_bill(void){
+void load_css_bill(void)
+{
     GtkCssProvider *provider = gtk_css_provider_new();
     GdkDisplay *display = gdk_display_get_default();
     GdkScreen *screen = gdk_display_get_default_screen(display);
@@ -23,18 +22,10 @@ void load_css_bill(void){
     }
 
     g_object_unref(provider);
-
-// Callback functions for navigation buttons
-static void on_home3_clicked(GtkButton *button, gpointer data) {
-    GtkWidget *dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, 
-                                              GTK_MESSAGE_INFO, GTK_BUTTONS_OK, 
-                                              "Home button clicked!");
-    gtk_dialog_run(GTK_DIALOG(dialog));
-    gtk_widget_destroy(dialog);
-
 }
-}
-static void on_confirm_bill_button_clicked(GtkButton *button, gpointer user_data){
+
+static void on_confirm_bill_button_clicked(GtkButton *button, gpointer user_data)
+{
     GtkWidget *window = GTK_WIDGET(user_data);
 
     // Open file to write bill
@@ -53,66 +44,6 @@ static void on_confirm_bill_button_clicked(GtkButton *button, gpointer user_data
     }
 
     // Get current date for the bill
-
-// Function to load CSS
-static void load_css_bill(void) {
-    GtkCssProvider *provider = gtk_css_provider_new();
-    GdkDisplay *display = gdk_display_get_default();
-    GdkScreen *screen = gdk_display_get_default_screen(display);
-    
-    gtk_style_context_add_provider_for_screen(screen, 
-                                             GTK_STYLE_PROVIDER(provider), 
-                                             GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-    
-    GError *error = NULL;
-    gtk_css_provider_load_from_path(provider, "Glade_CSS/edit1.css", &error);
-    
-    if (error != NULL) {
-        g_printerr("Error loading CSS: %s\n", error->message);
-        g_error_free(error);
-    }
-    
-    g_object_unref(provider);
-}
-}
-void run_bill() {
-    
-    // Load the Glade file
-    app_data->builder_bill_layout = gtk_builder_new();
-    GError *error = NULL;
-    
-    if (!gtk_builder_add_from_file(builder, "UI Glade/bill_layout.glade", &error)) {
-        g_printerr("Error loading Glade file: %s\n", error->message);
-        g_error_free(error);
-        g_object_unref(builder);
-        return ;
-    }
-    
-    // Load CSS
-    load_css_bill();
-    
-    // Get the main window
-    app_data->window_bill_layout = GTK_WIDGET(gtk_builder_get_object(app_data->builder_bill_layout, "bill_layout"));
-    
-    // Connect signals
-    gtk_builder_connect_signals(app_data->builder_bill_layout, app_data);
-    
-    // Update labels with data from AppData
-    if (app_data->selected_table) {
-        GtkLabel *table_ordered = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "table_ordered"));
-        char *table_text = g_strdup_printf("Table: %s", app_data->selected_table);
-        gtk_label_set_text(table_ordered, table_text);
-        g_free(table_text);
-    }
-    if (app_data->name) {
-        GtkLabel *customer_name = GTK_LABEL(gtk_builder_get_object(app_data->builder_bill_layout, "customer_name"));
-        char *customer_text = g_strdup_printf("Customer: %s", app_data->name);
-        gtk_label_set_text(customer_name, customer_text);
-        g_free(customer_text);
-    }
-    
-    // Set current date
-
     time_t now = time(NULL);
     struct tm *t = localtime(&now);
     char date_str[11];
@@ -168,7 +99,6 @@ void run_bill() {
         fclose(orders_file);
     }
 
-
     // Calculate tax (10% of subtotal) and total
     double tax = subtotal * 0.10;
     double total = subtotal + tax;
@@ -183,7 +113,8 @@ void run_bill() {
     gtk_widget_hide(window);
 }
 
-void run_bill(){
+void run_bill()
+{
     GtkBuilder *builder = gtk_builder_new();
     GError *error = NULL;
 
@@ -312,16 +243,4 @@ void run_bill(){
     g_signal_connect(gtk_builder_get_object(builder, "confirm_bill_button"), "clicked", G_CALLBACK(on_confirm_bill_button_clicked), window);
 
     gtk_widget_show_all(window);
-
-    
-    // Show the window
-    gtk_widget_show_all(window);
-    
-
-    
-    // Cleanup
-    g_object_unref(builder);
-
-    gtk_widget_show_all(app_data->window_bill_layout);
-
 }

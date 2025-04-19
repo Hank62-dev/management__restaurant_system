@@ -3,15 +3,6 @@
 #include <string.h>
 #include "table_booking.h"
 
-// Structure to hold application data
-typedef struct {
-    GtkWidget *window_booking_table;
-    GtkWidget *window_bill_layout;
-    GtkBuilder *builder_booking_table;
-    GtkBuilder *builder_bill_layout;
-    char *selected_table; // Store selected table number
-} AppData;
-
 static char *selected_table = NULL;
 
 void load_css_layout(void)
@@ -136,7 +127,6 @@ void book_table_show()
 
     load_css_layout();
 
-
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "window_booking_table"));
     g_object_set_data(G_OBJECT(window), "builder", builder); // Store builder for access in callback
     g_signal_connect(gtk_builder_get_object(builder, "confirm_booking_table_button"), "clicked", G_CALLBACK(on_confirm_booking_table_button_clicked), window);
@@ -144,27 +134,10 @@ void book_table_show()
     // Connect toggle signals for table buttons
     for (int i = 1; i <= 8; i++)
     {
-
-    
-    // Create AppData structure
-    AppData app_data = {0};
-    app_data.builder_booking_table = builder_booking_table;
-    app_data.selected_table = NULL;
-    
-    // Get the booking table window
-    app_data->window_booking_table = GTK_WIDGET(gtk_builder_get_object(app_data->builder_booking_table, "window_booking_table"));
-    
-    // Connect signals
-    gtk_builder_connect_signals(app_data->builder_booking_table, app_data);
-    
-    // Set table buttons as toggle buttons
-    for (int i = 1; i <= 8; i++) {
-
         char table_id[16];
         snprintf(table_id, sizeof(table_id), "table%d", i);
         g_signal_connect(gtk_builder_get_object(builder, table_id), "toggled", G_CALLBACK(on_table_clicked), builder);
     }
 
     gtk_widget_show_all(window);
-}
 }

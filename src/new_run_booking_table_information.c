@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include "table_booking.h"
 
-
 void load_css_information(void)
 {
     GtkCssProvider *provider = gtk_css_provider_new();
@@ -66,7 +65,6 @@ void show_booking_information()
     GtkBuilder *builder = gtk_builder_new();
     GError *error = NULL;
 
-
     if (!gtk_builder_add_from_file(builder, "window_booking_information.glade", &error))
     {
         g_printerr("Error loading file: %s\n", error->message);
@@ -77,14 +75,15 @@ void show_booking_information()
                                                   "Cannot load window_booking_information.glade!");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
-
-    gtk_css_provider_load_from_path(provider, "Glade_CSS/style.css", &error);
-    
-    if (error != NULL) {
-        g_printerr("Error loading CSS: %s\n", error->message);
         g_error_free(error);
+        return;
     }
-    
-    g_object_unref(provider);
-}
+
+    load_css_information();
+
+    GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "window_booking_information"));
+    g_object_set_data(G_OBJECT(window), "builder", builder); // Store builder for access in callback
+    g_signal_connect(gtk_builder_get_object(builder, "button_booking_table"), "clicked", G_CALLBACK(on_button_booking_table_clicked), window);
+
+    gtk_widget_show_all(window);
 }
