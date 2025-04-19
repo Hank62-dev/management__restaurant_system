@@ -1,4 +1,8 @@
-
+/* Định dạng chung */
+* {
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+}
 
 /* Định dạng nền tổng thể */
 .menuManager {
@@ -7,11 +11,14 @@
 
 /* Định dạng chữ mặc định */
 label {
-    color: black;
     font-weight: bold;
 }
 
-
+/* Định dạng khoảng cách cho các box */
+box {
+    margin: 5px;
+    padding: 5px;
+}
 
 /* Định dạng thanh điều hướng */
 .header {
@@ -199,39 +206,30 @@ label[class^="costItem"] {
     margin-bottom: 20px;
 }
 
-/* Định dạng nút "Thêm" */
-.buttonAdd {
-    font-size: 16px;
-    padding: 10px 20px;
-    background-color: rgb(23, 125, 23);
+/* Định dạng nút  */
+.buttonAdd,.buttonEdit,.buttonDelete {
+    background: white;
+    color: black;
+    font-weight: 700;
+}
+.buttonAdd:hover,.buttonEdit:hover,.buttonDelete:hover {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
     color: white;
-    border: none;
-    border-radius: 5px;
 }
 
-/* Định dạng nút "Sửa" */
-.buttonEdit {
-    font-size: 16px;
-    padding: 10px 20px;
-    background-color: rgb(23, 125, 23);
+.buttonAdd:focus,.buttonEdit:focus,.buttonDelete:focus {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
     color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-/* Định dạng nút "Xóa" */
-.buttonDelete {
-    font-size: 16px;
-    padding: 10px 20px;
-    background-color: rgb(23, 125, 23);
-    color: white;
-    border: none;
-    border-radius: 5px;
 }
 
 /* Định dạng khu vực chỉnh sửa */
 .editBox {
     margin-bottom: 20px;
+    border:0.5px solid#4CAF50;
 }
 
 /* Định dạng tiêu đề chỉnh sửa */
