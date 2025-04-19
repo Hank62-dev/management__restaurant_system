@@ -71,7 +71,7 @@ static void on_table_clicked(GtkToggleButton *button, gpointer user_data)
 static void on_confirm_booking_table_button_clicked(GtkButton *button, gpointer user_data)
 {
     GtkWidget *window = GTK_WIDGET(user_data);
-    show_booking_information();
+
     if (!selected_table)
     {
         // Set the parent of the dialog to the current window
@@ -81,12 +81,12 @@ static void on_confirm_booking_table_button_clicked(GtkButton *button, gpointer 
                                                   GTK_BUTTONS_OK, 
                                                   "Please select a table first!");
         gtk_dialog_run(GTK_DIALOG(dialog));
-        //gtk_widget_destroy(dialog);
+        gtk_widget_destroy(dialog);
         return;
     }
 
     // Update temp_data.txt with selected table
-    FILE *file = fopen("data/temp_data.txt", "a");
+    FILE *file = fopen("data/temp_data.txt", "w");
     if (file == NULL)
     {
         g_printerr("Error opening temp_data.txt\n");
@@ -96,7 +96,7 @@ static void on_confirm_booking_table_button_clicked(GtkButton *button, gpointer 
                                                   GTK_BUTTONS_OK, 
                                                   "Cannot open temp_data.txt for writing!");
         gtk_dialog_run(GTK_DIALOG(dialog));
-        //gtk_widget_destroy(dialog);
+        gtk_widget_destroy(dialog);
         return;
     }
     fprintf(file, "Table: %s\n", selected_table);

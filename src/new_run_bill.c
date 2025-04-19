@@ -47,7 +47,7 @@ static void on_confirm_bill_button_clicked(GtkButton *button, gpointer user_data
     time_t now = time(NULL);
     struct tm *t = localtime(&now);
     char date_str[11];
-    strftime(date_str, sizeof(date_str), "%Y-%m-%d", t);
+    strftime(date_str, sizeof(date_str), "%d-%m-%Y", t);
 
     // Write bill details to file
     fprintf(file, "===== Bill =====\n");

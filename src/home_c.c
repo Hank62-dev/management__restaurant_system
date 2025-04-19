@@ -31,7 +31,7 @@ void on_btn_menu_c_clicked(GtkWidget *widget, gpointer data){
     show_Menu_Cus();
 }
 void on_btn_booking_c_clicked(GtkWidget *widget, gpointer data){
-    book_table_show();
+    show_booking_information();
 }
 void on_btn_orders_c_clicked(GtkWidget *widget, gpointer data){
     run_bill();

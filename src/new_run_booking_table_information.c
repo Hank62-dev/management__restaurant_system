@@ -25,7 +25,7 @@ void load_css_information(void)
 static void on_button_booking_table_clicked(GtkButton *button, gpointer user_data)
 {
     GtkWidget *window = GTK_WIDGET(user_data);
-
+    book_table_show();
     // Get data from entries
     GtkEntry *entry_name = GTK_ENTRY(gtk_builder_get_object(g_object_get_data(G_OBJECT(window), "builder"), "enter_name"));
     GtkEntry *entry_date = GTK_ENTRY(gtk_builder_get_object(g_object_get_data(G_OBJECT(window), "builder"), "enter_date"));
@@ -34,7 +34,7 @@ static void on_button_booking_table_clicked(GtkButton *button, gpointer user_dat
     GtkEntry *entry_guests = GTK_ENTRY(gtk_builder_get_object(g_object_get_data(G_OBJECT(window), "builder"), "enter_number_of_guest"));
 
     // Open file to write data
-    FILE *file = fopen("data/temp_data.txt", "w");
+    FILE *file = fopen("data/temp_data.txt", "a");
     if (file == NULL)
     {
         g_printerr("Error opening temp_data.txt\n");
