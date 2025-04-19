@@ -66,13 +66,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="buttonBooking">
-                <property name="label" translatable="yes">BOOKING</property>
+              <object class="GtkButton" id="buttonOrders">
+                <property name="label" translatable="yes">ORDERS</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <style>
-                  <class name="buttonBooking"/>
+                  <class name="buttonOrders"/>
                 </style>
               </object>
               <packing>
@@ -82,8 +82,8 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="buttonBill">
-                <property name="label" translatable="yes">BILL</property>
+              <object class="GtkButton" id="buttonStats">
+                <property name="label" translatable="yes">STATS</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
@@ -95,6 +95,22 @@
                 <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="buttonEmployee">
+                <property name="label" translatable="yes">EMPLOYEE</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <style>
+                  <class name="buttonEmployee"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">5</property>
               </packing>
             </child>
             <style>
