@@ -5,8 +5,8 @@
 #include "menu_Mana.h"
 
 // Biến toàn cục
-MenuItemMana menuList[MAX_MENU_ITEMS];
-int menuCount = 0;
+MenuItemMana menuList_m[MAX_MENU_ITEMS];
+int menuCount_m = 0;
 GtkWidget *oldIdLabel, *oldNameLabel, *oldCategoryLabel, *oldPriceLabel, *oldImageLabel;
 GtkWidget *newIdEntry, *newNameEntry, *newCategoryEntry, *newPriceEntry, *newImageEntry;
 GtkWidget *menuGrid;
@@ -24,7 +24,7 @@ void applyCSS_MenuMana(const char *css_file_path) {
 }
 
 // Hàm hiển thị thông báo
-void showMessage(GtkWindow *parent, const char *message) {
+void showMessage_m(GtkWindow *parent, const char *message) {
     GtkWidget *dialog = gtk_message_dialog_new(parent, GTK_DIALOG_MODAL,
                                                GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "%s", message);
     gtk_dialog_run(GTK_DIALOG(dialog));
@@ -68,15 +68,15 @@ void updateMenuList() {
     g_list_free(children);
 
     // Tạo lại danh sách món
-    for (int i = 0; i < menuCount; i++) {
+    for (int i = 0; i < menuCount_m; i++) {
         int row = i / 4;
         int col = i % 4;
 
         GtkWidget *box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
-        GtkWidget *image = gtk_image_new_from_file(menuList[i].imagePath);
-        GtkWidget *name = gtk_label_new(menuList[i].dishName);
+        GtkWidget *image = gtk_image_new_from_file(menuList_m[i].imagePath);
+        GtkWidget *name = gtk_label_new(menuList_m[i].dishName);
         char priceStr[20];
-        snprintf(priceStr, sizeof(priceStr), "%.0f", menuList[i].price);
+        snprintf(priceStr, sizeof(priceStr), "%.0f", menuList_m[i].price);
         GtkWidget *price = gtk_label_new(priceStr);
         GtkWidget *selectBtn = gtk_button_new_with_label("Chọn");
 
@@ -99,10 +99,10 @@ void updateMenuList() {
 // Hàm xử lý nút "Chọn"
 void on_select_item_clicked(GtkButton *button, gpointer user_data) {
     int index = GPOINTER_TO_INT(g_object_get_data(G_OBJECT(button), "index"));
-    if (index >= 0 && index < menuCount) {
-        updateSelectedItemInfo(menuList[index].menuId, menuList[index].dishName,
-                              menuList[index].type, menuList[index].price, 
-                              menuList[index].imagePath);
+    if (index >= 0 && index < menuCount_m) {
+        updateSelectedItemInfo(menuList_m[index].menuId, menuList_m[index].dishName,
+                              menuList_m[index].type, menuList_m[index].price, 
+                              menuList_m[index].imagePath);
     } else {
         printf("Lỗi: Chỉ số không hợp lệ: %d\n", index);
     }
@@ -119,27 +119,27 @@ void on_add_clicked(GtkButton *button, gpointer user_data) {
 
     if (strlen(id) == 0 || strlen(name) == 0 || strlen(category) == 0 || 
         strlen(priceStr) == 0 || imagePath == NULL) {
-        showMessage(GTK_WINDOW(user_data), "Vui lòng điền đầy đủ thông tin!");
+        showMessage_m(GTK_WINDOW(user_data), "Vui lòng điền đầy đủ thông tin!");
         if (imagePath) g_free(imagePath);
         return;
     }
     if (sscanf(priceStr, "%f", &price) != 1 || price <= 0) {
-        showMessage(GTK_WINDOW(user_data), "Giá không hợp lệ!");
+        showMessage_m(GTK_WINDOW(user_data), "Giá không hợp lệ!");
         g_free(imagePath);
         return;
     }
 
-    if (addItem(menuList, &menuCount, id, name, category, price, imagePath)) {
-        saveMenuToFile(menuList, menuCount);
+    if (addItem(menuList_m, &menuCount_m, id, name, category, price, imagePath)) {
+        saveMenuToFile(menuList_m, menuCount_m);
         updateMenuList();
         gtk_entry_set_text(GTK_ENTRY(newIdEntry), "");
         gtk_entry_set_text(GTK_ENTRY(newNameEntry), "");
         gtk_entry_set_text(GTK_ENTRY(newCategoryEntry), "");
         gtk_entry_set_text(GTK_ENTRY(newPriceEntry), "");
         gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(newImageEntry), "");
-        showMessage(GTK_WINDOW(user_data), "Thêm món thành công!");
+        showMessage_m(GTK_WINDOW(user_data), "Thêm món thành công!");
     } else {
-        showMessage(GTK_WINDOW(user_data), "Mã món đã tồn tại!");
+        showMessage_m(GTK_WINDOW(user_data), "Mã món đã tồn tại!");
     }
     g_free(imagePath);
 }
@@ -155,47 +155,47 @@ void on_edit_clicked(GtkButton *button, gpointer user_data) {
     float newPrice;
 
     if (strcmp(oldId, "...") == 0) {
-        showMessage(GTK_WINDOW(user_data), "Vui lòng chọn món để sửa!");
+        showMessage_m(GTK_WINDOW(user_data), "Vui lòng chọn món để sửa!");
         if (newImagePath) g_free(newImagePath);
         return;
     }
     if (strlen(newId) == 0 || strlen(newName) == 0 || strlen(newCategory) == 0 || 
         strlen(newPriceStr) == 0 || newImagePath == NULL) {
-        showMessage(GTK_WINDOW(user_data), "Vui lòng điền đầy đủ thông tin mới!");
+        showMessage_m(GTK_WINDOW(user_data), "Vui lòng điền đầy đủ thông tin mới!");
         if (newImagePath) g_free(newImagePath);
         return;
     }
     if (sscanf(newPriceStr, "%f", &newPrice) != 1 || newPrice <= 0) {
-        showMessage(GTK_WINDOW(user_data), "Giá mới không hợp lệ!");
+        showMessage_m(GTK_WINDOW(user_data), "Giá mới không hợp lệ!");
         g_free(newImagePath);
         return;
     }
 
-    if (strcmp(oldId, newId) != 0 && checkDuplicate(menuList, menuCount, newId)) {
-        showMessage(GTK_WINDOW(user_data), "Mã mới đã tồn tại!");
+    if (strcmp(oldId, newId) != 0 && checkDuplicate(menuList_m, menuCount_m, newId)) {
+        showMessage_m(GTK_WINDOW(user_data), "Mã mới đã tồn tại!");
         g_free(newImagePath);
         return;
     }
 
-    if (editItem(menuList, menuCount, oldId, newName, newCategory, newPrice, newImagePath)) {
+    if (editItem(menuList_m, menuCount_m, oldId, newName, newCategory, newPrice, newImagePath)) {
         if (strcmp(oldId, newId) != 0) {
-            for (int i = 0; i < menuCount; i++) {
-                if (strcmp(menuList[i].menuId, oldId) == 0) {
-                    strcpy(menuList[i].menuId, newId);
+            for (int i = 0; i < menuCount_m; i++) {
+                if (strcmp(menuList_m[i].menuId, oldId) == 0) {
+                    strcpy(menuList_m[i].menuId, newId);
                     break;
                 }
             }
         }
-        saveMenuToFile(menuList, menuCount);
+        saveMenuToFile(menuList_m, menuCount_m);
         updateMenuList();
         gtk_entry_set_text(GTK_ENTRY(newIdEntry), "");
         gtk_entry_set_text(GTK_ENTRY(newNameEntry), "");
         gtk_entry_set_text(GTK_ENTRY(newCategoryEntry), "");
         gtk_entry_set_text(GTK_ENTRY(newPriceEntry), "");
         gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(newImageEntry), "");
-        showMessage(GTK_WINDOW(user_data), "Sửa món thành công!");
+        showMessage_m(GTK_WINDOW(user_data), "Sửa món thành công!");
     } else {
-        showMessage(GTK_WINDOW(user_data), "Không tìm thấy món để sửa!");
+        showMessage_m(GTK_WINDOW(user_data), "Không tìm thấy món để sửa!");
     }
     g_free(newImagePath);
 }
@@ -205,27 +205,27 @@ void on_delete_clicked(GtkButton *button, gpointer user_data) {
     const char *id = gtk_label_get_text(GTK_LABEL(oldIdLabel));
 
     if (strcmp(id, "...") == 0) {
-        showMessage(GTK_WINDOW(user_data), "Vui lòng chọn món để xóa!");
+        showMessage_m(GTK_WINDOW(user_data), "Vui lòng chọn món để xóa!");
         return;
     }
 
-    if (deleteItem(menuList, &menuCount, id)) {
-        saveMenuToFile(menuList, menuCount);
+    if (deleteItem(menuList_m, &menuCount_m, id)) {
+        saveMenuToFile(menuList_m, menuCount_m);
         updateMenuList();
         gtk_entry_set_text(GTK_ENTRY(newIdEntry), "");
         gtk_entry_set_text(GTK_ENTRY(newNameEntry), "");
         gtk_entry_set_text(GTK_ENTRY(newCategoryEntry), "");
         gtk_entry_set_text(GTK_ENTRY(newPriceEntry), "");
         gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(newImageEntry), "");
-        showMessage(GTK_WINDOW(user_data), "Xóa món thành công!");
+        showMessage_m(GTK_WINDOW(user_data), "Xóa món thành công!");
     } else {
-        showMessage(GTK_WINDOW(user_data), "Không tìm thấy món để xóa!");
+        showMessage_m(GTK_WINDOW(user_data), "Không tìm thấy món để xóa!");
     }
 }
 
 // Hàm xử lý nút "CONFIRM"
-void on_confirm_clicked(GtkButton *button, gpointer user_data) {
-    showMessage(GTK_WINDOW(user_data), "Danh sách món đã được lưu!");
+void on_confirm_clicked_m(GtkButton *button, gpointer user_data) {
+    showMessage_m(GTK_WINDOW(user_data), "Danh sách món đã được lưu!");
 }
 
 void show_Menu_Mana() {
@@ -263,18 +263,18 @@ void show_Menu_Mana() {
     gtk_grid_attach(GTK_GRID(grid), gtk_label_new(""), 0, 9, 1, 1);
     gtk_grid_attach(GTK_GRID(grid), newImageEntry, 1, 9, 1, 1);
 
-    if (!loadMenuFromFile_m(menuList, &menuCount)) {
+    if (!loadMenuFromFile_m(menuList_m, &menuCount_m)) {
         printf("Lỗi tải menu\n");
     }
 
-    printMenu_m(menuList, menuCount);
+    printMenu_m(menuList_m, menuCount_m);
     updateMenuList();
 
     g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
     g_signal_connect(addBtn, "clicked", G_CALLBACK(on_add_clicked), window);
     g_signal_connect(editBtn, "clicked", G_CALLBACK(on_edit_clicked), window);
     g_signal_connect(deleteBtn, "clicked", G_CALLBACK(on_delete_clicked), window);
-    g_signal_connect(confirmBtn, "clicked", G_CALLBACK(on_confirm_clicked), window);
+    g_signal_connect(confirmBtn, "clicked", G_CALLBACK(on_confirm_clicked_m), window);
 
     applyCSS_MenuMana("Glade_CSS/UI_MenuMana.css");
     gtk_widget_show_all(window);

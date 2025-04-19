@@ -5,9 +5,10 @@
   <object class="GtkWindow" id="home_c_window">
     <property name="can-focus">False</property>
     <property name="border-width">10</property>
-    <property name="resizable">False</property>
     <property name="default-width">1366</property>
-    <property name="default-height">768</property>
+    <property name="default-height">200</property>
+    <property name="skip-taskbar-hint">True</property>
+    <property name="skip-pager-hint">True</property>
     <child>
       <object class="GtkBox" id="main_box">
         <property name="visible">True</property>
@@ -144,22 +145,8 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
+                <property name="padding">25</property>
                 <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="name">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="label" translatable="yes">VQHT</property>
-                <attributes>
-                  <attribute name="font-desc" value="Segoe Print 60"/>
-                </attributes>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">2</property>
               </packing>
             </child>
             <child>
@@ -180,7 +167,22 @@ phục vụ các món ăn đậm đà bản sắc Việt trong không gian ấm 
                 </style>
               </object>
               <packing>
-                <property name="expand">True</property>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="padding">50</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="name">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <attributes>
+                  <attribute name="font-desc" value="Segoe Print 60"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="expand">False</property>
                 <property name="fill">True</property>
                 <property name="position">3</property>
               </packing>

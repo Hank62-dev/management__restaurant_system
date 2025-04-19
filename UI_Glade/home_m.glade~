@@ -17,6 +17,7 @@
           <object class="GtkBox" id="upper_box">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
+            <property name="border-width">20</property>
             <property name="spacing">10</property>
             <property name="homogeneous">True</property>
             <child>
@@ -41,6 +42,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="btn_home_m"/>
                   <class name="btn_c"/>
@@ -58,6 +60,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="btn_menu_m"/>
                   <class name="btn_c"/>
@@ -75,6 +78,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="btn_orders_m"/>
                 </style>
@@ -91,6 +95,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="btn_stats_m"/>
                   <class name="btn_m"/>
@@ -108,6 +113,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="btn_employee_m"/>
                   <class name="btn_c"/>

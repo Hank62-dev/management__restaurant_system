@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include "employees.h"
+#include "table_booking.h"
+#include "menu_Cus.h"
+#include "stats.h"
+#include "total_bills.h"
 #include <gtk/gtk.h>
 
 // Hàm khởi tạo TreeView
@@ -19,6 +23,21 @@ void apply_css_home_c(GtkWidget *widget, GtkCssProvider *provider) {
         gtk_container_foreach(GTK_CONTAINER(widget), (GtkCallback)apply_css_home_c, provider);
     };
 }
+
+void on_btn_home_c_clicked(GtkWidget *widget, gpointer data){
+    show_home_c();
+}
+void on_btn_menu_c_clicked(GtkWidget *widget, gpointer data){
+    show_Menu_Cus();
+}
+void on_btn_booking_c_clicked(GtkWidget *widget, gpointer data){
+    book_table_show();
+}
+void on_btn_orders_c_clicked(GtkWidget *widget, gpointer data){
+    run_bill();
+}
+
+
 void show_home_c() {
     GtkBuilder *builder;
     GtkCssProvider *css_provider;
@@ -54,12 +73,12 @@ void show_home_c() {
     gtk_style_context_add_class(gtk_widget_get_style_context(btn_booking_c), "btn_booking_c");
     gtk_style_context_add_class(gtk_widget_get_style_context(btn_orders_c), "btn_orders_c");
 
-    /*
-    g_signal_connect(btn_home_c,     "clicked", G_CALLBACK(on_btn_home_c_clicked), NULL);
-    g_signal_connect(btn_menu_c,     "clicked", G_CALLBACK(on_btn_menu_c_clicked), NULL);
-    g_signal_connect(btn_booking_c,    "clicked", G_CALLBACK(on_btn_booking_c_clicked), NULL);
-    g_signal_connect(btn_orders_c,   "clicked", G_CALLBACK(on_btn_orders_c_clicked), NULL);
-    */
+    
+    g_signal_connect(btn_home_c,"clicked", G_CALLBACK(on_btn_home_c_clicked), NULL);
+    g_signal_connect(btn_menu_c,"clicked", G_CALLBACK(on_btn_menu_c_clicked), NULL);
+    g_signal_connect(btn_booking_c,"clicked", G_CALLBACK(on_btn_booking_c_clicked), NULL);
+    g_signal_connect(btn_orders_c,"clicked", G_CALLBACK(on_btn_orders_c_clicked), NULL);
+    
 
     gtk_widget_show_all(window);
     g_object_unref(builder);

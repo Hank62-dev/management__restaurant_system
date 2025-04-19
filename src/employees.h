@@ -30,13 +30,19 @@ void addEmployeeFromUI(GtkBuilder *builder, Employee employees[], int *count);
 void displayEmployeeInfo(GtkBuilder *builder, Employee emp);
 void updateEmployeeFromUI(GtkBuilder *builder, Employee employees[], int *count,int id);
 
-//show
+
 void show_home_m();
 void show_home_c();
 void show_employee();
+//toolbar_mana
 void on_btn_home_m_clicked(GtkWidget *widget, gpointer data);
 void on_btn_menu_m_clicked(GtkWidget *widget, gpointer data);
 void on_btn_stats_m_clicked(GtkWidget *widget, gpointer data);
 void on_btn_employee_m_clicked(GtkWidget *widget, gpointer data);
 void on_btn_orders_m_clicked(GtkWidget *widget, gpointer data);
+//toolbar_cus
+void on_btn_home_c_clicked(GtkWidget *widget, gpointer data);
+void on_btn_menu_c_clicked(GtkWidget *widget, gpointer data);
+void on_btn_booking_c_clicked(GtkWidget *widget, gpointer data);
+void on_btn_orders_c_clicked(GtkWidget *widget, gpointer data);
 #endif

@@ -3,10 +3,10 @@
     
     .btn_home_c,.btn_menu_c,.btn_booking_c,.btn_orders_c{
         background: white;
-    color: black;
-    font-weight: 700;
+        color: black;
+        font-weight: 700;
     }
-    .btn_home_c:hover,.btn_menu_c:hover,.btn_orders_c :hover, .btn_booking_c:focus  {
+    .btn_home_c:hover,.btn_menu_c:hover,.btn_orders_c:hover,.btn_booking_c:hover  {
         border: 0.5px solid rgb(255, 255, 255);
         border-radius: 1px;
         background: green;
@@ -14,7 +14,7 @@
     
         }
 
-    .btn_home_c:focus,.btn_menu_c:focus,.btn_booking_c :focus,.btn_orders_c :focus {
+    .btn_home_c:focus,.btn_menu_c:focus,.btn_booking_c:focus,.btn_orders_c:focus {
         border: 0.5px solid rgb(255, 255, 255);
         border-radius: 1px;
         background: green;

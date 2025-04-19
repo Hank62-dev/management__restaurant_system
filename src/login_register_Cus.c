@@ -2,6 +2,7 @@
 #include "stats.h"
 #include "login_register_Cus.h"
 #include "identification.h"
+#include "employees.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -79,8 +80,7 @@ void on_login_now_clicked_c(GtkButton *button, gpointer user_data) {
     
     if (found) {
         g_print("Login successful! Redirecting to Home...\n");
-        // Chuyển sang giao diện Home
-        show_stats();
+        show_home_c();
 
     } else {
         g_print("Invalid login credentials!\n");

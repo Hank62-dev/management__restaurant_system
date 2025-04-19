@@ -161,27 +161,8 @@
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">False</property>
+                <property name="padding">25</property>
                 <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="text_name">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="label" translatable="yes">VQHT</property>
-                <attributes>
-                  <attribute name="font-desc" value="Segoe Script Oblique 72"/>
-                  <attribute name="style" value="normal"/>
-                  <attribute name="weight" value="ultralight"/>
-                </attributes>
-                <style>
-                  <class name="text_name"/>
-                </style>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">2</property>
               </packing>
             </child>
             <child>
@@ -201,6 +182,26 @@ phục vụ các món ăn đậm đà bản sắc Việt trong không gian ấm 
               </object>
               <packing>
                 <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="padding">50</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="text_name">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <attributes>
+                  <attribute name="font-desc" value="Segoe Script Oblique 72"/>
+                  <attribute name="style" value="normal"/>
+                  <attribute name="weight" value="ultralight"/>
+                </attributes>
+                <style>
+                  <class name="text_name"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
                 <property name="fill">True</property>
                 <property name="position">3</property>
               </packing>
