@@ -169,7 +169,6 @@
                 <property name="height-request">39</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="text" translatable="yes">YOUR FULL NAME</property>
                 <property name="placeholder-text" translatable="yes">Enter your name</property>
                 <style>
                   <class name="enter_name"/>
@@ -186,8 +185,7 @@
                 <property name="height-request">37</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="text" translatable="yes">DATE</property>
-                <property name="placeholder-text" translatable="yes">Enter the date you will arrive</property>
+                <property name="placeholder-text" translatable="yes">Enter the date</property>
                 <style>
                   <class name="enter_date"/>
                 </style>
@@ -203,7 +201,6 @@
                 <property name="height-request">31</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="text" translatable="yes">PHONE</property>
                 <property name="placeholder-text" translatable="yes">Enter your phone number</property>
                 <style>
                   <class name="enter_phone"/>
@@ -220,8 +217,7 @@
                 <property name="height-request">38</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="text" translatable="yes">TIME</property>
-                <property name="placeholder-text" translatable="yes">Enter the time you will arrive</property>
+                <property name="placeholder-text" translatable="yes">Enter the time</property>
                 <style>
                   <class name="enter_time"/>
                 </style>
@@ -237,8 +233,7 @@
                 <property name="height-request">32</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="text" translatable="yes">NUMBER OF GUEST</property>
-                <property name="placeholder-text" translatable="yes">Enter your number of guest</property>
+                <property name="placeholder-text" translatable="yes">Enter number guest</property>
                 <style>
                   <class name="enter_number_of_guest"/>
                 </style>

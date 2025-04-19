@@ -137,7 +137,7 @@
                 </style>
               </object>
               <packing>
-                <property name="x">620</property>
+                <property name="x">621</property>
                 <property name="y">350</property>
               </packing>
             </child>
@@ -217,7 +217,7 @@
                 <property name="height-request">38</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="placeholder-text" translatable="yes">Enter the time you will arrive</property>
+                <property name="placeholder-text" translatable="yes">Enter the time</property>
                 <style>
                   <class name="enter_time"/>
                 </style>
