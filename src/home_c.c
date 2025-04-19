@@ -7,7 +7,7 @@
 #include "stats.h"
 #include "total_bills.h"
 #include <gtk/gtk.h>
-
+GtkWidget *window_cus;
 // Hàm khởi tạo TreeView
 void setup_treeview(GtkBuilder *builder);
 void apply_css_home_c(GtkWidget *widget, GtkCssProvider *provider) {
@@ -26,15 +26,19 @@ void apply_css_home_c(GtkWidget *widget, GtkCssProvider *provider) {
 
 void on_btn_home_c_clicked(GtkWidget *widget, gpointer data){
     show_home_c();
+    gtk_widget_hide(window_cus);
 }
 void on_btn_menu_c_clicked(GtkWidget *widget, gpointer data){
     show_Menu_Cus();
+    gtk_widget_hide(window_cus);    
 }
 void on_btn_booking_c_clicked(GtkWidget *widget, gpointer data){
     show_booking_information();
+    gtk_widget_hide(window_cus);  
 }
 void on_btn_orders_c_clicked(GtkWidget *widget, gpointer data){
     run_bill();
+    gtk_widget_hide(window_cus);  
 }
 
 
@@ -52,20 +56,20 @@ void show_home_c() {
     }
 
     // Lấy các widget từ Glade
-    GtkWidget *window         = GTK_WIDGET(gtk_builder_get_object(builder, "home_c_window"));
+    window_cus                    = GTK_WIDGET(gtk_builder_get_object(builder, "home_c_window"));
     GtkWidget *btn_home_c     = GTK_WIDGET(gtk_builder_get_object(builder, "btn_home_c"));
     GtkWidget *btn_menu_c     = GTK_WIDGET(gtk_builder_get_object(builder, "btn_menu_c"));
     GtkWidget *btn_booking_c    = GTK_WIDGET(gtk_builder_get_object(builder, "btn_booking_c"));
     GtkWidget *btn_orders_c   = GTK_WIDGET(gtk_builder_get_object(builder, "btn_orders_c"));
 
-    if (!window) {
+    if (!window_cus) {
         g_printerr("Cannot find 'home_c_window' in Glade.\n");
         return;
     }
 
     // Gán CSS (nếu có)
     css_provider = gtk_css_provider_new();
-    apply_css_home_c(window, css_provider); 
+    apply_css_home_c(window_cus, css_provider); 
     g_object_unref(css_provider);
 
     gtk_style_context_add_class(gtk_widget_get_style_context(btn_home_c), "btn_home_c");
@@ -80,6 +84,6 @@ void show_home_c() {
     g_signal_connect(btn_orders_c,"clicked", G_CALLBACK(on_btn_orders_c_clicked), NULL);
     
 
-    gtk_widget_show_all(window);
+    gtk_widget_show_all(window_cus);
     g_object_unref(builder);
 }

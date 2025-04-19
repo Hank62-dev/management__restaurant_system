@@ -7,7 +7,7 @@
 #include "stats.h"
 #include "total_bills.h"
 #include <gtk/gtk.h>
-
+GtkWidget *window_mana ;
 // Hàm khởi tạo TreeView
 void setup_treeview(GtkBuilder *builder);
 void apply_css_home_m(GtkWidget *widget, GtkCssProvider *provider) {
@@ -26,18 +26,23 @@ void apply_css_home_m(GtkWidget *widget, GtkCssProvider *provider) {
 
 void on_btn_home_m_clicked(GtkWidget *widget, gpointer data){
     show_home_m();
+    gtk_widget_hide(window_mana);  
 }
 void on_btn_menu_m_clicked(GtkWidget *widget, gpointer data){
     show_Menu_Mana();
+    gtk_widget_hide(window_mana);  
 }
 void on_btn_stats_m_clicked(GtkWidget *widget, gpointer data){
     show_stats();
+    gtk_widget_hide(window_mana);  
 }
 void on_btn_employee_m_clicked(GtkWidget *widget, gpointer data){
     show_employee();
+    gtk_widget_hide(window_mana);  
 }
 void on_btn_orders_m_clicked(GtkWidget *widget, gpointer data){
     total_bills();
+    gtk_widget_hide(window_mana);  
 }
 
 void show_home_m() {
@@ -54,21 +59,21 @@ void show_home_m() {
     }
 
     // Lấy các widget từ Glade
-    GtkWidget *window         = GTK_WIDGET(gtk_builder_get_object(builder, "home_m_window"));
+    window_mana         = GTK_WIDGET(gtk_builder_get_object(builder, "home_m_window"));
     GtkWidget *btn_home_m     = GTK_WIDGET(gtk_builder_get_object(builder, "btn_home_m"));
     GtkWidget *btn_menu_m     = GTK_WIDGET(gtk_builder_get_object(builder, "btn_menu_m"));
     GtkWidget *btn_stats_m    = GTK_WIDGET(gtk_builder_get_object(builder, "btn_stats_m"));
     GtkWidget *btn_employee_m = GTK_WIDGET(gtk_builder_get_object(builder, "btn_employee_m"));
     GtkWidget *btn_orders_m   = GTK_WIDGET(gtk_builder_get_object(builder, "btn_orders_m"));
 
-    if (!window) {
+    if (!window_mana) {
         g_printerr("Cannot find 'home_m_window' in Glade.\n");
         return;
     }
 
     // Gán CSS (nếu có)
     css_provider = gtk_css_provider_new();
-    apply_css_home_m(window, css_provider); 
+    apply_css_home_m(window_mana, css_provider); 
     g_object_unref(css_provider);
 
     gtk_style_context_add_class(gtk_widget_get_style_context(btn_home_m), "btn_home_m");
@@ -85,6 +90,6 @@ void show_home_m() {
     g_signal_connect(btn_orders_m,   "clicked", G_CALLBACK(on_btn_orders_m_clicked), NULL);
     
 
-    gtk_widget_show_all(window);
+    gtk_widget_show_all(window_mana);
     g_object_unref(builder);
 }
