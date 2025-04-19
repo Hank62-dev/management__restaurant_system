@@ -143,10 +143,11 @@ void updateEmployee(Employee employees[], int *count, int id) {
 }
 
 */
+#include <gtk/gtk.h>
+#include "employees.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "employees.h"
 
 Employee employees[MAX_EMPLOYEES];
 int count = 0;
