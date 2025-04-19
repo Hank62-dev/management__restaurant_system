@@ -24,12 +24,12 @@ HostApplication=
 UseCustomMakefile=0
 CustomMakefile=
 CommandLine=
-Folders=
+Folders=src
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=1
 CompilerSettings=0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0
-UnitCount=3
+UnitCount=5
 
 [VersionInfo]
 Major=1
@@ -49,9 +49,48 @@ ProductName=
 ProductVersion=
 AutoIncBuildNr=0
 SyncProduct=1
+<<<<<<< HEAD
 
+<<<<<<< HEAD
 [Unit2]
 FileName=test\test.h
+=======
+[Unit1]
+FileName=main.c
+CompileCpp=0
+Folder=src
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+FileName=src\main.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit7]
+FileName=orders.c
+
+[Unit8]
+FileName=orders.h
+FileName=src\stats.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit9]
+FileName=employees.h
+FileName=src\stats.h
+>>>>>>> menu
 CompileCpp=0
 Folder=
 Compile=1
@@ -61,6 +100,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
+<<<<<<< HEAD
 FileName=test\testmain.c
 CompileCpp=0
 Folder=
@@ -72,8 +112,48 @@ BuildCmd=
 
 [Unit1]
 FileName=test\test.c
+=======
+<<<<<<< HEAD
+FileName=src\stats.c
+=======
+FileName=data\menu.txt
+>>>>>>> be2992b07fa812262a2a8cb16924e8807575d144
+>>>>>>> menu
 CompileCpp=0
 Folder=
+Compile=0
+Link=0
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit4]
+FileName=src\menu_manager.c
+Folder=src
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+CompileCpp=0
+
+[Unit5]
+FileName=src\menu_customer.c
+CompileCpp=0
+Folder=src
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit6]
+FileName=src\menu_customer.c
+
+[Unit2]
+FileName=src\menu.h
+CompileCpp=0
+Folder=src
 Compile=1
 Link=1
 Priority=1000

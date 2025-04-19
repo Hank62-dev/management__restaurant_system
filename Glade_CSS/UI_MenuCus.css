@@ -1,0 +1,183 @@
+/* Định dạng chung */
+* {
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+}
+
+/* Định dạng nền tổng thể */
+.menuCustomer {
+    background-color: #f5f5f5;
+}
+
+/* Định dạng chữ mặc định */
+label {
+
+    font-weight: bold;
+}
+
+/* Định dạng khoảng cách cho các box */
+box {
+    margin: 5px;
+    padding: 5px;
+}
+
+/* Định dạng thanh điều hướng */
+.title {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 10px;
+}
+
+/* Định dạng logo */
+.logo {
+    min-width: 50px;
+    min-height: 50px;
+    margin: 0 20px 0 0;
+}
+
+
+/* Định dạng các nút trong thanh điều hướng */
+.buttonHome, .buttonMenu, .buttonBooking, .buttonBill {
+    background: white;
+    color: black;
+    font-weight: 700;
+}
+
+/* Tab đang được chọn */
+.buttonHome:hover, .buttonMenu:hover, .buttonBooking:hover, .buttonBill:hover {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+}
+.buttonHome:focus, .buttonMenu:focus, .buttonBooking:focus, .buttonBill:focus {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+}
+.buttonHome:active, .buttonMenu:active, .buttonBooking:active, .buttonBill:active {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+}
+
+/* Định dạng khu vực chính */
+.menuDetails {
+    margin-top: 10px;
+}
+
+/* Định dạng danh sách món ăn */
+.menuListItemSelect {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Định dạng từng món ăn (động) */
+.menuListItemSelect box {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+
+/* Định dạng tên món */
+.menuListItemSelect label {
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Định dạng giá (trong button_box) */
+.menuListItemSelect box box label {
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* Định dạng nút "-" (delete_button) */
+.menuListItemSelect box box button:first-child {
+    font-size: 16px;
+    padding: 5px 10px;
+    background-color: rgb(23, 125, 23);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+/* Định dạng nút "+" (add_button) */
+.menuListItemSelect box box button:last-child {
+    font-size: 16px;
+    padding: 5px 10px;
+    background-color: rgb(23, 125, 23);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+/* Định dạng bảng đơn hàng */
+.menuListItemSelected {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.menuListItemSelected:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.menuListItemSelected:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.menuListItemSelected label {
+    font-size: 14px;
+    color: black;
+    padding: 8px;
+}
+
+/* Định dạng tiêu đề (nếu cần) */
+.menuListItemSelected:first-child label {
+    background-color:white;
+    color:black;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.menuListCofirm {
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+}
+
+/* Định dạng nút CONFIRM */
+.buttonConfirm {
+    background: white;
+    color: black;
+    font-weight: 700;
+}
+
+.buttonConfirm:hover{
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+}
+
+.buttonConfirm:focus{
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+}

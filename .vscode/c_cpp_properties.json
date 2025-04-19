@@ -4,7 +4,11 @@
             "name": "windows-gcc-x64",
             "includePath": [
                 "${workspaceFolder}/**",
+<<<<<<< HEAD
                 "C:/msys64/mingw64/include/gtk-3.0"
+=======
+                "C:/msys64/ucrt64/include/gtk-4.0"
+>>>>>>> menu
             ],
             "compilerPath": "C:/msys64/mingw64/bin/gcc.exe",
             "cStandard": "${default}",
@@ -13,6 +17,7 @@
             "compilerArgs": [
                 ""
             ]
+<<<<<<< HEAD
         },
         {
             "name": "mingw64",
@@ -28,6 +33,8 @@
             "cStandard": "c17",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "windows-gcc-x64"
+=======
+>>>>>>> menu
         }
     ],
     "version": 4
