@@ -88,7 +88,7 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <style>
-                  <class name="buttonBill"/>
+                  <class name="buttonStats"/>
                 </style>
               </object>
               <packing>
