@@ -1,8 +1,4 @@
-/* Định dạng chung */
-* {
-    font-family: "Arial", sans-serif;
-    font-size: 14px;
-}
+
 
 /* Định dạng nền tổng thể */
 .menuManager {
@@ -15,11 +11,7 @@ label {
     font-weight: bold;
 }
 
-/* Định dạng khoảng cách cho các box */
-box {
-    margin: 5px;
-    padding: 5px;
-}
+
 
 /* Định dạng thanh điều hướng */
 .header {
