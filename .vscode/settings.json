@@ -58,6 +58,7 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "test.h": "c",
     "stdlib.h": "c",
     "stdio.h": "c",
@@ -74,5 +75,9 @@
     "menu_mana.h": "c",
     "menu_cus.h": "c"
 >>>>>>> menu
+=======
+    "string.h": "c",
+    "employees.h": "c"
+>>>>>>> employee
   }
 }

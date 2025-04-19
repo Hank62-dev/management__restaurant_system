@@ -1,0 +1,36 @@
+/*home bg*/
+.home_m_window{
+background-color: white;
+border: 2px solid black;
+border-radius: 10px;
+}
+
+/*home btn*/
+
+.btn_home_m, .btn_menu_m, .btn_stats_m, .btn_employee_m, .btn_orders_m{
+    background: white;
+    color: black;
+    font-weight: 700;
+    }
+.btn_home_m:hover, .btn_menu_m:hover, .btn_stats_m:hover, .btn_orders_m:hover,
+.btn_employee_m:hover {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+    }
+.btn_home_m:focus, .btn_menu_m:focus, .btn_stats_m:focus,.btn_orders_m:focus,
+.btn_employee_m:focus {
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 0.5px;
+    background: green;
+    color: white;
+
+    }
+/*image*/
+#logo {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 64px 64px
+  }

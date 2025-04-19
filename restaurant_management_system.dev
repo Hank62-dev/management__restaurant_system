@@ -52,6 +52,7 @@ SyncProduct=1
 <<<<<<< HEAD
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [Unit2]
 FileName=test\test.h
 =======
@@ -91,6 +92,10 @@ BuildCmd=
 FileName=employees.h
 FileName=src\stats.h
 >>>>>>> menu
+=======
+[Unit2]
+FileName=test\test.c
+>>>>>>> employee
 CompileCpp=0
 Folder=
 Compile=1
@@ -101,7 +106,41 @@ BuildCmd=
 
 [Unit3]
 <<<<<<< HEAD
+<<<<<<< HEAD
 FileName=test\testmain.c
+=======
+FileName=test\test.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit1]
+FileName=test\testmain.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit4]
+FileName=src\login_register.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit5]
+FileName=src\main.c
+>>>>>>> employee
 CompileCpp=0
 Folder=
 Compile=1

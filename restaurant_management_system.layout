@@ -1,5 +1,6 @@
 [Editors]
 <<<<<<< HEAD
+<<<<<<< HEAD
 Order=0,1,2
 Focused=2
 [Editor_0]
@@ -66,9 +67,45 @@ CursorRow=202
 TopLine=1
 LeftChar=1
 [Editor_5]
+=======
+Order=2,1,3,4,0
+Focused=0
+[Editor_0]
+<<<<<<< HEAD
+CursorCol=1
+CursorRow=4
+TopLine=1
+LeftChar=1
+[Editor_1]
+>>>>>>> employee
 CursorCol=1
 CursorRow=1
 TopLine=1
+=======
+CursorCol=1
+CursorRow=5
+TopLine=1
+LeftChar=1
+[Editor_1]
+CursorCol=10
+CursorRow=4
+TopLine=1
+>>>>>>> e07695cc3c83ca57da862ce3be244006a04c13fb
+LeftChar=1
+[Editor_2]
+CursorCol=7
+CursorRow=20
+TopLine=1
+LeftChar=1
+[Editor_3]
+CursorCol=2
+CursorRow=14
+TopLine=16
+LeftChar=1
+[Editor_4]
+CursorCol=6
+CursorRow=27
+TopLine=22
 LeftChar=1
 [Editor_4]
 CursorCol=1
