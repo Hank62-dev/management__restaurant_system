@@ -12,7 +12,7 @@ GtkWidget *btn_management = NULL;
 
 
 void show_identification() {
-    GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Identification.glade");
+    GtkBuilder *builder = gtk_builder_new_from_file("UI_Glade/UI Identification.glade");
     window_identification = GTK_WIDGET(gtk_builder_get_object(builder, "identification_window"));
 
     GtkWidget *btn_customer = GTK_WIDGET(gtk_builder_get_object(builder, "btn_customer"));

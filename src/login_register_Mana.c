@@ -23,7 +23,7 @@ void switch_to_register_m(GtkButton *button, gpointer user_data){
 	gtk_stack_set_visible_child_name(GTK_STACK(stack_m),"register_box");
 }
 void switch_to_login_now_m(GtkButton *button, gpointer user_data){
-    GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Stats.glade");
+    GtkBuilder *builder = gtk_builder_new_from_file("UI_Glade/UI Stats.glade");
     GtkWidget *home_window_m = GTK_WIDGET(gtk_builder_get_object(builder,"Revenue_window"));//id home
     gtk_widget_show_all(home_window_m);
     gtk_widget_hide(Login_Register_window_m);
@@ -87,7 +87,7 @@ void on_login_now_clicked_m(GtkButton *button, gpointer user_data) {
     }
 }
 void login_register_Management(GtkWidget *identification_window){
-    GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Login_Register_Mana.glade");
+    GtkBuilder *builder = gtk_builder_new_from_file("UI_Glade/UI Login_Register_Mana.glade");
     window_m = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Register_window"));
     Login_Register_window_m = window_m;
     identification = identification_window;

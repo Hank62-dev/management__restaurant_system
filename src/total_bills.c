@@ -72,7 +72,7 @@ void load_labels_from_file(GtkButton *button, gpointer user_data) {
 
 // Hàm chính hiện toàn bộ bills
 void total_bills() {
-    GtkBuilder *builder = gtk_builder_new_from_file("UI Glade/UI Orders.glade");
+    GtkBuilder *builder = gtk_builder_new_from_file("UI_Glade/UI Orders.glade");
     GtkWidget *window_bills = GTK_WIDGET(gtk_builder_get_object(builder, "Orders_Window"));
 
     btn_orders = GTK_WIDGET(gtk_builder_get_object(builder, "btn_orders"));

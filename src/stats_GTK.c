@@ -202,7 +202,7 @@ void show_stats() {
     GtkWidget *window, *btn_stats;
 
 
-    builder = gtk_builder_new_from_file("UI Glade/UI Stats.glade");
+    builder = gtk_builder_new_from_file("UI_Glade/UI Stats.glade");
 
     // Lấy widget từ file Glade
     window = GTK_WIDGET(gtk_builder_get_object(builder, "Revenue_window"));
