@@ -58,6 +58,9 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "string.h": "c",
-    "employees.h": "c"
+    "employees.h": "c",
+    "stdlib.h": "c",
+    "test.h": "c",
+    "math.h": "c"
   }
 }
