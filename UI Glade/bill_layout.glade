@@ -276,6 +276,9 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="label" translatable="yes">BILL INFORMATION</property>
+                <style>
+                  <class name="bill_info"/>
+                </style>
               </object>
               <packing>
                 <property name="x">636</property>
