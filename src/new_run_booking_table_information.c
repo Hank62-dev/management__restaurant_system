@@ -1,6 +1,21 @@
 #include <gtk/gtk.h>
 #include <stdio.h>
 #include "table_booking.h"
+<<<<<<< HEAD
+// Structure to hold application data
+typedef struct {
+    GtkWidget *window_booking_information;
+    GtkWidget *window_booking_table;
+    GtkBuilder *builder_booking_information;
+    GtkBuilder *builder_booking_table;
+    char *name;
+    char *date;
+    char *phone;
+    char *time;
+    char *guests;
+} AppData;
+=======
+>>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
 
 void load_css_information(void)
 {
@@ -47,6 +62,7 @@ static void on_button_booking_table_clicked(GtkButton *button, gpointer user_dat
         gtk_widget_destroy(dialog);
         return;
     }
+<<<<<<< HEAD
 
     // Write data to file
     fprintf(file, "Name: %s\n", gtk_entry_get_text(entry_name));
@@ -58,12 +74,41 @@ static void on_button_booking_table_clicked(GtkButton *button, gpointer user_dat
 
     // Hide current window
     gtk_widget_hide(window);
+=======
+    
+    // Hide booking information window
+    gtk_widget_hide(app_data->window_booking_information);
+    
+<<<<<<< HEAD
+    // Load window_booking_table.glade
+    app_data->builder_booking_table = gtk_builder_new();
+    GError *error = NULL;
+    
+    if (!gtk_builder_add_from_file(app_data->builder_booking_table, "UI Glade/window_booking_table.glade", &error)) {
+        g_printerr("Error loading window_booking_table.glade: %s\n", error->message);
+        g_error_free(error);
+        g_object_unref(app_data->builder_booking_table);
+        return;
+    }
+    
+    // Get booking table window
+    app_data->window_booking_table = GTK_WIDGET(gtk_builder_get_object(app_data->builder_booking_table, "window_booking_table"));
+    
+    // Connect signals
+    gtk_builder_connect_signals(app_data->builder_booking_table, app_data);
+    
+=======
+>>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
+    // Show booking table window
+    book_table_show(app_data);
+>>>>>>> e5961ab5687db564333e30ce2ef2b6150e0397a9
 }
 
 void show_booking_information()
 {
     GtkBuilder *builder = gtk_builder_new();
     GError *error = NULL;
+<<<<<<< HEAD
 
     if (!gtk_builder_add_from_file(builder, "window_booking_information.glade", &error))
     {
@@ -75,15 +120,88 @@ void show_booking_information()
                                                   "Cannot load window_booking_information.glade!");
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
+=======
+    gtk_css_provider_load_from_path(provider, "Glade_CSS/style.css", &error);
+    
+    if (error != NULL) {
+        g_printerr("Error loading CSS: %s\n", error->message);
+        g_error_free(error);
+    }
+    
+    g_object_unref(provider);
+}
+
+<<<<<<< HEAD
+void show_booking_information() {
+    
+=======
+void show_booking_information(AppData *app_data) {
+>>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
+    // Load the booking information Glade file
+    app_data->builder_booking_information = gtk_builder_new();
+    GError *error = NULL;
+    
+<<<<<<< HEAD
+    if (!gtk_builder_add_from_file(builder_booking_information, "UI Glade/window_booking_information.glade", &error)) {
+        g_printerr("Error loading window_booking_information.glade: %s\n", error->message);
+        g_error_free(error);
+        g_object_unref(builder_booking_information);
+        return ;
+=======
+    if (!gtk_builder_add_from_file(app_data->builder_booking_information, "window_booking_information.glade", &error)) {
+        g_printerr("Error loading window_booking_information.glade: %s\n", error->message);
+>>>>>>> e5961ab5687db564333e30ce2ef2b6150e0397a9
         g_error_free(error);
         return;
+>>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
     }
 
     load_css_information();
+<<<<<<< HEAD
 
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "window_booking_information"));
     g_object_set_data(G_OBJECT(window), "builder", builder); // Store builder for access in callback
     g_signal_connect(gtk_builder_get_object(builder, "button_booking_table"), "clicked", G_CALLBACK(on_button_booking_table_clicked), window);
 
     gtk_widget_show_all(window);
+=======
+<<<<<<< HEAD
+    
+    // Create AppData structure
+    AppData app_data = {0};
+    app_data.builder_booking_information = builder_booking_information;
+    app_data.name = NULL;
+    app_data.date = NULL;
+    app_data.phone = NULL;
+    app_data.time = NULL;
+    app_data.guests = NULL;
+=======
+>>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
+    
+    // Get the booking information window
+    app_data->window_booking_information = GTK_WIDGET(gtk_builder_get_object(app_data->builder_booking_information, "window_booking_information"));
+    
+    // Connect signals
+    gtk_builder_connect_signals(app_data->builder_booking_information, app_data);
+    
+    // Show the booking information window
+<<<<<<< HEAD
+    gtk_widget_show_all(app_data.window_booking_information);
+    
+
+    
+    // Cleanup
+    if (app_data.name) g_free(app_data.name);
+    if (app_data.date) g_free(app_data.date);
+    if (app_data.phone) g_free(app_data.phone);
+    if (app_data.time) g_free(app_data.time);
+    if (app_data.guests) g_free(app_data.guests);
+    if (app_data.builder_booking_information) g_object_unref(app_data.builder_booking_information);
+    if (app_data.builder_booking_table) g_object_unref(app_data.builder_booking_table);
+    
+
+=======
+    gtk_widget_show_all(app_data->window_booking_information);
+>>>>>>> f1597c89f266a29ef1d0c4493895974cdfe156de
+>>>>>>> e5961ab5687db564333e30ce2ef2b6150e0397a9
 }
