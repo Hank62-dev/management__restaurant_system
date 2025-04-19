@@ -14,21 +14,7 @@ GtkWidget *entry_password_c, *entry_confirm_password_c;
 GtkWidget *entry_login_phone_c, *entry_login_password_c;
 GtkWidget *Login_Register_window_c, *home_window_c, *window_c;
 static GtkWidget *identification = NULL;
-/*
-//Áp dụng css
-void apply_css_Cus(GtkWidget *widget, GtkCssProvider *provider) {
-	
-    if( gtk_css_provider_load_from_path(provider, "Glade_CSS/login_register.css", NULL) ){
-    	g_print("CSS loaded successfully!!\n");
-	}else{
-		g_print("CSS load error!!!!\n");
-	}
-    GtkStyleContext *context = gtk_widget_get_style_context(widget);
-    gtk_style_context_add_provider(context, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
-    if (GTK_IS_CONTAINER(widget)) {
-        gtk_container_foreach(GTK_CONTAINER(widget), (GtkCallback)apply_css_Cus, provider);
-    }
-}*/
+
 // Chuyển form khi nhấn nút login/register
 void switch_to_login_c(GtkButton *button, gpointer user_data){
 	gtk_stack_set_visible_child_name(GTK_STACK(stack_c),"login_box");	

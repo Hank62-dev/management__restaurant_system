@@ -6,7 +6,7 @@
 #include "login_register_Mana.h"
 #include "utils.h"
 #include "total_bills.h"
-// Khai báo hàm sẽ viết trong identification.c
+
 
 
 int main(int argc, char *argv[]) {
