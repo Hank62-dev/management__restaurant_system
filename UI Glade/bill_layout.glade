@@ -17,6 +17,7 @@
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="border-width">20</property>
+            <property name="orientation">vertical</property>
             <property name="spacing">10</property>
             <property name="homogeneous">True</property>
             <child>
@@ -29,60 +30,6 @@
                 <property name="expand">False</property>
                 <property name="fill">True</property>
                 <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="home3">
-                <property name="label" translatable="yes">HOME</property>
-                <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="receives-default">True</property>
-                <property name="margin-bottom">20</property>
-                <signal name="clicked" handler="on_home3_clicked" swapped="no"/>
-                <style>
-                  <class name="home3"/>
-                </style>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="menu3">
-                <property name="label" translatable="yes">MENU</property>
-                <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="receives-default">True</property>
-                <property name="margin-bottom">20</property>
-                <signal name="clicked" handler="on_menu3_clicked" swapped="no"/>
-                <style>
-                  <class name="menu3"/>
-                </style>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">3</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="booking3">
-                <property name="label" translatable="yes">BOOKING</property>
-                <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="receives-default">True</property>
-                <property name="margin-bottom">20</property>
-                <signal name="clicked" handler="on_booking3_clicked" swapped="no"/>
-                <style>
-                  <class name="booking3"/>
-                </style>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">4</property>
               </packing>
             </child>
             <child>

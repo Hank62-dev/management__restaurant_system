@@ -18,6 +18,7 @@
             <property name="can-focus">False</property>
             <property name="border-width">10</property>
             <property name="spacing">10</property>
+            <property name="homogeneous">True</property>
             <child>
               <object class="GtkImage" id="logo">
                 <property name="visible">True</property>
@@ -39,6 +40,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="buttonHome"/>
                 </style>
@@ -55,6 +57,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="buttonMenu"/>
                 </style>
@@ -71,6 +74,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="buttonOrders"/>
                 </style>
@@ -87,6 +91,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="buttonStats"/>
                 </style>
@@ -103,6 +108,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
+                <property name="margin-bottom">20</property>
                 <style>
                   <class name="buttonEmployee"/>
                 </style>

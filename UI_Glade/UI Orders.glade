@@ -17,6 +17,7 @@
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="border-width">20</property>
+            <property name="orientation">vertical</property>
             <property name="spacing">10</property>
             <property name="homogeneous">True</property>
             <child>
@@ -35,40 +36,6 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_home">
-                <property name="label" translatable="yes">HOME</property>
-                <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="receives-default">True</property>
-                <property name="margin-bottom">30</property>
-                <style>
-                  <class name="btn_home"/>
-                </style>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="btn_menu">
-                <property name="label" translatable="yes">MENU</property>
-                <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="receives-default">True</property>
-                <property name="margin-bottom">30</property>
-                <style>
-                  <class name="btn_menu"/>
-                </style>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">2</property>
-              </packing>
-            </child>
-            <child>
               <object class="GtkButton" id="btn_orders">
                 <property name="label" translatable="yes">ORDERS</property>
                 <property name="visible">True</property>
@@ -83,40 +50,6 @@
                 <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">3</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="btn_stats">
-                <property name="label" translatable="yes">STATS</property>
-                <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="receives-default">True</property>
-                <property name="margin-bottom">30</property>
-                <style>
-                  <class name="btn_stats"/>
-                </style>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">4</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="btn_employee">
-                <property name="label" translatable="yes">EMPLOYEES</property>
-                <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="receives-default">True</property>
-                <property name="margin-bottom">30</property>
-                <style>
-                  <class name="btn_employees"/>
-                </style>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">5</property>
               </packing>
             </child>
             <style>

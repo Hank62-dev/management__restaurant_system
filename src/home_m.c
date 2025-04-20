@@ -26,7 +26,7 @@ void apply_css_home_m(GtkWidget *widget, GtkCssProvider *provider) {
 
 void on_btn_home_m_clicked(GtkWidget *widget, gpointer data){
     show_home_m();
-    //gtk_widget_hide(window_mana);  
+    gtk_widget_hide(window_mana);  
 }
 void on_btn_menu_m_clicked(GtkWidget *widget, gpointer data){
     show_Menu_Mana();

@@ -26,7 +26,7 @@ void apply_css_home_c(GtkWidget *widget, GtkCssProvider *provider) {
 
 void on_btn_home_c_clicked(GtkWidget *widget, gpointer data){
     show_home_c();
-    //gtk_widget_hide(window_cus);
+    gtk_widget_hide(window_cus);
 }
 void on_btn_menu_c_clicked(GtkWidget *widget, gpointer data){
     show_Menu_Cus();
