@@ -688,13 +688,17 @@ if (orders_file) {
     char code[32], item[64];
     int qty;
     double price;
-    while (fscanf(orders_file, "%s %s %d %lf", code, item, &qty, &price) == 4) {
-        char line[256];
-        snprintf(line, sizeof(line), "%s   x%d   %.0fđ\n", item, qty, price);
-        strcat(bill_lines, line);
+    char line[256];
+    while (fgets(line, sizeof(line), orders_file)) {
+        if (sscanf(line, "%s \"%[^\"]\" %d %lf", code, item, &qty, &price) == 4) {
+            char line_out[256];
+            snprintf(line_out, sizeof(line_out), "%s       x%d        %.0fđ\n", item, qty, price);
+            strcat(bill_lines, line_out);
+        }
     }
     fclose(orders_file);
 }
+
 
 GtkWidget *bill_label = GTK_WIDGET(gtk_builder_get_object(builder, "bill_infor"));
 if (GTK_IS_LABEL(bill_label)) {

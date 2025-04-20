@@ -1,6 +1,6 @@
 Name: Huy
-Date: 20/4/2026
+Date: 20/4/2025
 Phone: 0961002445
-Time: 23:20
+Time: 24:00
 Guests: 2
-Table: 6
+Table: 2
