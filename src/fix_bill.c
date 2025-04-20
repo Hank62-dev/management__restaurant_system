@@ -14,7 +14,7 @@ void load_css_bill(void)
     gtk_style_context_add_provider_for_screen(screen, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
     GError *error = NULL;
-    gtk_css_provider_load_from_path(provider, "style.css", &error);
+    gtk_css_provider_load_from_path(provider, "Glade_CSS/style.css", &error);
 
     if (error != NULL)
     {
@@ -30,7 +30,7 @@ static void on_confirm_bill_button_clicked(GtkButton *button, gpointer user_data
     GtkWidget *window = GTK_WIDGET(user_data);
 
     // Open file to write bill
-    FILE *file = fopen("view_bill.txt", "a");
+    FILE *file = fopen("data/view_bill.txt", "a");
     if (file == NULL)
     {
         g_printerr("Error opening view_bill.txt: %s\n", strerror(errno));
@@ -46,7 +46,7 @@ static void on_confirm_bill_button_clicked(GtkButton *button, gpointer user_data
 
     // Calculate STT by counting existing bills in view_bill.txt
     int stt = 1;
-    FILE *count_file = fopen("view_bill.txt", "r");
+    FILE *count_file = fopen("data/view_bill.txt", "r");
     if (count_file != NULL)
     {
         char line[256];
@@ -61,7 +61,7 @@ static void on_confirm_bill_button_clicked(GtkButton *button, gpointer user_data
     char customer_name[256] = "N/A";
     char booking_date[256] = "N/A";
     char formatted_date[11] = "N/A";
-    FILE *temp_file = fopen("temp_data.txt", "r");
+    FILE *temp_file = fopen("data/temp_data.txt", "r");
     if (temp_file != NULL)
     {
         char line[256];
@@ -90,7 +90,7 @@ static void on_confirm_bill_button_clicked(GtkButton *button, gpointer user_data
 
     // Calculate total from orders.txt
     double subtotal = 0.0;
-    FILE *orders_file = fopen("orders.txt", "r");
+    FILE *orders_file = fopen("data/orders.txt", "r");
     if (orders_file != NULL)
     {
         char line[256];
@@ -123,7 +123,7 @@ void run_bill()
     GtkBuilder *builder = gtk_builder_new();
     GError *error = NULL;
 
-    if (!gtk_builder_add_from_file(builder, "bill_layout.glade", &error))
+    if (!gtk_builder_add_from_file(builder, "UI Glade/bill_layout.glade", &error))
     {
         g_printerr("Error loading file: %s\n", error->message);
         GtkWidget *dialog = gtk_message_dialog_new(NULL, 
@@ -142,7 +142,7 @@ void run_bill()
     GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "bill_layout"));
 
     // Check if temp_data.txt exists and has data
-    FILE *temp_file = fopen("temp_data.txt", "r");
+    FILE *temp_file = fopen("data/temp_data.txt", "r");
     int has_name = 0, has_date = 0;
     if (temp_file == NULL)
     {
@@ -188,7 +188,7 @@ void run_bill()
     }
 
     // Check if orders.txt exists and has data
-    FILE *orders_file = fopen("orders.txt", "r");
+    FILE *orders_file = fopen("data/orders.txt", "r");
     int has_items = 0;
     if (orders_file == NULL)
     {
@@ -243,7 +243,7 @@ void run_bill()
     gtk_label_set_text(table_ordered, "Table: N/A");
 
     // Read temp_data.txt to set labels
-    temp_file = fopen("temp_data.txt", "r");
+    temp_file = fopen("data/temp_data.txt", "r");
     char customer_name[256] = "N/A";
     char booking_date[256] = "N/A";
     char table_number[256] = "N/A";
@@ -286,7 +286,7 @@ void run_bill()
     // Read orders.txt to display items in bill_information label and calculate subtotal, tax, and total
     double subtotal = 0.0;
     GString *items_text = g_string_new("Items:\n");
-    orders_file = fopen("orders.txt", "r");
+    orders_file = fopen("data/orders.txt", "r");
     if (orders_file != NULL)
     {
         char line[256];

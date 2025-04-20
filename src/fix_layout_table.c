@@ -33,7 +33,7 @@ static void on_confirm_booking_table_button_clicked(GtkButton *button, gpointer 
     }
 
     // Check if temp_data.txt exists
-    FILE *check_file = fopen("temp_data.txt", "r");
+    FILE *check_file = fopen("data/temp_data.txt", "r");
     if (check_file == NULL)
     {
         g_printerr("Error: temp_data.txt does not exist\n");
@@ -48,7 +48,7 @@ static void on_confirm_booking_table_button_clicked(GtkButton *button, gpointer 
     }
     fclose(check_file);
 
-    FILE *file = fopen("temp_data.txt", "a");
+    FILE *file = fopen("data/temp_data.txt", "a");
     if (file == NULL)
     {
         g_printerr("Error opening temp_data.txt: %s\n", strerror(errno));
@@ -77,7 +77,7 @@ void book_table_show()
     GtkBuilder *builder = gtk_builder_new();
     GError *error = NULL;
 
-    if (!gtk_builder_add_from_file(builder, "window_booking_table.glade", &error))
+    if (!gtk_builder_add_from_file(builder, "UI Glade/window_booking_table.glade", &error))
     {
         g_printerr("Error loading file: %s\n", error->message);
         g_error_free(error);
