@@ -26,23 +26,23 @@ void apply_css_home_m(GtkWidget *widget, GtkCssProvider *provider) {
 
 void on_btn_home_m_clicked(GtkWidget *widget, gpointer data){
     show_home_m();
-    gtk_widget_hide(window_mana);  
+    //gtk_widget_hide(window_mana);  
 }
 void on_btn_menu_m_clicked(GtkWidget *widget, gpointer data){
     show_Menu_Mana();
-    gtk_widget_hide(window_mana);  
+    //gtk_widget_hide(window_mana);  
 }
 void on_btn_stats_m_clicked(GtkWidget *widget, gpointer data){
     show_stats();
-    gtk_widget_hide(window_mana);  
+    //gtk_widget_hide(window_mana);  
 }
 void on_btn_employee_m_clicked(GtkWidget *widget, gpointer data){
     show_employee();
-    gtk_widget_hide(window_mana);  
+    //gtk_widget_hide(window_mana);  
 }
 void on_btn_orders_m_clicked(GtkWidget *widget, gpointer data){
     total_bills();
-    gtk_widget_hide(window_mana);  
+    //gtk_widget_hide(window_mana);  
 }
 
 void show_home_m() {

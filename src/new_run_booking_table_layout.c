@@ -1,4 +1,4 @@
-/*#include <gtk/gtk.h>
+#include <gtk/gtk.h>
 #include <stdio.h>
 #include <string.h>
 #include "table_booking.h"
@@ -74,7 +74,6 @@ static void on_confirm_booking_table_button_clicked(GtkButton *button, gpointer 
 
     if (!selected_table)
     {
-        // Set the parent of the dialog to the current window
         GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(window), 
                                                   GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT, 
                                                   GTK_MESSAGE_ERROR, 
@@ -140,15 +139,33 @@ void book_table_show()
     }
 
     gtk_widget_show_all(window);
-}*/
-
+}
+/*
 #include <gtk/gtk.h>
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
 #include "table_booking.h"
 
-void load_css_layout(void);
+void load_css_layout(void)
+{
+    GtkCssProvider *provider = gtk_css_provider_new();
+    GdkDisplay *display = gdk_display_get_default();
+    GdkScreen *screen = gdk_display_get_default_screen(display);
+
+    gtk_style_context_add_provider_for_screen(screen, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+    GError *error = NULL;
+    gtk_css_provider_load_from_path(provider, "Glade_CSS/style.css", &error);
+
+    if (error != NULL)
+    {
+        g_printerr("Error loading CSS: %s\n", error->message);
+        g_error_free(error);
+    }
+
+    g_object_unref(provider);
+}
 
 static char *selected_table = NULL;
 
@@ -246,4 +263,4 @@ void book_table_show()
     g_signal_connect(gtk_builder_get_object(builder, "confirm_booking_table_button"), "clicked", G_CALLBACK(on_confirm_booking_table_button_clicked), window);
 
     gtk_widget_show_all(window);
-}
+}*/

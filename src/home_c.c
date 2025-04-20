@@ -26,19 +26,19 @@ void apply_css_home_c(GtkWidget *widget, GtkCssProvider *provider) {
 
 void on_btn_home_c_clicked(GtkWidget *widget, gpointer data){
     show_home_c();
-    gtk_widget_hide(window_cus);
+    //gtk_widget_hide(window_cus);
 }
 void on_btn_menu_c_clicked(GtkWidget *widget, gpointer data){
     show_Menu_Cus();
-    gtk_widget_hide(window_cus);    
+    //gtk_widget_hide(window_cus);    
 }
 void on_btn_booking_c_clicked(GtkWidget *widget, gpointer data){
     show_booking_information();
-    gtk_widget_hide(window_cus);  
+    //gtk_widget_hide(window_cus);  
 }
 void on_btn_orders_c_clicked(GtkWidget *widget, gpointer data){
     run_bill();
-    gtk_widget_hide(window_cus);  
+    //gtk_widget_hide(window_cus);  
 }
 
 

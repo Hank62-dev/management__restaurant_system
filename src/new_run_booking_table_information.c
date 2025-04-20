@@ -94,7 +94,26 @@ void show_booking_information()
 #include <errno.h>
 #include "table_booking.h"
 
-void load_css_information(void);
+void load_css_information(void)
+{
+    GtkCssProvider *provider = gtk_css_provider_new();
+    GdkDisplay *display = gdk_display_get_default();
+    GdkScreen *screen = gdk_display_get_default_screen(display);
+
+    gtk_style_context_add_provider_for_screen(screen, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+    GError *error = NULL;
+    gtk_css_provider_load_from_path(provider, "Glade_CSS/style.css", &error);
+
+    if (error != NULL)
+    {
+        g_printerr("Error loading CSS: %s\n", error->message);
+        g_error_free(error);
+    }
+
+    g_object_unref(provider);
+}
+
 
 static void on_button_booking_table_clicked(GtkButton *button, gpointer user_data)
 {
@@ -140,8 +159,8 @@ static void on_button_booking_table_clicked(GtkButton *button, gpointer user_dat
     }
 
     // Write data to file
-    fprintf(file, "Name: %s\n", name);
-    fprintf(file, "Date: %s\n", date);
+    fprintf(file, "Name: %s\n", gtk_entry_get_text(entry_name));
+    fprintf(file, "Date: %s\n", gtk_entry_get_text(entry_date));
     fprintf(file, "Phone: %s\n", gtk_entry_get_text(entry_phone));
     fprintf(file, "Time: %s\n", gtk_entry_get_text(entry_time));
     fprintf(file, "Guests: %s\n", gtk_entry_get_text(entry_guests));
@@ -151,7 +170,7 @@ static void on_button_booking_table_clicked(GtkButton *button, gpointer user_dat
     gtk_widget_hide(window);
 
     // Open the booking table window
-    run_booking_table();
+    book_table_show();
 }
 
 void show_booking_information()

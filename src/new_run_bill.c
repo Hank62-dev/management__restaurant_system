@@ -1,4 +1,4 @@
-/*#include <gtk/gtk.h>
+#include <gtk/gtk.h>
 #include <stdio.h>
 #include <time.h>
 #include <string.h>
@@ -243,8 +243,11 @@ void run_bill()
     g_signal_connect(gtk_builder_get_object(builder, "confirm_bill_button"), "clicked", G_CALLBACK(on_confirm_bill_button_clicked), window);
 
     gtk_widget_show_all(window);
-}*/
+}
 
+
+
+/*
 #include <gtk/gtk.h>
 #include "table_booking.h"
 #include <stdio.h>
@@ -591,3 +594,4 @@ void run_bill()
 
     gtk_widget_show_all(window);
 }
+*/
