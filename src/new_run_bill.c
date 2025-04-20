@@ -1,4 +1,4 @@
-#include <gtk/gtk.h>
+/*#include <gtk/gtk.h>
 #include <stdio.h>
 #include <time.h>
 #include <string.h>
@@ -244,7 +244,7 @@ void run_bill()
 
     gtk_widget_show_all(window);
 }
-
+*/
 
 
 /*
@@ -595,3 +595,96 @@ void run_bill()
     gtk_widget_show_all(window);
 }
 */
+
+
+
+
+
+
+#include <gtk/gtk.h>
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
+#include "table_booking.h"
+
+void load_css_bill() {
+    GtkCssProvider *provider = gtk_css_provider_new();
+    GdkDisplay *display = gdk_display_get_default();
+    GdkScreen *screen = gdk_display_get_default_screen(display);
+    gtk_style_context_add_provider_for_screen(screen, GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+    GError *error = NULL;
+    gtk_css_provider_load_from_path(provider, "Glade_CSS/style.css", &error);
+    if (error) {
+        g_printerr("Error loading CSS: %s\n", error->message);
+        g_error_free(error);
+    }
+    g_object_unref(provider);
+}
+
+static void on_confirm_bill_clicked(GtkButton *button, gpointer user_data) {
+    GtkWidget *window = GTK_WIDGET(user_data);
+    char name[256] = "Unknown", date[32] = "N/A";
+    double subtotal = 0;
+
+    // Read name + date from temp_data.txt
+    FILE *temp = fopen("data/temp_data.txt", "r");
+    if (temp) {
+        char line[256];
+        while (fgets(line, sizeof(line), temp)) {
+            if (strncmp(line, "Name:", 5) == 0) sscanf(line + 6, "%255[^\n]", name);
+            if (strncmp(line, "Date:", 5) == 0) sscanf(line + 6, "%31[^\n]", date);
+        }
+        fclose(temp);
+    }
+
+    // Tính tiền từ orders.txt
+    FILE *orders = fopen("data/orders.txt", "r");
+    if (orders) {
+        char item[64]; int qty; double price; char code[16];
+        char line[256];
+        while (fgets(line, sizeof(line), orders)) {
+            if (sscanf(line, "%s %s %d %lf", code, item, &qty, &price) == 4) {
+                subtotal += price;
+            }
+        }
+        fclose(orders);
+    }
+
+    double tax = subtotal * 0.1;
+    double total = subtotal + tax;
+
+    // Tạo STT cho bill mới
+    int stt = 0;
+    FILE *view = fopen("data/view_bill.txt", "r");
+    if (view) {
+        char tmp[256];
+        while (fgets(tmp, sizeof(tmp), view)) stt++;
+        fclose(view);
+    }
+
+    // Lưu bill
+    FILE *out = fopen("data/view_bill.txt", "a");
+    if (out) {
+        fprintf(out,"%d %s %s %f\n", stt, name, date, total);
+        fclose(out);
+    }
+
+    gtk_widget_hide(window);
+}
+
+void run_bill() {
+    GtkBuilder *builder = gtk_builder_new();
+    GError *error = NULL;
+
+    if (!gtk_builder_add_from_file(builder, "UI Glade/bill_layout.glade", &error)) {
+        g_printerr("Error loading UI: %s\n", error->message);
+        g_error_free(error);
+        return;
+    }
+
+    load_css_bill();
+    GtkWidget *window = GTK_WIDGET(gtk_builder_get_object(builder, "bill_layout"));
+    g_signal_connect(gtk_builder_get_object(builder, "confirm_bill_button"), "clicked", G_CALLBACK(on_confirm_bill_clicked), window);
+    gtk_widget_show_all(window);
+}
