@@ -17,6 +17,7 @@
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="border-width">20</property>
+            <property name="orientation">vertical</property>
             <property name="spacing">10</property>
             <property name="homogeneous">True</property>
             <child>
@@ -29,60 +30,6 @@
                 <property name="expand">False</property>
                 <property name="fill">True</property>
                 <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="home3">
-                <property name="label" translatable="yes">HOME</property>
-                <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="receives-default">True</property>
-                <property name="margin-bottom">20</property>
-                <signal name="clicked" handler="on_home3_clicked" swapped="no"/>
-                <style>
-                  <class name="home3"/>
-                </style>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="menu3">
-                <property name="label" translatable="yes">MENU</property>
-                <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="receives-default">True</property>
-                <property name="margin-bottom">20</property>
-                <signal name="clicked" handler="on_menu3_clicked" swapped="no"/>
-                <style>
-                  <class name="menu3"/>
-                </style>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">3</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="booking3">
-                <property name="label" translatable="yes">BOOKING</property>
-                <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="receives-default">True</property>
-                <property name="margin-bottom">20</property>
-                <signal name="clicked" handler="on_booking3_clicked" swapped="no"/>
-                <style>
-                  <class name="booking3"/>
-                </style>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">4</property>
               </packing>
             </child>
             <child>
@@ -137,7 +84,7 @@
                 </style>
               </object>
               <packing>
-                <property name="x">431</property>
+                <property name="x">389</property>
                 <property name="y">30</property>
               </packing>
             </child>
@@ -147,13 +94,13 @@
                 <property name="height-request">20</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">PHONE: 0123456789</property>
+                <property name="label" translatable="yes">0123456789</property>
                 <style>
                   <class name="phone_contact"/>
                 </style>
               </object>
               <packing>
-                <property name="x">636</property>
+                <property name="x">663</property>
                 <property name="y">100</property>
               </packing>
             </child>
@@ -163,13 +110,13 @@
                 <property name="height-request">20</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Table: </property>
+                <property name="label" translatable="yes">8</property>
                 <style>
                   <class name="table_ordered"/>
                 </style>
               </object>
               <packing>
-                <property name="x">636</property>
+                <property name="x">648</property>
                 <property name="y">130</property>
               </packing>
             </child>
@@ -185,8 +132,8 @@
                 </style>
               </object>
               <packing>
-                <property name="x">636</property>
-                <property name="y">160</property>
+                <property name="x">625</property>
+                <property name="y">156</property>
               </packing>
             </child>
             <child>
@@ -195,14 +142,14 @@
                 <property name="height-request">20</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Customer's name:</property>
+                <property name="label" translatable="yes">HUY</property>
                 <style>
                   <class name="customer_name"/>
                 </style>
               </object>
               <packing>
-                <property name="x">636</property>
-                <property name="y">215</property>
+                <property name="x">651</property>
+                <property name="y">184</property>
               </packing>
             </child>
             <child>
@@ -211,14 +158,14 @@
                 <property name="height-request">20</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Subtotal:</property>
+                <property name="label" translatable="yes">50000000</property>
                 <style>
                   <class name="subtotal_bill"/>
                 </style>
               </object>
               <packing>
-                <property name="x">636</property>
-                <property name="y">390</property>
+                <property name="x">681</property>
+                <property name="y">391</property>
               </packing>
             </child>
             <child>
@@ -227,13 +174,13 @@
                 <property name="height-request">20</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Tar:</property>
+                <property name="label" translatable="yes">10%</property>
                 <style>
                   <class name="tar"/>
                 </style>
               </object>
               <packing>
-                <property name="x">636</property>
+                <property name="x">667</property>
                 <property name="y">420</property>
               </packing>
             </child>
@@ -243,13 +190,13 @@
                 <property name="height-request">20</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Total:</property>
+                <property name="label" translatable="yes">51000</property>
                 <style>
                   <class name="total_bill"/>
                 </style>
               </object>
               <packing>
-                <property name="x">636</property>
+                <property name="x">676</property>
                 <property name="y">450</property>
               </packing>
             </child>
@@ -267,7 +214,7 @@
                 </style>
               </object>
               <packing>
-                <property name="x">636</property>
+                <property name="x">617</property>
                 <property name="y">500</property>
               </packing>
             </child>
@@ -278,8 +225,127 @@
                 <property name="label" translatable="yes">BILL INFORMATION</property>
               </object>
               <packing>
-                <property name="x">636</property>
-                <property name="y">240</property>
+                <property name="x">610</property>
+                <property name="y">201</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="width-request">100</property>
+                <property name="height-request">20</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">PHONE:</property>
+              </object>
+              <packing>
+                <property name="x">588</property>
+                <property name="y">101</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="width-request">100</property>
+                <property name="height-request">20</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">TABLE:</property>
+              </object>
+              <packing>
+                <property name="x">617</property>
+                <property name="y">130</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="width-request">100</property>
+                <property name="height-request">20</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">NAME:</property>
+              </object>
+              <packing>
+                <property name="x">605</property>
+                <property name="y">184</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="width-request">100</property>
+                <property name="height-request">20</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Subtotal:</property>
+              </object>
+              <packing>
+                <property name="x">548</property>
+                <property name="y">390</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="width-request">100</property>
+                <property name="height-request">20</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Tax:</property>
+              </object>
+              <packing>
+                <property name="x">566</property>
+                <property name="y">419</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="width-request">100</property>
+                <property name="height-request">20</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Total:</property>
+              </object>
+              <packing>
+                <property name="x">562</property>
+                <property name="y">451</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSeparator">
+                <property name="width-request">591</property>
+                <property name="height-request">401</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="orientation">vertical</property>
+              </object>
+              <packing>
+                <property name="x">390</property>
+                <property name="y">96</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow">
+                <property name="width-request">333</property>
+                <property name="height-request">173</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="shadow-type">in</property>
+                <child>
+                  <object class="GtkViewport">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkLabel" id="bill_infor">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="hexpand">True</property>
+                        <property name="vexpand">True</property>
+                        <property name="wrap">True</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="x">514</property>
+                <property name="y">221</property>
               </packing>
             </child>
           </object>
