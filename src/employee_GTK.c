@@ -55,10 +55,10 @@ void apply_css_employee(GtkWidget *widget, GtkCssProvider *provider) {
         }
         int new_id = atoi(id_str);
 
-        // 🔁 Kiểm tra trùng ID
+        // Kiểm tra trùng ID
         for (int i = 0; i < *count; i++) {
             if (employees[i].employeeId == new_id) {
-                g_print("❌Employee ID %d already exists. Cannot add.\n", new_id);
+                g_print("Employee ID %d already exists. Cannot add.\n", new_id);
                 return;
             }
         }
@@ -241,7 +241,7 @@ void on_btn_find_clicked(GtkWidget *widget, gpointer data) {
     // Lấy ID từ ô tìm kiếm
     int id = get_search_entry_id(builder);
     if (id <= 0) {
-        g_print("❌ Invalid ID entered.\n");
+        g_print("Invalid ID entered.\n");
         return;
     }
 

@@ -1,148 +1,3 @@
-/*#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "employees.h"
-
-
-    //dua du lieu vao file
-void saveToFile(Employee employees[], int *count) {
-    FILE *file = fopen("employees.txt", "w");
-    if (file == NULL) {
-        printf("Error opening file.\n");
-        return;
-    }
-
-    for (int i = 0; i < *count; i++) {
-        fprintf(file, "%d,%s,%s,%.2f\n", 
-            employees[i].employeeId, 
-            employees[i].fullName, 
-            employees[i].position, 
-            employees[i].salary);
-    }
-
-    fclose(file);
-    printf("Data saved successfully.\n");
-
-    // Ví dụ: nếu muốn tăng số nhân viên sau khi lưu file
-    (*count)++;
-}
-     //lay du lieu tu file
-    void loadFromFile( Employee employees[], int *count){
-     	FILE *file=fopen("employees.txt","r");
-     	if (file == NULL) {
-        printf("Error to open file !\n");
-        return;
-    }
-     *count = 0;
-    while (fscanf(file, "%d,%49[^,],%29[^,],%f\n",
-                  &employees[*count].employeeId,
-                  employees[*count].fullName,
-                  employees[*count].position,
-                  &employees[*count].salary) == 4) {
-				  if (*count >= MAX_EMPLOYEES) { 
-        printf("Employee list is full!\n");
-        break;    
-    }
-     }
-    (*count)++;
-    fclose(file);
-}
-     
-     //Them nhan vien
-     void addEmployee( Employee employees[], int *count) {
-    scanf("%d", &employees[*count].employeeId);
-    getchar();
-    printf("Add full name: ");
-    fgets(employees[*count].fullName, 50, stdin);
-    employees[*count].fullName[strcspn(employees[*count].fullName, "\n")] = 0; // xoa \n
-
-    printf("Add position: ");
-    fgets(employees[*count].position, 35, stdin);
-    employees[*count].position[strcspn(employees[*count].position, "\n")] = 0;  
-
-    printf("Add salary: ");
-    scanf("%f", &employees[*count].salary);
-      
-	(*count)++; 
-     saveToFile (employees, count);
-	 printf("\nAdd Sucessfully!\n");
-            return;	}
-	 
-
-	
-	//hien thi danh sach nhan vien
-	void displayEmployees (Employee employees[], int count){
-	if (count == 0) {
-        printf("\nDo not have any employees.\n");
-        return;
-    }
-    printf("\nEmployees list:\n");
-    for (int i = 0; i < count; i++) {
-        printf("Number: %d,ID: %d, Name: %s, Position: %s, Salary: %.2f \n" ,i,
-               employees[i].employeeId,
-               employees[i].fullName,
-               employees[i].position,
-               employees[i].salary);
-    }
-}
-// tim kiem nhan vien
-void searchEmployee( Employee employees[], int count, int id){
-	for(int i=0 ;i<count;i++) {
-		if (employees[i].employeeId==id){
-		printf("Number: %d,ID: %d, Name: %s, Position: %s, Salary: %.2f \n" ,i,
-               employees[i].employeeId,
-               employees[i].fullName,
-               employees[i].position,
-               employees[i].salary);
-               	}
-               else printf("\nDo not have any employees for this Id %d\n", id);
-	
-	}
-}
-//xoa nhan vien
-void deleteEmployee( Employee employees[], int *count, int id) {
-    for (int i = 0; i < *count; i++) {
-        if (employees[i].employeeId == id) {
-            for (int j = i; j < *count - 1; j++) {
-                employees[j] = employees[j + 1];
-            }
-            (*count)--;
-            saveToFile(employees, count);
-            printf("\nDelete Sucessfully!\n");
-            return;
-        }
-    }
-    printf("\nDo not have any employees for this Id %d\n", id);
-}
-//update nhan vien
-void updateEmployee(Employee employees[], int *count, int id) { 
-    for (int i = 0; i <*count; i++) {
-        if (employees[i].employeeId == id) {
-            printf("\nUpdate name: ");
-            while (getchar() != '\n'); // Xóa bộ nhớ đệm
-            fgets(employees[i].fullName, sizeof(employees[i].fullName), stdin);
-            employees[i].fullName[strcspn(employees[i].fullName, "\n")] = 0;
-
-            printf("\nUpdate position: ");
-            fgets(employees[i].position, sizeof(employees[i].position), stdin);
-            employees[i].position[strcspn(employees[i].position, "\n")] = 0;
-
-            printf("\nUpdate salary: ");
-            if (scanf("%f", &employees[i].salary) != 1) {
-                printf("Invalid input! Salary must be a number.\n");
-                while (getchar() != '\n');
-                return;
-            }
-            
-            saveToFile(employees,count);
-            printf("\nUpdate Successful!\n");
-            return;
-        }
-    }
-    printf("\nDo not have any employees for this Id %d\n", id);
-}
-
-*/
 #include <gtk/gtk.h>
 #include "employees.h"
 #include <stdio.h>
@@ -158,7 +13,7 @@ int count = 0;
 void saveToFile(Employee employees[], int *count) {
     FILE *file = fopen("data/employees.txt", "w");  // đúng đường dẫn và ghi đè
     if (file == NULL) {
-        g_print("❌ Error opening file.\n");
+        g_print(" Error opening file.\n");
         return;
     }
 
@@ -171,13 +26,13 @@ void saveToFile(Employee employees[], int *count) {
     }
 
     fclose(file);
-    g_print("✅ Data saved to file.\n");
+    g_print(" Data saved to file.\n");
 }
 /* Load employee data from file
 void loadFromFile(Employee employees[], int *count, const char *filename) {
     FILE *file = fopen(filename, "r");
     if (!file) {
-        printf("❌ Cannot open file %s\n", filename);
+        printf(" Cannot open file %s\n", filename);
         return;
     }
 
@@ -204,14 +59,14 @@ void loadFromFile(Employee employees[], int *count, const char *filename) {
     }
 
     fclose(file);
-    printf("✅ Loaded %d employees.\n", *count);
+    printf(" Loaded %d employees.\n", *count);
 }*/
 #define MAX_EMPLOYEES 100  // nếu chưa có
 
 void loadEmployeesAll(const char *filename, Employee employees[], int *count, GtkListStore *store) {
     FILE *file = fopen(filename, "r");
     if (!file) {
-        g_print("❌ Cannot open file: %s\n", filename);
+        g_print(" Cannot open file: %s\n", filename);
         return;
     }
 
@@ -224,7 +79,7 @@ void loadEmployeesAll(const char *filename, Employee employees[], int *count, Gt
 
     while (fgets(line, sizeof(line), file)) {
         if (*count >= MAX_EMPLOYEES) {
-            g_print("⚠️ Max employee reached!\n");
+            g_print(" Max employee reached!\n");
             break;
         }
 
@@ -262,12 +117,12 @@ void loadEmployeesAll(const char *filename, Employee employees[], int *count, Gt
     }
 
     fclose(file);
-    g_print("✅ Load complete: %d employees\n", *count);
+    g_print(" Load complete: %d employees\n", *count);
 }
 void loadEmployeesToArrayOnly(const char *filename, Employee employees[], int *count) {
     FILE *file = fopen(filename, "r");
     if (!file) {
-        g_print("❌ Cannot open file: %s\n", filename);
+        g_print(" Cannot open file: %s\n", filename);
         return;
     }
 
@@ -275,7 +130,7 @@ void loadEmployeesToArrayOnly(const char *filename, Employee employees[], int *c
     char line[256];
     while (fgets(line, sizeof(line), file)) {
         if (*count >= MAX_EMPLOYEES) {
-            g_print("⚠️ Max employee limit reached!\n");
+            g_print(" Max employee limit reached!\n");
             break;
         }
 
@@ -299,7 +154,7 @@ void loadEmployeesToArrayOnly(const char *filename, Employee employees[], int *c
     }
 
     fclose(file);
-    g_print("✅ Loaded %d employees into array.\n", *count);
+    g_print(" Loaded %d employees into array.\n", *count);
 }
 // Add a new employee
 void addEmployee(Employee employees[], int *count) {
