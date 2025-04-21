@@ -97,7 +97,7 @@ gcc -o restaurant_VQHT src/*.c $(pkg-config --cflags --libs gtk+-3.0)
 Phần mềm **VQHT Restaurant** là minh chứng rõ ràng cho khả năng **làm việc nhóm**, **tổ chức dự án**, và **áp dụng công nghệ C – GTK+ – Glade** vào xây dựng một hệ thống hoàn chỉnh.
 
 Sản phẩm không chỉ đáp ứng yêu cầu kỹ thuật, mà còn mở rộng thêm các tính năng thực tiễn. Đây cũng là nền tảng để nhóm có thể tiếp tục phát triển hệ thống này lên tầm cao hơn trong tương lai:  
- Tích hợp cơ sở dữ liệu.
- Mở rộng sang nền tảng di động hoặc web. 
- Tối ưu hóa trải nghiệm người dùng hơn nữa.
+- Tích hợp cơ sở dữ liệu.
+- Mở rộng sang nền tảng di động hoặc web. 
+- Tối ưu hóa trải nghiệm người dùng hơn nữa.
 
