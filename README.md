@@ -1,10 +1,10 @@
 # Phần Mềm Quản Lý Nhà Hàng – VQHT Restaurant
 
 ## Thành viên nhóm  
-- **Võ Gia Huy** (Leader)  
-- **Phan Chí Thuận** (Member)  
-- **Vũ Việt Quang** (Member)  
-- **Nguyễn Trí Vỹ** (Member)  
+- **Võ Gia Huy** 
+- **Phan Chí Thuận**   
+- **Vũ Việt Quang**  
+- **Nguyễn Trí Vỹ**  
 
 ---
 
@@ -39,7 +39,7 @@ Nhận thấy điều đó, nhóm chúng tôi quyết định xây dựng phần
 ###  Phân quyền người dùng
 - **Khách hàng**:
   - Đăng ký / Đăng nhập tài khoản
-  - Đặt bàn, đặt món ăn
+  - Xem menu, đặt bàn, đặt món ăn
   - Xem hóa đơn đã thanh toán
 
 - **Quản lý**:
@@ -97,7 +97,7 @@ gcc -o restaurant_VQHT src/*.c $(pkg-config --cflags --libs gtk+-3.0)
 Phần mềm **VQHT Restaurant** là minh chứng rõ ràng cho khả năng **làm việc nhóm**, **tổ chức dự án**, và **áp dụng công nghệ C – GTK+ – Glade** vào xây dựng một hệ thống hoàn chỉnh.
 
 Sản phẩm không chỉ đáp ứng yêu cầu kỹ thuật, mà còn mở rộng thêm các tính năng thực tiễn. Đây cũng là nền tảng để nhóm có thể tiếp tục phát triển hệ thống này lên tầm cao hơn trong tương lai:  
- tích hợp cơ sở dữ liệu,  
- mở rộng sang nền tảng di động hoặc web,  
- và tối ưu hóa trải nghiệm người dùng hơn nữa.
+ Tích hợp cơ sở dữ liệu.
+ Mở rộng sang nền tảng di động hoặc web. 
+ Tối ưu hóa trải nghiệm người dùng hơn nữa.
 
