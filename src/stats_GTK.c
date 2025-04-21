@@ -1,10 +1,10 @@
-
+#include "stats.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
 #include <gtk/gtk.h>
-#include "stats.h"
+
 #include "identification.h"
 #define MAX_DAYS 100  
 
@@ -37,22 +37,25 @@ int get_revenue_by_day(DailyRevenue revenues[], int *num_days) {
         return -1;
     }
 
-    char date[11], item[50], type[10];
-    int amount;
+    char date[11], id[10], item[100];
+    int quantity, price;
     *num_days = 0;
 
-    while (fscanf(file, "%s %s %d %s", date, item, &amount, type) != EOF) {
+    while (fscanf(file, "%s %s \"%[^\"]\" %d %d", date, id, item, &quantity, &price) == 5) {
+        int revenue = quantity * price;
         int found = 0;
+
         for (int i = 0; i < *num_days; i++) {
             if (strcmp(revenues[i].date, date) == 0) {
-                revenues[i].revenue += amount;
+                revenues[i].revenue += revenue;
                 found = 1;
                 break;
             }
         }
+
         if (!found && *num_days < MAX_DAYS) {
             strcpy(revenues[*num_days].date, date);
-            revenues[*num_days].revenue = amount;
+            revenues[*num_days].revenue = revenue;
             (*num_days)++;
         }
     }
@@ -60,6 +63,7 @@ int get_revenue_by_day(DailyRevenue revenues[], int *num_days) {
     fclose(file);
     return 0;
 }
+
 
 // Hàm lấy doanh thu từ file orders.txt theo tháng
 int get_revenue_by_month(DailyRevenue revenues[], int *num_months) {
@@ -69,25 +73,29 @@ int get_revenue_by_month(DailyRevenue revenues[], int *num_months) {
         return -1;
     }
 
-    char date[11], item[50], type[10];
-    int amount;
+    char date[11], id[10], item[100];
+    int quantity, price;
     *num_months = 0;
 
-    while (fscanf(file, "%s %s %d %s", date, item, &amount, type) != EOF) {
-        char month_year[8];  // Định dạng YYYY-MM
-        strncpy(month_year, date, 7);  // Lấy 7 ký tự đầu (YYYY-MM)
+    while (fscanf(file, "%s %s \"%[^\"]\" %d %d", date, id, item, &quantity, &price) == 5) {
+        char month_year[8];  // YYYY-MM
+        strncpy(month_year, date, 7);
+        month_year[7] = '\0';
 
+        int revenue = quantity * price;
         int found = 0;
+
         for (int i = 0; i < *num_months; i++) {
             if (strcmp(revenues[i].date, month_year) == 0) {
-                revenues[i].revenue += amount;
+                revenues[i].revenue += revenue;
                 found = 1;
                 break;
             }
         }
+
         if (!found && *num_months < MAX_DAYS) {
             strcpy(revenues[*num_months].date, month_year);
-            revenues[*num_months].revenue = amount;
+            revenues[*num_months].revenue = revenue;
             (*num_months)++;
         }
     }
@@ -95,6 +103,7 @@ int get_revenue_by_month(DailyRevenue revenues[], int *num_months) {
     fclose(file);
     return 0;
 }
+
 
 // Hàm cập nhật doanh thu và hiển thị trên giao diện
 void update_stats(GtkWidget *widget, gpointer data) {

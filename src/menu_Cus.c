@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "menu_Cus.h"
+#include <time.h>
 
 int loadMenuFromFile(MenuItemCus menu[], int *count) {
     FILE *file = fopen("data/menu.txt", "r");
@@ -41,17 +42,25 @@ void printMenu(MenuItemCus menu[], int count) {
                menu[i].price, menu[i].imagePath);
     }
 }
-
+//lưu đơn hàng vào orders.txt
 int saveOrderToFile(OrderItem order[], int count) {
-    FILE *file = fopen("data/orders.txt", "w");
+    FILE *file = fopen("data/orders.txt", "a"); 
     if (!file) {
         perror("Lỗi mở file orders.txt");
         return 0;
     }
 
+    // Lấy ngày hiện tại
+    time_t now = time(NULL);
+    struct tm *t = localtime(&now);
+
+    // Tạo chuỗi ngày dạng YYYY-MM-DD
+    char date[11];
+    strftime(date, sizeof(date), "%Y-%m-%d", t);
+
     for (int i = 0; i < count; i++) {
-        fprintf(file, "%s \"%s\" %d %.0f\n",
-                order[i].menuId, order[i].dishName, 
+        fprintf(file, "%s %s \"%s\" %d %.0f\n",
+                date, order[i].menuId, order[i].dishName,
                 order[i].quantity, order[i].price * order[i].quantity);
     }
 

@@ -49,39 +49,41 @@ int calculate_revenue_by_month(int year, int month) {
 }
 char best_food[100];   // Biến toàn cục để lưu món ăn bán chạy nhất
 char best_drink[100];  // Biến toàn cục để lưu thức uống bán chạy nhất
-// Hàm trả về chuỗi chứa món ăn bán chạy nhất
+
+// Hàm trả về món ăn bán chạy nhất (ID bắt đầu bằng 'F')
 char* find_food_best_selling() {
     FILE *file_orders = fopen("data/orders.txt", "r");
-    if (!file_orders){
-    	printf("No found file!\n");
-    	return 0;
-	}
+    if (!file_orders) {
+        printf("No found file!\n");
+        return 0;
+    }
 
     int maxCount = 0;
     strcpy(best_food, "None");
 
-    char item[50], category[10], date[20];
-    int price;
-    char food_items[100][50];
+    char id[20], item[100];
+    int quantity, price;
+    char food_items[100][100];
     int food_count[100] = {0};
     int food_index = 0;
 
-    while (fscanf(file_orders, "%s %s %d %s", date, item, &price, category) == 4) {
-        if (strcmp(category, "food") == 0) {
+    while (fscanf(file_orders, "%s \"%[^\"]\" %d %d", id, item, &quantity, &price) == 4) {
+        if (id[0] == 'F') {
             int found = 0;
             for (int i = 0; i < food_index; i++) {
                 if (strcmp(food_items[i], item) == 0) {
-                    food_count[i]++;
+                    food_count[i] += quantity;
                     found = 1;
                     break;
                 }
             }
             if (!found) {
                 strcpy(food_items[food_index], item);
-                food_count[food_index++] = 1;
+                food_count[food_index++] = quantity;
             }
         }
     }
+
     fclose(file_orders);
 
     for (int i = 0; i < food_index; i++) {
@@ -93,39 +95,40 @@ char* find_food_best_selling() {
     return best_food;
 }
 
-// Hàm trả về chuỗi chứa thức uống bán chạy nhất
+// Hàm trả về thức uống bán chạy nhất (ID bắt đầu bằng 'D')
 char* find_drink_best_selling() {
     FILE *file_orders = fopen("data/orders.txt", "r");
-    if (!file_orders){
-    	printf("No found file!\n");
-    	return 0;
-	}
+    if (!file_orders) {
+        printf("No found file!\n");
+        return 0;
+    }
 
     int maxCount = 0;
     strcpy(best_drink, "None");
 
-    char item[50], category[10], date[20];
-    int price;
-    char drink_items[100][50];
+    char id[20], item[100];
+    int quantity, price;
+    char drink_items[100][100];
     int drink_count[100] = {0};
     int drink_index = 0;
 
-    while (fscanf(file_orders, "%s %s %d %s", date, item, &price, category) == 4) {
-        if (strcmp(category, "drink") == 0) {
+    while (fscanf(file_orders, "%s \"%[^\"]\" %d %d", id, item, &quantity, &price) == 4) {
+        if (id[0] == 'D') {
             int found = 0;
             for (int i = 0; i < drink_index; i++) {
                 if (strcmp(drink_items[i], item) == 0) {
-                    drink_count[i]++;
+                    drink_count[i] += quantity;
                     found = 1;
                     break;
                 }
             }
             if (!found) {
                 strcpy(drink_items[drink_index], item);
-                drink_count[drink_index++] = 1;
+                drink_count[drink_index++] = quantity;
             }
         }
     }
+
     fclose(file_orders);
 
     for (int i = 0; i < drink_index; i++) {
