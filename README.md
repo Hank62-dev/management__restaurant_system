@@ -36,7 +36,7 @@ Nhận thấy điều đó, nhóm chúng tôi quyết định xây dựng phần
 
 ## Chức năng chính của phần mềm
 
-### 🔑 Phân quyền người dùng
+###  Phân quyền người dùng
 - **Khách hàng**:
   - Đăng ký / Đăng nhập tài khoản
   - Đặt bàn, đặt món ăn
@@ -60,3 +60,44 @@ Nhận thấy điều đó, nhóm chúng tôi quyết định xây dựng phần
 ```bash
 gcc -o restaurant_VQHT src/*.c $(pkg-config --cflags --libs gtk+-3.0)
 ./restaurant_VQHT
+```
+##  Demo các tính năng nổi bật
+
+-  **Giao diện rõ ràng, trực quan**, tách biệt giữa khách hàng và quản lý.
+-  **Đặt món / đặt bàn dễ dàng**, thân thiện với người dùng.
+-  **Xuất hóa đơn và lưu trữ đơn hàng** tự động sau khi thanh toán.
+-  **Xem, lọc và thống kê doanh thu linh hoạt** theo ngày / tháng.
+-  **Dữ liệu lưu trữ bằng file `.txt`**, dễ thao tác và bảo trì hệ thống.
+
+---
+
+##  Khó khăn trong quá trình phát triển
+
+- Thiết kế **nhiều giao diện riêng biệt** phù hợp cho từng loại người dùng.
+- Tổ chức xử lý **dữ liệu thống kê từ `orders.txt` và `view_bill.txt`**.
+- **Tạo hóa đơn động** từ thông tin booking và món ăn.
+- **Đồng bộ giao diện với CSS** cho nhiều cửa sổ GTK+.
+- Xử lý **logic phân quyền người dùng và chuyển đổi giao diện động**.
+- **Đảm bảo xác thực đăng nhập / đăng ký** với dữ liệu lưu bằng file.
+
+---
+
+## 🛠️ Các cấu trúc dữ liệu sử dụng
+
+- `struct OrderItem` – Lưu thông tin món ăn được khách đặt
+- `struct Customer` – Lưu thông tin khách hàng
+- `struct Employee` – Lưu thông tin nhân viên
+- `struct DailyRevenue` – Lưu doanh thu theo ngày
+- Và các `struct` hỗ trợ khác giúp quản lý hệ thống hiệu quả
+
+---
+
+##  Kết luận
+
+Phần mềm **VQHT Restaurant** là minh chứng rõ ràng cho khả năng **làm việc nhóm**, **tổ chức dự án**, và **áp dụng công nghệ C – GTK+ – Glade** vào xây dựng một hệ thống hoàn chỉnh.
+
+Sản phẩm không chỉ đáp ứng yêu cầu kỹ thuật, mà còn mở rộng thêm các tính năng thực tiễn. Đây cũng là nền tảng để nhóm có thể tiếp tục phát triển hệ thống này lên tầm cao hơn trong tương lai:  
+ tích hợp cơ sở dữ liệu,  
+ mở rộng sang nền tảng di động hoặc web,  
+ và tối ưu hóa trải nghiệm người dùng hơn nữa.
+
