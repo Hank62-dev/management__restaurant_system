@@ -45,6 +45,14 @@ void on_register_now_clicked_c(GtkButton *button, gpointer user_data) {
 
     if (g_strcmp0(password, confirm_password) != 0) {
         g_print("Passwords do not match!\n");
+        GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(window),
+                                        GTK_DIALOG_DESTROY_WITH_PARENT,
+                                        GTK_MESSAGE_INFO,
+                                        GTK_BUTTONS_OK,
+                                        "Passwords do not match!");
+        // Hiển thị hộp thoại
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
         return;
     }
      
@@ -53,6 +61,14 @@ void on_register_now_clicked_c(GtkButton *button, gpointer user_data) {
         fprintf(file, "%s %s %s %s\n", firstname, lastname, phone, password);
         fclose(file);
         g_print("User registered successfully!\n");
+        GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(window),
+                                               GTK_DIALOG_DESTROY_WITH_PARENT,
+                                               GTK_MESSAGE_INFO,
+                                               GTK_BUTTONS_OK,
+                                               "User registered successfully!");
+        // Hiển thị hộp thoại
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
     } else {
         g_print("Error saving data!\n");
     }
