@@ -82,7 +82,7 @@ gcc -o restaurant_VQHT src/*.c $(pkg-config --cflags --libs gtk+-3.0)
 
 ---
 
-## 🛠️ Các cấu trúc dữ liệu sử dụng
+##  Các cấu trúc dữ liệu sử dụng
 
 - `struct OrderItem` – Lưu thông tin món ăn được khách đặt
 - `struct Customer` – Lưu thông tin khách hàng
