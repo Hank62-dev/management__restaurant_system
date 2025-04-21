@@ -48,7 +48,7 @@ if (temp) {
     gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(builder, "enter_number_of_guest")), guests);
     gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(builder, "table_ordered")), table);
 
-    // Đọc orders.txt
+   // Đọc orders.txt
     FILE *orders = fopen("data/orders.txt", "r");
     if (orders) {
         char line[256];
@@ -57,16 +57,17 @@ if (temp) {
             char code[32], item[64]; int qty; double price;
             int date[11];
             if (sscanf(line, "%s %s \"%[^\"]\" %d %lf",date, code, item, &qty, &price) == 5) {
-                subtotal += price;
+                subtotal += (price * qty);
             }
         }
         fclose(orders);
     }
 
-    char buf[64];
+    
     double tax = subtotal * 0.1;
     double total = subtotal + tax;
-
+ 
+    char buf[64];
     gtk_label_set_text(GTK_LABEL(gtk_builder_get_object(builder, "label_orders")), orders_text);
 
     snprintf(buf, sizeof(buf), "%.0f", subtotal);
@@ -86,11 +87,11 @@ if (orders_file) {
     int qty;
     double price;
     char line[256];
-    int date[11];
+    char date[11];
     while (fgets(line, sizeof(line), orders_file)) {
         if (sscanf(line, "%s %s \"%[^\"]\" %d %lf",date, code, item, &qty, &price) == 5) {
             char line_out[256];
-            snprintf(line_out, sizeof(line_out), "%s       x%d        %.0fđ\n", item, qty, price);
+            snprintf(line_out, sizeof(line_out), "%s          x%d          %.0fđ\n", item, qty, price);
             strcat(bill_lines, line_out);
         }
     }
@@ -99,7 +100,7 @@ if (orders_file) {
 
 
 GtkWidget *bill_label = GTK_WIDGET(gtk_builder_get_object(builder, "bill_infor"));
-if (GTK_IS_LABEL(bill_label)) {
+
     if (GTK_IS_LABEL(bill_label)) {
         gtk_label_set_text(GTK_LABEL(bill_label), bill_lines);
         gtk_label_set_line_wrap(GTK_LABEL(bill_label), TRUE);
@@ -109,16 +110,13 @@ if (GTK_IS_LABEL(bill_label)) {
     } else {
         g_print("Không tìm thấy label 'bill_infor' trong glade!\n");
     }
-
-
-
-}
 }
 
 static void on_confirm_bill_clicked(GtkButton *button, gpointer user_data) {
     GtkWidget *window = GTK_WIDGET(user_data);
     char name[256] = "Unknown", date[32] = "N/A";
     double subtotal = 0;
+    double total = 0; 
 
     FILE *temp = fopen("data/temp_data.txt", "r");
     if (temp) {
@@ -134,17 +132,15 @@ static void on_confirm_bill_clicked(GtkButton *button, gpointer user_data) {
     if (orders) {
         char item[64]; int qty; double price; char code[16];
         char line[256];
-        int date[11];
         while (fgets(line, sizeof(line), orders)) {
-            if (sscanf(line, "%s %s %s %d %lf",date, code, item, &qty, &price) == 5) {
-                subtotal += price;
+            if (sscanf(line, "%s %s \"%[^\"]\" %d %lf", date, code, item, &qty, &price) == 5) {
+                subtotal += (price * qty);
             }
         }
         fclose(orders);
+        double tax = subtotal * 0.1;
+        total = subtotal + tax;  
     }
-
-    double tax = subtotal * 0.1;
-    double total = subtotal + tax;
 
     int stt = 1;
     FILE *view = fopen("data/view_bill.txt", "r");
@@ -156,12 +152,13 @@ static void on_confirm_bill_clicked(GtkButton *button, gpointer user_data) {
 
     FILE *out = fopen("data/view_bill.txt", "a");
     if (out) {
-        fprintf(out, "%d %s %s %.0f\n", stt, name, date, total);
+        fprintf(out, "%d %s %s %.2lf\n", stt, name, date, total); 
         fclose(out);
     }
 
     gtk_widget_hide(window);
 }
+
 
 void run_bill() {
     GtkBuilder *builder = gtk_builder_new();

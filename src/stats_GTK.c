@@ -42,7 +42,7 @@ int get_revenue_by_day(DailyRevenue revenues[], int *num_days) {
     *num_days = 0;
 
     while (fscanf(file, "%s %s \"%[^\"]\" %d %d", date, id, item, &quantity, &price) == 5) {
-        int revenue = quantity * price;
+        double revenue = quantity * price * 1.1;
         int found = 0;
 
         for (int i = 0; i < *num_days; i++) {
@@ -82,7 +82,7 @@ int get_revenue_by_month(DailyRevenue revenues[], int *num_months) {
         strncpy(month_year, date, 7);
         month_year[7] = '\0';
 
-        int revenue = quantity * price;
+        double revenue = quantity * price * 1.1;
         int found = 0;
 
         for (int i = 0; i < *num_months; i++) {
