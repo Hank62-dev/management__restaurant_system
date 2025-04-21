@@ -107,7 +107,7 @@ int get_revenue_by_month(DailyRevenue revenues[], int *num_months) {
 
 // Hàm cập nhật doanh thu và hiển thị trên giao diện
 void update_stats(GtkWidget *widget, gpointer data) {
-    char buffer[2048] = "Daily Revenue:\n";  // Thêm markup để in đậm
+    char buffer[2048] = "\n";  // Thêm markup để in đậm
     DailyRevenue revenues[MAX_DAYS];
     int num_days = 0;
 
@@ -136,9 +136,9 @@ void update_stats(GtkWidget *widget, gpointer data) {
 
         char line[50];
         if (revenue == 0) {
-            sprintf(line, "%s: No Revenue\n", date_str);
+            sprintf(line, "%s: 0VNĐ\n", date_str);
         } else {
-            sprintf(line, "%s: %d VND\n", date_str, revenue);
+            sprintf(line, "%s: %d VNĐ\n", date_str, revenue);
         }
         strcat(buffer, line);
     }
@@ -146,7 +146,7 @@ void update_stats(GtkWidget *widget, gpointer data) {
     gtk_label_set_markup(GTK_LABEL(label_daily), buffer);  // Cập nhật GUI
 
     //Hiển thị doanh thu 7 tháng gần nhất
-    char buffer_monthly[2048] = "Monthly Revenue:\n";
+    char buffer_monthly[2048] = "\n";
 
     DailyRevenue monthly_revenues[MAX_DAYS];
     int num_months = 0;
@@ -180,9 +180,9 @@ void update_stats(GtkWidget *widget, gpointer data) {
         // Cập nhật thông tin doanh thu tháng
         char line[50];
         if (monthly_revenue == 0) {
-            sprintf(line, "%04d-%02d: No Revenue\n", year, month);
+            sprintf(line, "%04d-%02d: 0VNĐ\n", year, month);
         } else {
-            sprintf(line, "%04d-%02d: %d VND\n", year, month, monthly_revenue);
+            sprintf(line, "%04d-%02d: %d VNĐ\n", year, month, monthly_revenue);
         }
 
         strcat(buffer_monthly, line); // Ghép vào buffer tháng

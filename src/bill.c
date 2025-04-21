@@ -55,7 +55,8 @@ if (temp) {
         while (fgets(line, sizeof(line), orders)) {
             strcat(orders_text, line);
             char code[32], item[64]; int qty; double price;
-            if (sscanf(line, "%s \"%[^\"]\" %d %lf", code, item, &qty, &price) == 4) {
+            int date[11];
+            if (sscanf(line, "%s %s \"%[^\"]\" %d %lf",date, code, item, &qty, &price) == 5) {
                 subtotal += price;
             }
         }
@@ -85,8 +86,9 @@ if (orders_file) {
     int qty;
     double price;
     char line[256];
+    int date[11];
     while (fgets(line, sizeof(line), orders_file)) {
-        if (sscanf(line, "%s \"%[^\"]\" %d %lf", code, item, &qty, &price) == 4) {
+        if (sscanf(line, "%s %s \"%[^\"]\" %d %lf",date, code, item, &qty, &price) == 5) {
             char line_out[256];
             snprintf(line_out, sizeof(line_out), "%s       x%d        %.0fđ\n", item, qty, price);
             strcat(bill_lines, line_out);
@@ -132,8 +134,9 @@ static void on_confirm_bill_clicked(GtkButton *button, gpointer user_data) {
     if (orders) {
         char item[64]; int qty; double price; char code[16];
         char line[256];
+        int date[11];
         while (fgets(line, sizeof(line), orders)) {
-            if (sscanf(line, "%s %s %d %lf", code, item, &qty, &price) == 4) {
+            if (sscanf(line, "%s %s %s %d %lf",date, code, item, &qty, &price) == 5) {
                 subtotal += price;
             }
         }

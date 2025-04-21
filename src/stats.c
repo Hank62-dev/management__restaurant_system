@@ -14,8 +14,8 @@ int calculate_revenue_by_day(const char* date_target) {
 
     int total_day = 0, price = 0;
     char date[20], item[50], category[10];
-
-    while (fscanf(file, "%s %s %d %s", date, item, &price, category) == 4) {
+    int id[10];
+    while (fscanf(file, "%s %s %s %d %s", date, id, item, &price, category) == 4) {
         if (strcmp(date, date_target) == 0) {
             total_day += price;  // Cộng dồn doanh thu cho ngày cần tìm
         }
@@ -66,8 +66,8 @@ char* find_food_best_selling() {
     char food_items[100][100];
     int food_count[100] = {0};
     int food_index = 0;
-
-    while (fscanf(file_orders, "%s \"%[^\"]\" %d %d", id, item, &quantity, &price) == 4) {
+    int date[11];
+    while (fscanf(file_orders, "%s %s \"%[^\"]\" %d %d", date , id, item, &quantity, &price) == 5) {
         if (id[0] == 'F') {
             int found = 0;
             for (int i = 0; i < food_index; i++) {
@@ -97,8 +97,8 @@ char* find_food_best_selling() {
 
 // Hàm trả về thức uống bán chạy nhất (ID bắt đầu bằng 'D')
 char* find_drink_best_selling() {
-    FILE *file_orders = fopen("data/orders.txt", "r");
-    if (!file_orders) {
+    FILE *filed_orders = fopen("data/orders.txt", "r");
+    if (!filed_orders) {
         printf("No found file!\n");
         return 0;
     }
@@ -111,8 +111,8 @@ char* find_drink_best_selling() {
     char drink_items[100][100];
     int drink_count[100] = {0};
     int drink_index = 0;
-
-    while (fscanf(file_orders, "%s \"%[^\"]\" %d %d", id, item, &quantity, &price) == 4) {
+    int date[11];
+    while (fscanf(filed_orders, "%s %s \"%[^\"]\" %d %d", date, id, item, &quantity, &price) == 5) {
         if (id[0] == 'D') {
             int found = 0;
             for (int i = 0; i < drink_index; i++) {
@@ -129,7 +129,7 @@ char* find_drink_best_selling() {
         }
     }
 
-    fclose(file_orders);
+    fclose(filed_orders);
 
     for (int i = 0; i < drink_index; i++) {
         if (drink_count[i] > maxCount) {

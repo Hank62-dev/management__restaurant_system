@@ -44,7 +44,7 @@ void printMenu(MenuItemCus menu[], int count) {
 }
 //lưu đơn hàng vào orders.txt
 int saveOrderToFile(OrderItem order[], int count) {
-    FILE *file = fopen("data/orders.txt", "a"); 
+    FILE *file = fopen("data/orders.txt", "w"); 
     if (!file) {
         perror("Lỗi mở file orders.txt");
         return 0;
