@@ -61,7 +61,7 @@
             </child>
             <child>
               <object class="GtkButton" id="btn_management">
-                <property name="label" translatable="yes">MANAGEMENT</property>
+                <property name="label" translatable="yes">MANAGER</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>

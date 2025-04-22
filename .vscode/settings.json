@@ -55,29 +55,5 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false,
-  "files.associations": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "test.h": "c",
-    "stdlib.h": "c",
-    "stdio.h": "c",
-    "login_register_cus.h": "c",
-    "string.h": "c",
-    "login_register_mana.h": "c",
-    "utils.h": "c",
-    "identification.h": "c",
-    "text_encoding": "c",
-    "typeinfo": "c",
-    "atomic": "c"
-=======
-    "menu.h": "c",
-    "menu_mana.h": "c",
-    "menu_cus.h": "c"
->>>>>>> menu
-=======
-    "string.h": "c",
-    "employees.h": "c"
->>>>>>> employee
-  }
+  "C_Cpp_Runner.msvcSecureNoWarnings": false
 }
