@@ -1,11 +1,3 @@
-/*Idea: 
-Dữ liệu thống kê bao gồm:
-- Doanh thu(Revenue): Tổng tiền bán được theo ngày/tháng
-- Món bán chạy nhất(bestSelling): Món có số lượng bán nhiều nhất
-Lưu ý: dữ liệu sẽ được tính toán từ orders.txt
- */
-
-
  #ifndef STATS_H  // Kiểm tra nếu chưa được định nghĩa
  #define STATS_H // Định nghĩa để tránh nạp lại file
  
@@ -37,4 +29,4 @@ Lưu ý: dữ liệu sẽ được tính toán từ orders.txt
  int get_revenue_by_month(DailyRevenue revenues[], int *num_months);
  int get_revenue_by_day(DailyRevenue revenues[], int *num_days);
 
- #endif // kết thúc khai báo chương trình
+ #endif
