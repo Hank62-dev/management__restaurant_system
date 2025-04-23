@@ -71,17 +71,6 @@ gcc -o restaurant_VQHT src/*.c $(pkg-config --cflags --libs gtk+-3.0)
 
 ---
 
-##  Khó khăn trong quá trình phát triển
-
-- Thiết kế **nhiều giao diện riêng biệt** phù hợp cho từng loại người dùng.
-- Tổ chức xử lý **dữ liệu thống kê từ `orders.txt` và `view_bill.txt`**.
-- **Tạo hóa đơn động** từ thông tin booking và món ăn.
-- **Đồng bộ giao diện với CSS** cho nhiều cửa sổ GTK+.
-- Xử lý **logic phân quyền người dùng và chuyển đổi giao diện động**.
-- **Đảm bảo xác thực đăng nhập / đăng ký** với dữ liệu lưu bằng file.
-
----
-
 ##  Các cấu trúc dữ liệu sử dụng
 
 - `struct OrderItem` – Lưu thông tin món ăn được khách đặt
